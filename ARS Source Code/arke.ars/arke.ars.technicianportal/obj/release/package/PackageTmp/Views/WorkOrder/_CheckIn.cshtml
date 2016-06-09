@@ -1,0 +1,28 @@
+﻿@model Arke.ARS.TechnicianPortal.Models.WorkOrderModel
+<div class="modal fade" id="modal-check-in">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Check in</h4>
+            </div>
+            @using (Html.BeginForm("CheckIn", "WorkOrder", new { id = Model.Id }, FormMethod.Post))
+            {
+                <input type="hidden" name="id" value="@Model.Id" />
+                @Html.AntiForgeryToken()
+                <div class=modal-body>
+                    <div class=row>
+                        <div class=col-sm-12>
+                            <p>
+                                Confirm check in at <strong>@Model.Customer.CustomerName</strong> @Model.Customer.Composite
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class=modal-footer>
+                    <button type=button class="btn btn-default" data-dismiss=modal>Cancel</button> <button type="submit" class="btn btn-primary">Check in</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+#workOrders {
+    height: 600px;
+    float: left;
+    width: 10%;
+    padding: 0 10px;
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .btn-group .btn {
+        padding: 6px 0;
+    }
+
+    .fc-events li {
+        margin-bottom: 10px;
+        cursor: move;
+    }
+
+    .work-orders-list {
+        li.active {
+            background-color: #2c6ec8;
+            color: white;
+        }
+
+        .emergency {
+            border: solid red;
+            border-width: 1px;
+        }
+    }
+
+    #sortByTechDistance {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .loadmore {
+        text-align: center;
+    }
+}

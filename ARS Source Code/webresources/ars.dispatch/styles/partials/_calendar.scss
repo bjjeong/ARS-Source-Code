@@ -1,0 +1,81 @@
+@import "../../scripts/lib/fullcalendar-2.3.1/dist/fullcalendar";
+
+.timeZoneSelect {
+    font-size: 1em;
+    margin: 0 0 0 -1px;
+    padding: 1px 1px 3px;
+    height: 2.1em;
+    width: 200px;
+}
+
+.fc button {
+    padding: 1px 6px;
+}
+
+.fc-state-down, .fc-state-active { box-shadow: none; }
+
+.calendar {
+    clear: none;
+    float: left;
+    width: 60%;
+    height: 600px;
+    h2 {
+        @extend .title;
+    }
+}
+
+.details {
+    background: #cbe1ff;
+    opacity: 1;
+    z-index: 5;
+}
+
+.fc-icon {
+    color: $brand-primary;
+}
+
+.fc-button {
+    border: none;
+    background: none;
+}
+
+.fc-today-button {
+    @extend .title;
+    color: $brand-primary;
+}
+
+.fc-axis {
+    cursor: pointer;
+    background: #e9e9e9;
+    &.selected {
+        font-weight: bold;
+        position: relative;
+        &:after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 6px 6px 0;
+            border-color: transparent #2c6dc8 transparent transparent;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    }
+}
+
+.fc-unthemed .fc-today,
+.fc-today {
+    background: #F5F5F4;
+}
+
+.fc-toolbar {
+    margin-bottom: 3px;
+    position: relative;
+    .fc-left {
+        position: absolute;
+        left: 0;
+        top: -5px;
+    }
+}

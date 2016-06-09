@@ -1,0 +1,11 @@
+{
+  "name": "frm",
+  "private": true,
+  "dependencies": {
+    "bluebird": "~2.9.24",
+    "modernizr": "~2.6.2",
+    "jquery": "~1.11.0",
+    "jquery-ui-multiselect-widget":"1.13"
+  },
+  "devDependencies": {}
+}

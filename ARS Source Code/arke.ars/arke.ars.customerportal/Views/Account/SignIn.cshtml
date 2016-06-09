@@ -1,0 +1,41 @@
+﻿<form class="form-signin" id="signInForm">
+    <div class="form-group">
+        <h2 class="form-signin-heading">Customer Login</h2>
+        <label for="email" class="sr-only">User name</label>
+        <input type="email" id="email" class="form-control" placeholder="User name" required="" autofocus="">
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" id="password" class="form-control" placeholder="Password" required="">
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+</form>
+
+@section scripts
+{
+    <script>
+        $(function () {
+            var animationService = new ARS.AnimationService();
+            var notificationService = new ARS.NotificationService();
+
+            $("#signInForm").submit(function (e) {
+                e.preventDefault();
+
+                animationService.showBusyAnimation();
+                $.post("@Url.Content("~/")Token", {
+                        grant_type: 'password',
+                        username: $("#email").val(),
+                        password: $("#password").val(),
+                        remember: true
+                    })
+                    .done(function() {
+                        window.location.href = "@Url.Action("Index", "WorkOrder")";
+                    })
+                    .error(function () {
+                        notificationService.showError("The username/password you entered is not valid.");
+                    })
+                    .always(function() {
+                        animationService.hideBusyAnimation();
+                    });
+            });
+        });
+    </script>
+}

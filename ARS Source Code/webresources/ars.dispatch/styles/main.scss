@@ -1,0 +1,93 @@
+$brand-secondary: #cbe1ff;
+$icon-font-path: "../fonts/";
+$icon-font-name: "gicons_half_r"; // Renamed file to avoid length restrictions.
+
+@import "lib/bootstrap-3.3.5/bootstrap";
+@import "../scripts/jquery-ui-1.11.4.custom/jquery-ui";
+@import "../bower-components/jquery-ui-multiselect-widget/jquery.multiselect";
+
+@import "partials/frm";
+@import "partials/toolbar";
+@import "partials/calendar";
+@import "partials/event";
+@import "partials/orders";
+@import "partials/map";
+@import "partials/type";
+@import "partials/footer";
+@import "partials/overrides";
+@import "partials/technicians";
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+.error-box, .info-box {
+    display: none;
+}
+
+.announcement {
+    position: absolute;
+    z-index: 4;
+    width: 100%;
+    height: 50px;
+}
+
+#loadingDiv {
+    background: #CCCCCC url(../images/progress.gif) no-repeat center;
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 2010;
+    opacity: 0.7;
+}
+
+.template {
+    display: none;
+}
+
+.work-order p {
+    margin: 0;
+}
+
+.remove-appointment {
+    float: right;
+    padding-right: 5px;
+}
+
+.ui-widget-header {
+    border: transparent;
+    background: none;
+    background-color: #2c6ec8;
+    font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Helvetica Neue", Arial, sans-serif;
+    font-weight: bold;
+}
+
+.ui-state-hover, .ui-widget-content .ui-state-hover {
+    background-color: #2c6ec8;
+    border: transparent;
+    color: white;
+}
+
+.ui-state-active {
+    border-color: #2c6ec8;
+}
+
+.ui-multiselect {
+    margin-left: 10px;
+}
+
+.ui-multiselect-checkboxes {
+    label {
+        color: #2c6ec8;
+        font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Helvetica Neue", Arial, sans-serif;
+        font-weight: normal;
+    }
+
+    span {
+        padding-left: 5px;
+    }
+}

@@ -1,0 +1,250 @@
+﻿@using PagedList.Mvc
+@model Arke.ARS.CustomerPortal.Models.CustomerPortalModel
+@section navigation
+{
+  @Html.Partial("_AuthorizedNavigation")
+}
+@{
+    ViewBag.Title = "CUSTOMER PORTAL";
+}
+
+<div class="work-order">
+    <div class="wrap-pagination hidden-xs">
+        <nav class="pull-right no-print">
+            <div class="open-paging">
+                @Html.PagedListPager(Model.OpenOrders, page => Model.GetQueryLink(page, true))
+            </div>
+            <div class="closed-paging">
+                @Html.PagedListPager(Model.ClosedOrders, page => Model.GetQueryLink(page, false))
+            </div>
+        </nav>
+    </div>
+    <h2>Work orders</h2>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs no-print" role="tablist">
+        <li role="presentation" id="closed-tab"><a href="#closed" aria-controls="profile" role="tab" data-toggle="tab">Closed</a></li>
+        <li role="presentation" id="open-tab" class="active"><a href="#open" aria-controls="home" role="tab" data-toggle="tab">Open</a></li>
+    </ul>
+    @using (Html.BeginForm("Index", "WorkOrder", FormMethod.Post, new { id = "filterForm" }))
+    {
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="open">
+                <div class="row  hidden-xs">
+                    <div class="col-sm-2">
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("OrderNumber", true)>Order #</h3>
+                    </div>
+                    <div class="col-sm-2">
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("Location", true)>Location</h3>
+                    </div>
+                    <div class="col-sm-2 col-md-3">
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("Title", true)>Title</h3>
+                    </div>
+                    <div class="col-sm-2">
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("NeedBy", true)>Need by</h3>
+                    </div>
+                    <div class="col-sm-2">
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("Status", true)>Status</h3>
+                    </div>
+                    <div class="col-sm-2  col-md-1">
+                        <span class="sr-only">Edit/Delete</span>
+                    </div>
+                </div>
+                @foreach (var order in Model.OpenOrders)
+                {
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <p>
+                                <span class="title visible-xs-inline">Order number: </span>@order.OrderNumber
+                            </p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>
+                                <span class="title visible-xs-inline">Location: </span>@order.Location
+                            </p>
+                        </div>
+                        <div class="col-sm-2 col-md-3">
+                            <p>
+                                <span class="title visible-xs-inline">Title: </span>@order.Title
+                            </p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>
+                                <span class="title visible-xs-inline">Needed by: </span>@if (order.NeedBy != null)
+                                {
+                                    @String.Format("{0:MM/dd/yy}", order.NeedBy)
+                                }
+                            </p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>
+                                <span class="title visible-xs-inline">Status: </span>@order.Status
+                            </p>
+                        </div>
+                        <div class="col-sm-2 col-md-1 view-delete">
+                            <a href="@Url.Action("Details", new { id = @order.Id })" class="edit-delete edit btn btn-default btn-sm no-print" title="View or edit details">
+                                Details
+                            </a>
+                            <a href="#" class="edit-delete cancel no-print @(order.Status == "Pending" ? "" : "invisible")" data-orderid="@order.Id" title="Cancel Work Order">
+                                <span class="sr-only">Cancel Work Order</span>
+                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                    </div>
+                }
+                <a href="#" class="btn btn-default print pull-left no-print"><span class="glyphicon glyphicon-print"></span> Print view</a>
+                <nav class="pull-right no-print">
+                    @Html.PagedListPager(Model.OpenOrders, page => Model.GetQueryLink(page, true))
+                </nav>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="closed">
+                <div class="row hidden-xs">
+                    <div class="col-sm-2">
+                        <h3 title="Click to sort by column" class="heading sortable closed-sorting" data-sort-url=@Model.GetQueryLink("OrderNumber", false)>Order #</h3>
+                    </div>
+                    <div class="col-sm-2">
+                        <h3 title="Click to sort by column" class="heading sortable closed-sorting" data-sort-url=@Model.GetQueryLink("Location", false)>Location</h3>
+                    </div>
+                    <div class="col-sm-2">
+                        <h3 title="Click to sort by column" class="heading sortable closed-sorting" data-sort-url=@Model.GetQueryLink("Title", false)>Title</h3>
+                    </div>
+                    <div class="col-sm-2">
+                        <h3 title="Click to sort by column" class="heading sortable closed-sorting" data-sort-url=@Model.GetQueryLink("ClosedDate", false)>Close Date</h3>
+                    </div>
+                    <div class="col-sm-2">
+                        <h3 title="Click to sort by column" class="heading sortable closed-sorting" data-sort-url=@Model.GetQueryLink("Amount", false)>Amount</h3>
+                    </div>
+                    <div class="col-sm-1">
+                        <h3 title="Click to sort by column" class="heading sortable closed-sorting" data-sort-url=@Model.GetQueryLink("Tech", false)>Tech</h3>
+                    </div>
+                    <div class="col-sm-1">
+                        <p>&nbsp;</p>
+                    </div>
+                </div>
+                @foreach (var order in Model.ClosedOrders)
+                {
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <p>
+                                <span class="title visible-xs-inline">Order number: </span>@order.OrderNumber
+                            </p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>
+                                <span class="title visible-xs-inline">Location: </span>@order.Location
+                            </p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>
+                                <span class="title visible-xs-inline">Title: </span>@order.Title
+                            </p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>
+                                <span class="title visible-xs-inline">Close date: </span>@if (order.ClosedDate != null)
+                                {
+                                    @String.Format("{0:MM/dd/yy}", order.ClosedDate)
+                                }
+                            </p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>
+                                <span class="title visible-xs-inline">Amount: </span>$ @order.Amount
+                            </p>
+                        </div>
+                        <div class="col-sm-1">
+                            <p>
+                                <span class="title visible-xs-inline">Tech: </span>@order.Tech
+                            </p>
+                        </div>
+                        <div class="col-sm-1">
+                            <p>
+                                <a href="#" data-toggle="modal" data-orderid="@order.Id" class="btn btn-default btn-sm reopen @(order.Status == "Canceled" ? "" : "invisible")">Reopen</a>
+                            </p>
+                        </div>
+                    </div>
+                }
+                <a href="#" class="btn btn-default print pull-left no-print"><span class="glyphicon glyphicon-print"></span> Print view</a>
+                <nav class="pull-right no-print">
+                    @Html.PagedListPager(Model.ClosedOrders, page => Model.GetQueryLink(page, false))
+                </nav>
+            </div>
+        </div>
+    }
+
+</div>
+
+<a href="#" class="btn btn-primary no-print add-work-order" data-toggle="modal" data-target="#add-work-order"><span class="glyphicon glyphicon-plus"></span> New work order</a>
+
+@Html.Partial("_AddWorkOrder", Model)
+@Html.Partial("_ReopenWorkOrder")
+
+@section scripts {
+    <script>
+        $(function () {
+            var notificationService = new ARS.NotificationService();
+            var animationService = new ARS.AnimationService();
+
+            $(".closed-paging").hide();
+
+            if ('@Model.ShowOpen' === 'False') {
+                $("#open").removeClass("active");
+                $("#closed").addClass("active");
+                $("#open-tab").removeClass("active");
+                $("#closed-tab").addClass("active");
+                $(".open-paging").hide();
+                $(".closed-paging").show();
+            }
+
+            $('h3[data-sort-url]').click(function() {
+                window.location.href = $(this).data('sort-url');
+            });
+
+            $(".nav-tabs").find("li").click(function () {
+                if (!$(this).hasClass("active")) {
+                    $(".open-paging").toggle();
+                    $(".closed-paging").toggle();
+                }
+            });
+
+            $(".cancel").click(function () {
+                animationService.showBusyAnimation();
+
+                var orderId = $(this).data("orderid");
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("Cancel", "WorkOrder")',
+                    data: 'orderId=' + orderId
+                }).done(function () {
+                    window.location.href = '@Url.Action("Index","WorkOrder")';
+                }).fail(function () {
+                    notificationService.showError("Cannot reopen work item");
+                }).always(function () {
+                    animationService.hideBusyAnimation();
+                });
+            });
+
+            $("#reopen").on("hidden.bs.modal", function () {
+                window.location.href = '@Url.Action("Index","WorkOrder")';
+            });
+
+            $(".reopen").click(function () {
+                animationService.showBusyAnimation();
+
+                var orderId = $(this).data("orderid");
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("Reopen", "WorkOrder")',
+                    data: 'orderId=' + orderId
+                }).done(function () {
+                    $("#reopen").modal("show");
+                }).fail(function () {
+                    notificationService.showError("Cannot reopen work item");
+                }).always(function () {
+                    animationService.hideBusyAnimation();
+                });
+            });
+
+            $("#need-by-date").datetimepicker();
+        });
+    </script>
+}

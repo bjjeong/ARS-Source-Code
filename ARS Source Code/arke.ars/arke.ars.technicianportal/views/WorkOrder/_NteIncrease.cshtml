@@ -1,0 +1,57 @@
+﻿@model Arke.ARS.TechnicianPortal.Models.WorkOrderModel
+
+@using (Html.BeginForm("NteIncrease", "WorkOrder"))
+{
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="workOrderId" value="@Model.Id" />
+    <div class="modal fade" id="modal-nte-increase">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Request NTE Increase</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <p class="help-block">
+                                    Current Money Limit: <strong>$<span id="current">@Model.NteMoney.ToString("F2")</span></strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="nte-money" class="sr-only">Increase Money Limit On</label>
+                                <input type="number" class="form-control" id="nte-money" name="money" placeholder="Amount" min="0" step="0.01" value="0">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <p class="help-block">
+                                    Current Time Limit: <strong><span id="current">@Model.NteHours.ToString("F2")</span></strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="nte-time" class="sr-only">Increase Time Limit On</label>
+                                <input type="number" class="form-control" id="nte-time" name="hours" placeholder="Hours" min="0" step="0.01" value="0">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="nte-increase">Submit request</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

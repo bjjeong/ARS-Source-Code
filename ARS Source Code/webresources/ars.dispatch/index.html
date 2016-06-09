@@ -1,0 +1,261 @@
+﻿<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <title>ARS - Dispatch Dashboard</title>
+    <meta name="description" content="Dispatch dashboard">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css" />
+    <!-- endbuild -->
+</head>
+<body>
+    <div id="loadingDiv"></div>
+
+    <div class="alert alert-danger error-box announcement" role="alert">
+        <span
+            class="glyphicon glyphicon-exclamation-sign"
+            aria-hidden="true"></span>
+        <span class="error-text"></span>
+        <div class="help-block with-errors"></div>
+    </div>
+
+    <div class="alert alert-success info-box announcement" role="alert">
+        <span class="message-text"></span>
+    </div>
+
+    <div class="calendar ui-layout-center">
+        <ul id="technicians" class="ui-selectable"></ul>
+        <div id="calendar"></div>
+    </div>
+
+    <div class="ui-layout-north">
+        <h1>Dispatch</h1>
+
+        <div class="form-inline">
+
+            <div class="form-group form-group-sm">
+                <select
+                    id="regions"
+                    class="dropdown-menu region-filter"
+                    role="menu"
+                    multiple="multiple"
+                    name="regions"></select>
+            </div>
+
+            <div class="checkbox form-group-sm">
+                <label>
+                    <input type="checkbox" id="allUsers" /> All Users
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label for="search" class="sr-only">Search</label>
+                <div class="input-group input-group-sm">
+                    <input
+                        type="text"
+                        id="search"
+                        name="search"
+                        class="form-control"
+                        placeholder="Search" />
+
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default">
+                            <span
+                                class="glyphicon glyphicon-search"
+                                aria-hidden="true"></span>
+
+                            <span class="sr-only">Search</span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+
+            <button
+                type="button"
+                class="btn btn-default btn-sm"
+                title="Sort technicians by distance to the selected work order"
+                data-action="sort-by-order">Sort by distance</button>
+        </div>
+    </div>
+
+    <div class="ui-layout-south footer">
+        <h2>Work Order Details</h2>
+        <p>Select a Work Order to view details.</p>
+    </div>
+
+    <div id="map" class="map ui-layout-east"></div>
+
+    <div id="workOrders" class="orders ui-layout-west">
+        <div class="btn-group">
+            <button
+                type="button"
+                class="btn btn-default dropdown-toggle"
+                data-toggle="dropdown"
+                aria-expanded="false">
+
+                <span
+                    class="glyphicon glyphicon-sort"
+                    aria-hidden="true"></span>
+
+                <span class="order-title">Unassigned</span>
+                <span class="caret"></span>
+            </button>
+
+            <ul class="dropdown-menu order-filter" role="menu">
+                
+                <li id="Unassigned" class="active">
+                    <a href="#">Unassigned</a>
+                </li>
+
+                <li id="Return"><a href="#">Return</a></li>
+                <li id="Recall"><a href="#">Recall</a></li>
+                <li id="All"><a href="#">All</a></li>
+            </ul>
+        </div>
+
+        <button
+            type="button"
+            class="btn btn-default btn-xs"
+            id="sortByTechDistance"
+            title="Sort work orders by distance to the selected technician"
+            data-action="sort-by-technician">Sort by distance</button>
+
+        <ul class="fc-events work-orders-list"></ul>
+        <div class="loadmore">
+            <img src="images/progress.gif" />
+            <div class="nomore" style="display: none;">
+                No more posts to show.
+            </div>
+        </div>
+    </div>
+
+    <div class="template">
+        <script type="text/x-template" id="workOrderTemplate">
+            <li
+                class="work-order {{isEmergencyFormatted}}"
+                data-work-order-id="{{workOrderId}}"
+                data-work-order-address="{{addressComposite}}"
+                data-work-order-complete-by-date="{{completeByDate}}"
+                data-work-order-distance="{{distance}}"
+                data-work-order-is-emergency="{{isEmergency}}"
+                data-work-order-lat-lng="{{latLng}}"
+                data-work-order-scheduling-complete="{{schedulingComplete}}"
+                data-work-order-status="{{status}}"
+                data-work-order-ticket-number="{{ticketNumber}}"
+                data-work-order-title="{{title}}"
+                data-work-order-location-name="{{locationName}}"
+                data-work-order-time-zone="{{timeZone}}"
+                data-duration='03:00'>
+                <div id="{{workOrderId}}">
+                    <p>{{ticketNumber}}</p>
+                    <p>{{locationName}}</p>
+                    <p>{{completeByDateFormatted}}</p>
+                    <p>{{addressComposite}}</p>
+                    <p class="distance">{{distanceFormatted}}</p>
+                </div>
+            </li>
+        </script>
+
+        <script type="text/x-template" id="workOrderDetailsTemplate">
+            <div data-work-order-id="{{workOrderId}}">
+                <p>{{title}}</p>
+                <p>{{ticketNumber}}</p>
+                <p>{{locationName}}</p>
+                <p>{{addressComposite}}</p>
+            </div>
+        </script>
+        <script type="text/x-template" id="technicianTemplate">
+            <li data-technician-id="{{technicianId}}">
+                <span>{{name}}</span>
+            </li>
+        </script>
+        <script type="text/x-template" id="regionTemplate">
+            <option
+                data-region-id="{{regionId}}"
+                id="{{regionId}}"
+                value="{{regionId}}">{{name}}</option>
+        </script>
+    </div>
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower-components/jquery/dist/jquery.js"></script>
+    <script src="bower-components/jqueryui/jquery-ui.js"></script>
+    <script src="bower-components/jquery-ui-multiselect-widget/src/jquery.multiselect.js"></script>
+    <script src="scripts/vendor/sdk.jquery.js"></script>
+    <script src="scripts/vendor/SDK.MetaData.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:js scripts/plugins.js -->
+    <script src="bower-components/moment/moment.js"></script>
+    <script src="bower-components/layout/source/stable/jquery.layout.js"></script>
+    <script src="bower-components/bluebird/js/browser/bluebird.js"></script>
+    <script src="bower-components/modernizr/modernizr.js"></script>
+    <script src="scripts/lib/fullcalendar-2.3.1/dist/fullcalendar.js"></script>
+    <script src="scripts/lib/bootstrap-3.3.5/dropdown.js"></script>
+    <script src="scripts/lib/Tesseract/Extensions/Array.js"></script>
+    <script src="scripts/lib/Tesseract/Extensions/Function.js"></script>
+    <script src="scripts/lib/Tesseract/Extensions/String.js"></script>
+    <script src="scripts/lib/Tesseract/Util/Validation.js"></script>
+    <script src="scripts/lib/Tesseract/Util/Selection/_Selection.js"></script>
+    <!-- endbuild -->
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/Controllers/IndexController.js"></script>
+    <script src="scripts/Controls/TimeZoneDropdown.js"></script>
+    <script src="scripts/dataRepository.js"></script>
+    <script src="scripts/fakes/FakeDataRepository.js"></script>
+    <script src="scripts/fakes/FakeRegionService.js"></script>
+    <script src="scripts/fakes/FakeServiceAppointmentService.js"></script>
+    <script src="scripts/fakes/FakeTechnicianService.js"></script>
+    <script src="scripts/fakes/FakeTimeService.js"></script>
+    <script src="scripts/fakes/FakeWorkOrderService.js"></script>
+    <script src="scripts/Filters/FilterBase.js"></script>
+    <script src="scripts/Filters/RegionFilter.js"></script>
+    <script src="scripts/Filters/TechnicianFilter.js"></script>
+    <script src="scripts/Filters/TicketFilter.js"></script>
+    <script src="scripts/Filters/WorkOrderFilter.js"></script>
+    <script src="scripts/GlobalContext.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/Models/IncidentStatusCode.js"></script>
+    <script src="scripts/Models/LatLng.js"></script>
+    <script src="scripts/Models/ServiceAppointment.js"></script>
+    <script src="scripts/Models/Technician.js"></script>
+    <script src="scripts/Models/TimeZone.js"></script>
+    <script src="scripts/Models/WorkOrderModel.js"></script>
+    <script src="scripts/Queries/CurrentUserTimeZoneQuery.js"></script>
+    <script src="scripts/Queries/DurationQuery.js"></script>
+    <script src="scripts/Queries/ServiceAppointmentQuery.js"></script>
+    <script src="scripts/Queries/TechnicianQuery.js"></script>
+    <script src="scripts/Queries/TimeZoneQuery.js"></script>
+    <script src="scripts/Queries/WorkOrderQuery.js"></script>
+    <script src="scripts/searchFilterFactory.js"></script>
+    <script src="scripts/serviceFactory.js"></script>
+    <script src="scripts/Services/AnimationService.js"></script>
+    <script src="scripts/Services/FetchXmlService.js"></script>
+    <script src="scripts/Services/GeoLocationService.js"></script>
+    <script src="scripts/Services/HeartbeatService.js"></script>
+    <script src="scripts/Services/NotificationService.js"></script>
+    <script src="scripts/Services/RegionService.js"></script>
+    <script src="scripts/Services/ServiceAppointmentService.js"></script>
+    <script src="scripts/Services/SettingsService.js"></script>
+    <script src="scripts/Services/TechnicianService.js"></script>
+    <script src="scripts/Services/TemplateService.js"></script>
+    <script src="scripts/Services/TimeService.js"></script>
+    <script src="scripts/Services/WorkOrderService.js"></script>
+    <script src="scripts/Util.js"></script>
+    <script src="scripts/viewFactory.js"></script>
+    <script src="scripts/Views/CalendarView.js"></script>
+    <script src="scripts/Views/EventRendering.js"></script>
+    <script src="scripts/Views/MapView.js"></script>
+    <script src="scripts/Views/WorkOrderView.js"></script>
+
+    <script src="scripts/Filters/AllUsersFilter.js"></script>
+    <script src="scripts/Filters/DateRangeFilter.js"></script>
+    <!-- endbuild -->
+    <script type="text/javascript">
+        document.write('<script type="text/javascript" src="' + (location.protocol === "file:" ? "http:" : location.protocol) + '//ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0&s=1"></' + 'script>');
+    </script>
+</body>
+</html>

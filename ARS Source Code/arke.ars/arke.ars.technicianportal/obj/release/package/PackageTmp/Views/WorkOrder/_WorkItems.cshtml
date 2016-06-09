@@ -1,0 +1,30 @@
+﻿@using Arke.ARS.TechnicianPortal.Models
+@model WorkOrderModel
+
+<div class="checklist panel panel-default">
+    <div class="panel-heading">
+        <p id="remaining" class="remaining pull-right small">Remaining: <span id="remaining-work-items-count"></span></p>
+        <h3 class="panel-title">Work Items</h3>
+    </div>
+    <div class="form panel-body">
+        <ul>
+            @foreach (WorkItemModel workItem in Model.WorkItems)
+            {
+                <li>
+                    @using (Html.BeginForm("SetWorkItemStatus", "WorkOrder", null, FormMethod.Post, new { data_work_item = (object)null, id = @workItem.Id }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" required name="id" value="@workItem.Id" />
+                        <div class="checkbox">
+                            <label><input type="checkbox" @(workItem.IsComplete ? "checked" : String.Empty) name="isComplete" value="true" />@workItem.Name</label>
+                        </div>
+                        <div class="form-group file">
+                            <label for="file-@workItem.Id" class="sr-only">Include File</label>
+                            <input type="file" name="note" id="file-@workItem.Id" />
+                        </div>
+                    }
+                </li>
+            }
+        </ul>
+    </div>
+</div>

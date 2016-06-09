@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="Default Web Site" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\bjjeo\\Downloads\\ARS\ Source\ Code\\ARS\ Source\ Code\\arke\.ars\\Arke\.ARS\.TechnicianPortal\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\bjjeo\\Downloads\\ARS\ Source\ Code\\ARS\ Source\ Code\\arke\.ars\\Arke\.ARS\.TechnicianPortal\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="ArsOrg-Web.config Connection String" description="" value="Url=https://advancedretail.crm.dynamics.com/; Username=bjeong@advancedretail.onmicrosoft.com; Password=Adv@nc3d" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\bjjeo\\Downloads\\ARS\ Source\ Code\\ARS\ Source\ Code\\arke\.ars\\Arke\.ARS\.TechnicianPortal\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ArsOrg']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,24 @@
+﻿@model Arke.ARS.TechnicianPortal.Models.WorkOrderModel
+@using (Html.BeginForm("Sign", "WorkOrder", new { id = Model.Id }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="modal fade" id=modal-signature>
+        <div class=modal-dialog>
+            <div class=modal-content>
+                <div class=modal-header>
+                    <button type=button class=close data-dismiss=modal aria-label=Close><span aria-hidden=true>&times;</span></button>
+                    <h4 class=modal-title>Please sign below</h4>
+                </div>
+                <div class="modal-body signature-pad">
+                    <div id=signature-pad></div>
+                    <input type="hidden" name="id" value="@Model.Id" />
+                    <input type="hidden" name="signature" id="signature" />
+                </div>
+                <div class=modal-footer>
+                    <button data-action=clear class="btn btn-default clear" id="clear-signature">Clear</button>
+                    <button data-action=save class="btn btn-primary save" id="save-signature">Save Signature</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,30 @@
+C:\Dev\ARSPlatformImplementation\Arke.ARS\Arke.ARS.Activities\bin\Debug\Arke.ARS.Activities.dll
+C:\Dev\ARSPlatformImplementation\Arke.ARS\Arke.ARS.Activities\bin\Debug\Arke.ARS.Activities.pdb
+C:\Dev\ARSPlatformImplementation\Arke.ARS\Arke.ARS.Activities\bin\Debug\Arke.ARS.Organization.dll
+C:\Dev\ARSPlatformImplementation\Arke.ARS\Arke.ARS.Activities\bin\Debug\Arke.Crm.Utils.dll
+C:\Dev\ARSPlatformImplementation\Arke.ARS\Arke.ARS.Activities\bin\Debug\Microsoft.IdentityModel.dll
+C:\Dev\ARSPlatformImplementation\Arke.ARS\Arke.ARS.Activities\bin\Debug\microsoft.xrm.sdk.dll
+C:\Dev\ARSPlatformImplementation\Arke.ARS\Arke.ARS.Activities\bin\Debug\microsoft.xrm.sdk.workflow.dll
+C:\Dev\ARSPlatformImplementation\Arke.ARS\Arke.ARS.Activities\bin\Debug\mscorlib.dll
+C:\Dev\ARSPlatformImplementation\Arke.ARS\Arke.ARS.Activities\bin\Debug\Arke.ARS.Organization.pdb
+C:\Dev\ARSPlatformImplementation\Arke.ARS\Arke.ARS.Activities\bin\Debug\Arke.Crm.Utils.pdb
+C:\Dev\ARSPlatformImplementation\Arke.ARS\Arke.ARS.Activities\bin\Debug\normidna.nlp
+C:\Dev\ARSPlatformImplementation\Arke.ARS\Arke.ARS.Activities\bin\Debug\normnfc.nlp
+C:\Dev\ARSPlatformImplementation\Arke.ARS\Arke.ARS.Activities\bin\Debug\normnfd.nlp
+C:\Dev\ARSPlatformImplementation\Arke.ARS\Arke.ARS.Activities\bin\Debug\normnfkc.nlp
+C:\Dev\ARSPlatformImplementation\Arke.ARS\Arke.ARS.Activities\bin\Debug\normnfkd.nlp
+C:\Dev\ARSPlatformImplementation\Arke.ARS\Arke.ARS.Activities\obj\Debug\Arke.ARS.Activities.csprojResolveAssemblyReference.cache
+C:\Dev\ARSPlatformImplementation\Arke.ARS\Arke.ARS.Activities\obj\Debug\Arke.ARS.Activities.dll
+C:\Dev\ARSPlatformImplementation\Arke.ARS\Arke.ARS.Activities\obj\Debug\Arke.ARS.Activities.pdb
+C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.Activities\obj\Debug\Arke.ARS.Activities.csprojResolveAssemblyReference.cache
+C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.Activities\obj\Debug\Arke.ARS.Activities.dll
+C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.Activities\obj\Debug\Arke.ARS.Activities.pdb
+C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.Activities\bin\Debug\Arke.ARS.Activities.dll
+C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.Activities\bin\Debug\Arke.ARS.Activities.pdb
+C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.Activities\bin\Debug\Arke.ARS.Organization.dll
+C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.Activities\bin\Debug\Arke.Crm.Utils.dll
+C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.Activities\bin\Debug\Microsoft.IdentityModel.dll
+C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.Activities\bin\Debug\microsoft.xrm.sdk.dll
+C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.Activities\bin\Debug\microsoft.xrm.sdk.workflow.dll
+C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.Activities\bin\Debug\Arke.ARS.Organization.pdb
+C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.Activities\bin\Debug\Arke.Crm.Utils.pdb

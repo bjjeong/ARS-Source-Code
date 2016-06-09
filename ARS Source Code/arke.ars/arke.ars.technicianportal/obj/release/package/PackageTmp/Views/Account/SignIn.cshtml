@@ -1,0 +1,52 @@
+﻿@section navigation
+{
+    @Html.Partial("_UnauthorizedNavigation")
+}
+
+<form id="signInForm">
+    <div class=form-group>
+        <label for=email>Email address</label>
+        <input type=email class=form-control id=email placeholder="Enter email" required aria-required="true">
+    </div>
+    <div class=form-group>
+        <label for=password>Password</label>
+        <input type=password class=form-control id=password placeholder=Password required aria-required="true">
+    </div>
+    <div class=checkbox>
+        <label>
+            <input type=checkbox id=remember> Remember me
+        </label>
+    </div>
+    <button type=submit class="btn btn-default">Submit</button>
+</form>
+
+@section scripts
+{
+    <script>
+        $(function () {
+            var animationService = new ARS.AnimationService();
+            var notificationService = new ARS.NotificationService();
+
+            $('#signInForm').submit(function(e) {
+                e.preventDefault();
+
+                animationService.showBusyAnimation();
+                $.post("@Url.Content("~/")Token", {
+                        grant_type: 'password',
+                        username: $("#email").val(),
+                        password: $("#password").val(),
+                        remember: $("#remember").is(':checked')
+                    })
+                    .done(function() {
+                        window.location.href = "@Url.Action("Home", "Home")";
+                    })
+                    .error(function () {
+                        notificationService.showError("The username/password you entered is not valid.");
+                    })
+                    .always(function() {
+                        animationService.hideBusyAnimation();
+                    });
+            });
+        });
+    </script>
+}

@@ -1,0 +1,77 @@
+{
+    "organizations": [
+        {
+            "uniqueName": "ARSDev",
+            "assemblies": [
+                {
+                    "name": "Arke.ARS.Plugins",
+                    "filePath": "../../../../../../ARARS/trunk/Arke.ARS/Arke.ARS.Plugins/bin/Debug/AfterMerge/Arke.ARS.Plugins.dll",
+                    "plugins": [
+                        {
+                            "typeName": "Arke.ARS.Plugins.GeoLocationUpdaterPlugin",
+                            "steps": [
+                                {
+                                    "message": "create",
+                                    "primaryEntity": "account",
+                                    "stage": "PostOperation",
+                                    "async": true,
+                                    "configuration": "<config><sections><section><address><attribute name=\"address1_composite\" /></address><location><longitude name=\"address1_longitude\" /><latitude name=\"address1_latitude\" /></location></section></sections></config>"
+                                },
+                                {
+                                    "message": "update",
+                                    "primaryEntity": "account",
+                                    "stage": "PostOperation",
+                                    "async": true,
+                                    "filteringAttributes": "address1_composite",
+                                    "configuration": "<config><sections><section><address><attribute name=\"address1_composite\" /></address><location><longitude name=\"address1_longitude\" /><latitude name=\"address1_latitude\" /></location></section></sections></config>"
+                                },
+                                {
+                                    "message": "create",
+                                    "primaryEntity": "ars_technician",
+                                    "stage": "PostOperation",
+                                    "async": true,
+                                    "filteringAttributes": "ars_streetaddress1,ars_city,ars_stateprovince,ars_zipcode",
+                                    "configuration": "<config><sections><section><address><attribute name=\"ars_streetaddress1\" /><attribute name=\"ars_city\" /><attribute name=\"ars_stateprovince\" /><attribute name=\"ars_zipcode\" /></address><location><longitude name=\"ars_longitude\" /><latitude name=\"ars_latitude\" /></location></section></sections></config>"
+                                },
+                                {
+                                    "message": "update",
+                                    "primaryEntity": "ars_technician",
+                                    "stage": "PostOperation",
+                                    "async": true,
+                                    "filteringAttributes": "ars_streetaddress1,ars_city,ars_stateprovince,ars_zipcode",
+                                    "configuration": "<config><sections><section><address><attribute name=\"ars_streetaddress1\" /><attribute name=\"ars_city\" /><attribute name=\"ars_stateprovince\" /><attribute name=\"ars_zipcode\" /></address><location><longitude name=\"ars_longitude\" /><latitude name=\"ars_latitude\" /></location></section></sections></config>"
+                                }
+                            ]
+                        },
+                        {
+                            "typeName": "Arke.ARS.Plugins.WorkOrderItemsInitializerPlugin",
+                            "steps": [
+                                {
+                                    "message": "create",
+                                    "primaryEntity": "incident",
+                                    "stage": "PostOperation"
+                                }
+                            ]
+                        },
+						,
+                        {
+                            "typeName": "Arke.ARS.Plugins.AccountNumberGeneratorPlugin",
+                            "steps": [
+                                {
+                                    "message": "create",
+                                    "primaryEntity": "account",
+                                    "stage": "PreOperation"
+                                },
+								{
+                                    "message": "update",
+                                    "primaryEntity": "account",
+                                    "stage": "PreOperation"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

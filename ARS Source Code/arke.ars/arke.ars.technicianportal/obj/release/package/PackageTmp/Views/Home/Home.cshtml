@@ -1,0 +1,80 @@
+﻿@section navigation
+{
+    @Html.Partial("_AuthorizedNavigation")
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/fullcalendar")
+
+    <script>
+    "use strict";
+
+    $(function () {
+        var animationService = new ARS.AnimationService();
+        var notificationService = new ARS.NotificationService();
+
+        window.addEventListener("unhandledrejection", function (e) {
+            e.preventDefault();
+            var reason = e.detail.reason;
+            notificationService.showError(reason);
+            animationService.hideBusyAnimation(true);
+        });
+
+        $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: ''
+            },
+            editable: false,
+            timezone: "local",
+            defaultView: 'agendaDay',
+            dragScroll: false,
+            eventClick: function (event) {
+                window.location = '@Url.Action("Index", "WorkOrder")/' + event.workOrderId;
+            },
+            events: function (start, end, timezone, callback) {
+                animationService.showBusyAnimation();
+
+                $.getJSON('@Url.HttpRouteUrl("DefaultApi", new { controller = "Appointment"})?' + 'start=' + encodeURIComponent(start.toISOString()) + '&end=' + encodeURIComponent(end.toISOString()))
+                    .done(function(data) {
+                        if (data.haveWorkForTomorrow) {
+                            $('button.fc-corner-right').attr('disabled', 'disabled');
+                        } else {
+                            $('button.fc-corner-right').removeAttr('disabled');
+                        }
+
+                        callback(data.appointments.map(function (appointment) {
+                            return {
+                                id: appointment.id,
+                                start: appointment.start,
+                                end: appointment.end,
+                                title: appointment.ticketNumber,
+                                name: appointment.subject,
+                                workOrderId: appointment.workOrderId,
+                                address: appointment.address,
+                                phone: appointment.phone
+                            };
+                        }));
+
+                        animationService.hideBusyAnimation();
+                    })
+                    .fail(function() {
+                        notificationService.showError("Cannot load appointments right now, please try again later");
+                        animationService.hideBusyAnimation();
+                    });
+            },
+            eventRender: function (event, element) {
+                element.find('.fc-title')
+                    .after("<div class='metsa'>" +
+                        event.address + "<br>" +
+                        event.phone +
+                        "</div>");
+            }
+        });
+    });
+    </script>
+}
+
+<div id=calendar></div>

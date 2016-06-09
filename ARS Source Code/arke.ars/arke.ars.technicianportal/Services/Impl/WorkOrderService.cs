@@ -1,0 +1,417 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using Arke.ARS.CommonWeb.Helpers;
+using Arke.ARS.CommonWeb.Services;
+using Arke.ARS.Organization.Context;
+using Arke.ARS.TechnicianPortal.Infrastructure;
+using Arke.ARS.TechnicianPortal.Models;
+using Arke.Crm.Utils.Helpers;
+using Arke.Crm.Utils.Infrastructure.OptionSet;
+using Microsoft.Crm.Sdk.Messages;
+using Microsoft.Xrm.Sdk;
+
+namespace Arke.ARS.TechnicianPortal.Services.Impl
+{
+    public sealed class WorkOrderService : IWorkOrderService
+    {
+        private readonly IArsOrganizationContext _context;
+        private readonly ITechnicianService _technicianService;
+        private readonly IOptionSetHelper _optionSetHelper;
+        private static string _productDescription;
+        private readonly ILogger _logger;
+
+        public WorkOrderService(IArsOrganizationContext context, ITechnicianService technicianService, IOptionSetHelper optionSetHelper, ILogger logger)
+        {
+            if (context == null)
+            {
+                throw new ArgumentNullException("context");
+            }
+
+            if (technicianService == null)
+            {
+                throw new ArgumentNullException("technicianService");
+            }
+
+            if (optionSetHelper == null)
+            {
+                throw new ArgumentNullException("optionSetHelper");
+            }
+
+            if (logger == null)
+            {
+                throw new ArgumentNullException("logger");
+            }
+
+            _context = context;
+            _technicianService = technicianService;
+            _optionSetHelper = optionSetHelper;
+            _logger = logger;
+        }
+
+        public WorkOrderModel GetWorkOrder(Guid workOrderId, Guid technicianId)
+        {
+            if (workOrderId == null)
+            {
+                throw new ArgumentNullException("workOrderId");
+            }
+            _logger.LogInfo("getting order with id {0}", workOrderId);
+            var workOrder = _context.IncidentSet.Single(i => i.IncidentId == workOrderId);
+            var customer = new CustomerModel();
+
+            if (workOrder.ars_Location != null)
+            {
+                customer = (from account in _context.AccountSet
+                            where account.AccountId == workOrder.ars_Location.Id
+                            select new CustomerModel
+                            {
+                                CustomerName = account.Name,
+                                AddressLine1 = account.Address1_Line1,
+                                City = account.Address1_City,
+                                State = account.Address1_StateOrProvince,
+                                PostalCode = account.Address1_PostalCode,
+                                Country = account.Address1_Country,
+                                Telephone = account.Address1_Telephone1,
+                                Composite = account.Address1_Composite,
+                                IVR = account.new_IVR,
+                                Pin = account.new_pinNumber
+                            }).First();
+                _logger.LogInfo("customer name {0}", customer.CustomerName);
+            }
+
+            Dictionary<string, int> workItemStatuses = GetWorkItemStatuses();
+             var workItems = (from workItem in _context.ars_workitemSet
+                             where workItem.ars_WorkOrderId.Id == workOrderId
+                             select new WorkItemModel
+                             {
+                                 Id = workItem.Id,
+                                 IsComplete = workItem.statuscode.Value == workItemStatuses["Complete"],
+                                 Name = workItem.ars_name
+                             }).ToArray();
+            _logger.LogInfo("workItemStatuses contains {0}", workItemStatuses.Keys.Count);
+            var checkInKey = GetEventTypeValue(EventType.CheckIn).Key;
+            var checkOutKey = GetEventTypeValue(EventType.CheckOut).Key;
+            bool isInProgress;
+            var events = _context.ars_workordereventSet
+                .Where(e => e.ars_WorkOrder.Id == workOrderId)
+                .Where(e=>e.ars_Technician.Id == technicianId)
+                .Where(e=>e.ars_EventType.Value == checkInKey || e.ars_EventType.Value==checkOutKey)
+                .OrderByDescending(e=>e.CreatedOn)
+                .FirstOrDefault();
+
+            if (events == null || events.ars_EventType.Value == checkOutKey)
+            {
+                isInProgress = false;
+            }
+            else
+            {
+                isInProgress = true;
+            }
+
+            return new WorkOrderModel
+            {
+                Id = workOrder.Id,
+                Title = workOrder.Title,
+                TicketNumber = workOrder.TicketNumber,
+                Description = workOrder.Description,
+                IsInProgress = isInProgress,
+                RemainingHours = workOrder.ars_NTERemainingHours.GetValueOrDefault(),
+                NteHours = workOrder.ars_NTETotalHours.GetValueOrDefault(),
+                RemainingMoney = workOrder.ars_NTERemainingMoney != null ? workOrder.ars_NTERemainingMoney.Value : 0,
+                NteMoney = workOrder.new_NotToExceedNTE != null ? workOrder.new_NotToExceedNTE.Value : 0,
+                Customer = customer,
+                WorkItems = workItems
+            };
+        }
+
+        public string StartProgress(Guid workOrderId, Guid technicianId)
+        {
+            var workOrder = _context.IncidentSet.Single(i => i.IncidentId == workOrderId);
+            var technician = _context.ars_technicianSet.Single(t => t.ars_technicianId == technicianId);
+            ChangeWorkOrdersStatus(workOrder, technician, StatusCode.InProgress, EventType.CheckIn);
+
+            if (workOrder.ars_Order == null)
+            {
+                var errorMessage = string.Format("Work order with Id: {0} has no Order. Please contact administrator", workOrderId);
+                _logger.LogWarning(errorMessage);
+                _context.SaveChanges();
+                return "Current work order  has no Order. Please contact administrator.";
+            }
+            else
+            {
+                var salesOrder = _context.SalesOrderSet.SingleOrDefault(s => s.SalesOrderId == workOrder.ars_Order.Id);
+                if (salesOrder == null)
+                {
+                    throw new Exception("Current workflow is not connected to the order");
+                }
+
+                _productDescription = "Trip Charge";
+                var details = _context
+                    .SalesOrderDetailSet.Where(s => s.SalesOrderId.Id == salesOrder.SalesOrderId)
+                    .Where(s => s.ProductDescription == _productDescription)
+                    .ToList();
+                var today = details.Where(d => ((DateTime) d.CreatedOn).Date == DateTime.Today)
+                    .ToList();
+
+                if (!today.Any())
+                {
+                    var product = new SalesOrderDetail
+                    {
+                        ProductDescription = _productDescription,
+                        SalesOrderId = salesOrder.ToEntityReference(),
+                        Quantity = 1,
+                        PricePerUnit = workOrder.ars_TripRate
+                    };
+                    _context.AddObject(product);
+                }
+                _context.SaveChanges();
+                return null;
+            }
+        }
+
+        public void SetTemporarilyOffSite(Guid workOrderId, Guid technicianId, string note)
+        {
+            var workOrder = _context.IncidentSet.Single(i => i.IncidentId == workOrderId);
+            var technician = _context.ars_technicianSet.Single(t => t.ars_technicianId == technicianId);
+            ChangeWorkOrdersStatus(workOrder, technician, StatusCode.TechnicianOffsite, EventType.CheckOut);
+            AddNote(technicianId, workOrder, note);
+            _context.SaveChanges();
+        }
+
+        public void ReturnRequired(Guid workOrderId, string note, StatusCode statusCode, Guid technicianId)
+        {
+            if (workOrderId == null)
+            {
+                throw new ArgumentNullException("workOrderId");
+            }
+
+            var workOrder = _context.IncidentSet.Single(i => i.IncidentId == workOrderId);
+            var technician = _context.ars_technicianSet.Single(t => t.ars_technicianId == technicianId);
+            ChangeWorkOrdersStatus(workOrder, technician, statusCode, EventType.CheckOut);
+            AddNote(technicianId, workOrder, note);
+            _context.SaveChanges();
+        }
+
+        private void AddNote(Guid technicianId, Incident workOrder, string note)
+        {
+            if (string.IsNullOrWhiteSpace(note))
+            {
+                return;
+            }
+            var technician = _context.ars_technicianSet.Single(t => t.ars_technicianId == technicianId);
+            var annotation = new Annotation
+            {
+                NoteText = string.Format("Technician Note by {0} {1} - {2}", technician.ars_FirstName, technician.ars_LastName, note),
+                Incident_Annotation = workOrder
+            };
+
+            _context.AddObject(annotation);
+        }
+
+        public void CompleteWork(Guid workOrderId, Guid technicianId, string notes)
+        {
+            Dictionary<string, int> workItemStatuses = GetWorkItemStatuses();
+            bool hasIncompleteWorkItems =
+                (from item in _context.ars_workitemSet
+                 where item.ars_WorkOrderId.Id == workOrderId && item.statuscode.Value == workItemStatuses["Incomplete"]
+                 select item.ars_workitemId)
+                    .FirstOrDefault()
+                    .HasValue;
+
+            if (hasIncompleteWorkItems)
+            {
+                throw new Exception("All Work Items must be completed before marking this job as complete.");
+            }
+            var workOrder = _context.IncidentSet.Single(i => i.IncidentId == workOrderId);
+            var technician = _context.ars_technicianSet.Single(t => t.ars_technicianId == technicianId);
+            ChangeWorkOrdersStatus(workOrder, technician, StatusCode.WorkComplete, EventType.CheckOut);
+            AddNote(technicianId, workOrder, notes);
+            _context.SaveChanges();
+        }
+
+        public void IncreaseNte(Guid workOrderId, Guid technicianId, decimal money, decimal hours)
+        {
+            if (money < 0)
+            {
+                throw new ArgumentOutOfRangeException("money", money, "Money could not be negative");
+            }
+
+            if (hours < 0)
+            {
+                throw new ArgumentOutOfRangeException("hours", hours, "Hours could not be negative");
+            }
+
+            Incident workOrder = _context.IncidentSet.First(i => i.Id == workOrderId);
+
+            var technician = _context.ars_technicianSet.Single(t => t.ars_technicianId == technicianId);
+            CreateWorkOrderEventOnNteIncrease(workOrder, technician, money);
+
+            _context.UpdateObject(workOrder);
+            _context.SaveChanges();
+        }
+
+        public void AddCommentAndAttachment(Guid workOrderId, Guid technicianId, string comment, HttpPostedFileBase attachment)
+        {
+            bool hasAttachment = attachment != null && attachment.ContentLength > 0;
+
+            if (String.IsNullOrWhiteSpace(comment) && !hasAttachment)
+            {
+                return;
+            }
+
+            string techName = _technicianService.GetTechnicianName(technicianId);
+
+            var annotation = new Annotation
+            {
+                NoteText = String.IsNullOrWhiteSpace(comment) ? techName : String.Format("{0} - {1}", techName, comment),
+                ObjectId = new EntityReference(Incident.EntityLogicalName, workOrderId)
+            };
+
+            if (hasAttachment)
+            {
+                annotation.FileName = attachment.GetNonEmptyFileName();
+                annotation.DocumentBody = attachment.ConvertToBase64();
+            }
+
+            _context.AddObject(annotation);
+            _context.SaveChanges();
+        }
+
+        public void AddSignature(Guid workOrderId, Guid technicianId, string signature, string printname)
+        {
+            if (String.IsNullOrWhiteSpace(signature))
+            {
+                throw new ArgumentNullException("signature");
+            }
+
+            string techName = _technicianService.GetTechnicianName(technicianId);
+
+            var annotation = new Annotation
+            {
+                NoteText = String.IsNullOrWhiteSpace(printname) ? techName : String.Format("{0} - Signature from: {1}", techName, printname),
+                ObjectId = new EntityReference(Incident.EntityLogicalName, workOrderId),
+                FileName = "Signature.png",
+                MimeType = "image/png",
+                DocumentBody = signature
+            };
+
+            _context.AddObject(annotation);
+            _context.SaveChanges();
+        }
+
+        public void SetWorkItemStatus(Guid workItemId, Guid technicianId, bool isComplete, HttpPostedFileBase note)
+        {
+            bool hasAttachment = note != null && note.ContentLength > 0;
+            Dictionary<string, int> workItemStatuses = GetWorkItemStatuses();
+
+            _context.Execute(new SetStateRequest
+            {
+                EntityMoniker = new EntityReference(ars_workitem.EntityLogicalName, workItemId),
+                State = new OptionSetValue((int)(isComplete ? ars_workitemState.Inactive : ars_workitemState.Active)),
+                Status = new OptionSetValue(workItemStatuses[isComplete ? "Complete" : "Incomplete"])
+            });
+
+            if (hasAttachment)
+            {
+                string techName = _technicianService.GetTechnicianName(technicianId);
+
+                var annotation = new Annotation
+                {
+                    NoteText = String.Format("{0} changed status of work item to '{1}'", techName, isComplete ? "Complete" : "Incomplete"),
+                    ObjectId = new EntityReference(ars_workitem.EntityLogicalName, workItemId),
+                    FileName = note.GetNonEmptyFileName(),
+                    DocumentBody = note.ConvertToBase64()
+                };
+
+                _context.AddObject(annotation);
+                _context.SaveChanges();
+            }
+        }
+
+        private void ChangeWorkOrdersStatus(Incident workOrder, ars_technician technician, StatusCode statusCode, EventType eventType)
+        {
+            var status = GetStatusOptionSetValue(statusCode);
+            workOrder.StatusCode = new OptionSetValue
+            {
+                Value = Convert.ToInt32(status.Key)
+            };
+
+            _context.UpdateObject(workOrder);
+
+            CreateWorkOrderEventOnChange(workOrder, technician, eventType, status);
+        }
+
+        private void CreateWorkOrderEventOnChange(Incident workOrder, ars_technician technician, EventType eventType, KeyValuePair<int, string> status)
+        {
+            var eventTypecode = GetEventTypeValue(eventType);
+            var previouscode = GetEventTypeValue(eventType == EventType.CheckIn ? EventType.CheckOut : EventType.CheckIn);
+            var events = _context.ars_workordereventSet.Where(e => e.ars_WorkOrder.Id == workOrder.IncidentId);
+            var incidentEvent =
+                events.Where(e => e.ars_EventType.Value == previouscode.Key)
+                    .OrderByDescending(e => e.CreatedOn)
+                    .FirstOrDefault();
+            decimal? hours = 0;
+            if (incidentEvent != null && eventType == EventType.CheckOut)
+            {
+                    var diff = DateTime.UtcNow.Subtract(incidentEvent.CreatedOn.Value);
+                    hours = diff.Hours + (decimal) diff.Minutes/60;
+            }
+
+            var workorderevent = new ars_workorderevent
+            {
+                ars_name = string.Format("{0} - Status Change", workOrder.Title),
+                ars_DateTime = DateTime.UtcNow,
+                ars_WorkOrder = workOrder.ToEntityReference(),
+                ars_Technician = technician.ToEntityReference(),
+                ars_WorkOrderStatus = status.Value,
+                ars_EventType = new OptionSetValue
+                {
+                    Value = Convert.ToInt32(eventTypecode.Key)
+                },
+                ars_Hours = hours
+            };
+
+            _context.AddObject(workorderevent);
+        }
+
+        private void CreateWorkOrderEventOnNteIncrease(Incident workOrder, ars_technician technician, decimal money)
+        {
+            var eventTypecode = GetEventTypeValue(EventType.NteIncreaseRequest);
+
+            var workorderevent = new ars_workorderevent
+            {
+                ars_name = string.Format("{0} - NTE Increase Request", workOrder.Title),
+                ars_DateTime = DateTime.UtcNow,
+                ars_WorkOrder = workOrder.ToEntityReference(),
+                ars_Technician = technician.ToEntityReference(),
+                ars_EventType = new OptionSetValue
+                {
+                    Value = Convert.ToInt32(eventTypecode.Key)
+                },
+                ars_Amount = new Money(money)
+            };
+
+            _context.AddObject(workorderevent);
+        }
+
+        private KeyValuePair<int, string> GetStatusOptionSetValue(StatusCode statusCode)
+        {
+            var options = _optionSetHelper.GetStringValues(Incident.EntityLogicalName, NameOf.Property(() => ((Incident)null).StatusCode));
+
+            return options.Single(x => x.Value == statusCode.GetDescription());
+        }
+
+        private KeyValuePair<int, string> GetEventTypeValue(EventType statusCode)
+        {
+            var options = _optionSetHelper.GetStringValues(ars_workorderevent.EntityLogicalName, NameOf.Property(() => ((ars_workorderevent)null).ars_EventType));
+
+            return options.Single(x => x.Value == statusCode.GetDescription());
+        }
+
+        private Dictionary<string, int> GetWorkItemStatuses()
+        {
+            return _optionSetHelper.GetStringValues(ars_workitem.EntityLogicalName, NameOf.Property(() => ((ars_workitem)null).statuscode)).ToDictionary(o => o.Value, o => o.Key);
+        }
+    }
+}

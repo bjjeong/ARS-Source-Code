@@ -1,0 +1,44 @@
+﻿#technicians {
+    overflow-x: auto;
+    padding: 10px;
+    width: 100%;
+    &:focus { outline: none; }
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+    @include clearfix;
+
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    cursor: default;
+
+    > li {
+        position: relative;
+        display: table-cell;
+        width: 1%;
+
+        > span {
+            position: relative;
+            display: block;
+            padding: 10px 15px;
+            border-radius: 4px;
+            text-align: center;
+            margin-bottom: 5px;
+
+            &:hover, &:focus { background-color: #eee; }
+        }
+
+        + li { margin-left: 2px; }
+
+        // Active state
+        &.ui-selectee > span {
+            &, &:hover, &:focus {
+                color: white;
+                background-color: #337ab7;
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+.toolbar {
+   @extend .clearfix;
+    margin-bottom: 10px;
+    .btn-group,
+    .navbar-form,
+    .tool {
+        float: left;
+        margin-right: 25px;
+    }
+    .dropdown-toggle {
+        top: 1px;
+    }
+
+    .search {
+        .form-group {
+            position: relative;
+        }
+    }
+}
