@@ -6,7 +6,7 @@
 }
 @section navigation
 {
-    @Html.Partial("_AuthorizedNavigation")
+@Html.Partial("_AuthorizedNavigation")
 }
 @section styles{
     @Styles.Render("~/styles/purchaseOrder")
@@ -43,6 +43,8 @@
                 <p>
                     <a href=tel:@Model.Customer.Telephone>@Model.Customer.Telephone</a>
                 </p>
+                <p><strong>IVR: </strong>@Model.Customer.IVR</p>
+                <p><strong>PIN #: </strong>@Model.Customer.Pin</p>
             </div>
             <div class="nte">
                 <p class="nte-amount">
@@ -90,31 +92,35 @@
     @Scripts.Render("~/bundles/signature")
     @Scripts.Render("~/bundles/purchaseOrder")
     <script type="text/javascript">
-        var GUID = GUID || {
-            isValid: function (s) {
-                return /^\{?[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\}?$/i.test(s);
-            },
-            create: function () {
-                return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
-                    var r = Math.random() * 16 | 0, v = c === "x" ? r : (r & 0x3 | 0x8);
-                    return v.toString(16);
-                });
-            }
-        };
-
-        $(function () {
-            $('#purchase-order-price,#purchase-order-quantity').change(function () {
-                var quantity = parseFloat($('#purchase-order-quantity').val());
-                quantity = isNaN(quantity) ? 0 : quantity;
-
-                var price = parseFloat($('#purchase-order-price').val());
-                price = isNaN(price) ? 0 : price;
-
-                $('#purchase-order-total').val(quantity * price);
+    var GUID = GUID || {
+        isValid: function (s) {
+            return /^\{?[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\}?$/i.test(s);
+        },
+        create: function () {
+            return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
+                var r = Math.random() * 16 | 0, v = c === "x" ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
             });
+        }
+    };
 
-            var notificationService = new ARS.NotificationService();
-            var animationService = new ARS.AnimationService();
+    $(function () {
+        $('#purchase-order-price,#purchase-order-quantity').change(function () {
+            var quantity = parseFloat($('#purchase-order-quantity').val());
+            quantity = isNaN(quantity) ? 0 : quantity;
+
+            var price = parseFloat($('#purchase-order-price').val());
+            price = isNaN(price) ? 0 : price;
+
+            $('#purchase-order-total').val(quantity * price);
+        });
+
+        var notificationService = new ARS.NotificationService();
+        var animationService = new ARS.AnimationService();
+
+        if ('@TempData["ErrorMessage"]') {
+                notificationService.showError('@TempData["ErrorMessage"]');
+            }
 
             $('#purchase-order-add-to-list').click(function () {
                 var quantity = parseFloat($('#purchase-order-quantity').val());
@@ -212,13 +218,28 @@
                 $('#signature-pad').signature('clear');
             });
 
-            $('#save-signature').click(function () {
+            $('#save-signature').click(function (evt) {
                 var canvas = $(this).closest("form").find('canvas')[0];
                 var signature = canvas.toDataURL("image/png");
                 var prefix = "data:image/png;base64,";
                 signature = signature.substring(prefix.length);
 
                 $('#signature').val(signature);
+                var value = $("#printname").val();
+                var signatureValue = $("#signature").val();
+                if(!value)
+                {
+                    evt.preventDefault();
+                    notificationService.showError("Please add a printed name!");
+                }
+            });
+
+            $(".return-submit").click(function (evt) {
+                var value = $("#notes-area").val();
+                if (!value) {
+                    evt.preventDefault();
+                    notificationService.showError("Please, add a note");
+                }
             });
 
             var currencyFormatter = function (column, row) {

@@ -8,169 +8,170 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <LastUsedBuildConfiguration>Release</LastUsedBuildConfiguration>
     <LastUsedPlatform>Any CPU</LastUsedPlatform>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\bjjeo\Desktop\Publish\TechPortal</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="Areas/HelpPage/HelpPage.css">
-      <publishTime>07/16/2015 16:03:14</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/Api.cshtml">
-      <publishTime>07/16/2015 16:03:15</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/ApiGroup.cshtml">
-      <publishTime>07/16/2015 16:03:15</publishTime>
+      <publishTime>05/31/2016 15:17:16</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/HelpPageApiModel.cshtml">
-      <publishTime>07/16/2015 16:03:15</publishTime>
+      <publishTime>05/31/2016 15:17:16</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/ImageSample.cshtml">
-      <publishTime>07/16/2015 16:03:15</publishTime>
+      <publishTime>05/31/2016 15:17:16</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/InvalidSample.cshtml">
-      <publishTime>07/16/2015 16:03:15</publishTime>
+      <publishTime>05/31/2016 15:17:16</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/Parameters.cshtml">
-      <publishTime>07/16/2015 16:03:15</publishTime>
+      <publishTime>05/31/2016 15:17:16</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/Samples.cshtml">
-      <publishTime>07/16/2015 16:03:15</publishTime>
+      <publishTime>05/31/2016 15:17:16</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/TextSample.cshtml">
-      <publishTime>07/16/2015 16:03:15</publishTime>
+      <publishTime>05/31/2016 15:17:16</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/Index.cshtml">
-      <publishTime>07/16/2015 16:03:15</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Shared/_Layout.cshtml">
-      <publishTime>07/16/2015 16:03:15</publishTime>
+      <publishTime>05/31/2016 15:17:16</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Web.config">
-      <publishTime>07/16/2015 16:03:15</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/_ViewStart.cshtml">
-      <publishTime>07/16/2015 16:03:15</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
-      <publishTime>07/16/2015 16:06:36</publishTime>
+      <publishTime>05/31/2016 15:17:02</publishTime>
     </File>
     <File Include="bin/Arke.ARS.CommonWeb.dll">
-      <publishTime>09/08/2015 11:50:11</publishTime>
+      <publishTime>06/09/2016 09:43:10</publishTime>
     </File>
     <File Include="bin/Arke.ARS.Organization.dll">
-      <publishTime>09/08/2015 11:50:10</publishTime>
+      <publishTime>06/09/2016 09:43:09</publishTime>
     </File>
     <File Include="bin/Arke.ARS.TechnicianPortal.dll">
-      <publishTime>09/23/2015 09:11:17</publishTime>
+      <publishTime>06/09/2016 10:29:15</publishTime>
     </File>
     <File Include="bin/Arke.Crm.Utils.dll">
-      <publishTime>07/16/2015 16:03:10</publishTime>
+      <publishTime>05/31/2016 15:17:25</publishTime>
     </File>
     <File Include="bin/Autofac.dll">
-      <publishTime>07/16/2015 16:06:42</publishTime>
+      <publishTime>05/31/2016 15:17:00</publishTime>
     </File>
     <File Include="bin/Autofac.Integration.Mvc.dll">
-      <publishTime>07/16/2015 16:06:43</publishTime>
+      <publishTime>05/31/2016 15:17:05</publishTime>
     </File>
     <File Include="bin/Autofac.Integration.Mvc.Owin.dll">
-      <publishTime>07/16/2015 16:06:44</publishTime>
+      <publishTime>05/31/2016 15:16:59</publishTime>
     </File>
     <File Include="bin/Autofac.Integration.Owin.dll">
-      <publishTime>07/16/2015 16:06:45</publishTime>
+      <publishTime>05/31/2016 15:17:00</publishTime>
     </File>
     <File Include="bin/Autofac.Integration.WebApi.dll">
-      <publishTime>07/16/2015 16:06:45</publishTime>
+      <publishTime>05/31/2016 15:17:06</publishTime>
     </File>
     <File Include="bin/Autofac.Integration.WebApi.Owin.dll">
-      <publishTime>07/16/2015 16:06:46</publishTime>
+      <publishTime>05/31/2016 15:17:05</publishTime>
     </File>
     <File Include="bin/Content/animate.less">
-      <publishTime>07/16/2015 16:03:17</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="bin/Content/fullcalendar.less">
-      <publishTime>07/16/2015 16:03:17</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="bin/Content/modal.less">
-      <publishTime>07/16/2015 16:03:17</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="bin/Content/notify.less">
-      <publishTime>07/16/2015 16:03:17</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="bin/Content/signature.less">
-      <publishTime>07/16/2015 16:03:17</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="bin/Content/Site.css">
-      <publishTime>07/27/2015 10:14:36</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="bin/Content/Site.css.map">
-      <publishTime>07/27/2015 10:14:36</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="bin/Content/Site.less">
-      <publishTime>07/27/2015 10:14:36</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="bin/Content/Site.min.css">
-      <publishTime>07/27/2015 10:14:36</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="bin/Content/style.less">
-      <publishTime>07/16/2015 16:03:17</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="bin/Content/theme.less">
-      <publishTime>07/16/2015 16:03:17</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="bin/Content/work-order.less">
-      <publishTime>07/16/2015 16:03:17</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="bin/Content/_variables.less">
-      <publishTime>07/16/2015 16:03:17</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="bin/dotless.Core.dll">
-      <publishTime>07/16/2015 16:06:47</publishTime>
+      <publishTime>05/31/2016 15:17:05</publishTime>
     </File>
     <File Include="bin/log4net.dll">
-      <publishTime>07/16/2015 16:06:50</publishTime>
+      <publishTime>05/31/2016 15:17:03</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
-      <publishTime>07/16/2015 16:06:51</publishTime>
+      <publishTime>05/31/2016 15:17:00</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
-      <publishTime>07/16/2015 16:06:52</publishTime>
+      <publishTime>05/31/2016 15:17:03</publishTime>
     </File>
     <File Include="bin/microsoft.crm.sdk.proxy.dll">
-      <publishTime>07/16/2015 16:07:01</publishTime>
+      <publishTime>05/31/2016 15:17:06</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.dll">
-      <publishTime>07/16/2015 16:07:05</publishTime>
+      <publishTime>05/31/2016 15:17:02</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Host.HttpListener.dll">
-      <publishTime>07/16/2015 16:07:06</publishTime>
+      <publishTime>05/31/2016 15:17:00</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
-      <publishTime>07/16/2015 16:07:06</publishTime>
+      <publishTime>05/31/2016 15:17:04</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Hosting.dll">
-      <publishTime>07/16/2015 16:07:07</publishTime>
+      <publishTime>05/31/2016 15:17:04</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.Cookies.dll">
-      <publishTime>07/16/2015 16:07:09</publishTime>
+      <publishTime>05/31/2016 15:17:00</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.dll">
-      <publishTime>07/16/2015 16:07:08</publishTime>
+      <publishTime>05/31/2016 15:17:00</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
-      <publishTime>07/16/2015 16:07:13</publishTime>
+      <publishTime>05/31/2016 15:17:05</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
-      <publishTime>07/16/2015 16:07:13</publishTime>
+      <publishTime>05/31/2016 15:17:00</publishTime>
     </File>
     <File Include="bin/microsoft.xrm.client.dll">
-      <publishTime>07/16/2015 16:07:13</publishTime>
+      <publishTime>05/31/2016 15:17:00</publishTime>
     </File>
     <File Include="bin/Microsoft.Xrm.Sdk.dll">
-      <publishTime>07/16/2015 16:07:13</publishTime>
+      <publishTime>05/31/2016 15:17:06</publishTime>
     </File>
     <File Include="bin/mscorlib.dll">
       <publishTime>04/12/2014 00:48:40</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>07/16/2015 16:07:15</publishTime>
+      <publishTime>05/31/2016 15:17:04</publishTime>
     </File>
     <File Include="bin/normidna.nlp">
       <publishTime>03/28/2012 05:43:06</publishTime>
@@ -188,244 +189,244 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/28/2012 05:43:06</publishTime>
     </File>
     <File Include="bin/Owin.dll">
-      <publishTime>07/16/2015 16:07:16</publishTime>
+      <publishTime>05/31/2016 15:17:06</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
-      <publishTime>07/16/2015 16:06:56</publishTime>
+      <publishTime>05/31/2016 15:17:06</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
-      <publishTime>07/16/2015 16:07:01</publishTime>
+      <publishTime>05/31/2016 15:17:05</publishTime>
     </File>
     <File Include="bin/System.Web.Http.dll">
-      <publishTime>07/16/2015 16:06:57</publishTime>
+      <publishTime>05/31/2016 15:17:04</publishTime>
     </File>
     <File Include="bin/System.Web.Http.Owin.dll">
-      <publishTime>07/16/2015 16:06:58</publishTime>
+      <publishTime>05/31/2016 15:17:04</publishTime>
     </File>
     <File Include="bin/System.Web.Http.WebHost.dll">
-      <publishTime>07/16/2015 16:07:00</publishTime>
+      <publishTime>05/31/2016 15:17:05</publishTime>
     </File>
     <File Include="bin/System.Web.Mvc.dll">
-      <publishTime>07/16/2015 16:06:53</publishTime>
+      <publishTime>05/31/2016 15:17:02</publishTime>
     </File>
     <File Include="bin/System.Web.Optimization.dll">
-      <publishTime>07/16/2015 16:06:54</publishTime>
+      <publishTime>05/31/2016 15:17:03</publishTime>
     </File>
     <File Include="bin/System.Web.Razor.dll">
-      <publishTime>07/16/2015 16:06:54</publishTime>
+      <publishTime>05/31/2016 15:17:04</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Deployment.dll">
-      <publishTime>07/16/2015 16:07:01</publishTime>
+      <publishTime>05/31/2016 15:17:06</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.dll">
-      <publishTime>07/16/2015 16:07:01</publishTime>
+      <publishTime>05/31/2016 15:17:06</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Razor.dll">
-      <publishTime>07/16/2015 16:07:01</publishTime>
+      <publishTime>05/31/2016 15:17:06</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
-      <publishTime>07/16/2015 16:07:17</publishTime>
+      <publishTime>05/31/2016 15:17:06</publishTime>
     </File>
     <File Include="Content/animate.less">
-      <publishTime>07/16/2015 16:03:17</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="Content/bootstrap-theme.css">
-      <publishTime>07/16/2015 16:03:17</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="Content/bootstrap-theme.min.css">
-      <publishTime>07/16/2015 16:03:17</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="Content/bootstrap.css">
-      <publishTime>07/16/2015 16:03:17</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="Content/bootstrap.min.css">
-      <publishTime>07/16/2015 16:03:17</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="Content/fullcalendar.less">
-      <publishTime>07/16/2015 16:03:17</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="Content/images/apple-touch-icon-144-precomposed.png">
-      <publishTime>07/16/2015 16:03:17</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="Content/images/logo.png">
-      <publishTime>07/16/2015 16:03:17</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="Content/images/progress.gif">
-      <publishTime>07/16/2015 16:03:17</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="Content/jquery.bootgrid.min.css">
-      <publishTime>07/27/2015 10:14:36</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="Content/modal.less">
-      <publishTime>07/16/2015 16:03:17</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="Content/notify.less">
-      <publishTime>07/16/2015 16:03:17</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="Content/signature.less">
-      <publishTime>07/16/2015 16:03:17</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="Content/Site.css">
-      <publishTime>07/27/2015 10:14:36</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="Content/Site.css.map">
-      <publishTime>07/27/2015 10:14:36</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="Content/Site.less">
-      <publishTime>07/27/2015 10:14:36</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="Content/Site.min.css">
-      <publishTime>07/27/2015 10:14:36</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="Content/style.less">
-      <publishTime>07/16/2015 16:03:17</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="Content/technician-portal.css">
-      <publishTime>09/02/2015 09:01:27</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="Content/theme.less">
-      <publishTime>07/16/2015 16:03:17</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="Content/work-order.less">
-      <publishTime>07/16/2015 16:03:17</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="Content/_variables.less">
-      <publishTime>07/16/2015 16:03:17</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="favicon.ico">
-      <publishTime>07/16/2015 16:03:16</publishTime>
+      <publishTime>05/31/2016 15:17:06</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.eot">
-      <publishTime>07/16/2015 16:03:14</publishTime>
+      <publishTime>05/31/2016 15:17:16</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.svg">
-      <publishTime>07/16/2015 16:03:13</publishTime>
+      <publishTime>05/31/2016 15:17:16</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.ttf">
-      <publishTime>07/16/2015 16:03:13</publishTime>
+      <publishTime>05/31/2016 15:17:16</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.woff">
-      <publishTime>07/16/2015 16:03:14</publishTime>
+      <publishTime>05/31/2016 15:17:16</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.woff2">
-      <publishTime>07/16/2015 16:03:14</publishTime>
+      <publishTime>05/31/2016 15:17:16</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>07/16/2015 16:03:15</publishTime>
+      <publishTime>05/31/2016 15:17:07</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>07/16/2015 16:03:11</publishTime>
+      <publishTime>06/07/2016 15:06:48</publishTime>
     </File>
     <File Include="Scripts/animationService.js">
-      <publishTime>07/16/2015 16:03:13</publishTime>
+      <publishTime>05/31/2016 15:17:14</publishTime>
     </File>
     <File Include="Scripts/bootstrap-notify.js">
-      <publishTime>07/16/2015 16:03:13</publishTime>
+      <publishTime>05/31/2016 15:17:14</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
-      <publishTime>07/16/2015 16:03:13</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="Scripts/bootstrap.min.js">
-      <publishTime>07/16/2015 16:03:13</publishTime>
+      <publishTime>05/31/2016 15:17:14</publishTime>
     </File>
     <File Include="Scripts/callendar.js">
-      <publishTime>07/16/2015 16:03:13</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="Scripts/fastclick.js">
-      <publishTime>07/16/2015 16:03:13</publishTime>
+      <publishTime>05/31/2016 15:17:14</publishTime>
     </File>
     <File Include="Scripts/fullcalendar.js">
-      <publishTime>07/16/2015 16:03:13</publishTime>
+      <publishTime>05/31/2016 15:38:51</publishTime>
     </File>
     <File Include="Scripts/jquery-2.1.4.js">
-      <publishTime>07/16/2015 16:03:13</publishTime>
+      <publishTime>05/31/2016 15:17:14</publishTime>
     </File>
     <File Include="Scripts/jquery-2.1.4.min.js">
-      <publishTime>07/16/2015 16:03:13</publishTime>
+      <publishTime>05/31/2016 15:17:14</publishTime>
     </File>
     <File Include="Scripts/jquery-2.1.4.min.map">
-      <publishTime>07/16/2015 16:03:13</publishTime>
+      <publishTime>05/31/2016 15:17:14</publishTime>
     </File>
     <File Include="Scripts/jquery-ui.1.10.3.min.js">
-      <publishTime>07/27/2015 10:14:35</publishTime>
+      <publishTime>05/31/2016 15:17:14</publishTime>
     </File>
     <File Include="Scripts/jquery.bootgrid.min.js">
-      <publishTime>07/27/2015 10:14:35</publishTime>
+      <publishTime>05/31/2016 15:17:14</publishTime>
     </File>
     <File Include="Scripts/jquery.signature.js">
-      <publishTime>07/27/2015 10:14:35</publishTime>
+      <publishTime>05/31/2016 15:17:14</publishTime>
     </File>
     <File Include="Scripts/jquery.ui.touch-punch.min.js">
-      <publishTime>07/27/2015 10:14:35</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="Scripts/modernizr-2.6.2.js">
-      <publishTime>07/16/2015 16:03:13</publishTime>
+      <publishTime>05/31/2016 15:17:14</publishTime>
     </File>
     <File Include="Scripts/moment.js">
-      <publishTime>07/16/2015 16:03:13</publishTime>
+      <publishTime>05/31/2016 15:17:14</publishTime>
     </File>
     <File Include="Scripts/notificationService.js">
-      <publishTime>07/16/2015 16:03:13</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="Scripts/respond.js">
-      <publishTime>07/16/2015 16:03:13</publishTime>
+      <publishTime>05/31/2016 15:17:14</publishTime>
     </File>
     <File Include="Scripts/respond.min.js">
-      <publishTime>07/16/2015 16:03:13</publishTime>
+      <publishTime>05/31/2016 15:17:15</publishTime>
     </File>
     <File Include="Scripts/_references.js">
-      <publishTime>07/27/2015 10:14:35</publishTime>
+      <publishTime>05/31/2016 15:17:14</publishTime>
     </File>
     <File Include="Views/Account/SignIn.cshtml">
-      <publishTime>07/16/2015 16:03:16</publishTime>
+      <publishTime>05/31/2016 15:17:10</publishTime>
     </File>
     <File Include="Views/Home/Home.cshtml">
-      <publishTime>07/16/2015 16:03:16</publishTime>
+      <publishTime>05/31/2016 15:17:10</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
-      <publishTime>07/16/2015 16:03:16</publishTime>
+      <publishTime>05/31/2016 15:17:10</publishTime>
     </File>
     <File Include="Views/Shared/_AuthorizedNavigation.cshtml">
-      <publishTime>07/16/2015 16:03:16</publishTime>
+      <publishTime>05/31/2016 15:17:10</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>08/13/2015 08:56:36</publishTime>
+      <publishTime>05/31/2016 15:17:10</publishTime>
     </File>
     <File Include="Views/Shared/_UnauthorizedNavigation.cshtml">
-      <publishTime>07/16/2015 16:03:16</publishTime>
+      <publishTime>05/31/2016 15:17:10</publishTime>
     </File>
     <File Include="Views/Web.config">
-      <publishTime>07/16/2015 16:03:16</publishTime>
+      <publishTime>05/31/2016 15:17:10</publishTime>
     </File>
     <File Include="Views/WorkOrder/Index.cshtml">
-      <publishTime>09/02/2015 09:01:26</publishTime>
+      <publishTime>06/09/2016 08:33:42</publishTime>
     </File>
     <File Include="Views/WorkOrder/_CheckIn.cshtml">
-      <publishTime>07/27/2015 10:14:35</publishTime>
+      <publishTime>05/31/2016 15:17:10</publishTime>
     </File>
     <File Include="Views/WorkOrder/_CheckOut.cshtml">
-      <publishTime>09/02/2015 09:01:26</publishTime>
+      <publishTime>06/09/2016 09:10:37</publishTime>
     </File>
     <File Include="Views/WorkOrder/_CommentsAndAttachments.cshtml">
-      <publishTime>07/27/2015 10:14:35</publishTime>
+      <publishTime>05/31/2016 15:17:10</publishTime>
     </File>
     <File Include="Views/WorkOrder/_NteIncrease.cshtml">
-      <publishTime>07/27/2015 10:14:35</publishTime>
+      <publishTime>05/31/2016 15:17:10</publishTime>
     </File>
     <File Include="Views/WorkOrder/_PurchaseOrder.cshtml">
-      <publishTime>07/27/2015 10:14:36</publishTime>
+      <publishTime>05/31/2016 15:17:10</publishTime>
     </File>
     <File Include="Views/WorkOrder/_SignWorkOrder.cshtml">
-      <publishTime>07/27/2015 10:14:35</publishTime>
+      <publishTime>06/09/2016 09:23:13</publishTime>
     </File>
     <File Include="Views/WorkOrder/_WorkItems.cshtml">
-      <publishTime>08/27/2015 14:18:46</publishTime>
+      <publishTime>05/31/2016 15:17:10</publishTime>
     </File>
     <File Include="Views/_ViewStart.cshtml">
-      <publishTime>07/16/2015 16:03:16</publishTime>
+      <publishTime>05/31/2016 15:17:10</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/23/2015 09:11:18</publishTime>
+      <publishTime>06/09/2016 10:29:17</publishTime>
     </File>
   </ItemGroup>
 </Project>
