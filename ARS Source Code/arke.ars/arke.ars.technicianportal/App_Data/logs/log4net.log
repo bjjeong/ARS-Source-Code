@@ -2993,3 +2993,27 @@ System.Collections.Generic.KeyNotFoundException - The given key was not present 
 2016-06-10 11:15:30,394 [8] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
 2016-06-10 11:15:32,517 [8] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
 2016-06-10 11:15:32,730 [8] INFO  workItemStatuses contains 2
+2016-06-10 11:30:26,587 [8] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-10 11:30:26,975 [8] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-10 11:30:27,341 [8] INFO  workItemStatuses contains 2
+2016-06-10 11:30:47,554 [6] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-10 11:30:47,748 [6] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-10 11:30:47,948 [6] INFO  workItemStatuses contains 2
+2016-06-10 11:31:03,062 [8] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-10 11:31:03,269 [8] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-10 11:31:03,449 [8] INFO  workItemStatuses contains 2
+2016-06-10 11:46:26,495 [8] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-10 11:46:26,860 [8] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-10 11:46:27,214 [8] INFO  workItemStatuses contains 2
+2016-06-10 11:48:14,900 [8] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-10 11:48:15,114 [8] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-10 11:48:15,386 [8] INFO  workItemStatuses contains 2
+2016-06-10 11:53:28,844 [9] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-10 11:53:29,059 [9] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-10 11:53:29,393 [9] INFO  workItemStatuses contains 2
+2016-06-10 11:53:37,205 [7] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-10 11:53:37,384 [7] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-10 11:53:37,583 [7] INFO  workItemStatuses contains 2
+2016-06-10 11:53:51,357 [6] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-10 11:53:51,550 [6] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-10 11:53:51,770 [6] INFO  workItemStatuses contains 2

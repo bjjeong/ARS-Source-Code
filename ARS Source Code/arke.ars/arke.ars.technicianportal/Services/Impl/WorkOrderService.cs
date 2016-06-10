@@ -75,10 +75,10 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                                 State = account.Address1_StateOrProvince,
                                 PostalCode = account.Address1_PostalCode,
                                 Country = account.Address1_Country,
-                                Telephone = account.Address1_Telephone1,
+                                Telephone = account.Address1_Telephone2 != null ? account.Address1_Telephone2 : "N/A",
                                 Composite = account.Address1_Composite,
-                                IVR = account.new_IVR,
-                                Pin = account.new_pinNumber,
+                                IVR = account.new_IVR != null ? account.new_IVR : "N/A",
+                                Pin = account.new_pinNumber != null ? account.new_pinNumber : "N/A",
                             }).First();
                 _logger.LogInfo("customer name {0}", customer.CustomerName);
             }
