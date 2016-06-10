@@ -18,3 +18,13 @@ C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.Organ
 C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.Organization\obj\Release\Arke.ARS.Organization.csprojResolveAssemblyReference.cache
 C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.Organization\obj\Release\Arke.ARS.Organization.dll
 C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.Organization\obj\Release\Arke.ARS.Organization.pdb
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.Organization\bin\Release\Arke.ARS.Organization.dll
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.Organization\bin\Release\Arke.ARS.Organization.pdb
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.Organization\bin\Release\Arke.Crm.GeoLocation.dll
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.Organization\bin\Release\Arke.Crm.Utils.dll
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.Organization\bin\Release\microsoft.xrm.sdk.dll
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.Organization\bin\Release\Arke.Crm.GeoLocation.pdb
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.Organization\bin\Release\Arke.Crm.Utils.pdb
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.Organization\obj\Release\Arke.ARS.Organization.csprojResolveAssemblyReference.cache
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.Organization\obj\Release\Arke.ARS.Organization.dll
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.Organization\obj\Release\Arke.ARS.Organization.pdb
