@@ -11,6 +11,9 @@ using Arke.Crm.Utils.Helpers;
 using Arke.Crm.Utils.Infrastructure.OptionSet;
 using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Metadata;
+using Microsoft.Xrm.Sdk.Messages;
+using Microsoft.Xrm.Sdk.Client;
 
 namespace Arke.ARS.TechnicianPortal.Services.Impl
 {
@@ -75,13 +78,13 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                                 Telephone = account.Address1_Telephone1,
                                 Composite = account.Address1_Composite,
                                 IVR = account.new_IVR,
-                                Pin = account.new_pinNumber
+                                Pin = account.new_pinNumber,
                             }).First();
                 _logger.LogInfo("customer name {0}", customer.CustomerName);
             }
 
             Dictionary<string, int> workItemStatuses = GetWorkItemStatuses();
-             var workItems = (from workItem in _context.ars_workitemSet
+            var workItems = (from workItem in _context.ars_workitemSet
                              where workItem.ars_WorkOrderId.Id == workOrderId
                              select new WorkItemModel
                              {
@@ -95,9 +98,9 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
             bool isInProgress;
             var events = _context.ars_workordereventSet
                 .Where(e => e.ars_WorkOrder.Id == workOrderId)
-                .Where(e=>e.ars_Technician.Id == technicianId)
-                .Where(e=>e.ars_EventType.Value == checkInKey || e.ars_EventType.Value==checkOutKey)
-                .OrderByDescending(e=>e.CreatedOn)
+                .Where(e => e.ars_Technician.Id == technicianId)
+                .Where(e => e.ars_EventType.Value == checkInKey || e.ars_EventType.Value == checkOutKey)
+                .OrderByDescending(e => e.CreatedOn)
                 .FirstOrDefault();
 
             if (events == null || events.ars_EventType.Value == checkOutKey)
@@ -121,8 +124,30 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                 RemainingMoney = workOrder.ars_NTERemainingMoney != null ? workOrder.ars_NTERemainingMoney.Value : 0,
                 NteMoney = workOrder.new_NotToExceedNTE != null ? workOrder.new_NotToExceedNTE.Value : 0,
                 Customer = customer,
-                WorkItems = workItems
+                WorkItems = workItems,
+                trade = workOrder.new_trade
+
             };
+        }
+
+        public string GetoptionsetText(string entityName, string attributeName, int optionSetValue, IOrganizationService service)
+        {
+            string AttributeName = attributeName;
+            string EntityLogicalName = entityName;
+            RetrieveEntityRequest retrieveDetails = new RetrieveEntityRequest
+            {
+                EntityFilters = EntityFilters.All,
+                LogicalName = EntityLogicalName
+            };
+            RetrieveEntityResponse retrieveEntityResponseObj = (RetrieveEntityResponse)service.Execute(retrieveDetails);
+            Microsoft.Xrm.Sdk.Metadata.EntityMetadata metadata = retrieveEntityResponseObj.EntityMetadata;
+            Microsoft.Xrm.Sdk.Metadata.PicklistAttributeMetadata picklistMetadata = metadata.Attributes.FirstOrDefault(attribute => String.Equals(attribute.LogicalName, attributeName, StringComparison.OrdinalIgnoreCase)) as Microsoft.Xrm.Sdk.Metadata.PicklistAttributeMetadata;
+            Microsoft.Xrm.Sdk.Metadata.OptionSetMetadata options = picklistMetadata.OptionSet;
+            IList<OptionMetadata> OptionsList = (from o in options.Options
+                                                 where o.Value.Value == optionSetValue
+                                                 select o).ToList();
+            string optionsetLabel = (OptionsList.First()).Label.UserLocalizedLabel.Label;
+            return optionsetLabel;
         }
 
         public string StartProgress(Guid workOrderId, Guid technicianId)
