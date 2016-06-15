@@ -71,7 +71,7 @@ namespace Arke.ARS.TechnicianPortal.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public RedirectToRouteResult NteIncrease(NteIncreaseRequestModel nteIncreaseRequest)
+        public RedirectToRouteResult NteIncrease(NteIncreaseRequestModel nteIncreaseRequest, string item1, string item2, string item3, string item4, string item5, string price1, string price2, string price3, string price4, string price5, string quantity1, string quantity2, string quantity3, string quantity4, string quantity5)
         {
             if (nteIncreaseRequest == null)
             {
@@ -79,7 +79,7 @@ namespace Arke.ARS.TechnicianPortal.Controllers
             }
             var identity = (ClaimsIdentity)User.Identity;
             var technicianId = Guid.Parse(identity.GetUserId());
-            _workOrderService.IncreaseNte(nteIncreaseRequest.WorkOrderId,technicianId, nteIncreaseRequest.Money, nteIncreaseRequest.Hours);
+            _workOrderService.IncreaseNte(nteIncreaseRequest.WorkOrderId,technicianId, nteIncreaseRequest.Money, nteIncreaseRequest.Hours, item1, item2, item3, item4, item5, price1, price2, price3, price4, price5, quantity1, quantity2, quantity3, quantity4, quantity5);
             return RedirectToAction("Index", new { Id = nteIncreaseRequest.WorkOrderId });
         }
 
