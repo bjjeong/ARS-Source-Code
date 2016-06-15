@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Xrm.Sdk.Client;
 using Arke.ARS.CommonWeb.Services;
 using Arke.ARS.Organization.Context;
 using Arke.ARS.TechnicianPortal.Models;

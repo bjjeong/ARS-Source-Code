@@ -3017,3 +3017,163 @@ System.Collections.Generic.KeyNotFoundException - The given key was not present 
 2016-06-10 11:53:51,357 [6] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
 2016-06-10 11:53:51,550 [6] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
 2016-06-10 11:53:51,770 [6] INFO  workItemStatuses contains 2
+2016-06-13 09:29:49,913 [6] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-13 09:29:50,759 [6] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-13 09:29:51,235 [6] INFO  workItemStatuses contains 2
+2016-06-13 15:01:10,650 [7] ERROR ==========================  Exception info see below  ===============================
+An unhandled exception occurred.
+Url: /api/Appointment?start=2016-06-13&end=2016-06-14
+System.NotSupportedException - The authentication endpoint AsymmetricToken was not found on the configured Secure Token Service!
+   at Microsoft.Xrm.Sdk.Client.IssuerEndpointDictionary.GetIssuerEndpoint(TokenServiceCredentialType credentialType)
+   at Microsoft.Xrm.Sdk.Client.AuthenticationCredentials.get_IssuerEndpoint()
+   at Microsoft.Xrm.Sdk.Client.ServiceConfiguration`1.Issue(AuthenticationCredentials authenticationCredentials)
+   at Microsoft.Xrm.Sdk.Client.ServiceConfiguration`1.AuthenticateTokenWithACSForCrm(AuthenticationCredentials authenticationCredentials, Uri appliesTo, Uri acsEndpoint)
+   at Microsoft.Xrm.Sdk.Client.ServiceConfiguration`1.AuthenticateOnlineFederationInternal(AuthenticationCredentials authenticationCredentials)
+   at Microsoft.Xrm.Sdk.Client.ServiceConfiguration`1.Authenticate(AuthenticationCredentials authenticationCredentials)
+   at Microsoft.Xrm.Sdk.Client.ServiceConfiguration`1.Authenticate(ClientCredentials clientCredentials)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceConfiguration.Authenticate(ClientCredentials clientCredentials)
+   at Microsoft.Xrm.Client.Services.OrganizationService.CreateUserTokenResponse(CrmConnection connection, IServiceConfiguration`1 config)
+   at Microsoft.Xrm.Client.Services.OrganizationService.GetUserTokenResponse(CrmConnection connection, IServiceConfiguration`1 config)
+   at Microsoft.Xrm.Client.Services.OrganizationService.ToOrganizationServiceProxy(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.ToOrganizationService(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.<>c__DisplayClass2.<.ctor>b__0()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.Xrm.Client.Services.OrganizationService.InnerOrganizationService.UsingService[TResult](Func`2 action)
+   at Microsoft.Xrm.Client.Services.OrganizationService.Execute(OrganizationRequest request)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceContext.Execute(OrganizationRequest request)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.RetrieveEntityCollection(OrganizationRequest request, NavigationSource source)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute(QueryExpression qe, Boolean throwIfSequenceIsEmpty, Boolean throwIfSequenceNotSingle, Projection projection, NavigationSource source, List`1 linkLookups, String& pagingCookie, Boolean& moreRecords)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute[TElement](QueryExpression qe, Boolean throwIfSequenceIsEmpty, Boolean throwIfSequenceNotSingle, Projection projection, NavigationSource source, List`1 linkLookups)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute[TElement](Expression expression)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.GetEnumerator[TElement](Expression expression)
+   at Microsoft.Xrm.Sdk.Linq.Query`1.GetEnumerator()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at Arke.ARS.TechnicianPortal.Services.Impl.AppointmentService.GetAppointments(DateTime start, DateTime end, Guid technicianId) in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal\Services\Impl\AppointmentService.cs:line 37
+   at Arke.ARS.TechnicianPortal.Controllers.AppointmentController.Get(DateTime start, DateTime end) in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal\Controllers\AppointmentController.cs:line 26
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+
+
+2016-06-13 15:01:10,658 [7] ERROR ==========================  Exception info see below  ===============================
+An unhandled exception occurred.
+Url: /api/Appointment?start=2016-06-13&end=2016-06-14
+System.NotSupportedException - The authentication endpoint AsymmetricToken was not found on the configured Secure Token Service!
+   at Microsoft.Xrm.Sdk.Client.IssuerEndpointDictionary.GetIssuerEndpoint(TokenServiceCredentialType credentialType)
+   at Microsoft.Xrm.Sdk.Client.AuthenticationCredentials.get_IssuerEndpoint()
+   at Microsoft.Xrm.Sdk.Client.ServiceConfiguration`1.Issue(AuthenticationCredentials authenticationCredentials)
+   at Microsoft.Xrm.Sdk.Client.ServiceConfiguration`1.AuthenticateTokenWithACSForCrm(AuthenticationCredentials authenticationCredentials, Uri appliesTo, Uri acsEndpoint)
+   at Microsoft.Xrm.Sdk.Client.ServiceConfiguration`1.AuthenticateOnlineFederationInternal(AuthenticationCredentials authenticationCredentials)
+   at Microsoft.Xrm.Sdk.Client.ServiceConfiguration`1.Authenticate(AuthenticationCredentials authenticationCredentials)
+   at Microsoft.Xrm.Sdk.Client.ServiceConfiguration`1.Authenticate(ClientCredentials clientCredentials)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceConfiguration.Authenticate(ClientCredentials clientCredentials)
+   at Microsoft.Xrm.Client.Services.OrganizationService.CreateUserTokenResponse(CrmConnection connection, IServiceConfiguration`1 config)
+   at Microsoft.Xrm.Client.Services.OrganizationService.GetUserTokenResponse(CrmConnection connection, IServiceConfiguration`1 config)
+   at Microsoft.Xrm.Client.Services.OrganizationService.ToOrganizationServiceProxy(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.ToOrganizationService(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.<>c__DisplayClass2.<.ctor>b__0()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.Xrm.Client.Services.OrganizationService.InnerOrganizationService.UsingService[TResult](Func`2 action)
+   at Microsoft.Xrm.Client.Services.OrganizationService.Execute(OrganizationRequest request)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceContext.Execute(OrganizationRequest request)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.RetrieveEntityCollection(OrganizationRequest request, NavigationSource source)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute(QueryExpression qe, Boolean throwIfSequenceIsEmpty, Boolean throwIfSequenceNotSingle, Projection projection, NavigationSource source, List`1 linkLookups, String& pagingCookie, Boolean& moreRecords)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute[TElement](QueryExpression qe, Boolean throwIfSequenceIsEmpty, Boolean throwIfSequenceNotSingle, Projection projection, NavigationSource source, List`1 linkLookups)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute[TElement](Expression expression)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.GetEnumerator[TElement](Expression expression)
+   at Microsoft.Xrm.Sdk.Linq.Query`1.GetEnumerator()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at Arke.ARS.TechnicianPortal.Services.Impl.AppointmentService.GetAppointments(DateTime start, DateTime end, Guid technicianId) in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal\Services\Impl\AppointmentService.cs:line 37
+   at Arke.ARS.TechnicianPortal.Controllers.AppointmentController.Get(DateTime start, DateTime end) in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal\Controllers\AppointmentController.cs:line 26
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+
+
+2016-06-13 15:13:50,283 [6] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-13 15:13:51,092 [6] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-13 15:13:51,521 [6] INFO  workItemStatuses contains 2
+2016-06-13 15:36:56,372 [5] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-13 15:36:56,806 [5] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-13 15:36:57,219 [5] INFO  workItemStatuses contains 2
+2016-06-13 15:37:41,254 [7] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-13 15:37:41,618 [7] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-13 15:37:41,995 [7] INFO  workItemStatuses contains 2
+2016-06-13 15:42:49,810 [8] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-13 15:42:51,288 [8] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-13 15:42:51,531 [8] INFO  workItemStatuses contains 2
+2016-06-13 15:43:25,378 [6] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-13 15:43:25,648 [6] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-13 15:43:25,864 [6] INFO  workItemStatuses contains 2
+2016-06-13 15:44:30,876 [7] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-13 15:44:31,312 [7] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-13 15:44:31,617 [7] INFO  workItemStatuses contains 2
+2016-06-13 15:44:51,461 [7] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-13 15:44:51,727 [7] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-13 15:44:51,968 [7] INFO  workItemStatuses contains 2
+2016-06-13 15:46:30,520 [7] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-13 15:46:30,773 [7] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-13 15:46:31,023 [7] INFO  workItemStatuses contains 2
+2016-06-13 15:49:20,355 [21] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-13 15:49:21,895 [21] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-13 15:49:22,236 [21] INFO  workItemStatuses contains 2
+2016-06-13 15:49:57,213 [7] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-13 15:49:57,496 [7] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-13 15:49:57,694 [7] INFO  workItemStatuses contains 2
+2016-06-13 15:50:21,012 [28] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-13 15:50:21,196 [28] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-13 15:50:21,390 [28] INFO  workItemStatuses contains 2
+2016-06-13 15:50:43,601 [21] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-13 15:50:43,786 [21] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-13 15:50:43,974 [21] INFO  workItemStatuses contains 2
+2016-06-13 15:51:23,501 [7] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-13 15:51:23,715 [7] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-13 15:51:23,909 [7] INFO  workItemStatuses contains 2
