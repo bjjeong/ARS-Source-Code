@@ -3201,3 +3201,255 @@ System.NotSupportedException - The authentication endpoint AsymmetricToken was n
 2016-06-15 12:54:05,980 [6] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
 2016-06-15 12:54:06,207 [6] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
 2016-06-15 12:54:06,433 [6] INFO  workItemStatuses contains 2
+2016-06-16 12:58:56,036 [8] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 12:58:56,535 [8] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 12:58:56,902 [8] INFO  workItemStatuses contains 2
+2016-06-16 12:59:35,363 [5] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 12:59:35,554 [5] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 12:59:35,754 [5] INFO  workItemStatuses contains 2
+2016-06-16 13:02:02,177 [6] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 13:02:04,586 [6] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 13:02:04,804 [6] INFO  workItemStatuses contains 2
+2016-06-16 13:05:15,661 [7] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 13:05:15,929 [7] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 13:05:16,221 [7] INFO  workItemStatuses contains 2
+2016-06-16 13:06:06,488 [6] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 13:06:07,095 [6] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 13:06:07,636 [6] INFO  workItemStatuses contains 2
+2016-06-16 13:07:04,572 [8] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 13:07:04,822 [8] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 13:07:05,036 [8] INFO  workItemStatuses contains 2
+2016-06-16 13:09:01,016 [20] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 13:09:03,673 [20] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 13:09:03,966 [20] INFO  workItemStatuses contains 2
+2016-06-16 13:19:14,189 [24] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 13:19:16,806 [24] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 13:19:17,139 [24] INFO  workItemStatuses contains 2
+2016-06-16 13:22:07,352 [24] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 13:22:07,704 [24] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 13:22:07,934 [24] INFO  workItemStatuses contains 2
+2016-06-16 13:22:17,427 [28] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 13:22:17,602 [28] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 13:22:17,796 [28] INFO  workItemStatuses contains 2
+2016-06-16 13:28:38,611 [37] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 13:28:38,908 [37] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 13:28:39,103 [37] INFO  workItemStatuses contains 2
+2016-06-16 13:29:06,955 [37] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 13:29:07,147 [37] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 13:29:07,331 [37] INFO  workItemStatuses contains 2
+2016-06-16 13:29:53,244 [29] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 13:29:53,434 [29] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 13:29:54,051 [29] INFO  workItemStatuses contains 2
+2016-06-16 13:30:18,972 [29] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 13:30:19,205 [29] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 13:30:19,395 [29] INFO  workItemStatuses contains 2
+2016-06-16 13:30:30,654 [37] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 13:30:30,838 [37] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 13:30:31,032 [37] INFO  workItemStatuses contains 2
+2016-06-16 13:50:30,299 [6] ERROR ==========================  Exception info see below  ===============================
+Unhandled exception
+Url: /WorkOrder/Index
+System.ArgumentException - The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Guid' for method 'System.Web.Mvc.ActionResult Index(System.Guid)' in 'Arke.ARS.TechnicianPortal.Controllers.WorkOrderController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+   at System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.ActionInvocation.InvokeSynchronousActionMethod()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass48.<InvokeActionMethodFilterAsynchronouslyRecursive>b__41()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncResultWrapper.End(IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecute>b__15(IAsyncResult asyncResult, Controller controller)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncResultWrapper.End(IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncResultWrapper.End(IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+2016-06-16 13:50:51,366 [6] ERROR ==========================  Exception info see below  ===============================
+Unhandled exception
+Url: /WorkOrder/Index
+System.ArgumentException - The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Guid' for method 'System.Web.Mvc.ActionResult Index(System.Guid)' in 'Arke.ARS.TechnicianPortal.Controllers.WorkOrderController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+   at System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.ActionInvocation.InvokeSynchronousActionMethod()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass48.<InvokeActionMethodFilterAsynchronouslyRecursive>b__41()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncResultWrapper.End(IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecute>b__15(IAsyncResult asyncResult, Controller controller)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncResultWrapper.End(IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncResultWrapper.End(IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+2016-06-16 13:51:30,566 [6] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 13:51:30,904 [6] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 13:51:31,252 [6] INFO  workItemStatuses contains 2
+2016-06-16 13:53:21,560 [8] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 13:53:22,124 [8] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 13:53:22,624 [8] INFO  workItemStatuses contains 2
+2016-06-16 13:53:24,225 [8] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 13:53:24,433 [8] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 13:53:24,680 [8] INFO  workItemStatuses contains 2
+2016-06-16 15:23:43,519 [86] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 15:23:43,791 [86] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 15:23:44,368 [86] INFO  workItemStatuses contains 2
+2016-06-16 15:43:18,580 [97] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 15:43:18,990 [97] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 15:43:19,180 [97] INFO  workItemStatuses contains 2
+2016-06-16 15:43:54,447 [94] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 15:43:54,653 [94] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 15:43:54,847 [94] INFO  workItemStatuses contains 2
+2016-06-16 15:45:56,657 [99] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 15:45:59,211 [99] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 15:45:59,498 [99] INFO  workItemStatuses contains 2
+2016-06-16 15:53:51,484 [96] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 15:53:51,729 [96] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 15:53:51,966 [96] INFO  workItemStatuses contains 2
+2016-06-16 16:13:45,556 [77] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 16:13:46,141 [77] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 16:13:46,434 [77] INFO  workItemStatuses contains 2
+2016-06-16 16:14:07,803 [78] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 16:14:08,013 [78] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 16:14:08,203 [78] INFO  workItemStatuses contains 2
+2016-06-16 16:16:28,655 [76] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 16:16:31,461 [76] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 16:16:31,793 [76] INFO  workItemStatuses contains 2
+2016-06-16 16:16:53,493 [76] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 16:16:53,687 [76] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 16:16:53,868 [76] INFO  workItemStatuses contains 2
+2016-06-16 16:17:47,262 [76] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 16:17:47,613 [76] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 16:17:47,803 [76] INFO  workItemStatuses contains 2
+2016-06-16 16:17:56,914 [79] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 16:17:57,090 [79] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 16:17:57,269 [79] INFO  workItemStatuses contains 2
+2016-06-16 16:20:21,891 [80] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 16:20:22,283 [80] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 16:20:22,479 [80] INFO  workItemStatuses contains 2
+2016-06-16 16:20:40,785 [80] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 16:20:40,983 [80] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 16:20:41,168 [80] INFO  workItemStatuses contains 2
+2016-06-16 16:21:13,470 [83] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 16:21:13,663 [83] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 16:21:13,841 [83] INFO  workItemStatuses contains 2
+2016-06-16 16:21:24,121 [90] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 16:21:24,318 [90] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 16:21:24,526 [90] INFO  workItemStatuses contains 2
+2016-06-16 16:21:27,765 [83] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 16:21:27,953 [83] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 16:21:28,148 [83] INFO  workItemStatuses contains 2
+2016-06-16 16:23:56,097 [83] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 16:23:56,444 [83] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 16:23:56,621 [83] INFO  workItemStatuses contains 2
+2016-06-16 16:24:18,612 [83] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 16:24:18,823 [83] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 16:24:19,019 [83] INFO  workItemStatuses contains 2
+2016-06-16 16:25:21,905 [83] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 16:25:22,094 [83] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 16:25:22,277 [83] INFO  workItemStatuses contains 2
+2016-06-16 16:25:32,525 [83] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 16:25:32,718 [83] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 16:25:32,907 [83] INFO  workItemStatuses contains 2
+2016-06-16 16:26:05,670 [83] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-16 16:26:08,741 [83] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-16 16:26:08,968 [83] INFO  workItemStatuses contains 2
+2016-06-17 08:18:36,209 [81] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-17 08:18:37,335 [81] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-17 08:18:37,799 [81] INFO  workItemStatuses contains 2
+2016-06-17 08:27:49,881 [77] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-17 08:27:50,244 [77] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-17 08:27:50,437 [77] INFO  workItemStatuses contains 2
+2016-06-17 08:31:08,081 [98] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-17 08:31:11,356 [98] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-17 08:31:11,778 [98] INFO  workItemStatuses contains 2
+2016-06-17 08:32:23,658 [10] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-17 08:32:23,896 [10] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-17 08:32:24,079 [10] INFO  workItemStatuses contains 2
+2016-06-17 08:37:22,728 [94] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-17 08:37:23,171 [94] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-17 08:37:23,367 [94] INFO  workItemStatuses contains 2
+2016-06-17 08:37:32,858 [94] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-17 08:37:33,037 [94] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-17 08:37:33,228 [94] INFO  workItemStatuses contains 2
+2016-06-17 08:37:51,134 [76] INFO  getting order with id eae680ff-a629-e611-8104-3863bb3cf4a8
+2016-06-17 08:37:51,330 [76] INFO  customer name 00006  PQ6 Protein Bar Store SMS Assist, LLC
+2016-06-17 08:37:51,519 [76] INFO  workItemStatuses contains 2
+2016-06-17 09:00:59,594 [84] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 09:00:59,931 [84] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 09:01:00,235 [84] INFO  workItemStatuses contains 2
+2016-06-17 09:02:07,261 [89] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 09:02:07,469 [89] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 09:02:07,657 [89] INFO  workItemStatuses contains 2
+2016-06-17 09:02:51,439 [84] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 09:02:51,641 [84] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 09:02:51,839 [84] INFO  workItemStatuses contains 2
+2016-06-17 09:03:11,564 [91] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 09:03:11,783 [91] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 09:03:12,033 [91] INFO  workItemStatuses contains 2

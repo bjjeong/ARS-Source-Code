@@ -22,5 +22,6 @@ namespace Arke.ARS.TechnicianPortal.Models
         public WorkItemModel[] WorkItems { get; set; }
         public string TradeType { get; set; }
         public string trade { get; set; }
+        public string po { get; set; }
     }
 }
