@@ -3453,3 +3453,153 @@ Parameter name: parameters
 2016-06-17 09:03:11,564 [91] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
 2016-06-17 09:03:11,783 [91] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
 2016-06-17 09:03:12,033 [91] INFO  workItemStatuses contains 2
+2016-06-17 09:17:02,936 [7] ERROR ==========================  Exception info see below  ===============================
+Unhandled exception
+Url: /WorkOrder/Index
+System.ArgumentException - The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Guid' for method 'System.Web.Mvc.ActionResult Index(System.Guid)' in 'Arke.ARS.TechnicianPortal.Controllers.WorkOrderController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+   at System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.ActionInvocation.InvokeSynchronousActionMethod()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass48.<InvokeActionMethodFilterAsynchronouslyRecursive>b__41()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncResultWrapper.End(IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecute>b__15(IAsyncResult asyncResult, Controller controller)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncResultWrapper.End(IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncResultWrapper.End(IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+2016-06-17 09:18:21,806 [6] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 09:18:22,041 [6] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 09:18:22,289 [6] INFO  workItemStatuses contains 2
+2016-06-17 09:23:54,408 [9] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 09:23:54,915 [9] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 09:23:55,200 [9] INFO  workItemStatuses contains 2
+2016-06-17 09:26:43,771 [7] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 09:26:44,074 [7] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 09:26:44,607 [7] INFO  workItemStatuses contains 2
+2016-06-17 09:32:34,809 [7] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 09:32:37,310 [7] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 09:32:37,599 [7] INFO  workItemStatuses contains 2
+2016-06-17 09:34:06,736 [7] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 09:34:07,409 [7] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 09:34:07,601 [7] INFO  workItemStatuses contains 2
+2016-06-17 09:38:34,826 [25] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 09:38:35,247 [25] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 09:38:35,468 [25] INFO  workItemStatuses contains 2
+2016-06-17 09:39:40,743 [18] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 09:39:40,931 [18] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 09:39:41,139 [18] INFO  workItemStatuses contains 2
+2016-06-17 09:39:54,023 [29] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 09:39:54,282 [29] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 09:39:54,594 [29] INFO  workItemStatuses contains 2
+2016-06-17 09:41:11,625 [29] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 09:41:11,833 [29] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 09:41:12,027 [29] INFO  workItemStatuses contains 2
+2016-06-17 09:41:24,934 [29] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 09:41:25,143 [29] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 09:41:25,322 [29] INFO  workItemStatuses contains 2
+2016-06-17 09:42:07,768 [24] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 09:42:08,006 [24] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 09:42:08,195 [24] INFO  workItemStatuses contains 2
+2016-06-17 09:42:17,887 [24] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 09:42:18,070 [24] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 09:42:18,257 [24] INFO  workItemStatuses contains 2
+2016-06-17 09:42:23,841 [24] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 09:42:24,028 [24] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 09:42:24,208 [24] INFO  workItemStatuses contains 2
+2016-06-17 09:44:12,056 [11] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 09:44:12,438 [11] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 09:44:12,654 [11] INFO  workItemStatuses contains 2
+2016-06-17 09:45:36,327 [11] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 09:45:36,634 [11] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 09:45:36,878 [11] INFO  workItemStatuses contains 2
+2016-06-17 09:45:54,584 [5] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 09:45:54,845 [5] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 09:45:55,038 [5] INFO  workItemStatuses contains 2
+2016-06-17 09:46:03,048 [5] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 09:46:03,321 [5] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 09:46:03,516 [5] INFO  workItemStatuses contains 2
+2016-06-17 10:02:59,262 [13] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 10:03:02,054 [13] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 10:03:02,344 [13] INFO  workItemStatuses contains 2
+2016-06-17 10:03:29,951 [13] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 10:03:30,193 [13] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 10:03:30,841 [13] INFO  workItemStatuses contains 2
+2016-06-17 10:04:11,872 [21] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 10:04:12,130 [21] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 10:04:12,394 [21] INFO  workItemStatuses contains 2
+2016-06-17 10:05:13,887 [7] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 10:05:14,134 [7] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 10:05:14,364 [7] INFO  workItemStatuses contains 2
+2016-06-17 10:05:32,545 [21] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 10:05:35,927 [21] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 10:05:36,172 [21] INFO  workItemStatuses contains 2
+2016-06-17 10:11:14,943 [30] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 10:11:15,361 [30] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 10:11:15,561 [30] INFO  workItemStatuses contains 2
+2016-06-17 10:11:40,512 [7] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 10:11:41,095 [7] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 10:11:41,273 [7] INFO  workItemStatuses contains 2
+2016-06-17 10:12:46,079 [26] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 10:12:47,681 [26] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 10:12:48,250 [26] INFO  workItemStatuses contains 2
+2016-06-17 10:12:59,453 [26] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 10:13:00,035 [26] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 10:13:00,895 [26] INFO  workItemStatuses contains 2
+2016-06-17 10:18:53,154 [20] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 10:18:53,561 [20] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 10:18:53,758 [20] INFO  workItemStatuses contains 2
+2016-06-17 10:19:07,935 [22] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 10:19:08,128 [22] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 10:19:08,334 [22] INFO  workItemStatuses contains 2
+2016-06-17 10:19:15,025 [26] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 10:19:15,335 [26] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 10:19:15,525 [26] INFO  workItemStatuses contains 2
+2016-06-17 10:21:54,422 [26] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 10:21:55,453 [26] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 10:21:55,769 [26] INFO  workItemStatuses contains 2
+2016-06-17 10:22:05,162 [22] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 10:22:05,351 [22] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 10:22:06,044 [22] INFO  workItemStatuses contains 2
+2016-06-17 10:23:51,310 [17] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 10:23:51,628 [17] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 10:23:52,400 [17] INFO  workItemStatuses contains 2
+2016-06-17 10:23:59,181 [11] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 10:23:59,368 [11] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 10:23:59,561 [11] INFO  workItemStatuses contains 2

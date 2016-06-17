@@ -20,25 +20,25 @@
             <div class=work-order-buttons>
                 @if (!Model.IsInProgress)
                 {
-                    <a href=# class="btn btn-danger btn-work-order checkin" data-toggle=modal data-target=#modal-check-in>Check In</a>
+                    <button class="btn btn-danger btn-work-order checkin" id="checkin" data-toggle=modal data-target=#modal-check-in>Check In</button>
                 }
                 else
                 {
-                    <a href=# class="btn btn-primary btn-work-order" id="checkout1" data-toggle=modal data-target=#modal-check-out>Check Out</a>
+                    <button class="btn btn-primary btn-work-order" id="checkout1" disabled data-toggle=modal data-target=#modal-check-out>Check Out</button>
                 }
                 @if (!Model.IsInProgress)
                 {
-                    <a href=# class="btn btn-default btn-work-order disabled" data-toggle="modal" data-target="#modal-nte-increase">NTE Increase</a>
-                    <a href=# class="btn btn-default btn-work-order disabled" data-toggle="modal" data-target="#modal-po-request">P.O. Request</a>
-                    <a href=# class="btn btn-default btn-work-order disabled" data-toggle="modal" data-target="#modal-comments-attachments">Comments/Attachments</a>
-                    <a href=# class="btn btn-default btn-work-order disabled signout" data-toggle="modal" data-target="#modal-signature">Sign Work Order</a>
+                    <button class="btn btn-default btn-work-order disabled" data-toggle="modal" data-target="#modal-nte-increase">NTE Increase</button>
+                    <button class="btn btn-default btn-work-order disabled" data-toggle="modal" data-target="#modal-po-request">P.O. Request</button>
+                    <button class="btn btn-default btn-work-order disabled" data-toggle="modal" data-target="#modal-comments-attachments">Comments/Attachments</button>
+                    <button class="btn btn-default btn-work-order disabled signout" data-toggle="modal" data-target="#modal-signature">Sign Work Order</button>
                 }
                 else
                 {
-                    <a href=# class="btn btn-primary btn-work-order" data-toggle="modal" data-target="#modal-nte-increase">NTE Increase</a>
-                    <a href=# class="btn btn-primary btn-work-order" data-toggle="modal" data-target="#modal-po-request">P.O. Request</a>
-                    <a href=# class="btn btn-primary btn-work-order" data-toggle="modal" data-target="#modal-comments-attachments">Comments/Attachments</a>
-                    <a href=# class="btn btn-danger btn-work-order signout" data-toggle="modal" data-target="#modal-signature">Sign Work Order</a>
+                    <button class="btn btn-primary btn-work-order" data-toggle="modal" data-target="#modal-nte-increase">NTE Increase</button>
+                    <button class="btn btn-primary btn-work-order" data-toggle="modal" data-target="#modal-po-request">P.O. Request</button>
+                    <button class="btn btn-primary btn-work-order" data-toggle="modal" data-target="#modal-comments-attachments">Comments/Attachments</button>
+                    <button class="btn btn-danger btn-work-order signout" data-toggle="modal" data-target="#modal-signature">Sign Work Order</button>
                 }
             </div>
         </div>
@@ -209,17 +209,9 @@
 
             });
             
-            var savedSignature = function () {
-                var signed = false;
-                $('#save-signature').click(function () {
-                    signed = true;
-                    $('#checkout1').prop('disabled', false);
-                });
-                if(signed == false)
-                {
-                    $('#checkout1').prop('disabled', true);
-                }
-            }
+            $(".save").click(function () {
+                $('#checkout1').removeAttr("disabled");
+            });
 
             $("#nte-increase").click(function (evt) {
                 var money = $("#nte-money").val();
@@ -241,7 +233,6 @@
                 $('#signature-pad').signature('clear');
             });
             
-            var signatureSaved = false;
             $('#save-signature').click(function (evt) {
                 var canvas = $(this).closest("form").find('canvas')[0];
                 var signature = canvas.toDataURL("image/png");
@@ -255,9 +246,6 @@
                 {
                     evt.preventDefault();
                     notificationService.showError("Please add a printed name!");
-                }
-                else {
-                    signatureSaved = true;
                 }
             });
 

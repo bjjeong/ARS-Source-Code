@@ -95,7 +95,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
             _logger.LogInfo("workItemStatuses contains {0}", workItemStatuses.Keys.Count);
             var checkInKey = GetEventTypeValue(EventType.CheckIn).Key;
             var checkOutKey = GetEventTypeValue(EventType.CheckOut).Key;
-            bool isInProgress; 
+            bool isInProgress;
             var events = _context.ars_workordereventSet
                 .Where(e => e.ars_WorkOrder.Id == workOrderId)
                 .Where(e => e.ars_Technician.Id == technicianId)
