@@ -60,7 +60,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/10/2016 11:20:53</publishTime>
     </File>
     <File Include="bin/Arke.ARS.TechnicianPortal.dll">
-      <publishTime>06/17/2016 10:25:37</publishTime>
+      <publishTime>06/17/2016 10:29:09</publishTime>
     </File>
     <File Include="bin/Arke.Crm.Utils.dll">
       <publishTime>05/31/2016 15:17:25</publishTime>

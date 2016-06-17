@@ -3603,3 +3603,69 @@ Parameter name: parameters
 2016-06-17 10:23:59,181 [11] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
 2016-06-17 10:23:59,368 [11] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
 2016-06-17 10:23:59,561 [11] INFO  workItemStatuses contains 2
+2016-06-17 10:27:46,251 [7] ERROR ==========================  Exception info see below  ===============================
+Unhandled exception
+Url: /WorkOrder/Index
+System.ArgumentException - The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Guid' for method 'System.Web.Mvc.ActionResult Index(System.Guid)' in 'Arke.ARS.TechnicianPortal.Controllers.WorkOrderController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+   at System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.ActionInvocation.InvokeSynchronousActionMethod()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass48.<InvokeActionMethodFilterAsynchronouslyRecursive>b__41()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncResultWrapper.End(IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecute>b__15(IAsyncResult asyncResult, Controller controller)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncResultWrapper.End(IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncResultWrapper.End(IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+2016-06-17 10:28:25,133 [9] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 10:28:25,501 [9] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 10:28:25,843 [9] INFO  workItemStatuses contains 2
+2016-06-17 10:28:41,354 [11] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 10:28:41,538 [11] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 10:28:41,727 [11] INFO  workItemStatuses contains 2
+2016-06-17 10:28:47,779 [8] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 10:28:48,026 [8] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 10:28:48,242 [8] INFO  workItemStatuses contains 2
+2016-06-17 10:29:28,869 [6] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 10:29:29,128 [6] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 10:29:29,359 [6] INFO  workItemStatuses contains 2
+2016-06-17 10:29:41,805 [8] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-17 10:29:41,989 [8] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-17 10:29:42,175 [8] INFO  workItemStatuses contains 2
