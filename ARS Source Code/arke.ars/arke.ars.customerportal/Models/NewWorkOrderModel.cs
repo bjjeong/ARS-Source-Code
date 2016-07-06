@@ -14,5 +14,6 @@ namespace Arke.ARS.CustomerPortal.Models
         public DateTime NeedByDate { get; set; }
         public string Description { get; set; }
         public HttpPostedFileBase Attachment { get; set; }
+        public string PO { get; set; }
     }
 }

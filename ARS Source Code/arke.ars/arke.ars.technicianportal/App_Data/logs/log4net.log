@@ -3837,3 +3837,27 @@ Parameter name: parameters
 2016-06-17 10:55:49,656 [8] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
 2016-06-17 10:55:50,120 [8] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
 2016-06-17 10:55:50,435 [8] INFO  workItemStatuses contains 2
+2016-06-20 08:17:42,063 [267] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-20 08:17:46,874 [267] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-20 08:17:47,260 [267] INFO  workItemStatuses contains 2
+2016-06-20 08:36:03,637 [279] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-20 08:36:04,111 [279] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-20 08:36:04,305 [279] INFO  workItemStatuses contains 2
+2016-06-20 09:23:23,432 [311] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-20 09:23:23,654 [311] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-20 09:23:23,827 [311] INFO  workItemStatuses contains 2
+2016-06-20 09:23:32,350 [315] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-20 09:23:32,510 [315] INFO  customer name 0016TNT BBVA Compass Bank Jones Lang LaSalle SMS Assist, LLC
+2016-06-20 09:23:32,670 [315] INFO  workItemStatuses contains 2
+2016-06-27 08:23:09,192 [6] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-27 08:23:09,701 [6] INFO  customer name 00320 Family Dollar SMS Assist, LLC
+2016-06-27 08:23:10,005 [6] INFO  workItemStatuses contains 2
+2016-06-27 08:26:35,790 [6] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-27 08:26:36,063 [6] INFO  customer name 00320 Family Dollar SMS Assist, LLC
+2016-06-27 08:26:36,272 [6] INFO  workItemStatuses contains 2
+2016-06-27 08:26:46,943 [14] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-27 08:26:47,618 [14] INFO  customer name 00320 Family Dollar SMS Assist, LLC
+2016-06-27 08:26:47,787 [14] INFO  workItemStatuses contains 2
+2016-06-27 08:28:25,213 [18] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-06-27 08:28:25,792 [18] INFO  customer name 00320 Family Dollar SMS Assist, LLC
+2016-06-27 08:28:27,323 [18] INFO  workItemStatuses contains 2

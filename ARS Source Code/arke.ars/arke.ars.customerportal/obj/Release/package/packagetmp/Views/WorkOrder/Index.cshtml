@@ -104,10 +104,10 @@
                     <div class="col-sm-2">
                         <h3 title="Click to sort by column" class="heading sortable closed-sorting" data-sort-url=@Model.GetQueryLink("Location", false)>Location</h3>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-sm-2 col-md-2">
                         <h3 title="Click to sort by column" class="heading sortable closed-sorting" data-sort-url=@Model.GetQueryLink("Title", false)>Title</h3>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-sm-1">
                         <h3 title="Click to sort by column" class="heading sortable closed-sorting" data-sort-url=@Model.GetQueryLink("ClosedDate", false)>Close Date</h3>
                     </div>
                     <div class="col-sm-2">
@@ -138,7 +138,7 @@
                                 <span class="title visible-xs-inline">Title: </span>@order.Title
                             </p>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-1">
                             <p>
                                 <span class="title visible-xs-inline">Close date: </span>@if (order.ClosedDate != null)
                                 {
@@ -161,9 +161,18 @@
                                 <a href="#" data-toggle="modal" data-orderid="@order.Id" class="btn btn-default btn-sm reopen @(order.Status == "Canceled" ? "" : "invisible")">Reopen</a>
                             </p>
                         </div>
+                        <div class="col-sm-1 col-md-1 view-delete">
+                            <a href="@Url.Action("Details", new { id = @order.Id })" class="edit-delete edit btn btn-default btn-sm no-print" title="View or edit details">
+                                Details
+                            </a>
+                            <a href="#" class="edit-delete cancel no-print @(order.Status == "Pending" ? "" : "invisible")" data-orderid="@order.Id" title="Cancel Work Order">
+                                <span class="sr-only">Cancel Work Order</span>
+                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                            </a>
+                        </div>
                     </div>
                 }
-                <a href="#" class="btn btn-default print pull-left no-print"><span class="glyphicon glyphicon-print"></span> Print view</a>
+                <button class="btn btn-default print pull-left no-print"><span class="glyphicon glyphicon-print"></span> Print view</button>
                 <nav class="pull-right no-print">
                     @Html.PagedListPager(Model.ClosedOrders, page => Model.GetQueryLink(page, false))
                 </nav>
@@ -173,7 +182,7 @@
 
 </div>
 
-<a href="#" class="btn btn-primary no-print add-work-order" data-toggle="modal" data-target="#add-work-order"><span class="glyphicon glyphicon-plus"></span> New work order</a>
+<button class="btn btn-danger no-print add-work-order" data-toggle="modal" data-target="#add-work-order"><span class="glyphicon glyphicon-plus"></span> New Work Order</button>
 
 @Html.Partial("_AddWorkOrder", Model)
 @Html.Partial("_ReopenWorkOrder")
@@ -217,7 +226,7 @@
                 }).done(function () {
                     window.location.href = '@Url.Action("Index","WorkOrder")';
                 }).fail(function () {
-                    notificationService.showError("Cannot reopen work item");
+                    notificationService.showError("Cannot cancel work item");
                 }).always(function () {
                     animationService.hideBusyAnimation();
                 });

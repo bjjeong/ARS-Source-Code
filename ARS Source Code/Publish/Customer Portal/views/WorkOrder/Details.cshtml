@@ -37,7 +37,7 @@
                     <ul>
                         @foreach (AttachmentModel attachment in activity.Attachments)
                         {
-                            <li><a href="@Url.Action("Donwload", "Attachment", new { id = attachment.Id })">@attachment.FileName</a></li>
+                            <li><a href="@Url.Action("Download", "Attachment", new { id = attachment.Id })">@attachment.FileName</a></li>
                         }
                     </ul>
                 </div>
@@ -50,14 +50,14 @@
         </div>
         <div class="col-sm-4 right-rail">
             <div class="h-group">
-                <h3>About</h3>
+                <h3><strong>About</strong></h3>
             </div>
             <p><strong>Title: </strong>@Model.Name</p>
             <p><strong>Status: </strong>@Model.Status</p>
             <p><strong>Created on: </strong>@Model.CreatedOn.ToShortDateString()</p>
             @if (Model.ScheduledOn.HasValue)
             {
-                <p><strong>Scheduled for: </strong>@Model.ScheduledOn.Value.ToShortDateString() @Model.ScheduledOn.Value.ToShortTimeString()</p>
+                <p><strong>Complete By: </strong>@Model.ScheduledOn.Value.ToShortDateString() @Model.ScheduledOn.Value.ToShortTimeString()</p>
             }
             <p><strong>Location: </strong>@Model.Location</p>
             @if (Model.LocationAddress != null)
@@ -71,10 +71,10 @@
             <p><strong>Description of Service: </strong>@Model.DescriptionOfService</p>
         </div>
     </div>
-    <a href="#" class="btn btn-default print pull-left no-print"><span class="glyphicon glyphicon-print"></span> Print view</a>
+    <button class="btn btn-default print pull-left no-print"><span class="glyphicon glyphicon-print"></span> Print view</button>
     <a href="@ViewData["ReturnToListUrl"]" class="btn btn-default back pull-right no-print"><span class="glyphicon"></span> Return to List</a>
-    <a href="#" class="btn btn-primary no-print add-work-order" data-toggle="modal" data-target="#add-comment">
-        <span class="glyphicon glyphicon-plus"></span>New Comment/Attachment
-    </a>
+    <button class="btn btn-danger no-print add-work-order" data-toggle="modal" data-target="#add-comment">
+        <span class="glyphicon glyphicon-plus"></span> New Comment/Attachment
+    </button>
     @Html.Partial("_AddComment", Model)
 </div>

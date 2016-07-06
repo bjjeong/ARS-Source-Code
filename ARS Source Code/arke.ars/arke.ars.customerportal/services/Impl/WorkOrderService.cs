@@ -333,7 +333,8 @@ namespace Arke.ARS.CustomerPortal.Services.Impl
                 Title = model.Title,
                 Description = model.Description,
                 ars_CompleteByDate = model.NeedByDate == DateTime.MinValue ? (DateTime?)null : model.NeedByDate,
-                CustomerId = customerReference
+                CustomerId = customerReference,
+                new_PO = model.PO
             };
 
             _context.AddObject(order);
