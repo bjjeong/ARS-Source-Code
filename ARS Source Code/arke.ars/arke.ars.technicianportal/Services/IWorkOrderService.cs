@@ -15,5 +15,6 @@ namespace Arke.ARS.TechnicianPortal.Services
         void AddCommentAndAttachment(Guid workOrderId, Guid technicianId, string comment, HttpPostedFileBase attachment);
         void AddSignature(Guid workOrderId, Guid technicianId, string signature, string printname);
         void SetWorkItemStatus(Guid workItemId, Guid technicianId, bool isComplete, HttpPostedFileBase note);
+        void setNteBool(Guid workOrderId, Guid technicianId);
     }
 }

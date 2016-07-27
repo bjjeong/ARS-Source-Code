@@ -205,6 +205,14 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
             _context.SaveChanges();
         }
 
+        public void setNteBool(Guid workOrderId, Guid technicianId)
+        {
+            var workOrder = _context.IncidentSet.Single(i => i.IncidentId == workOrderId);
+            workOrder["new_nteincrease"] = true;
+            _context.UpdateObject(workOrder);
+            _context.SaveChanges();
+        }
+
         public void ReturnRequired(Guid workOrderId, string note, StatusCode statusCode, Guid technicianId)
         {
             if (workOrderId == null)

@@ -331,7 +331,7 @@ namespace Arke.ARS.CustomerPortal.Services.Impl
                 ars_Location = locationReference,
                 new_NotToExceedNTE = new Money(model.Nte),
                 Title = model.Title,
-                Description = model.Description, 
+                Description = model.Description,
                 ars_CompleteByDate = model.NeedByDate == DateTime.MinValue ? (DateTime?)null : model.NeedByDate,
                 CustomerId = customerReference,
                 new_PO = model.PO

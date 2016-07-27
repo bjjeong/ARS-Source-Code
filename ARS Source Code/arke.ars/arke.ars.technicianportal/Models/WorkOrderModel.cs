@@ -12,7 +12,7 @@ namespace Arke.ARS.TechnicianPortal.Models
         public Guid Id { get; set; }
         public string Title { get; set; }
         public string TicketNumber { get; set; }
-        public string Description { get; set; } 
+        public string Description { get; set; }
         public bool IsInProgress { get; set; }
         public CustomerModel Customer { get; set; }
         public decimal RemainingHours { get; set; }
@@ -23,5 +23,6 @@ namespace Arke.ARS.TechnicianPortal.Models
         public string TradeType { get; set; }
         public string trade { get; set; }
         public string po { get; set; }
+        public bool new_nteincrease { get; set; }
     }
 }

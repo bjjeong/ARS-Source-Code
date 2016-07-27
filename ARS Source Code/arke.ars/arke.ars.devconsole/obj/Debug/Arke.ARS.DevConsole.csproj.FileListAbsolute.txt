@@ -13,3 +13,18 @@ C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.DevCo
 C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.DevConsole\obj\Debug\Arke.ARS.DevConsole.csprojResolveAssemblyReference.cache
 C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.DevConsole\obj\Debug\Arke.ARS.DevConsole.exe
 C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.DevConsole\obj\Debug\Arke.ARS.DevConsole.pdb
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.DevConsole\bin\Debug\Arke.ARS.DevConsole.exe.config
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.DevConsole\bin\Debug\Arke.ARS.DevConsole.exe
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.DevConsole\bin\Debug\Arke.ARS.DevConsole.pdb
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.DevConsole\bin\Debug\Arke.ARS.Organization.dll
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.DevConsole\bin\Debug\Arke.Crm.GeoLocation.dll
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.DevConsole\bin\Debug\Arke.Crm.Utils.dll
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.DevConsole\bin\Debug\microsoft.xrm.client.dll
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.DevConsole\bin\Debug\microsoft.xrm.sdk.deployment.dll
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.DevConsole\bin\Debug\microsoft.xrm.sdk.dll
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.DevConsole\bin\Debug\Arke.ARS.Organization.pdb
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.DevConsole\bin\Debug\Arke.Crm.GeoLocation.pdb
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.DevConsole\bin\Debug\Arke.Crm.Utils.pdb
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.DevConsole\obj\Debug\Arke.ARS.DevConsole.csprojResolveAssemblyReference.cache
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.DevConsole\obj\Debug\Arke.ARS.DevConsole.exe
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.DevConsole\obj\Debug\Arke.ARS.DevConsole.pdb

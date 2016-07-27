@@ -59,6 +59,8 @@ namespace Arke.ARS.TechnicianPortal.Controllers
                     _workOrderService.SetTemporarilyOffSite(id, technicianId, notes);
                     break;
                 case StatusCode.ReturnNeedForParts:
+                    _workOrderService.ReturnRequired(id, notes, status, technicianId);
+                    break;
                 case StatusCode.ReturnNeedToQuote:
                     _workOrderService.ReturnRequired(id, notes, status, technicianId);
                     break;
@@ -79,6 +81,7 @@ namespace Arke.ARS.TechnicianPortal.Controllers
             }
             var identity = (ClaimsIdentity)User.Identity;
             var technicianId = Guid.Parse(identity.GetUserId());
+            _workOrderService.setNteBool(nteIncreaseRequest.WorkOrderId, technicianId);
             _workOrderService.IncreaseNte(nteIncreaseRequest.WorkOrderId,technicianId, nteIncreaseRequest.Money, nteIncreaseRequest.Hours, item1, item2, item3, item4, item5, price1, price2, price3, price4, price5, quantity1, quantity2, quantity3, quantity4, quantity5);
             return RedirectToAction("Index", new { Id = nteIncreaseRequest.WorkOrderId });
         }
