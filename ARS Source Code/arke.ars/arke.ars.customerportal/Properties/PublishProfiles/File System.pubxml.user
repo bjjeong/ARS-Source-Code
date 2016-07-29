@@ -54,13 +54,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/31/2016 15:17:02</publishTime>
     </File>
     <File Include="bin/Arke.ARS.CommonWeb.dll">
-      <publishTime>06/17/2016 10:51:45</publishTime>
+      <publishTime>07/29/2016 09:52:35</publishTime>
     </File>
     <File Include="bin/Arke.ARS.CustomerPortal.dll">
-      <publishTime>07/06/2016 08:09:07</publishTime>
+      <publishTime>07/29/2016 09:52:52</publishTime>
     </File>
     <File Include="bin/Arke.ARS.Organization.dll">
-      <publishTime>06/17/2016 10:51:44</publishTime>
+      <publishTime>07/29/2016 09:52:34</publishTime>
     </File>
     <File Include="bin/Arke.Crm.Utils.dll">
       <publishTime>05/31/2016 15:17:25</publishTime>
@@ -324,7 +324,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/31/2016 15:16:55</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/06/2016 08:09:11</publishTime>
+      <publishTime>07/29/2016 09:52:53</publishTime>
     </File>
   </ItemGroup>
 </Project>

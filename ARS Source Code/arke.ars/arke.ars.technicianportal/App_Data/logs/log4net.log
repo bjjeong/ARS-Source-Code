@@ -4046,3 +4046,12 @@ System.Web.HttpException - A public action method 'NteIncrease' was not found on
 2016-07-27 11:58:58,886 [8] INFO  getting order with id 7a81a8aa-e13e-e611-9bd3-48e24478fb74
 2016-07-27 11:58:59,030 [8] INFO  customer name 03308 Office Depot SMS Assist, LLC
 2016-07-27 11:58:59,187 [8] INFO  workItemStatuses contains 2
+2016-07-27 15:00:14,751 [134] INFO  getting order with id 7a81a8aa-e13e-e611-9bd3-48e24478fb74
+2016-07-27 15:00:14,926 [134] INFO  customer name 03308 Office Depot SMS Assist, LLC
+2016-07-27 15:00:15,111 [134] INFO  workItemStatuses contains 2
+2016-07-27 15:08:51,910 [135] INFO  getting order with id 7a81a8aa-e13e-e611-9bd3-48e24478fb74
+2016-07-27 15:08:52,106 [135] INFO  customer name 03308 Office Depot SMS Assist, LLC
+2016-07-27 15:08:52,294 [135] INFO  workItemStatuses contains 2
+2016-07-28 15:04:56,561 [217] INFO  getting order with id ecf782fb-f354-e611-80ed-c4346bdcf181
+2016-07-28 15:04:57,502 [217] INFO  customer name 02154 Office Depot SMS Assist, LLC
+2016-07-28 15:04:58,120 [217] INFO  workItemStatuses contains 2

@@ -54,13 +54,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/31/2016 15:17:02</publishTime>
     </File>
     <File Include="bin/Arke.ARS.CommonWeb.dll">
-      <publishTime>06/17/2016 10:51:45</publishTime>
+      <publishTime>07/29/2016 09:52:35</publishTime>
     </File>
     <File Include="bin/Arke.ARS.Organization.dll">
-      <publishTime>06/17/2016 10:51:44</publishTime>
+      <publishTime>07/29/2016 09:52:34</publishTime>
     </File>
     <File Include="bin/Arke.ARS.TechnicianPortal.dll">
-      <publishTime>06/17/2016 10:55:32</publishTime>
+      <publishTime>07/29/2016 09:52:36</publishTime>
     </File>
     <File Include="bin/Arke.Crm.Utils.dll">
       <publishTime>05/31/2016 15:17:25</publishTime>
@@ -399,7 +399,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/31/2016 15:17:10</publishTime>
     </File>
     <File Include="Views/WorkOrder/Index.cshtml">
-      <publishTime>06/17/2016 10:48:25</publishTime>
+      <publishTime>07/18/2016 10:45:46</publishTime>
     </File>
     <File Include="Views/WorkOrder/_CheckIn.cshtml">
       <publishTime>06/17/2016 10:23:34</publishTime>
@@ -426,7 +426,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/31/2016 15:17:10</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>06/09/2016 10:29:17</publishTime>
+      <publishTime>07/29/2016 09:52:38</publishTime>
     </File>
   </ItemGroup>
 </Project>
