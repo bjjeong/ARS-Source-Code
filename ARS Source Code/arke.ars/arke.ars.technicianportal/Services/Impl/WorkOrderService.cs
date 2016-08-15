@@ -264,7 +264,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
             _context.SaveChanges();
         }
 
-        public void IncreaseNte(Guid workOrderId, Guid technicianId, decimal money, decimal hours, string item1, string item2, string item3, string item4, string item5, string price1, string price2, string price3, string price4, string price5, string quantity1, string quantity2, string quantity3, string quantity4, string quantity5)
+        public void IncreaseNte(Guid workOrderId, Guid technicianId, decimal money, decimal hours, string item1, string item2, string item3, string item4, string item5, string price1, string price2, string price3, string price4, string price5, string quantity1, string quantity2, string quantity3, string quantity4, string quantity5, string comment)
         {
             if (money < 0)
             {
@@ -279,11 +279,11 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
             Incident workOrder = _context.IncidentSet.First(i => i.Id == workOrderId);
 
             var technician = _context.ars_technicianSet.Single(t => t.ars_technicianId == technicianId);
-            CreateWorkOrderEventOnNteIncrease(workOrder, technician, money);
+            CreateWorkOrderEventOnNteIncrease(workOrder, technician, money, hours);
 
             var annotation = new Annotation
             {
-                NoteText = String.Format("NTE Increase Request:{19}Name:   {0}   Price: {1}   Quantity {2}{3}Name:   {4}   Price: {5}   Quantity {6}{7}Name:   {8}   Price: {9}   Quantity {10}{11}Name:   {12}   Price: {13}   Quantity {14}{15}Name:   {16}   Price: {17}   Quantity {18}", item1, price1, quantity1, Environment.NewLine, item2, price2, quantity2, Environment.NewLine, item3, price3, quantity3, Environment.NewLine, item4, price4, quantity4, Environment.NewLine, item5, price5, quantity5, Environment.NewLine),
+                NoteText = String.Format("NTE Increase Request: {20} hours requested{25}{19}Name:   {0}   Price: {1}   Quantity: {2}{3}Name:   {4}   Price: {5}   Quantity: {6}{7}Name:   {8}   Price: {9}   Quantity: {10}{11}Name:   {12}   Price: {13}   Quantity: {14}{15}Name:   {16}   Price: {17}   Quantity: {18}{21}{24}Comments:{22}{23}", item1, price1, quantity1, Environment.NewLine, item2, price2, quantity2, Environment.NewLine, item3, price3, quantity3, Environment.NewLine, item4, price4, quantity4, Environment.NewLine, item5, price5, quantity5, Environment.NewLine, hours, Environment.NewLine, Environment.NewLine, comment, Environment.NewLine, Environment.NewLine),
                 ObjectId = new EntityReference(Incident.EntityLogicalName, workOrderId)
             };
 
@@ -416,7 +416,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
             _context.AddObject(workorderevent);
         }
 
-        private void CreateWorkOrderEventOnNteIncrease(Incident workOrder, ars_technician technician, decimal money)
+        private void CreateWorkOrderEventOnNteIncrease(Incident workOrder, ars_technician technician, decimal money, decimal hours)
         {
             var eventTypecode = GetEventTypeValue(EventType.NteIncreaseRequest);
 
@@ -430,7 +430,8 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                 {
                     Value = Convert.ToInt32(eventTypecode.Key)
                 },
-                ars_Amount = new Money(money)
+                ars_Amount = new Money(money),
+                ars_Hours = hours
             };
 
             _context.AddObject(workorderevent);

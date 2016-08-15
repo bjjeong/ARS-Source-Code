@@ -4055,3 +4055,201 @@ System.Web.HttpException - A public action method 'NteIncrease' was not found on
 2016-07-28 15:04:56,561 [217] INFO  getting order with id ecf782fb-f354-e611-80ed-c4346bdcf181
 2016-07-28 15:04:57,502 [217] INFO  customer name 02154 Office Depot SMS Assist, LLC
 2016-07-28 15:04:58,120 [217] INFO  workItemStatuses contains 2
+2016-08-03 08:54:47,303 [7] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 08:54:47,702 [7] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 08:54:48,114 [7] INFO  workItemStatuses contains 2
+2016-08-03 08:54:57,246 [8] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 08:54:57,459 [8] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 08:54:57,619 [8] INFO  workItemStatuses contains 2
+2016-08-03 09:15:00,296 [7] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 09:15:00,548 [7] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 09:15:00,780 [7] INFO  workItemStatuses contains 2
+2016-08-03 09:25:27,772 [8] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 09:25:27,967 [8] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 09:25:28,191 [8] INFO  workItemStatuses contains 2
+2016-08-03 09:27:26,543 [7] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 09:27:29,293 [7] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 09:27:29,523 [7] INFO  workItemStatuses contains 2
+2016-08-03 09:29:19,481 [7] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 09:29:21,218 [7] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 09:29:21,429 [7] INFO  workItemStatuses contains 2
+2016-08-03 09:29:41,937 [8] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 09:29:42,083 [8] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 09:29:42,241 [8] INFO  workItemStatuses contains 2
+2016-08-03 09:34:19,104 [6] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 09:34:20,100 [6] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 09:34:20,670 [6] INFO  workItemStatuses contains 2
+2016-08-03 09:34:42,469 [6] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 09:34:42,740 [6] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 09:34:42,953 [6] INFO  workItemStatuses contains 2
+2016-08-03 09:47:13,842 [7] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 09:47:14,037 [7] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 09:47:14,306 [7] INFO  workItemStatuses contains 2
+2016-08-03 09:48:19,942 [6] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 09:48:20,117 [6] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 09:48:20,260 [6] INFO  workItemStatuses contains 2
+2016-08-03 09:48:39,175 [6] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 09:48:39,341 [6] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 09:48:39,882 [6] INFO  workItemStatuses contains 2
+2016-08-03 09:49:24,441 [6] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 09:49:24,592 [6] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 09:49:24,745 [6] INFO  workItemStatuses contains 2
+2016-08-03 09:52:00,417 [6] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 09:52:00,593 [6] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 09:52:00,783 [6] INFO  workItemStatuses contains 2
+2016-08-03 09:52:10,066 [8] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 09:52:10,609 [8] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 09:52:10,826 [8] INFO  workItemStatuses contains 2
+2016-08-03 09:53:47,323 [9] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 09:53:47,528 [9] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 09:53:47,726 [9] INFO  workItemStatuses contains 2
+2016-08-03 09:53:58,374 [9] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 09:53:58,526 [9] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 09:53:58,686 [9] INFO  workItemStatuses contains 2
+2016-08-03 09:55:26,716 [6] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 09:55:26,899 [6] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 09:55:27,083 [6] INFO  workItemStatuses contains 2
+2016-08-03 09:55:39,674 [7] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 09:55:39,837 [7] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 09:55:40,015 [7] INFO  workItemStatuses contains 2
+2016-08-03 09:59:48,868 [15] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 09:59:49,606 [15] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 09:59:49,761 [15] INFO  workItemStatuses contains 2
+2016-08-03 10:01:59,836 [15] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 10:02:00,120 [15] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 10:02:00,836 [15] INFO  workItemStatuses contains 2
+2016-08-03 10:02:40,300 [29] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 10:02:40,464 [29] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 10:02:40,614 [29] INFO  workItemStatuses contains 2
+2016-08-03 10:03:31,065 [15] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 10:03:31,229 [15] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 10:03:31,378 [15] INFO  workItemStatuses contains 2
+2016-08-03 10:03:52,592 [15] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 10:03:52,768 [15] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 10:03:52,955 [15] INFO  workItemStatuses contains 2
+2016-08-03 10:06:52,532 [15] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 10:06:53,180 [15] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 10:06:53,376 [15] INFO  workItemStatuses contains 2
+2016-08-03 10:07:32,829 [15] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 10:07:32,996 [15] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 10:07:33,158 [15] INFO  workItemStatuses contains 2
+2016-08-03 10:08:13,844 [23] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 10:08:14,005 [23] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 10:08:14,156 [23] INFO  workItemStatuses contains 2
+2016-08-03 10:08:34,254 [26] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 10:08:34,440 [26] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 10:08:34,586 [26] INFO  workItemStatuses contains 2
+2016-08-03 10:09:00,957 [26] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 10:09:01,173 [26] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 10:09:01,324 [26] INFO  workItemStatuses contains 2
+2016-08-03 10:09:43,198 [12] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 10:09:43,684 [12] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 10:09:43,861 [12] INFO  workItemStatuses contains 2
+2016-08-03 10:10:00,594 [26] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 10:10:00,751 [26] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 10:10:00,904 [26] INFO  workItemStatuses contains 2
+2016-08-03 13:12:24,211 [27] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 13:12:26,507 [27] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 13:12:26,723 [27] INFO  workItemStatuses contains 2
+2016-08-03 13:14:11,459 [27] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 13:14:11,735 [27] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 13:14:11,923 [27] INFO  workItemStatuses contains 2
+2016-08-03 13:18:27,993 [27] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 13:18:29,825 [27] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 13:18:30,038 [27] INFO  workItemStatuses contains 2
+2016-08-03 14:56:50,024 [146] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 14:56:55,532 [146] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 14:56:55,808 [146] INFO  workItemStatuses contains 2
+2016-08-03 14:57:18,103 [146] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 14:57:18,257 [146] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 14:57:18,413 [146] INFO  workItemStatuses contains 2
+2016-08-03 14:57:24,094 [33] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 14:57:24,281 [33] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 14:57:24,429 [33] INFO  workItemStatuses contains 2
+2016-08-03 14:57:26,364 [12] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 14:57:26,580 [12] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 14:57:26,735 [12] INFO  workItemStatuses contains 2
+2016-08-03 14:57:36,977 [146] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 14:57:37,195 [146] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 14:57:37,338 [146] INFO  workItemStatuses contains 2
+2016-08-03 14:57:45,684 [12] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 14:57:45,858 [12] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 14:57:46,013 [12] INFO  workItemStatuses contains 2
+2016-08-03 14:57:50,226 [12] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 14:57:50,387 [12] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 14:57:50,538 [12] INFO  workItemStatuses contains 2
+2016-08-03 14:57:52,866 [33] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 14:57:53,592 [33] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 14:57:53,769 [33] INFO  workItemStatuses contains 2
+2016-08-03 14:57:57,825 [33] INFO  getting order with id 5b3ee64a-ed54-e611-80ed-c4346bdcf181
+2016-08-03 14:57:58,057 [33] INFO  customer name 00270 Office Depot SMS Assist, LLC
+2016-08-03 14:57:58,203 [33] INFO  workItemStatuses contains 2
+2016-08-03 15:08:19,719 [14] INFO  getting order with id 206f3948-c659-e611-80ee-c4346bdcf181
+2016-08-03 15:08:19,993 [14] INFO  customer name 00487 Office Depot SMS Assist, LLC
+2016-08-03 15:08:20,254 [14] INFO  workItemStatuses contains 2
+2016-08-03 15:08:42,752 [16] INFO  getting order with id 206f3948-c659-e611-80ee-c4346bdcf181
+2016-08-03 15:08:42,950 [16] INFO  customer name 00487 Office Depot SMS Assist, LLC
+2016-08-03 15:08:43,216 [16] INFO  workItemStatuses contains 2
+2016-08-03 15:08:46,108 [147] INFO  getting order with id 206f3948-c659-e611-80ee-c4346bdcf181
+2016-08-03 15:08:46,267 [147] INFO  customer name 00487 Office Depot SMS Assist, LLC
+2016-08-03 15:08:46,451 [147] INFO  workItemStatuses contains 2
+2016-08-03 15:08:51,245 [14] INFO  getting order with id 206f3948-c659-e611-80ee-c4346bdcf181
+2016-08-03 15:08:51,454 [14] INFO  customer name 00487 Office Depot SMS Assist, LLC
+2016-08-03 15:08:51,812 [14] INFO  workItemStatuses contains 2
+2016-08-03 15:08:58,732 [147] INFO  getting order with id 206f3948-c659-e611-80ee-c4346bdcf181
+2016-08-03 15:08:58,952 [147] INFO  customer name 00487 Office Depot SMS Assist, LLC
+2016-08-03 15:08:59,146 [147] INFO  workItemStatuses contains 2
+2016-08-03 15:09:02,613 [147] INFO  getting order with id 206f3948-c659-e611-80ee-c4346bdcf181
+2016-08-03 15:09:02,767 [147] INFO  customer name 00487 Office Depot SMS Assist, LLC
+2016-08-03 15:09:02,918 [147] INFO  workItemStatuses contains 2
+2016-08-03 15:09:27,349 [147] INFO  getting order with id 206f3948-c659-e611-80ee-c4346bdcf181
+2016-08-03 15:09:27,612 [147] INFO  customer name 00487 Office Depot SMS Assist, LLC
+2016-08-03 15:09:27,793 [147] INFO  workItemStatuses contains 2
+2016-08-03 15:09:30,149 [147] INFO  getting order with id 206f3948-c659-e611-80ee-c4346bdcf181
+2016-08-03 15:09:30,312 [147] INFO  customer name 00487 Office Depot SMS Assist, LLC
+2016-08-03 15:09:30,524 [147] INFO  workItemStatuses contains 2
+2016-08-03 15:09:36,652 [14] INFO  getting order with id 206f3948-c659-e611-80ee-c4346bdcf181
+2016-08-03 15:09:36,808 [14] INFO  customer name 00487 Office Depot SMS Assist, LLC
+2016-08-03 15:09:37,017 [14] INFO  workItemStatuses contains 2
+2016-08-03 15:09:48,318 [147] INFO  getting order with id 206f3948-c659-e611-80ee-c4346bdcf181
+2016-08-03 15:09:48,475 [147] INFO  customer name 00487 Office Depot SMS Assist, LLC
+2016-08-03 15:09:48,673 [147] INFO  workItemStatuses contains 2
+2016-08-03 15:12:38,294 [22] INFO  getting order with id 206f3948-c659-e611-80ee-c4346bdcf181
+2016-08-03 15:12:40,035 [22] INFO  customer name 00487 Office Depot SMS Assist, LLC
+2016-08-03 15:12:40,314 [22] INFO  workItemStatuses contains 2
+2016-08-03 15:14:42,944 [22] INFO  getting order with id 206f3948-c659-e611-80ee-c4346bdcf181
+2016-08-03 15:14:43,616 [22] INFO  customer name 00487 Office Depot SMS Assist, LLC
+2016-08-03 15:14:43,841 [22] INFO  workItemStatuses contains 2
+2016-08-03 15:23:36,353 [19] INFO  getting order with id 206f3948-c659-e611-80ee-c4346bdcf181
+2016-08-03 15:23:36,699 [19] INFO  customer name 00487 Office Depot SMS Assist, LLC
+2016-08-03 15:23:36,854 [19] INFO  workItemStatuses contains 2
+2016-08-03 15:23:42,326 [19] INFO  getting order with id 206f3948-c659-e611-80ee-c4346bdcf181
+2016-08-03 15:23:42,859 [19] INFO  customer name 00487 Office Depot SMS Assist, LLC
+2016-08-03 15:23:43,008 [19] INFO  workItemStatuses contains 2
+2016-08-03 15:23:45,347 [19] INFO  getting order with id 206f3948-c659-e611-80ee-c4346bdcf181
+2016-08-03 15:23:45,511 [19] INFO  customer name 00487 Office Depot SMS Assist, LLC
+2016-08-03 15:23:45,661 [19] INFO  workItemStatuses contains 2
+2016-08-03 15:23:50,734 [139] INFO  getting order with id 206f3948-c659-e611-80ee-c4346bdcf181
+2016-08-03 15:23:50,950 [139] INFO  customer name 00487 Office Depot SMS Assist, LLC
+2016-08-03 15:23:51,097 [139] INFO  workItemStatuses contains 2
+2016-08-03 15:24:14,496 [19] INFO  getting order with id 206f3948-c659-e611-80ee-c4346bdcf181
+2016-08-03 15:24:14,643 [19] INFO  customer name 00487 Office Depot SMS Assist, LLC
+2016-08-03 15:24:14,797 [19] INFO  workItemStatuses contains 2
+2016-08-03 15:37:04,499 [136] INFO  getting order with id 206f3948-c659-e611-80ee-c4346bdcf181
+2016-08-03 15:37:04,807 [136] INFO  customer name 00487 Office Depot SMS Assist, LLC
+2016-08-03 15:37:04,965 [136] INFO  workItemStatuses contains 2
+2016-08-03 15:49:38,506 [126] INFO  getting order with id 206f3948-c659-e611-80ee-c4346bdcf181
+2016-08-03 15:49:40,744 [126] INFO  customer name 00487 Office Depot SMS Assist, LLC
+2016-08-03 15:49:40,984 [126] INFO  workItemStatuses contains 2
+2016-08-03 16:15:55,438 [142] INFO  getting order with id 206f3948-c659-e611-80ee-c4346bdcf181
+2016-08-03 16:15:55,843 [142] INFO  customer name 00487 Office Depot SMS Assist, LLC
+2016-08-03 16:15:56,036 [142] INFO  workItemStatuses contains 2
+2016-08-03 16:16:02,748 [123] INFO  getting order with id 206f3948-c659-e611-80ee-c4346bdcf181
+2016-08-03 16:16:02,919 [123] INFO  customer name 00487 Office Depot SMS Assist, LLC
+2016-08-03 16:16:03,068 [123] INFO  workItemStatuses contains 2
+2016-08-04 09:04:12,009 [106] INFO  getting order with id 206f3948-c659-e611-80ee-c4346bdcf181
+2016-08-04 09:04:15,170 [106] INFO  customer name 00487 Office Depot SMS Assist, LLC
+2016-08-04 09:04:15,567 [106] INFO  workItemStatuses contains 2
+2016-08-04 09:05:14,462 [108] INFO  getting order with id 206f3948-c659-e611-80ee-c4346bdcf181
+2016-08-04 09:05:15,028 [108] INFO  customer name 00487 Office Depot SMS Assist, LLC
+2016-08-04 09:05:15,238 [108] INFO  workItemStatuses contains 2
