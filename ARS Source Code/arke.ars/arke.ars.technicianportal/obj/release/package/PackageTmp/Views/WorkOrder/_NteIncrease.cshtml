@@ -16,36 +16,37 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <p class="help-block">
+                                    Current Time Left: <strong><span id="current">@Model.RemainingHours.ToString("F2")</span></strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                <label for="nte-time">How many more hours do you need *FROM THIS POINT ON?*</label>
+                                <input type="number" class="form-control" id="nte-time" name="hours" min="0" step="0.01" value="0" required>
+                            </div>
+                        </div>
+                    </div>
+   <!--                 <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <p class="help-block">
                                     Current Money Limit: <strong>$<span id="current">@Model.NteMoney.ToString("F2")</span></strong>
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4">
+                        <div class="col-sm-8">
                             <div class="form-group">
-                                <label for="nte-money" class="sr-only">Increase Money Limit On</label>
+                                <label for="nte-money">Increase Money Limit On</label>
                                 <input type="number" class="form-control" id="nte-money" name="money" placeholder="Amount" min="0" step="0.01" value="0">
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="form-group">
-                                <p class="help-block">
-                                    Current Time Limit: <strong><span id="current">@Model.NteHours.ToString("F2")</span></strong>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div class="form-group">
-                                <label for="nte-time" class="sr-only">Increase Time Limit On</label>
-                                <input type="number" class="form-control" id="nte-time" name="hours" placeholder="Hours" min="0" step="0.01" value="0">
-                            </div>
-                        </div>
-                    </div>
+   -->
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
@@ -53,7 +54,7 @@
                                     <thead>
                                         <tr>
                                             <th class="col-xs-8">Item</th>
-                                            <th class="col-xs-2">Price</th>
+                                            <th class="col-xs-2">Unit Price</th>
                                             <th class="col-xs-2">Quantity</th>
                                         </tr>
                                     </thead>
@@ -85,6 +86,9 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                                <br />
+                                <label for="comment" style="text-align:center;">Please document what you have done so far and why you need extra time</label>
+                                <textarea class="form-control" id="comment" name="comment" rows="3" required></textarea>
                             </div>
                         </div>
                     </div>

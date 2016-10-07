@@ -7,6 +7,33 @@
 @{
     ViewBag.Title = "CUSTOMER PORTAL";
 }
+@{ int openOrderCount = 0; }
+@{ int closedOrderCount = 0;}
+@{ int scheduledOrderCount = 0; }
+@foreach (var order in Model.OpenOrders) { openOrderCount++; }
+@foreach (var order in Model.ClosedOrders) { closedOrderCount++; }
+@foreach (var order in Model.OpenOrders) { if (order.Status == "Scheduled") { scheduledOrderCount++; } }
+<section class="two">
+    <div class="wrap">
+        <a href="#" class="btn btn-primary btn-xl btn-3d" id="billed">
+            Amount Billed
+            <div class="btn-content">$20000</div>
+        </a>
+        <a href="#" class="btn btn-success btn-xl btn-3d" id="open-jobs">
+            Open Jobs
+            <div class="btn-content">@openOrderCount</div>
+        </a>
+        <a href="#" class="btn btn-warning btn-xl btn-3d" id="scheduled-jobs">
+            Scheduled Jobs
+            <div class="btn-content">@scheduledOrderCount</div>
+        </a>
+        <a href="#" class="btn btn-danger btn-xl btn-3d" id="closed-jobs">
+            Closed Jobs
+            <div class="btn-content">@closedOrderCount</div>
+        </a>
+        <img src="@Model.imageUrl" alt="Mountain View" style="width:304px;height:228px;">
+    </div>
+</section>
 
 <div class="work-order">
     <div class="wrap-pagination hidden-xs">
@@ -19,6 +46,7 @@
             </div>
         </nav>
     </div>
+
     <h2>Work orders</h2>
     <!-- Nav tabs -->
     <ul class="nav nav-tabs no-print" role="tablist">
@@ -254,6 +282,32 @@
             });
 
             $("#need-by-date").datetimepicker();
+
+            $("#open-jobs").click(function () {
+                $("#closed").removeClass("active");
+                $("#open").addClass("active");
+                $("#closed-tab").removeClass("active");
+                $("#open-tab").addClass("active");
+                $(".closed-paging").hide();
+                $(".open-paging").show();
+                $('html,body').animate({
+                    scrollTop: $("#open").offset().top
+                },
+                    'slow');
+            });
+
+            $("#closed-jobs").click(function () {
+                $("#open").removeClass("active");
+                $("#closed").addClass("active");
+                $("#open-tab").removeClass("active");
+                $("#closed-tab").addClass("active");
+                $(".open-paging").hide();
+                $(".closed-paging").show();
+                $('html,body').animate({
+                    scrollTop: $("#closed").offset().top
+                },
+                    'slow');
+            });
         });
     </script>
 }
