@@ -4253,3 +4253,9 @@ System.Web.HttpException - A public action method 'NteIncrease' was not found on
 2016-08-04 09:05:14,462 [108] INFO  getting order with id 206f3948-c659-e611-80ee-c4346bdcf181
 2016-08-04 09:05:15,028 [108] INFO  customer name 00487 Office Depot SMS Assist, LLC
 2016-08-04 09:05:15,238 [108] INFO  workItemStatuses contains 2
+2016-09-16 10:46:09,496 [8] INFO  getting order with id 86aef44c-a434-e611-80fc-3863bb35cf88
+2016-09-16 10:46:09,978 [8] INFO  customer name 00320 Family Dollar SMS Assist, LLC
+2016-09-16 10:46:10,302 [8] INFO  workItemStatuses contains 2
+2016-10-06 11:24:56,459 [6] INFO  getting order with id 64686e8c-2587-e611-80f2-c4346bdcf181
+2016-10-06 11:24:56,646 [6] INFO  customer name 00178 Office Depot SMS Assist, LLC
+2016-10-06 11:24:56,848 [6] INFO  workItemStatuses contains 2

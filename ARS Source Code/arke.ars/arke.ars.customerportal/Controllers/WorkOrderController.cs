@@ -8,6 +8,12 @@ using Arke.ARS.CustomerPortal.Models;
 using Arke.ARS.CustomerPortal.Services;
 using Microsoft.AspNet.Identity;
 using PagedList;
+using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Query;
+using System.ServiceModel.Description;
+using Microsoft.Xrm.Sdk.Client;
+using Microsoft.Xrm.Client;
+using Microsoft.Xrm.Client.Services;
 
 namespace Arke.ARS.CustomerPortal.Controllers
 {
@@ -53,6 +59,23 @@ namespace Arke.ARS.CustomerPortal.Controllers
             }).ToList();
             locationItems.Insert(0, new SelectListItem());
 
+/*          
+            var connection = CrmConnection.Parse("Url=http://advancedretail.crm.dynamics.com; Username=bjeong@advancedretail.onmicrosoft.com; Password=bjtjjjaj1029.;");
+            var service = new OrganizationService(connection);
+            var context = new CrmOrganizationServiceContext(connection);
+            IOrganizationService _service = service;
+
+            QueryByAttribute query = new QueryByAttribute("account");
+            query.ColumnSet = new ColumnSet("entityimage_url");
+            query.AddAttributeValue("contact", "Brian Jeong");
+            EntityCollection binaryImageResults = _service.RetrieveMultiple(query);
+            String recordName = "blank.jpg";
+            foreach (var record in binaryImageResults.Entities)
+            {
+                recordName = record.Attributes["entityimage_url"].ToString();
+                Console.WriteLine(recordName);
+            }
+*/
             var model = new CustomerPortalModel(Url)
             {
                 OpenOrders = openOrders,
@@ -60,7 +83,8 @@ namespace Arke.ARS.CustomerPortal.Controllers
                 ShowOpen = showOpen ?? true,
                 Locations = locationItems,
                 ClosedWorkOrdersQuery = cq,
-                OpenWorkOrdersQuery = oq
+                OpenWorkOrdersQuery = oq,
+                //imageUrl = recordName
             };
 
             TempData["ReturnToListUrl"] = Request.RawUrl;

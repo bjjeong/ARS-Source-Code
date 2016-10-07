@@ -26,6 +26,7 @@ namespace Arke.ARS.CustomerPortal.Models
         public QueryModel OpenWorkOrdersQuery{ get; set; }
         public QueryModel ClosedWorkOrdersQuery { get; set; }
         public bool ShowOpen { get; set; }
+        public string imageUrl { get; set; }
 
         public string GetQueryLink(string columnName, bool forOpen)
         {
