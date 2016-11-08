@@ -13,6 +13,21 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="taxAmount">Tax Amount</label>
+                                <input type="text" class="form-control" rows="" id="taxAmount" name="taxAmount" required="required" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="subtotal">Subtotal</label>
+                                <input type="text" class="form-control" rows="" id="subtotal" name="subtotal" required="required" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p><strong>Purchase Order Items</strong></p>
                         <div class="form-group col-sm-2">
                             <label for="purchase-order-quantity" class="sr-only">Quantity</label>
                             <input type="number" class="form-control input-sm" id="purchase-order-quantity" placeholder="QTY" min="0">
@@ -31,6 +46,50 @@
                         </div>
                         <div class="form-group col-sm-1">
                             <button type="button" class="btn btn-primary" id="purchase-order-add-to-list">Add to list</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p><strong>Truck Stock Items</strong></p>
+                        <div class="form-group col-sm-2">
+                            <label for="truck-stock-quantity" class="sr-only">Quantity</label>
+                            <input type="number" class="form-control input-sm" id="truck-stock-quantity" placeholder="QTY" min="0">
+                        </div>
+                        <div class="form-group col-sm-3">
+                            <label for="truck-stock-name" class="sr-only">Item</label>
+                            <input class="form-control input-sm" id="truck-stock-name" placeholder="Item">
+                        </div>
+                        <div class="form-group col-sm-3">
+                            <label for="truck-stock-price" class="sr-only">Price each</label>
+                            <input class="form-control input-sm" id="truck-stock-price" placeholder="Price each" type="number" min="0">
+                        </div>
+                        <div class="form-group col-sm-2">
+                            <label for="truck-stock-total" class="sr-only">Total</label>
+                            <input class="form-control input-sm" id="truck-stock-total" readonly placeholder="Total">
+                        </div>
+                        <div class="form-group col-sm-1">
+                            <button type="button" class="btn btn-primary" id="truck-stock-add-to-list">Add to list</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p><strong>Other Equipment Items</strong></p>
+                        <div class="form-group col-sm-2">
+                            <label for="equipment-quantity" class="sr-only">Quantity</label>
+                            <input type="number" class="form-control input-sm" id="equipment-quantity" placeholder="QTY" min="0">
+                        </div>
+                        <div class="form-group col-sm-3">
+                            <label for="equipment-name" class="sr-only">Item</label>
+                            <input class="form-control input-sm" id="equipment-name" placeholder="Item">
+                        </div>
+                        <div class="form-group col-sm-3">
+                            <label for="equipment-price" class="sr-only">Price each</label>
+                            <input class="form-control input-sm" id="equipment-price" placeholder="Price each" type="number" min="0">
+                        </div>
+                        <div class="form-group col-sm-2">
+                            <label for="equipment-total" class="sr-only">Total</label>
+                            <input class="form-control input-sm" id="equipment-total" readonly placeholder="Total">
+                        </div>
+                        <div class="form-group col-sm-1">
+                            <button type="button" class="btn btn-primary" id="equipment-add-to-list">Add to list</button>
                         </div>
                     </div>
                     <div class="row">
@@ -57,7 +116,7 @@
                     <div class="row">
                         <div class="form-group col-sm-12">
                             NTE <strong>$@Model.NteMoney.ToString("F2")</strong>
-                        </div>
+                        </div> 
                     </div>
                     <div class="row">
                         <div class="col-sm-12">

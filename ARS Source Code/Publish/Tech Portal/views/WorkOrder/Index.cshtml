@@ -125,6 +125,26 @@
             $('#purchase-order-total').val(quantity * price);
         });
 
+        $('#truck-stock-price,#purchase-order-quantity').change(function () {
+            var quantity = parseFloat($('#truck-stock-quantity').val());
+            quantity = isNaN(quantity) ? 0 : quantity;
+
+            var price = parseFloat($('#truck-stock-price').val());
+            price = isNaN(price) ? 0 : price;
+
+            $('#truck-stock-total').val(quantity * price);
+        });
+
+        $('#equipment-price,#equipment-quantity').change(function () {
+            var quantity = parseFloat($('#equipment-quantity').val());
+            quantity = isNaN(quantity) ? 0 : quantity;
+
+            var price = parseFloat($('#equipment-price').val());
+            price = isNaN(price) ? 0 : price;
+
+            $('#equipment-total').val(quantity * price);
+        });
+
         var notificationService = new ARS.NotificationService();
         var animationService = new ARS.AnimationService();
 
@@ -145,7 +165,111 @@
                     return;
                 }
 
+                var taxAmount = parseFloat($('#taxAmount').val());
+                if (isNaN(taxAmount) || taxAmount <= 0) {
+                    notificationService.showError("Please specify the amount of tax paid on receipt");
+                    return; 
+                }
+
+                var subtotal = parseFloat($('#subtotal').val());
+                if (isNaN(subtotal) || subtotal <= 0) {
+                    notificationService.showError("Please specify the subtotal on receipt");
+                    return;
+                }
+
                 var item = $('#purchase-order-name').val();
+                if (!item) {
+                    notificationService.showError("Please specify purchase order item name");
+                    return;
+                }
+
+                var purchaseOrderItem = {
+                    id: GUID.create(),
+                    quantity: quantity,
+                    item: item,
+                    price: price * (1 + taxAmount/subtotal) * 1.35
+                };
+
+                $('#purchase-orders-grid').bootgrid("append", [purchaseOrderItem]);
+
+                $('#purchase-order-name').val("");
+                $('#purchase-order-quantity').val("");
+                $('#purchase-order-price').val("");
+                $('#purchase-order-total').val("");
+            });
+
+            $('#truck-stock-add-to-list').click(function () {
+                var quantity = parseFloat($('#truck-stock-quantity').val());
+                if (isNaN(quantity) || quantity <= 0) {
+                    notificationService.showError("Please specify purchase order item quantity");
+                    return;
+                }
+
+                var price = parseFloat($('#truck-stock-price').val());
+                if (isNaN(price) || price <= 0) {
+                    notificationService.showError("Please specify purchase order item price");
+                    return;
+                }
+
+                var taxAmount = parseFloat($('#taxAmount').val());
+                if (isNaN(taxAmount) || taxAmount <= 0) {
+                    notificationService.showError("Please specify the amount of tax paid on receipt");
+                    return;
+                }
+
+                var subtotal = parseFloat($('#subtotal').val());
+                if (isNaN(subtotal) || subtotal <= 0) {
+                    notificationService.showError("Please specify the subtotal on receipt");
+                    return;
+                }
+
+                var item = $('#truck-stock-name').val();
+                if (!item) {
+                    notificationService.showError("Please specify purchase order item name");
+                    return;
+                }
+
+                var purchaseOrderItem = {
+                    id: GUID.create(),
+                    quantity: quantity,
+                    item: item,
+                    price: price * 1.35
+                };
+
+                $('#purchase-orders-grid').bootgrid("append", [purchaseOrderItem]);
+
+                $('#truck-stock-name').val("");
+                $('#truck-stock-quantity').val("");
+                $('#truck-stock-price').val("");
+                $('#truck-stock-total').val("");
+            });
+
+            $('#equipment-add-to-list').click(function () {
+                var quantity = parseFloat($('#equipment-quantity').val());
+                if (isNaN(quantity) || quantity <= 0) {
+                    notificationService.showError("Please specify purchase order item quantity");
+                    return;
+                }
+
+                var price = parseFloat($('#equipment-price').val());
+                if (isNaN(price) || price <= 0) {
+                    notificationService.showError("Please specify purchase order item price");
+                    return;
+                }
+
+                var taxAmount = parseFloat($('#taxAmount').val());
+                if (isNaN(taxAmount) || taxAmount <= 0) {
+                    notificationService.showError("Please specify the amount of tax paid on receipt");
+                    return;
+                }
+
+                var subtotal = parseFloat($('#subtotal').val());
+                if (isNaN(subtotal) || subtotal <= 0) {
+                    notificationService.showError("Please specify the subtotal on receipt");
+                    return;
+                }
+
+                var item = $('#equipment-name').val();
                 if (!item) {
                     notificationService.showError("Please specify purchase order item name");
                     return;
@@ -160,10 +284,10 @@
 
                 $('#purchase-orders-grid').bootgrid("append", [purchaseOrderItem]);
 
-                $('#purchase-order-name').val("");
-                $('#purchase-order-quantity').val("");
-                $('#purchase-order-price').val("");
-                $('#purchase-order-total').val("");
+                $('#equipment-name').val("");
+                $('#equipment-quantity').val("");
+                $('#equipment-price').val("");
+                $('#equipment-total').val("");
             });
 
             var checkoutButton = function () {
@@ -275,6 +399,8 @@
                 for (var i = 0; i < rows.length; i++) {
                     total += rows[i].price * rows[i].quantity;
                 }
+
+                //total = total * 1.35;
 
                 $("#purchase-orders-grid-total").text(total);
             };
