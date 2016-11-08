@@ -91,7 +91,7 @@ namespace Arke.ARS.TechnicianPortal.Controllers
         public RedirectToRouteResult Sign(Guid id, string signature, string printname)
         {
             _workOrderService.AddSignature(id, GetCurrentTechnicianId(), signature, printname);
-            return RedirectToAction("Index", new { id });
+            return RedirectToAction("Index", new { id }); 
         }
 
         [HttpPost]
