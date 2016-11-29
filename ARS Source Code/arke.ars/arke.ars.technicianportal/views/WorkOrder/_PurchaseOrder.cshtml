@@ -49,50 +49,6 @@
                         </div>
                     </div>
                     <div class="row">
-                        <p><strong>Truck Stock Items</strong></p>
-                        <div class="form-group col-sm-2">
-                            <label for="truck-stock-quantity" class="sr-only">Quantity</label>
-                            <input type="number" class="form-control input-sm" id="truck-stock-quantity" placeholder="QTY" min="0">
-                        </div>
-                        <div class="form-group col-sm-3">
-                            <label for="truck-stock-name" class="sr-only">Item</label>
-                            <input class="form-control input-sm" id="truck-stock-name" placeholder="Item">
-                        </div>
-                        <div class="form-group col-sm-3">
-                            <label for="truck-stock-price" class="sr-only">Price each</label>
-                            <input class="form-control input-sm" id="truck-stock-price" placeholder="Price each" type="number" min="0">
-                        </div>
-                        <div class="form-group col-sm-2">
-                            <label for="truck-stock-total" class="sr-only">Total</label>
-                            <input class="form-control input-sm" id="truck-stock-total" readonly placeholder="Total">
-                        </div>
-                        <div class="form-group col-sm-1">
-                            <button type="button" class="btn btn-primary" id="truck-stock-add-to-list">Add to list</button>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <p><strong>Other Equipment Items</strong></p>
-                        <div class="form-group col-sm-2">
-                            <label for="equipment-quantity" class="sr-only">Quantity</label>
-                            <input type="number" class="form-control input-sm" id="equipment-quantity" placeholder="QTY" min="0">
-                        </div>
-                        <div class="form-group col-sm-3">
-                            <label for="equipment-name" class="sr-only">Item</label>
-                            <input class="form-control input-sm" id="equipment-name" placeholder="Item">
-                        </div>
-                        <div class="form-group col-sm-3">
-                            <label for="equipment-price" class="sr-only">Price each</label>
-                            <input class="form-control input-sm" id="equipment-price" placeholder="Price each" type="number" min="0">
-                        </div>
-                        <div class="form-group col-sm-2">
-                            <label for="equipment-total" class="sr-only">Total</label>
-                            <input class="form-control input-sm" id="equipment-total" readonly placeholder="Total">
-                        </div>
-                        <div class="form-group col-sm-1">
-                            <button type="button" class="btn btn-primary" id="equipment-add-to-list">Add to list</button>
-                        </div>
-                    </div>
-                    <div class="row">
                         <div class="col-sm-12">
                             <table class="table table-striped" id="purchase-orders-grid">
                                 <thead>
@@ -122,7 +78,7 @@
                         <div class="col-sm-12">
                             <div class="file">
                                 <label for="attach-receipt">Attach Receipt</label>
-                                <input type="file" id="attach-receipt" name="purchaseOrderReceipt">
+                                <input required type="file" id="attach-receipt" name="purchaseOrderReceipt">
                             </div>
                         </div>
                     </div>

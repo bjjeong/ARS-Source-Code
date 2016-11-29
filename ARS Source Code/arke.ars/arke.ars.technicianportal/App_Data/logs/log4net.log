@@ -4374,3 +4374,130 @@ Parameter name: parameters
 2016-11-08 08:57:40,014 [94] INFO  getting order with id 682318aa-d1a5-e611-80f5-3863bb36ade8
 2016-11-08 08:57:40,197 [94] INFO  customer name 00030Office Depot SMS Assist, LLC
 2016-11-08 08:57:40,386 [94] INFO  workItemStatuses contains 2
+2016-11-08 10:33:33,876 [10] INFO  getting order with id 8431dd7f-e1a5-e611-80f5-3863bb36ade8
+2016-11-08 10:33:34,137 [10] INFO  customer name 00030Office Depot SMS Assist, LLC
+2016-11-08 10:33:34,345 [10] INFO  workItemStatuses contains 2
+2016-11-08 10:33:43,056 [15] INFO  getting order with id 8431dd7f-e1a5-e611-80f5-3863bb36ade8
+2016-11-08 10:33:43,286 [15] INFO  customer name 00030Office Depot SMS Assist, LLC
+2016-11-08 10:33:43,505 [15] INFO  workItemStatuses contains 2
+2016-11-08 10:34:50,389 [15] INFO  getting order with id 8431dd7f-e1a5-e611-80f5-3863bb36ade8
+2016-11-08 10:34:50,576 [15] INFO  customer name 00030Office Depot SMS Assist, LLC
+2016-11-08 10:34:50,747 [15] INFO  workItemStatuses contains 2
+2016-11-11 10:05:24,763 [7] INFO  getting order with id 8431dd7f-e1a5-e611-80f5-3863bb36ade8
+2016-11-11 10:05:25,318 [7] INFO  customer name 00030Office Depot SMS Assist, LLC
+2016-11-11 10:05:25,726 [7] INFO  workItemStatuses contains 2
+2016-11-16 12:40:40,161 [7] INFO  getting order with id 8431dd7f-e1a5-e611-80f5-3863bb36ade8
+2016-11-16 12:40:40,429 [7] INFO  customer name 00030Office Depot SMS Assist, LLC
+2016-11-16 12:40:40,725 [7] INFO  workItemStatuses contains 2
+2016-11-16 13:05:49,357 [6] ERROR ==========================  Exception info see below  ===============================
+Unhandled exception
+Url: /WorkOrder/Index
+System.ArgumentException - The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Guid' for method 'System.Web.Mvc.ActionResult Index(System.Guid)' in 'Arke.ARS.TechnicianPortal.Controllers.WorkOrderController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+   at System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass48.<InvokeActionMethodFilterAsynchronouslyRecursive>b__41()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecute>b__15(IAsyncResult asyncResult, Controller controller)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+2016-11-16 13:06:23,455 [9] INFO  getting order with id 8431dd7f-e1a5-e611-80f5-3863bb36ade8
+2016-11-16 13:06:24,125 [9] INFO  customer name 00030Office Depot SMS Assist, LLC
+2016-11-16 13:06:24,576 [9] INFO  workItemStatuses contains 2
+2016-11-16 13:12:39,196 [6] INFO  getting order with id 8431dd7f-e1a5-e611-80f5-3863bb36ade8
+2016-11-16 13:12:39,449 [6] INFO  customer name 00030Office Depot SMS Assist, LLC
+2016-11-16 13:12:39,702 [6] INFO  workItemStatuses contains 2
+2016-11-16 13:13:00,356 [5] INFO  getting order with id 8431dd7f-e1a5-e611-80f5-3863bb36ade8
+2016-11-16 13:13:00,546 [5] INFO  customer name 00030Office Depot SMS Assist, LLC
+2016-11-16 13:13:00,722 [5] INFO  workItemStatuses contains 2
+2016-11-16 13:13:57,610 [8] INFO  getting order with id 8431dd7f-e1a5-e611-80f5-3863bb36ade8
+2016-11-16 13:13:57,795 [8] INFO  customer name 00030Office Depot SMS Assist, LLC
+2016-11-16 13:13:57,993 [8] INFO  workItemStatuses contains 2
+2016-11-16 14:03:44,093 [8] INFO  getting order with id 8431dd7f-e1a5-e611-80f5-3863bb36ade8
+2016-11-16 14:03:44,576 [8] INFO  customer name 00030Office Depot SMS Assist, LLC
+2016-11-16 14:03:44,890 [8] INFO  workItemStatuses contains 2
+2016-11-17 10:47:58,336 [686] INFO  getting order with id 8431dd7f-e1a5-e611-80f5-3863bb36ade8
+2016-11-17 10:48:02,838 [686] INFO  customer name 00030Office Depot SMS Assist, LLC
+2016-11-17 10:48:03,455 [686] INFO  workItemStatuses contains 2
+2016-11-18 14:16:02,550 [6] ERROR ==========================  Exception info see below  ===============================
+Unhandled exception
+Url: /WorkOrder/Index
+System.ArgumentException - The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Guid' for method 'System.Web.Mvc.ActionResult Index(System.Guid)' in 'Arke.ARS.TechnicianPortal.Controllers.WorkOrderController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+   at System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass48.<InvokeActionMethodFilterAsynchronouslyRecursive>b__41()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecute>b__15(IAsyncResult asyncResult, Controller controller)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+2016-11-18 14:17:29,672 [7] INFO  getting order with id 8431dd7f-e1a5-e611-80f5-3863bb36ade8
+2016-11-18 14:17:30,349 [7] INFO  customer name 00030Office Depot SMS Assist, LLC
+2016-11-18 14:17:30,884 [7] INFO  workItemStatuses contains 2
+2016-11-18 14:18:03,929 [7] INFO  getting order with id 8431dd7f-e1a5-e611-80f5-3863bb36ade8
+2016-11-18 14:18:04,120 [7] INFO  customer name 00030Office Depot SMS Assist, LLC
+2016-11-18 14:18:04,344 [7] INFO  workItemStatuses contains 2
+2016-11-18 14:20:16,832 [8] INFO  getting order with id 8431dd7f-e1a5-e611-80f5-3863bb36ade8
+2016-11-18 14:20:17,081 [8] INFO  customer name 00030Office Depot SMS Assist, LLC
+2016-11-18 14:20:17,353 [8] INFO  workItemStatuses contains 2
+2016-11-18 15:33:03,457 [57] INFO  getting order with id 8431dd7f-e1a5-e611-80f5-3863bb36ade8
+2016-11-18 15:33:07,845 [57] INFO  customer name 00030Office Depot SMS Assist, LLC
+2016-11-18 15:33:08,062 [57] INFO  workItemStatuses contains 2

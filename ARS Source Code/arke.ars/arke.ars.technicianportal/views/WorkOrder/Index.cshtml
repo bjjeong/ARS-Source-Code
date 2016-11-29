@@ -30,6 +30,7 @@
                 {
                     <button class="btn btn-default btn-work-order" disabled data-toggle="modal" data-target="#modal-nte-increase">NTE Increase</button>
                     <button class="btn btn-default btn-work-order" disabled data-toggle="modal" data-target="#modal-po-request">P.O. Request</button>
+                    <button class="btn btn-default btn-work-order" disabled data-toggle="modal" data-target="#modal-truck-equipment">Truck/Equipment</button>
                     <button class="btn btn-default btn-work-order" disabled data-toggle="modal" data-target="#modal-comments-attachments">Comments/Attachments</button>
                     <button class="btn btn-default btn-work-order signout" disabled data-toggle="modal" data-target="#modal-signature">Sign Work Order</button>
                 }
@@ -37,6 +38,7 @@
                 {
                     <button class="btn btn-primary btn-work-order" data-toggle="modal" data-target="#modal-nte-increase">NTE Increase</button>
                     <button class="btn btn-primary btn-work-order" data-toggle="modal" data-target="#modal-po-request">P.O. Request</button>
+                    <button class="btn btn-default btn-work-order" data-toggle="modal" data-target="#modal-truck-equipment">Truck/Equipment</button>
                     <button class="btn btn-primary btn-work-order" data-toggle="modal" data-target="#modal-comments-attachments">Comments/Attachments</button>
                     <button class="btn btn-danger btn-work-order signout" data-toggle="modal" data-target="#modal-signature">Sign Work Order</button>
                 }
@@ -93,6 +95,7 @@
     </div>
     @Html.Partial("_CommentsAndAttachments", Model)
     @Html.Partial("_PurchaseOrder", Model)
+    @Html.Partial("_TruckEquipment", Model)
     @Html.Partial("_CheckIn", Model)
     @Html.Partial("_CheckOut", Model)
     @Html.Partial("_NteIncrease", Model)
@@ -211,18 +214,6 @@
                     return;
                 }
 
-                var taxAmount = parseFloat($('#taxAmount').val());
-                if (isNaN(taxAmount) || taxAmount <= 0) {
-                    notificationService.showError("Please specify the amount of tax paid on receipt");
-                    return;
-                }
-
-                var subtotal = parseFloat($('#subtotal').val());
-                if (isNaN(subtotal) || subtotal <= 0) {
-                    notificationService.showError("Please specify the subtotal on receipt");
-                    return;
-                }
-
                 var item = $('#truck-stock-name').val();
                 if (!item) {
                     notificationService.showError("Please specify purchase order item name");
@@ -236,7 +227,7 @@
                     price: price * 1.35
                 };
 
-                $('#purchase-orders-grid').bootgrid("append", [purchaseOrderItem]);
+                $('#truck-stock-grid').bootgrid("append", [purchaseOrderItem]);
 
                 $('#truck-stock-name').val("");
                 $('#truck-stock-quantity').val("");
@@ -257,18 +248,6 @@
                     return;
                 }
 
-                var taxAmount = parseFloat($('#taxAmount').val());
-                if (isNaN(taxAmount) || taxAmount <= 0) {
-                    notificationService.showError("Please specify the amount of tax paid on receipt");
-                    return;
-                }
-
-                var subtotal = parseFloat($('#subtotal').val());
-                if (isNaN(subtotal) || subtotal <= 0) {
-                    notificationService.showError("Please specify the subtotal on receipt");
-                    return;
-                }
-
                 var item = $('#equipment-name').val();
                 if (!item) {
                     notificationService.showError("Please specify purchase order item name");
@@ -282,7 +261,7 @@
                     price: price
                 };
 
-                $('#purchase-orders-grid').bootgrid("append", [purchaseOrderItem]);
+                $('#truck-stock-grid').bootgrid("append", [purchaseOrderItem]);
 
                 $('#equipment-name').val("");
                 $('#equipment-quantity').val("");
@@ -400,9 +379,19 @@
                     total += rows[i].price * rows[i].quantity;
                 }
 
-                //total = total * 1.35;
-
                 $("#purchase-orders-grid-total").text(total);
+            };
+
+            var calculateTruckGrandTotal = function () {
+                var rows = $("#truck-stock-grid").bootgrid("getRows");
+
+                var total = 0;
+
+                for (var i = 0; i < rows.length; i++) {
+                    total += rows[i].price * rows[i].quantity;
+                }
+
+                $("#truck-stock-grid-total").text(total);
             };
 
             $('#purchase-orders-grid').bootgrid({
@@ -428,6 +417,29 @@
             }).on("appended.rs.jquery.bootgrid", calculateGrandTotal)
                 .on("removed.rs.jquery.bootgrid", calculateGrandTotal);
 
+            $('#truck-stock-grid').bootgrid({
+                formatters: {
+                    "commands": function (column, row) {
+                        return '<span class="glyphicon glyphicon-remove remove" data-row-id="' + row.id + '"></span>';
+                    },
+                    "currency": currencyFormatter,
+                    "total": totalFormatter
+                }
+            }).on("loaded.rs.jquery.bootgrid", function () {
+                $(this).find(".remove").click(function () {
+                    var id = $(this).data("row-id");
+                    $('#truck-stock-grid').bootgrid("remove", [id]);
+                });
+
+                var pages = $("#truck-stock-grid-footer ul.pagination>li[class*='page-'");
+                if (pages.length <= 1) {
+                    $("#truck-stock-grid-footer").hide();
+                } else {
+                    $("#truck-stock-grid-footer").show();
+                }
+            }).on("appended.rs.jquery.bootgrid", calculateTruckGrandTotal)
+                .on("removed.rs.jquery.bootgrid", calculateTruckGrandTotal);
+
 
             $("#submit-purchase-order-request").click(function (e) {
                 var form = $("#submit-purchase-order-request-form");
@@ -435,6 +447,33 @@
                 if (rows.length === 0) {
                     e.preventDefault();
                     notificationService.showError("Please add at least one purchase order item before submitting");
+                    return;
+                }
+
+                var receipt = $("#attach-receipt").length;
+                if (receipt.length == 0)
+                {
+                    e.preventDefault();
+                    notificationService.showError("Please attach a receipt before submitting");
+                }
+
+                for (var i = 0; i < rows.length; i++) {
+                    var row = rows[i];
+
+                    for (var prop in row) {
+                        if (row.hasOwnProperty(prop)) {
+                            $('<input type=hidden>').val(row[prop]).attr('name', 'orderItems[' + i + '].' + prop).appendTo(form);
+                        }
+                    }
+                }
+            });
+
+            $("#submit-truck-stock-request").click(function (e) {
+                var form = $("#submit-truck-stock-request-form");
+                var rows = $("#truck-stock-grid").bootgrid("getCurrentRows");
+                if (rows.length === 0) {
+                    e.preventDefault();
+                    notificationService.showError("Please add at least one item before submitting");
                     return;
                 }
 

@@ -117,6 +117,19 @@ namespace Arke.ARS.TechnicianPortal.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        public RedirectToRouteResult SubmitTruckEquipment(Guid id, OrderItemModel[] orderItems)
+        {
+            if (orderItems == null)
+            {
+                throw new ArgumentNullException("orderItems");
+            }
+
+            _purchaseOrderService.SubmitTruckEquipment(id, GetCurrentTechnicianId(), orderItems);
+            return RedirectToAction("Index", new { id });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult SetWorkItemStatus(Guid id, bool? isComplete, HttpPostedFileBase note)
         {
             _workOrderService.SetWorkItemStatus(id, GetCurrentTechnicianId(), isComplete == true, note);

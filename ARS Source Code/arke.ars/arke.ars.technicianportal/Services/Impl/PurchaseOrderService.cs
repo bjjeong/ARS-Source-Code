@@ -52,7 +52,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                 throw new ArgumentException(String.Format("Order item {0} quantity cannot be negative", orderItem.Item));
             }
         }
-
+            
         public void SubmitPurchaseOrderRequest(Guid workOrderId, Guid technicianId, OrderItemModel[] orderItems, HttpPostedFileBase purchaseOrderReceipt)
         {
             if (orderItems == null)
@@ -92,6 +92,34 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                 _context.AddObject(annotation);
             }
             
+            _context.SaveChanges();
+        }
+
+        public void SubmitTruckEquipment(Guid workOrderId, Guid technicianId, OrderItemModel[] orderItems)
+        {
+            if (orderItems == null)
+            {
+                throw new ArgumentNullException("orderItems");
+            }
+
+            orderItems.ForEach(VaildateOrderItem);
+
+            string techName = _technicianService.GetTechnicianName(technicianId);
+            var workOrder = _context.IncidentSet.Single(w => w.IncidentId == workOrderId);
+
+            foreach (OrderItemModel orderItem in orderItems)
+            {
+                var item = new ars_technicianitem
+                {
+                    ars_Price = new Money(orderItem.Price),
+                    ars_description = orderItem.Item,
+                    ars_Quantity = orderItem.Quantity,
+                    ars_OrderId = workOrder.ars_Order
+                };
+
+                _context.AddObject(item);
+            }
+
             _context.SaveChanges();
         }
     }

@@ -344,6 +344,7 @@
     <Content Include="Views\WorkOrder\_SignWorkOrder.cshtml" />
     <Content Include="Views\WorkOrder\_PurchaseOrder.cshtml" />
     <Content Include="Views\WorkOrder\_WorkItems.cshtml" />
+    <Content Include="Views\WorkOrder\_TruckEquipment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Arke.ARS.Organization\Arke.ARS.Organization.csproj">
