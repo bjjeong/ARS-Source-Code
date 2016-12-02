@@ -222,6 +222,7 @@
     </Compile>
     <Compile Include="Infrastructure\EnumUtility.cs" />
     <Compile Include="Models\AppointmentModel.cs" />
+    <Compile Include="Models\PurchaseOrderModel.cs" />
     <Compile Include="Models\CustomerModel.cs" />
     <Compile Include="Models\EventType.cs" />
     <Compile Include="Models\NteIncreaseRequestModel.cs" />

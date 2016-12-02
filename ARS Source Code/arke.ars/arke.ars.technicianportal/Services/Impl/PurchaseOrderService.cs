@@ -68,7 +68,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
             //Using ticks as a way to have unique PO #'s
             long time = DateTime.Now.Ticks;
             String fileName = Convert.ToString(time);
-            fileName.Substring(fileName.Length - 15);
+            //fileName.Substring(fileName.Length - 15);
 
             foreach (OrderItemModel orderItem in orderItems)
             {
