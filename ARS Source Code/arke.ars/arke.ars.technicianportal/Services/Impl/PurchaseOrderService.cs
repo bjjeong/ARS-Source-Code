@@ -64,6 +64,11 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
 
             string techName = _technicianService.GetTechnicianName(technicianId);
             var workOrder = _context.IncidentSet.Single(w => w.IncidentId == workOrderId);
+            
+            //Using ticks as a way to have unique PO #'s
+            long time = DateTime.Now.Ticks;
+            String fileName = Convert.ToString(time);
+            fileName.Substring(fileName.Length - 15);
 
             foreach (OrderItemModel orderItem in orderItems)
             {
@@ -72,7 +77,8 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                     ars_Price = new Money(orderItem.Price),
                     ars_description = orderItem.Item,
                     ars_Quantity = orderItem.Quantity,
-                    ars_OrderId = workOrder.ars_Order
+                    ars_OrderId = workOrder.ars_Order,
+                    new_ponumber = fileName
                 };
 
                 _context.AddObject(item);

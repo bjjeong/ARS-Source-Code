@@ -4501,3 +4501,12 @@ Parameter name: parameters
 2016-11-18 15:33:03,457 [57] INFO  getting order with id 8431dd7f-e1a5-e611-80f5-3863bb36ade8
 2016-11-18 15:33:07,845 [57] INFO  customer name 00030Office Depot SMS Assist, LLC
 2016-11-18 15:33:08,062 [57] INFO  workItemStatuses contains 2
+2016-12-01 10:58:23,554 [15] INFO  getting order with id 8431dd7f-e1a5-e611-80f5-3863bb36ade8
+2016-12-01 10:58:24,066 [15] INFO  customer name 00030Office Depot SMS Assist, LLC
+2016-12-01 10:58:24,404 [15] INFO  workItemStatuses contains 2
+2016-12-01 10:59:16,878 [19] INFO  getting order with id 8431dd7f-e1a5-e611-80f5-3863bb36ade8
+2016-12-01 10:59:17,075 [19] INFO  customer name 00030Office Depot SMS Assist, LLC
+2016-12-01 10:59:17,332 [19] INFO  workItemStatuses contains 2
+2016-12-01 11:04:09,979 [19] INFO  getting order with id 8431dd7f-e1a5-e611-80f5-3863bb36ade8
+2016-12-01 11:04:10,194 [19] INFO  customer name 00030Office Depot SMS Assist, LLC
+2016-12-01 11:04:10,441 [19] INFO  workItemStatuses contains 2
