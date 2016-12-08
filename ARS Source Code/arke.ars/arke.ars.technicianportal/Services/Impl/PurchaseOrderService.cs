@@ -72,12 +72,24 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
 
             foreach (OrderItemModel orderItem in orderItems)
             {
+                /*
                 var item = new ars_technicianitem
                 {
                     ars_Price = new Money(orderItem.Price),
                     ars_description = orderItem.Item,
                     ars_Quantity = orderItem.Quantity,
                     ars_OrderId = workOrder.ars_Order,
+                    new_ponumber = fileName
+                };
+
+                _context.AddObject(item); */
+
+                var item = new SalesOrderDetail
+                {
+                    PricePerUnit = new Money(orderItem.Price),
+                    ProductDescription = orderItem.Item,
+                    Quantity = orderItem.Quantity,
+                    SalesOrderId = workOrder.ars_Order,
                     new_ponumber = fileName
                 };
 
@@ -115,12 +127,12 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
 
             foreach (OrderItemModel orderItem in orderItems)
             {
-                var item = new ars_technicianitem
+                var item = new SalesOrderDetail
                 {
-                    ars_Price = new Money(orderItem.Price),
-                    ars_description = orderItem.Item,
-                    ars_Quantity = orderItem.Quantity,
-                    ars_OrderId = workOrder.ars_Order
+                    PricePerUnit = new Money(orderItem.Price),
+                    ProductDescription = orderItem.Item,
+                    Quantity = orderItem.Quantity,
+                    SalesOrderId = workOrder.ars_Order,
                 };
 
                 _context.AddObject(item);
