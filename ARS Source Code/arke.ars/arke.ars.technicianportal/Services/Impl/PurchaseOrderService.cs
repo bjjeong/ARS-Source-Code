@@ -72,8 +72,8 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
 
             foreach (OrderItemModel orderItem in orderItems)
             {
-                /*
-                var item = new ars_technicianitem
+
+                var item1 = new ars_technicianitem
                 {
                     ars_Price = new Money(orderItem.Price),
                     ars_description = orderItem.Item,
@@ -82,15 +82,17 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                     new_ponumber = fileName
                 };
 
-                _context.AddObject(item); */
+                _context.AddObject(item1);
 
                 var item = new SalesOrderDetail
                 {
-                    PricePerUnit = new Money(orderItem.Price),
+                    PricePerUnit = new Money(orderItem.RealPrice),
+                    //new_markupprice = new Money(orderItem.Price),
                     ProductDescription = orderItem.Item,
                     Quantity = orderItem.Quantity,
                     SalesOrderId = workOrder.ars_Order,
-                    new_ponumber = fileName
+                    new_ponumber = fileName,
+                    IsProductOverridden = true
                 };
 
                 _context.AddObject(item);
@@ -127,12 +129,24 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
 
             foreach (OrderItemModel orderItem in orderItems)
             {
+                var item1 = new ars_technicianitem
+                {
+                    ars_Price = new Money(orderItem.Price),
+                    ars_description = orderItem.Item,
+                    ars_Quantity = orderItem.Quantity,
+                    ars_OrderId = workOrder.ars_Order,
+                };
+
+                _context.AddObject(item1);
+
                 var item = new SalesOrderDetail
                 {
-                    PricePerUnit = new Money(orderItem.Price),
+                    PricePerUnit = new Money(orderItem.RealPrice),
+                    //new_markupprice = new Money(orderItem.Price),
                     ProductDescription = orderItem.Item,
                     Quantity = orderItem.Quantity,
                     SalesOrderId = workOrder.ars_Order,
+                    IsProductOverridden = true
                 };
 
                 _context.AddObject(item);

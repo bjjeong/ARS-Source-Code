@@ -13,5 +13,8 @@ namespace Arke.ARS.TechnicianPortal.Models
 
         [Range(0, Int64.MaxValue)]
         public decimal Price { get; set; }
+
+        [Range(0, Int64.MaxValue)]
+        public decimal RealPrice { get; set; }
     }
 }

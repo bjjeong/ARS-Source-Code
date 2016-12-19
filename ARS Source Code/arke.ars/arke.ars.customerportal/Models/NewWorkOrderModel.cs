@@ -15,5 +15,6 @@ namespace Arke.ARS.CustomerPortal.Models
         public string Description { get; set; }
         public HttpPostedFileBase Attachment { get; set; }
         public string PO { get; set; }
+        public string Trade { get; set; }
     }
 }

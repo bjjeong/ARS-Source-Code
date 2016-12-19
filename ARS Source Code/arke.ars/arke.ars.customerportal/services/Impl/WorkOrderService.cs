@@ -326,6 +326,20 @@ namespace Arke.ARS.CustomerPortal.Services.Impl
             var customerReference = _context.AccountSet.Single(a => a.PrimaryContactId.Id == contactId).ToEntityReference();
             var locationReference = _context.AccountSet.Single(l => l.AccountId == model.Locations).ToEntityReference();
 
+            OptionSetValue myOptionSet = new OptionSetValue();
+            if (model.Trade == "General Maintenance")
+                myOptionSet.Value = 100000003;
+            else if (model.Trade == "Electrical")
+                myOptionSet.Value = 100000001;
+            else if (model.Trade == "HVAC")
+                myOptionSet.Value = 100000002;
+            else if (model.Trade == "Plumbing")
+                myOptionSet.Value = 100000000;
+            else if (model.Trade == "Refrigeration")
+                myOptionSet.Value = 100000004;
+            else
+                myOptionSet.Value = 100000003;
+
             var order = new Incident
             {
                 ars_Location = locationReference,
@@ -334,7 +348,8 @@ namespace Arke.ARS.CustomerPortal.Services.Impl
                 Description = model.Description,
                 ars_CompleteByDate = model.NeedByDate == DateTime.MinValue ? (DateTime?)null : model.NeedByDate,
                 CustomerId = customerReference,
-                new_PO = model.PO
+                new_PO = model.PO,
+                new_TradeType = myOptionSet
             };
 
             _context.AddObject(order);

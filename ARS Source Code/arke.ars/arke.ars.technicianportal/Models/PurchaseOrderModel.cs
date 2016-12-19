@@ -11,5 +11,7 @@ namespace Arke.ARS.TechnicianPortal.Models
         public string Price { get; set; }
 
         public string PO { get; set; }
+
+        public string RealPrice { get; set; }
     }
 }

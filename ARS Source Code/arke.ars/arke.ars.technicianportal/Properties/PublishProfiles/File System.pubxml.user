@@ -54,13 +54,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/31/2016 15:17:02</publishTime>
     </File>
     <File Include="bin/Arke.ARS.CommonWeb.dll">
-      <publishTime>12/02/2016 08:03:12</publishTime>
+      <publishTime>12/19/2016 14:40:05</publishTime>
     </File>
     <File Include="bin/Arke.ARS.Organization.dll">
-      <publishTime>12/02/2016 08:03:11</publishTime>
+      <publishTime>12/19/2016 14:40:05</publishTime>
     </File>
     <File Include="bin/Arke.ARS.TechnicianPortal.dll">
-      <publishTime>12/02/2016 08:03:13</publishTime>
+      <publishTime>12/19/2016 14:41:37</publishTime>
     </File>
     <File Include="bin/Arke.Crm.Utils.dll">
       <publishTime>05/31/2016 15:17:25</publishTime>
@@ -342,7 +342,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/31/2016 15:17:14</publishTime>
     </File>
     <File Include="Scripts/jquery-2.1.4.min.js">
-      <publishTime>05/31/2016 15:17:14</publishTime>
+      <publishTime>12/16/2016 10:21:24</publishTime>
     </File>
     <File Include="Scripts/jquery-2.1.4.min.map">
       <publishTime>05/31/2016 15:17:14</publishTime>
@@ -399,7 +399,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/31/2016 15:17:10</publishTime>
     </File>
     <File Include="Views/WorkOrder/Index.cshtml">
-      <publishTime>12/01/2016 12:58:32</publishTime>
+      <publishTime>12/14/2016 11:41:26</publishTime>
     </File>
     <File Include="Views/WorkOrder/_CheckIn.cshtml">
       <publishTime>06/17/2016 10:23:34</publishTime>
@@ -414,13 +414,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/03/2016 13:18:25</publishTime>
     </File>
     <File Include="Views/WorkOrder/_PurchaseOrder.cshtml">
-      <publishTime>11/18/2016 14:19:56</publishTime>
+      <publishTime>12/07/2016 10:01:58</publishTime>
     </File>
     <File Include="Views/WorkOrder/_SignWorkOrder.cshtml">
       <publishTime>06/16/2016 13:06:02</publishTime>
     </File>
     <File Include="Views/WorkOrder/_TruckEquipment.cshtml">
-      <publishTime>11/16/2016 13:11:45</publishTime>
+      <publishTime>12/07/2016 11:03:07</publishTime>
     </File>
     <File Include="Views/WorkOrder/_WorkItems.cshtml">
       <publishTime>05/31/2016 15:17:10</publishTime>

@@ -4842,3 +4842,215 @@ Exception rethrown at [0]:
 2016-12-07 16:02:10,480 [62] INFO  getting order with id 70c9b53f-cbbc-e611-80f8-3863bb36ade8
 2016-12-07 16:02:11,228 [62] INFO  customer name 00045 Office Depot SMS Assist, LLC
 2016-12-07 16:02:11,439 [62] INFO  workItemStatuses contains 2
+2016-12-08 11:55:12,478 [138] INFO  getting order with id e1186ced-7fbd-e611-80f7-3863bb347a00
+2016-12-08 11:55:13,006 [138] INFO  customer name 00016 Office Depot SMS Assist, LLC
+2016-12-08 11:55:13,311 [138] INFO  workItemStatuses contains 2
+2016-12-08 11:55:22,690 [140] INFO  getting order with id e1186ced-7fbd-e611-80f7-3863bb347a00
+2016-12-08 11:55:23,318 [140] INFO  customer name 00016 Office Depot SMS Assist, LLC
+2016-12-08 11:55:23,559 [140] INFO  workItemStatuses contains 2
+2016-12-12 15:40:42,800 [6] INFO  getting order with id 5bbd0bd8-c3c0-e611-80f7-3863bb347a00
+2016-12-12 15:40:43,105 [6] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-12 15:40:43,405 [6] INFO  workItemStatuses contains 2
+2016-12-12 15:41:11,626 [6] INFO  getting order with id 5bbd0bd8-c3c0-e611-80f7-3863bb347a00
+2016-12-12 15:41:11,823 [6] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-12 15:41:12,026 [6] INFO  workItemStatuses contains 2
+2016-12-12 15:41:24,041 [8] INFO  getting order with id 5bbd0bd8-c3c0-e611-80f7-3863bb347a00
+2016-12-12 15:41:24,241 [8] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-12 15:41:24,430 [8] INFO  workItemStatuses contains 2
+2016-12-12 15:42:21,482 [6] INFO  getting order with id 5bbd0bd8-c3c0-e611-80f7-3863bb347a00
+2016-12-12 15:42:21,671 [6] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-12 15:42:21,862 [6] INFO  workItemStatuses contains 2
+2016-12-12 15:43:44,582 [9] INFO  getting order with id 5bbd0bd8-c3c0-e611-80f7-3863bb347a00
+2016-12-12 15:43:44,790 [9] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-12 15:43:44,980 [9] INFO  workItemStatuses contains 2
+2016-12-12 15:44:22,009 [12] INFO  getting order with id 5bbd0bd8-c3c0-e611-80f7-3863bb347a00
+2016-12-12 15:44:22,516 [12] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-12 15:44:23,232 [12] INFO  workItemStatuses contains 2
+2016-12-12 15:44:56,269 [9] INFO  getting order with id 5bbd0bd8-c3c0-e611-80f7-3863bb347a00
+2016-12-12 15:44:56,498 [9] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-12 15:44:56,709 [9] INFO  workItemStatuses contains 2
+2016-12-14 11:44:33,740 [6] INFO  getting order with id 5bbd0bd8-c3c0-e611-80f7-3863bb347a00
+2016-12-14 11:44:34,220 [6] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-14 11:44:34,574 [6] INFO  workItemStatuses contains 2
+2016-12-14 11:44:45,754 [9] INFO  getting order with id 5bbd0bd8-c3c0-e611-80f7-3863bb347a00
+2016-12-14 11:44:45,964 [9] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-14 11:44:46,164 [9] INFO  workItemStatuses contains 2
+2016-12-14 11:45:13,975 [8] INFO  getting order with id 5bbd0bd8-c3c0-e611-80f7-3863bb347a00
+2016-12-14 11:45:14,177 [8] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-14 11:45:14,377 [8] INFO  workItemStatuses contains 2
+2016-12-14 11:55:54,588 [21] INFO  getting order with id 5bbd0bd8-c3c0-e611-80f7-3863bb347a00
+2016-12-14 11:55:55,117 [21] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-14 11:55:55,406 [21] INFO  workItemStatuses contains 2
+2016-12-14 12:10:36,153 [31] ERROR ==========================  Exception info see below  ===============================
+Unhandled exception
+Url: /WorkOrder/SubmitPurchaseOrderRequest
+Microsoft.Xrm.Sdk.SaveChangesException - An error occured while processing this request.
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceContext.SaveChanges(SaveChangesOptions options)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceContext.SaveChanges()
+   at Arke.ARS.Organization.Context.ArsOrganizationContext.Arke.Crm.Utils.IOrganizationServiceContext.SaveChanges()
+   at Arke.ARS.TechnicianPortal.Services.Impl.PurchaseOrderService.SubmitPurchaseOrderRequest(Guid workOrderId, Guid technicianId, OrderItemModel[] orderItems, HttpPostedFileBase purchaseOrderReceipt) in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal\Services\Impl\PurchaseOrderService.cs:line 113
+   at Arke.ARS.TechnicianPortal.Controllers.WorkOrderController.SubmitPurchaseOrderRequest(Guid id, OrderItemModel[] orderItems, HttpPostedFileBase purchaseOrderReceipt) in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal\Controllers\WorkOrderController.cs:line 114
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass48.<InvokeActionMethodFilterAsynchronouslyRecursive>b__41()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecute>b__15(IAsyncResult asyncResult, Controller controller)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+System.ServiceModel.FaultException`1[Microsoft.Xrm.Sdk.OrganizationServiceFault] - Cannot find record to be updated
+
+Server stack trace: 
+   at System.ServiceModel.Channels.ServiceChannel.HandleReply(ProxyOperationRuntime operation, ProxyRpc& rpc)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at Microsoft.Xrm.Sdk.IOrganizationService.Execute(OrganizationRequest request)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceProxy.ExecuteCore(OrganizationRequest request)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceProxy.Execute(OrganizationRequest request)
+   at Microsoft.Xrm.Client.Services.OrganizationService.<>c__DisplayClass19.<Execute>b__18(IOrganizationService s)
+   at Microsoft.Xrm.Client.Services.OrganizationService.InnerOrganizationService.UsingService[TResult](Func`2 action)
+   at Microsoft.Xrm.Client.Services.OrganizationService.Execute(OrganizationRequest request)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceContext.Execute(OrganizationRequest request)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceContext.SaveChange(OrganizationRequest request, IList`1 results)
+
+
+2016-12-14 12:12:05,044 [7] INFO  getting order with id 5bbd0bd8-c3c0-e611-80f7-3863bb347a00
+2016-12-14 12:12:05,304 [7] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-14 12:12:05,580 [7] INFO  workItemStatuses contains 2
+2016-12-14 12:13:25,678 [7] INFO  getting order with id 5bbd0bd8-c3c0-e611-80f7-3863bb347a00
+2016-12-14 12:13:25,883 [7] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-14 12:13:26,108 [7] INFO  workItemStatuses contains 2
+2016-12-14 12:15:04,808 [8] INFO  getting order with id 5bbd0bd8-c3c0-e611-80f7-3863bb347a00
+2016-12-14 12:15:05,044 [8] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-14 12:15:05,313 [8] INFO  workItemStatuses contains 2
+2016-12-14 12:16:08,357 [9] INFO  getting order with id 5bbd0bd8-c3c0-e611-80f7-3863bb347a00
+2016-12-14 12:16:08,617 [9] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-14 12:16:08,920 [9] INFO  workItemStatuses contains 2
+2016-12-14 12:16:31,914 [6] INFO  getting order with id 5bbd0bd8-c3c0-e611-80f7-3863bb347a00
+2016-12-14 12:16:32,124 [6] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-14 12:16:32,342 [6] INFO  workItemStatuses contains 2
+2016-12-14 12:19:19,188 [11] INFO  getting order with id 5bbd0bd8-c3c0-e611-80f7-3863bb347a00
+2016-12-14 12:19:24,240 [11] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-14 12:19:24,481 [11] INFO  workItemStatuses contains 2
+2016-12-14 12:27:24,240 [6] INFO  getting order with id 5bbd0bd8-c3c0-e611-80f7-3863bb347a00
+2016-12-14 12:27:24,562 [6] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-14 12:27:24,830 [6] INFO  workItemStatuses contains 2
+2016-12-14 12:29:24,612 [6] INFO  getting order with id 5bbd0bd8-c3c0-e611-80f7-3863bb347a00
+2016-12-14 12:29:24,877 [6] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-14 12:29:25,187 [6] INFO  workItemStatuses contains 2
+2016-12-14 12:32:55,366 [9] INFO  getting order with id 5bbd0bd8-c3c0-e611-80f7-3863bb347a00
+2016-12-14 12:32:55,637 [9] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-14 12:32:55,923 [9] INFO  workItemStatuses contains 2
+2016-12-14 12:33:19,727 [6] INFO  getting order with id 5bbd0bd8-c3c0-e611-80f7-3863bb347a00
+2016-12-14 12:33:19,912 [6] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-14 12:33:20,104 [6] INFO  workItemStatuses contains 2
+2016-12-14 12:34:36,828 [9] INFO  getting order with id 5bbd0bd8-c3c0-e611-80f7-3863bb347a00
+2016-12-14 12:34:37,035 [9] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-14 12:34:37,233 [9] INFO  workItemStatuses contains 2
+2016-12-14 12:54:44,676 [10] INFO  getting order with id 5bbd0bd8-c3c0-e611-80f7-3863bb347a00
+2016-12-14 12:54:45,334 [10] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-14 12:54:45,654 [10] INFO  workItemStatuses contains 2
+2016-12-14 12:55:47,644 [10] INFO  getting order with id 5bbd0bd8-c3c0-e611-80f7-3863bb347a00
+2016-12-14 12:55:47,816 [10] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-14 12:55:48,004 [10] INFO  workItemStatuses contains 2
+2016-12-14 12:55:54,221 [6] INFO  getting order with id 5bbd0bd8-c3c0-e611-80f7-3863bb347a00
+2016-12-14 12:55:54,447 [6] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-14 12:55:54,635 [6] INFO  workItemStatuses contains 2
+2016-12-14 12:58:43,342 [6] INFO  getting order with id 5bbd0bd8-c3c0-e611-80f7-3863bb347a00
+2016-12-14 12:58:43,634 [6] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-14 12:58:43,919 [6] INFO  workItemStatuses contains 2
+2016-12-14 12:59:17,659 [9] INFO  getting order with id 5bbd0bd8-c3c0-e611-80f7-3863bb347a00
+2016-12-14 12:59:17,904 [9] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-14 12:59:18,093 [9] INFO  workItemStatuses contains 2
+2016-12-14 13:01:06,163 [9] INFO  getting order with id 5bbd0bd8-c3c0-e611-80f7-3863bb347a00
+2016-12-14 13:01:06,434 [9] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-14 13:01:06,714 [9] INFO  workItemStatuses contains 2
+2016-12-14 13:13:19,699 [25] INFO  getting order with id 0c57e8cf-41c2-e611-80f7-3863bb347a00
+2016-12-14 13:13:19,947 [25] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-14 13:13:20,204 [25] INFO  workItemStatuses contains 2
+2016-12-14 13:13:29,243 [25] INFO  getting order with id 0c57e8cf-41c2-e611-80f7-3863bb347a00
+2016-12-14 13:13:29,445 [25] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-14 13:13:29,627 [25] INFO  workItemStatuses contains 2
+2016-12-14 13:14:41,312 [28] INFO  getting order with id 0c57e8cf-41c2-e611-80f7-3863bb347a00
+2016-12-14 13:14:41,499 [28] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-14 13:14:41,744 [28] INFO  workItemStatuses contains 2
+2016-12-14 13:18:30,339 [37] INFO  getting order with id 0c57e8cf-41c2-e611-80f7-3863bb347a00
+2016-12-14 13:18:30,561 [37] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-14 13:18:30,994 [37] INFO  workItemStatuses contains 2
+2016-12-14 13:20:04,370 [35] INFO  getting order with id 0c57e8cf-41c2-e611-80f7-3863bb347a00
+2016-12-14 13:20:04,557 [35] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-14 13:20:04,759 [35] INFO  workItemStatuses contains 2
+2016-12-14 13:20:24,671 [36] INFO  getting order with id 0c57e8cf-41c2-e611-80f7-3863bb347a00
+2016-12-14 13:20:25,315 [36] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-14 13:20:25,530 [36] INFO  workItemStatuses contains 2
+2016-12-14 13:21:46,941 [32] INFO  getting order with id 0c57e8cf-41c2-e611-80f7-3863bb347a00
+2016-12-14 13:21:47,238 [32] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-14 13:21:47,452 [32] INFO  workItemStatuses contains 2
+2016-12-14 14:07:12,906 [56] INFO  getting order with id 0c57e8cf-41c2-e611-80f7-3863bb347a00
+2016-12-14 14:07:13,110 [56] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-14 14:07:13,299 [56] INFO  workItemStatuses contains 2
+2016-12-14 14:17:14,927 [58] INFO  getting order with id 0c57e8cf-41c2-e611-80f7-3863bb347a00
+2016-12-14 14:17:15,224 [58] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-14 14:17:15,409 [58] INFO  workItemStatuses contains 2
+2016-12-19 08:27:31,441 [11] INFO  getting order with id 0c57e8cf-41c2-e611-80f7-3863bb347a00
+2016-12-19 08:27:31,890 [11] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-19 08:27:32,334 [11] INFO  workItemStatuses contains 2
+2016-12-19 08:27:39,882 [6] INFO  getting order with id 0c57e8cf-41c2-e611-80f7-3863bb347a00
+2016-12-19 08:27:40,071 [6] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-19 08:27:40,250 [6] INFO  workItemStatuses contains 2
+2016-12-19 11:10:51,734 [14] INFO  getting order with id 55d0994a-1ec6-e611-80f8-3863bb360c20
+2016-12-19 11:10:51,987 [14] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-19 11:10:52,278 [14] INFO  workItemStatuses contains 2
+2016-12-19 11:11:01,357 [13] INFO  getting order with id 55d0994a-1ec6-e611-80f8-3863bb360c20
+2016-12-19 11:11:01,618 [13] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-19 11:11:01,857 [13] INFO  workItemStatuses contains 2
+2016-12-19 11:11:31,436 [14] INFO  getting order with id 55d0994a-1ec6-e611-80f8-3863bb360c20
+2016-12-19 11:11:31,663 [14] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-19 11:11:31,916 [14] INFO  workItemStatuses contains 2
+2016-12-19 11:12:20,959 [13] INFO  getting order with id 55d0994a-1ec6-e611-80f8-3863bb360c20
+2016-12-19 11:12:21,187 [13] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-19 11:12:21,411 [13] INFO  workItemStatuses contains 2
+2016-12-19 11:13:51,301 [8] INFO  getting order with id 55d0994a-1ec6-e611-80f8-3863bb360c20
+2016-12-19 11:13:51,601 [8] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-19 11:13:51,896 [8] INFO  workItemStatuses contains 2
+2016-12-19 11:14:18,915 [8] INFO  getting order with id 55d0994a-1ec6-e611-80f8-3863bb360c20
+2016-12-19 11:14:19,119 [8] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-19 11:14:19,296 [8] INFO  workItemStatuses contains 2
+2016-12-19 13:18:09,323 [75] INFO  getting order with id 55d0994a-1ec6-e611-80f8-3863bb360c20
+2016-12-19 13:18:09,793 [75] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-19 13:18:09,984 [75] INFO  workItemStatuses contains 2
+2016-12-19 13:18:18,747 [73] INFO  getting order with id 55d0994a-1ec6-e611-80f8-3863bb360c20
+2016-12-19 13:18:18,923 [73] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-19 13:18:19,114 [73] INFO  workItemStatuses contains 2
