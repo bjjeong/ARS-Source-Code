@@ -67,6 +67,15 @@ namespace Arke.ARS.TechnicianPortal.Controllers
                 case StatusCode.WorkComplete:
                     _workOrderService.CompleteWork(id, technicianId, notes);
                     break;
+                case StatusCode.NeedToQuotePlumbing:
+                    _workOrderService.ReturnRequired(id, notes, status, technicianId);
+                    break;
+                case StatusCode.NeedToQuoteElectrical:
+                    _workOrderService.ReturnRequired(id, notes, status, technicianId);
+                    break;
+                case StatusCode.NeedToQuoteGeneral:
+                    _workOrderService.ReturnRequired(id, notes, status, technicianId);
+                    break;
             }
             return RedirectToAction("Index", new { id });
         }
@@ -104,14 +113,14 @@ namespace Arke.ARS.TechnicianPortal.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public RedirectToRouteResult SubmitPurchaseOrderRequest(Guid id, OrderItemModel[] orderItems, HttpPostedFileBase purchaseOrderReceipt)
+        public RedirectToRouteResult SubmitPurchaseOrderRequest(Guid id, OrderItemModel[] orderItems, HttpPostedFileBase purchaseOrderReceipt, string vendor, string store)
         {
             if (orderItems == null)
             {
                 throw new ArgumentNullException("orderItems");
             }
 
-            _purchaseOrderService.SubmitPurchaseOrderRequest(id, GetCurrentTechnicianId(), orderItems, purchaseOrderReceipt);
+            _purchaseOrderService.SubmitPurchaseOrderRequest(id, GetCurrentTechnicianId(), orderItems, purchaseOrderReceipt, vendor, store);
             return RedirectToAction("Index", new { id });
         }
 

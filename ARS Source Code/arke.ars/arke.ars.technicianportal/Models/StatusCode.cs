@@ -17,6 +17,15 @@ namespace Arke.ARS.TechnicianPortal.Models
         ReturnNeedToQuote,
 
         [Description("Return - Need for Parts")]
-        ReturnNeedForParts
+        ReturnNeedForParts,
+
+        [Description("Need to Quote - Electrical")]
+        NeedToQuoteElectrical,
+
+        [Description("Need to Quote - General")]
+        NeedToQuoteGeneral,
+
+        [Description("Need to Quote - Plumbing")]
+        NeedToQuotePlumbing
     }
 }

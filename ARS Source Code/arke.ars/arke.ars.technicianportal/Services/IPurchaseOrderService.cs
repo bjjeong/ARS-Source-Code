@@ -6,7 +6,7 @@ namespace Arke.ARS.TechnicianPortal.Services
 {
     public interface IPurchaseOrderService
     {
-        void SubmitPurchaseOrderRequest(Guid workOrderId, Guid technicianId, OrderItemModel[] orderItems, HttpPostedFileBase purchaseOrderReceipt);
+        void SubmitPurchaseOrderRequest(Guid workOrderId, Guid technicianId, OrderItemModel[] orderItems, HttpPostedFileBase purchaseOrderReceipt, string vendor, string store);
         void SubmitTruckEquipment(Guid workOrderId, Guid technicianId, OrderItemModel[] orderItems);
     }
 }

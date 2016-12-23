@@ -187,10 +187,33 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                         ProductDescription = _productDescription,
                         SalesOrderId = salesOrder.ToEntityReference(),
                         Quantity = 1,
-                        PricePerUnit = workOrder.ars_TripRate
+                        PricePerUnit = workOrder.ars_TripRate,
+                        IsProductOverridden = true
                     };
                     _context.AddObject(product);
                 }
+
+                //Check if labor charge is already in the Product list
+                _productDescription = "Labor Charge";
+                var laborDetails = _context
+                    .SalesOrderDetailSet.Where(s => s.SalesOrderId.Id == salesOrder.SalesOrderId)
+                    .Where(s => s.ProductDescription == _productDescription)
+                    .ToList();
+
+                //If labor charge is not yet in the list, add it
+                if (!laborDetails.Any())
+                {
+                    var labor = new SalesOrderDetail
+                    {
+                        ProductDescription = _productDescription,
+                        SalesOrderId = salesOrder.ToEntityReference(),
+                        Quantity = 1,
+                        PricePerUnit = workOrder.ars_LaborRate,
+                        IsProductOverridden = true
+                    };
+                    _context.AddObject(labor);
+                }
+
                 _context.SaveChanges();
                 return null;
             }

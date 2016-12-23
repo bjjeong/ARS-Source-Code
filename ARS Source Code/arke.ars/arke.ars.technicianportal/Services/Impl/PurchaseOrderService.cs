@@ -53,7 +53,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
             }
         }
             
-        public void SubmitPurchaseOrderRequest(Guid workOrderId, Guid technicianId, OrderItemModel[] orderItems, HttpPostedFileBase purchaseOrderReceipt)
+        public void SubmitPurchaseOrderRequest(Guid workOrderId, Guid technicianId, OrderItemModel[] orderItems, HttpPostedFileBase purchaseOrderReceipt, string vendor, string store)
         {
             if (orderItems == null)
             {
@@ -72,6 +72,19 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
 
             foreach (OrderItemModel orderItem in orderItems)
             {
+                OptionSetValue myOptionSet = new OptionSetValue();
+                if (vendor == "Visa")
+                    myOptionSet.Value = 100000000;
+                else if (vendor == "Vendor 2")
+                    myOptionSet.Value = 100000001;
+                else if (vendor == "Vendor 3")
+                    myOptionSet.Value = 100000002;
+                else if (vendor == "Vendor 4")
+                    myOptionSet.Value = 100000003;
+                else if (vendor == "Vendor 5")
+                    myOptionSet.Value = 100000004;
+                else
+                    myOptionSet.Value = 100000000;
 
                 var item1 = new ars_technicianitem
                 {
@@ -87,12 +100,13 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                 var item = new SalesOrderDetail
                 {
                     PricePerUnit = new Money(orderItem.RealPrice),
-                    //new_markupprice = new Money(orderItem.Price),
                     ProductDescription = orderItem.Item,
                     Quantity = orderItem.Quantity,
                     SalesOrderId = workOrder.ars_Order,
                     new_ponumber = fileName,
-                    IsProductOverridden = true
+                    IsProductOverridden = true,
+                    new_vendor = myOptionSet,
+                    new_storename = store
                 };
 
                 _context.AddObject(item);

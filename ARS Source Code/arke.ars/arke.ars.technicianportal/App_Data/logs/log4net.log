@@ -5054,3 +5054,42 @@ Exception rethrown at [0]:
 2016-12-19 13:18:18,747 [73] INFO  getting order with id 55d0994a-1ec6-e611-80f8-3863bb360c20
 2016-12-19 13:18:18,923 [73] INFO  customer name 00042 Office Depot SMS Assist, LLC
 2016-12-19 13:18:19,114 [73] INFO  workItemStatuses contains 2
+2016-12-20 10:53:00,284 [8] INFO  getting order with id 55d0994a-1ec6-e611-80f8-3863bb360c20
+2016-12-20 10:53:00,785 [8] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-20 10:53:01,181 [8] INFO  workItemStatuses contains 2
+2016-12-20 10:53:10,688 [8] INFO  getting order with id 55d0994a-1ec6-e611-80f8-3863bb360c20
+2016-12-20 10:53:10,879 [8] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-20 10:53:11,051 [8] INFO  workItemStatuses contains 2
+2016-12-20 10:53:37,300 [7] INFO  getting order with id 55d0994a-1ec6-e611-80f8-3863bb360c20
+2016-12-20 10:53:37,504 [7] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-20 10:53:37,696 [7] INFO  workItemStatuses contains 2
+2016-12-20 11:02:43,206 [8] INFO  getting order with id 55d0994a-1ec6-e611-80f8-3863bb360c20
+2016-12-20 11:02:43,449 [8] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-20 11:02:43,745 [8] INFO  workItemStatuses contains 2
+2016-12-20 11:04:02,859 [6] INFO  getting order with id 55d0994a-1ec6-e611-80f8-3863bb360c20
+2016-12-20 11:04:03,055 [6] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-20 11:04:03,240 [6] INFO  workItemStatuses contains 2
+2016-12-20 11:05:08,315 [6] INFO  getting order with id 55d0994a-1ec6-e611-80f8-3863bb360c20
+2016-12-20 11:05:08,540 [6] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-20 11:05:08,742 [6] INFO  workItemStatuses contains 2
+2016-12-20 12:26:59,228 [8] INFO  getting order with id 55d0994a-1ec6-e611-80f8-3863bb360c20
+2016-12-20 12:26:59,476 [8] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-20 12:26:59,767 [8] INFO  workItemStatuses contains 2
+2016-12-20 12:28:40,666 [12] INFO  getting order with id 55d0994a-1ec6-e611-80f8-3863bb360c20
+2016-12-20 12:28:45,150 [12] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-20 12:28:45,387 [12] INFO  workItemStatuses contains 2
+2016-12-20 12:29:43,412 [7] INFO  getting order with id 55d0994a-1ec6-e611-80f8-3863bb360c20
+2016-12-20 12:29:43,600 [7] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-20 12:29:43,785 [7] INFO  workItemStatuses contains 2
+2016-12-20 13:06:45,775 [37] INFO  getting order with id 55d0994a-1ec6-e611-80f8-3863bb360c20
+2016-12-20 13:06:45,989 [37] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-20 13:06:46,178 [37] INFO  workItemStatuses contains 2
+2016-12-20 14:09:15,524 [9] INFO  getting order with id 55d0994a-1ec6-e611-80f8-3863bb360c20
+2016-12-20 14:09:15,770 [9] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-20 14:09:16,034 [9] INFO  workItemStatuses contains 2
+2016-12-20 14:09:24,661 [10] INFO  getting order with id 55d0994a-1ec6-e611-80f8-3863bb360c20
+2016-12-20 14:09:24,843 [10] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-20 14:09:25,022 [10] INFO  workItemStatuses contains 2
+2016-12-21 10:47:40,330 [43] INFO  getting order with id 55d0994a-1ec6-e611-80f8-3863bb360c20
+2016-12-21 10:47:40,545 [43] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-21 10:47:40,736 [43] INFO  workItemStatuses contains 2

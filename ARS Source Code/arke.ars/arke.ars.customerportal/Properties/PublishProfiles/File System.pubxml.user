@@ -54,13 +54,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/31/2016 15:17:02</publishTime>
     </File>
     <File Include="bin/Arke.ARS.CommonWeb.dll">
-      <publishTime>12/19/2016 14:40:05</publishTime>
+      <publishTime>12/23/2016 08:29:41</publishTime>
     </File>
     <File Include="bin/Arke.ARS.CustomerPortal.dll">
-      <publishTime>12/19/2016 14:40:07</publishTime>
+      <publishTime>12/23/2016 08:29:43</publishTime>
     </File>
     <File Include="bin/Arke.ARS.Organization.dll">
-      <publishTime>12/19/2016 14:40:05</publishTime>
+      <publishTime>12/23/2016 08:29:20</publishTime>
     </File>
     <File Include="bin/Arke.Crm.Utils.dll">
       <publishTime>05/31/2016 15:17:25</publishTime>

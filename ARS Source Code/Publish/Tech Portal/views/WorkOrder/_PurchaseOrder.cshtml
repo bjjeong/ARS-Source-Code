@@ -13,6 +13,14 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="store">Store Name</label>
+                                <input type="text" class="form-control" rows="" id="store" name="store" required="required" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="taxAmount">Tax Amount</label>
@@ -75,10 +83,22 @@
                         </div> 
                     </div>
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-sm-6">
                             <div class="file">
                                 <label for="attach-receipt">Attach Receipt</label>
                                 <input required type="file" id="attach-receipt" name="purchaseOrderReceipt">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="vendorlist">Select Vendor</label>
+                            <div class="form-group" id="vendorlist">
+                                <select name="vendor" id="vendor" required>
+                                    <option value="Visa">Visa</option>
+                                    <option value="Vendor 2">Vendor 2</option>
+                                    <option value="Vendor 3">Vendor 3</option>
+                                    <option value="Vendor 4">Vendor 4</option>
+                                    <option value="Vendor 5">Vendor 5</option>
+                                </select>
                             </div>
                         </div>
                     </div>
