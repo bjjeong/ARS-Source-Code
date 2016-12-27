@@ -198,12 +198,13 @@
                     return;
                 }
 
+                var taxRate = taxAmount / subtotal;
                 var purchaseOrderItem = {
                     id: GUID.create(),
                     quantity: quantity,
                     item: item,
-                    realprice: price * (1 + taxAmount/subtotal),
-                    price: price * (1 + taxAmount/subtotal) * 1.35
+                    realprice: price * (1 + taxRate),
+                    price: price * (1 + taxRate) * 1.3500
                 };
 
                 $('#purchase-orders-grid').bootgrid("append", [purchaseOrderItem]);
