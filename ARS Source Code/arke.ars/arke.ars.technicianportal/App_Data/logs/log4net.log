@@ -5114,3 +5114,9 @@ Exception rethrown at [0]:
 2016-12-27 08:03:09,817 [490] INFO  getting order with id 55d0994a-1ec6-e611-80f8-3863bb360c20
 2016-12-27 08:03:10,062 [490] INFO  customer name 00042 Office Depot SMS Assist, LLC
 2016-12-27 08:03:10,242 [490] INFO  workItemStatuses contains 2
+2016-12-27 09:39:08,841 [6] INFO  getting order with id 55d0994a-1ec6-e611-80f8-3863bb360c20
+2016-12-27 09:39:09,118 [6] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-27 09:39:09,414 [6] INFO  workItemStatuses contains 2
+2016-12-27 09:40:08,994 [7] INFO  getting order with id 55d0994a-1ec6-e611-80f8-3863bb360c20
+2016-12-27 09:40:09,191 [7] INFO  customer name 00042 Office Depot SMS Assist, LLC
+2016-12-27 09:40:09,367 [7] INFO  workItemStatuses contains 2
