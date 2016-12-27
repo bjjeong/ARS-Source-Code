@@ -69,8 +69,13 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
             long time = DateTime.Now.Ticks;
             String fileName = Convert.ToString(time);
             //fileName.Substring(fileName.Length - 15);
+            var receiptBool = false;
+            if (purchaseOrderReceipt != null)
+            {
+                receiptBool = true;
+            }
 
-            foreach (OrderItemModel orderItem in orderItems)
+                foreach (OrderItemModel orderItem in orderItems)
             {
                 OptionSetValue myOptionSet = new OptionSetValue();
                 if (vendor == "Visa")
@@ -106,7 +111,8 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                     new_ponumber = fileName,
                     IsProductOverridden = true,
                     new_vendor = myOptionSet,
-                    new_storename = store
+                    new_storename = store,
+                    new_receipt = receiptBool
                 };
 
                 _context.AddObject(item);
