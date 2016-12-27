@@ -81,7 +81,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                                 Pin = account.new_pinNumber != null ? account.new_pinNumber : "N/A",
                             }).First();
                 _logger.LogInfo("customer name {0}", customer.CustomerName);
-            }
+            } 
 
             Dictionary<string, int> workItemStatuses = GetWorkItemStatuses();
             var workItems = (from workItem in _context.ars_workitemSet
