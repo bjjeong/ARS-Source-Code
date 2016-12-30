@@ -203,8 +203,8 @@
                     id: GUID.create(),
                     quantity: quantity,
                     item: item,
-                    realprice: price * (1 + taxRate),
-                    price: price * (1 + taxRate) * 1.3500
+                    realprice: price * (1.0000 + taxRate),
+                    price: price * 1.3500
                 };
 
                 $('#purchase-orders-grid').bootgrid("append", [purchaseOrderItem]);
@@ -410,6 +410,7 @@
                 $("#truck-stock-grid-total").text(total);
             };
 
+            //Purchase Order Grid--------------------------------------------------------------
             $('#purchase-orders-grid').bootgrid({
                 formatters: {
                     "commands": function (column, row) {
@@ -433,6 +434,7 @@
             }).on("appended.rs.jquery.bootgrid", calculateGrandTotal)
                 .on("removed.rs.jquery.bootgrid", calculateGrandTotal);
 
+            //Truck Stock Grid-------------------------------------------------------------------
             $('#truck-stock-grid').bootgrid({
                 formatters: {
                     "commands": function (column, row) {

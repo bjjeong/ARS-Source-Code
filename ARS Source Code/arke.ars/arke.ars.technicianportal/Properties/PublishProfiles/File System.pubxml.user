@@ -54,13 +54,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/31/2016 15:17:02</publishTime>
     </File>
     <File Include="bin/Arke.ARS.CommonWeb.dll">
-      <publishTime>12/23/2016 10:38:52</publishTime>
+      <publishTime>12/30/2016 13:14:12</publishTime>
     </File>
     <File Include="bin/Arke.ARS.Organization.dll">
-      <publishTime>12/23/2016 10:38:52</publishTime>
+      <publishTime>12/30/2016 13:14:10</publishTime>
     </File>
     <File Include="bin/Arke.ARS.TechnicianPortal.dll">
-      <publishTime>12/27/2016 14:07:35</publishTime>
+      <publishTime>12/30/2016 13:14:14</publishTime>
     </File>
     <File Include="bin/Arke.Crm.Utils.dll">
       <publishTime>05/31/2016 15:17:25</publishTime>
@@ -342,7 +342,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/31/2016 15:17:14</publishTime>
     </File>
     <File Include="Scripts/jquery-2.1.4.min.js">
-      <publishTime>12/16/2016 10:21:24</publishTime>
+      <publishTime>12/27/2016 16:11:38</publishTime>
     </File>
     <File Include="Scripts/jquery-2.1.4.min.map">
       <publishTime>05/31/2016 15:17:14</publishTime>
@@ -351,7 +351,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/31/2016 15:17:14</publishTime>
     </File>
     <File Include="Scripts/jquery.bootgrid.min.js">
-      <publishTime>05/31/2016 15:17:14</publishTime>
+      <publishTime>12/27/2016 16:11:09</publishTime>
     </File>
     <File Include="Scripts/jquery.signature.js">
       <publishTime>05/31/2016 15:17:14</publishTime>
@@ -390,7 +390,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/31/2016 15:17:10</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>05/31/2016 15:17:10</publishTime>
+      <publishTime>12/27/2016 14:48:41</publishTime>
     </File>
     <File Include="Views/Shared/_UnauthorizedNavigation.cshtml">
       <publishTime>05/31/2016 15:17:10</publishTime>
@@ -399,7 +399,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/31/2016 15:17:10</publishTime>
     </File>
     <File Include="Views/WorkOrder/Index.cshtml">
-      <publishTime>12/27/2016 14:06:51</publishTime>
+      <publishTime>12/29/2016 12:28:03</publishTime>
     </File>
     <File Include="Views/WorkOrder/_CheckIn.cshtml">
       <publishTime>06/17/2016 10:23:34</publishTime>
@@ -414,7 +414,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/03/2016 13:18:25</publishTime>
     </File>
     <File Include="Views/WorkOrder/_PurchaseOrder.cshtml">
-      <publishTime>12/27/2016 09:34:20</publishTime>
+      <publishTime>12/29/2016 09:39:19</publishTime>
     </File>
     <File Include="Views/WorkOrder/_SignWorkOrder.cshtml">
       <publishTime>06/16/2016 13:06:02</publishTime>

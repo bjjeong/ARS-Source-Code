@@ -112,7 +112,9 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                     IsProductOverridden = true,
                     new_vendor = myOptionSet,
                     new_storename = store,
-                    new_receipt = receiptBool
+                    new_receipt = receiptBool,
+                    new_cost = new Money(orderItem.RealPrice),
+                    new_extcost = new Money(orderItem.RealPrice*orderItem.Quantity)
                 };
 
                 _context.AddObject(item);
