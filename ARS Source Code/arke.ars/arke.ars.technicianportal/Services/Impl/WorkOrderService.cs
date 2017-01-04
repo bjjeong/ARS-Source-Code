@@ -266,7 +266,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
             _context.AddObject(annotation);
         }
 
-        public void CompleteWork(Guid workOrderId, Guid technicianId, string notes)
+        public void CompleteWork(Guid workOrderId, Guid technicianId, string notes, string lunch)
         {
             Dictionary<string, int> workItemStatuses = GetWorkItemStatuses();
             bool hasIncompleteWorkItems =
@@ -284,6 +284,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
             var technician = _context.ars_technicianSet.Single(t => t.ars_technicianId == technicianId);
             ChangeWorkOrdersStatus(workOrder, technician, StatusCode.WorkComplete, EventType.CheckOut);
             AddNote(technicianId, workOrder, notes);
+            workOrder.new_lunch = lunch;
             _context.SaveChanges();
         }
 

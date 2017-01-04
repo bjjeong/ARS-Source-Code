@@ -49,7 +49,7 @@ namespace Arke.ARS.TechnicianPortal.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public RedirectToRouteResult CheckOut(Guid id, StatusCode status, string notes)
+        public RedirectToRouteResult CheckOut(Guid id, StatusCode status, string notes, string lunch)
         {
             var identity = (ClaimsIdentity)User.Identity;
             var technicianId = Guid.Parse(identity.GetUserId());
@@ -65,7 +65,7 @@ namespace Arke.ARS.TechnicianPortal.Controllers
                     _workOrderService.ReturnRequired(id, notes, status, technicianId);
                     break;
                 case StatusCode.WorkComplete:
-                    _workOrderService.CompleteWork(id, technicianId, notes);
+                    _workOrderService.CompleteWork(id, technicianId, notes, lunch);
                     break;
                 case StatusCode.NeedToQuotePlumbing:
                     _workOrderService.ReturnRequired(id, notes, status, technicianId);
