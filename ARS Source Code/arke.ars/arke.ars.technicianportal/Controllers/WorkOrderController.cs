@@ -113,14 +113,14 @@ namespace Arke.ARS.TechnicianPortal.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public RedirectToRouteResult SubmitPurchaseOrderRequest(Guid id, OrderItemModel[] orderItems, HttpPostedFileBase purchaseOrderReceipt, string vendor, string store)
+        public RedirectToRouteResult SubmitPurchaseOrderRequest(Guid id, OrderItemModel[] orderItems, HttpPostedFileBase purchaseOrderReceipt, HttpPostedFileBase purchaseOrderReceipt2, string vendor, string store)
         {
             if (orderItems == null)
             {
                 throw new ArgumentNullException("orderItems");
             }
 
-            _purchaseOrderService.SubmitPurchaseOrderRequest(id, GetCurrentTechnicianId(), orderItems, purchaseOrderReceipt, vendor, store);
+            _purchaseOrderService.SubmitPurchaseOrderRequest(id, GetCurrentTechnicianId(), orderItems, purchaseOrderReceipt, purchaseOrderReceipt2, vendor, store);
             return RedirectToAction("Index", new { id });
         }
 

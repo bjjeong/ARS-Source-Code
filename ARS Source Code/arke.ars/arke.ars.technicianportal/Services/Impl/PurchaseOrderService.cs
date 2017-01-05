@@ -53,7 +53,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
             }
         }
             
-        public void SubmitPurchaseOrderRequest(Guid workOrderId, Guid technicianId, OrderItemModel[] orderItems, HttpPostedFileBase purchaseOrderReceipt, string vendor, string store)
+        public void SubmitPurchaseOrderRequest(Guid workOrderId, Guid technicianId, OrderItemModel[] orderItems, HttpPostedFileBase purchaseOrderReceipt, HttpPostedFileBase purchaseOrderReceipt2, string vendor, string store)
         {
             if (orderItems == null)
             {
@@ -70,7 +70,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
             String fileName = Convert.ToString(time);
             //fileName.Substring(fileName.Length - 15);
             var receiptBool = false;
-            if (purchaseOrderReceipt != null)
+            if ((purchaseOrderReceipt != null) || (purchaseOrderReceipt2 != null))
             {
                 receiptBool = true;
             }
@@ -133,7 +133,21 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
 
                 _context.AddObject(annotation);
             }
-            
+
+            if (purchaseOrderReceipt2 != null)
+            {
+                var annotation = new Annotation
+                {
+                    NoteText = String.Format("Purchase order receipt from {0}", techName),
+                    ObjectId = workOrder.ars_Order,
+                    FileName = purchaseOrderReceipt2.GetNonEmptyFileName(),
+                    MimeType = purchaseOrderReceipt2.ContentType,
+                    DocumentBody = purchaseOrderReceipt2.ConvertToBase64()
+                };
+
+                _context.AddObject(annotation);
+            }
+
             _context.SaveChanges();
         }
 
