@@ -5281,3 +5281,21 @@ Exception rethrown at [0]:
 2017-01-05 14:31:15,059 [8] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
 2017-01-05 14:31:15,265 [8] INFO  customer name 00027 Office Depot SMS Assist, LLC
 2017-01-05 14:31:15,453 [8] INFO  workItemStatuses contains 2
+2017-01-06 09:13:16,392 [6] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-06 09:13:16,893 [6] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-06 09:13:17,246 [6] INFO  workItemStatuses contains 2
+2017-01-06 09:13:44,123 [9] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-06 09:13:44,307 [9] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-06 09:13:44,491 [9] INFO  workItemStatuses contains 2
+2017-01-06 10:49:41,016 [9] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-06 10:49:41,279 [9] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-06 10:49:41,640 [9] INFO  workItemStatuses contains 2
+2017-01-06 10:50:23,335 [6] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-06 10:50:23,522 [6] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-06 10:50:23,700 [6] INFO  workItemStatuses contains 2
+2017-01-06 10:50:31,887 [9] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-06 10:50:32,104 [9] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-06 10:50:32,775 [9] INFO  workItemStatuses contains 2
+2017-01-06 10:51:02,666 [8] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-06 10:51:02,845 [8] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-06 10:51:03,020 [8] INFO  workItemStatuses contains 2

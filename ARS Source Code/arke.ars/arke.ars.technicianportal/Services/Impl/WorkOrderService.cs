@@ -303,15 +303,34 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
             Incident workOrder = _context.IncidentSet.First(i => i.Id == workOrderId);
 
             var technician = _context.ars_technicianSet.Single(t => t.ars_technicianId == technicianId);
-            CreateWorkOrderEventOnNteIncrease(workOrder, technician, money, hours);
+            //CreateWorkOrderEventOnNteIncrease(workOrder, technician, money, hours);
 
-            var annotation = new Annotation
+/*            var annotation = new Annotation
             {
                 NoteText = String.Format("NTE Increase Request: {20} hours requested{25}{19}Name:   {0}   Price: {1}   Quantity: {2}{3}Name:   {4}   Price: {5}   Quantity: {6}{7}Name:   {8}   Price: {9}   Quantity: {10}{11}Name:   {12}   Price: {13}   Quantity: {14}{15}Name:   {16}   Price: {17}   Quantity: {18}{21}{24}Comments:{22}{23}", item1, price1, quantity1, Environment.NewLine, item2, price2, quantity2, Environment.NewLine, item3, price3, quantity3, Environment.NewLine, item4, price4, quantity4, Environment.NewLine, item5, price5, quantity5, Environment.NewLine, hours, Environment.NewLine, Environment.NewLine, comment, Environment.NewLine, Environment.NewLine),
                 ObjectId = new EntityReference(Incident.EntityLogicalName, workOrderId)
             };
+*/
+            var eventTypecode = GetEventTypeValue(EventType.NteIncreaseRequest);
 
-            _context.AddObject(annotation);
+            var workorderevent = new ars_workorderevent
+            {
+                ars_name = String.Format("{0} - NTE Increase Request", workOrder.Title),
+                ars_DateTime = DateTime.UtcNow,
+                ars_WorkOrder = workOrder.ToEntityReference(),
+                ars_Technician = technician.ToEntityReference(),
+                ars_EventType = new OptionSetValue
+                {
+                    Value = Convert.ToInt32(eventTypecode.Key)
+                },
+                ars_Amount = new Money(money),
+                ars_Hours = hours,
+                new_description = String.Format("NTE Increase Request: {20} hours requested{25}{19}Name:   {0}   Price: {1}   Quantity: {2}{3}Name:   {4}   Price: {5}   Quantity: {6}{7}Name:   {8}   Price: {9}   Quantity: {10}{11}Name:   {12}   Price: {13}   Quantity: {14}{15}Name:   {16}   Price: {17}   Quantity: {18}{21}{24}Comments:{22}{23}", item1, price1, quantity1, Environment.NewLine, item2, price2, quantity2, Environment.NewLine, item3, price3, quantity3, Environment.NewLine, item4, price4, quantity4, Environment.NewLine, item5, price5, quantity5, Environment.NewLine, hours, Environment.NewLine, Environment.NewLine, comment, Environment.NewLine, Environment.NewLine)
+            };
+
+            _context.AddObject(workorderevent);
+
+            //_context.AddObject(annotation);
             _context.UpdateObject(workOrder);
             _context.SaveChanges();
         }
@@ -440,7 +459,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
             _context.AddObject(workorderevent);
         }
 
-        private void CreateWorkOrderEventOnNteIncrease(Incident workOrder, ars_technician technician, decimal money, decimal hours)
+/*        private void CreateWorkOrderEventOnNteIncrease(Incident workOrder, ars_technician technician, decimal money, decimal hours)
         {
             var eventTypecode = GetEventTypeValue(EventType.NteIncreaseRequest);
 
@@ -460,7 +479,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
 
             _context.AddObject(workorderevent);
         }
-
+*/
         private KeyValuePair<int, string> GetStatusOptionSetValue(StatusCode statusCode)
         {
             var options = _optionSetHelper.GetStringValues(Incident.EntityLogicalName, NameOf.Property(() => ((Incident)null).StatusCode));
