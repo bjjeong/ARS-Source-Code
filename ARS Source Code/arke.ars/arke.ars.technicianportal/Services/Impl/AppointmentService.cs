@@ -50,7 +50,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                 HaveWorkForTomorrow = data.Any(d => d.Appointment.ScheduledEnd > end)
             };
 
-            foreach (var d in data)
+            foreach (var d in data) 
             {
                 models.Add(new AppointmentModel
                 {

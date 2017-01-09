@@ -22,7 +22,7 @@
         });
 
         var d = new Date();
-        var n = (d.getTimezoneOffset() - 480)/60;
+        var n = (480 - d.getTimezoneOffset())/60;
         //notificationService.showError(n);
 
         $('#calendar').fullCalendar({
