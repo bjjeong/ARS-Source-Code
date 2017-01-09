@@ -44,7 +44,7 @@ namespace Arke.ARS.TechnicianPortal.Controllers
             var identity = (ClaimsIdentity)User.Identity;
             var technicianId = Guid.Parse(identity.GetUserId());
             TempData["ErrorMessage"] = _workOrderService.StartProgress(id, technicianId);
-            return RedirectToAction("Index", new { id });
+            return RedirectToAction("Index", new { id }); 
         }
 
         [HttpPost]

@@ -23,6 +23,10 @@ namespace Arke.ARS.CommonWeb.Services.Impl
 
         public DateTime ConvertUtcTimeToUserTime(DateTime utcDate)
         {
+            // Get the local time zone and the current local time and year.
+            TimeZone localZone = TimeZone.CurrentTimeZone;
+            string timezone = localZone.StandardName;
+
             var response = (LocalTimeFromUtcTimeResponse)_context.Execute(new LocalTimeFromUtcTimeRequest
             {
                 TimeZoneCode = _timeZoneCode.Value,

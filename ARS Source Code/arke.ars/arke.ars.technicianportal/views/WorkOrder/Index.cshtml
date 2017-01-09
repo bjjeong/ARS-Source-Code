@@ -198,7 +198,7 @@
                     return;
                 }
 
-                var taxRate = taxAmount / subtotal;
+                var taxRate = (taxAmount / subtotal);
                 var purchaseOrderItem = {
                     id: GUID.create(),
                     quantity: quantity,

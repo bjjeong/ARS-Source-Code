@@ -322,7 +322,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                 ars_EventType = new OptionSetValue
                 {
                     Value = Convert.ToInt32(eventTypecode.Key)
-                },
+                }, 
                 ars_Amount = new Money(money),
                 ars_Hours = hours,
                 new_description = String.Format("NTE Increase Request: {20} hours requested{25}{19}Name:   {0}   Price: {1}   Quantity: {2}{3}Name:   {4}   Price: {5}   Quantity: {6}{7}Name:   {8}   Price: {9}   Quantity: {10}{11}Name:   {12}   Price: {13}   Quantity: {14}{15}Name:   {16}   Price: {17}   Quantity: {18}{21}{24}Comments:{22}{23}", item1, price1, quantity1, Environment.NewLine, item2, price2, quantity2, Environment.NewLine, item3, price3, quantity3, Environment.NewLine, item4, price4, quantity4, Environment.NewLine, item5, price5, quantity5, Environment.NewLine, hours, Environment.NewLine, Environment.NewLine, comment, Environment.NewLine, Environment.NewLine)
