@@ -21,6 +21,10 @@
             animationService.hideBusyAnimation(true);
         });
 
+        var d = new Date();
+        var n = (d.getTimezoneOffset() - 480)/60;
+        //notificationService.showError(n);
+
         $('#calendar').fullCalendar({
             header: {
                 left: 'prev,next today',
@@ -46,10 +50,11 @@
                         }
 
                         callback(data.appointments.map(function (appointment) {
+                            //notificationService.showError(appointment.start);
                             return {
                                 id: appointment.id,
-                                start: appointment.start,
-                                end: appointment.end,
+                                start: moment(appointment.start).add(n, 'hours'),
+                                end: moment(appointment.end).add(n, 'hours'),
                                 title: appointment.ticketNumber,
                                 name: appointment.subject,
                                 workOrderId: appointment.workOrderId,
