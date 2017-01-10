@@ -60,7 +60,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/06/2017 10:55:57</publishTime>
     </File>
     <File Include="bin/Arke.ARS.TechnicianPortal.dll">
-      <publishTime>01/09/2017 13:44:31</publishTime>
+      <publishTime>01/10/2017 12:50:00</publishTime>
     </File>
     <File Include="bin/Arke.Crm.Utils.dll">
       <publishTime>05/31/2016 15:17:25</publishTime>
@@ -390,7 +390,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/31/2016 15:17:10</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>12/27/2016 14:48:41</publishTime>
+      <publishTime>01/10/2017 12:49:29</publishTime>
     </File>
     <File Include="Views/Shared/_UnauthorizedNavigation.cshtml">
       <publishTime>05/31/2016 15:17:10</publishTime>
@@ -399,7 +399,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/31/2016 15:17:10</publishTime>
     </File>
     <File Include="Views/WorkOrder/Index.cshtml">
-      <publishTime>01/06/2017 13:33:41</publishTime>
+      <publishTime>01/10/2017 12:46:58</publishTime>
     </File>
     <File Include="Views/WorkOrder/_CheckIn.cshtml">
       <publishTime>06/17/2016 10:23:34</publishTime>

@@ -320,7 +320,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                 ars_WorkOrder = workOrder.ToEntityReference(),
                 ars_Technician = technician.ToEntityReference(),
                 ars_EventType = new OptionSetValue
-                {
+                { 
                     Value = Convert.ToInt32(eventTypecode.Key)
                 }, 
                 ars_Amount = new Money(money),

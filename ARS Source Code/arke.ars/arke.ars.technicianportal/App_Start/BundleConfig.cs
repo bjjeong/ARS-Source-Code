@@ -28,6 +28,8 @@ namespace Arke.ARS.TechnicianPortal
 
             bundles.Add(new ScriptBundle("~/bundles/purchaseOrder").Include("~/Scripts/jquery.bootgrid.min.js"));
             bundles.Add(new StyleBundle("~/styles/purchaseOrder").Include("~/Content/jquery.bootgrid.min.css"));
+            //bundles.Add(new StyleBundle("~/styles/purchaseOrder").Include("~/Content/jquery.bootgrid.css"));
+            //bundles.Add(new StyleBundle("~/styles/purchaseOrder").Include("~/Content/jquery.bootstrap.css"));
             bundles.Add(new StyleBundle("~/styles/purchaseOrder").Include("~/Content/technician-portal.css"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're

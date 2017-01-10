@@ -25,7 +25,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
             {
                 throw new ArgumentNullException("technicianService");
             }
-
+            
             _context = context;
             _technicianService = technicianService;
         }

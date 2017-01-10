@@ -140,7 +140,7 @@
             $('#purchase-order-total').val(quantity * price);
         });
 
-        $('#truck-stock-price,#purchase-order-quantity').change(function () {
+        $('#truck-stock-price,#truck-stock-quantity').change(function () {
             var quantity = parseFloat($('#truck-stock-quantity').val());
             quantity = isNaN(quantity) ? 0 : quantity;
 
@@ -234,7 +234,7 @@
                     return;
                 }
 
-                var purchaseOrderItem = {
+                var truckStockItem = {
                     id: GUID.create(),
                     quantity: quantity,
                     item: item,
@@ -242,7 +242,7 @@
                     price: price * 1.35
                 };
 
-                $('#truck-stock-grid').bootgrid("append", [purchaseOrderItem]);
+                $('#truck-stock-grid').bootgrid("append", [truckStockItem]);
 
                 $('#truck-stock-name').val("");
                 $('#truck-stock-quantity').val("");
@@ -269,14 +269,14 @@
                     return;
                 }
 
-                var purchaseOrderItem = {
+                var equipmentItem = {
                     id: GUID.create(),
                     quantity: quantity,
                     item: item,
                     price: price
                 };
 
-                $('#truck-stock-grid').bootgrid("append", [purchaseOrderItem]);
+                $('#truck-stock-grid').bootgrid("append", [equipmentItem]);
 
                 $('#equipment-name').val("");
                 $('#equipment-quantity').val("");
@@ -395,7 +395,7 @@
                 }
 
                 $("#purchase-orders-grid-total").text(total);
-                document.getElementById("#purchase-orders-grid-total").innerHTML = total;
+                document.getElementById("purchase-orders-grid-total").innerHTML = total;
             };
 
             var calculateTruckGrandTotal = function () {
@@ -408,10 +408,13 @@
                 }
 
                 $("#truck-stock-grid-total").text(total);
+                document.getElementById("truck-stock-grid-total").innerHTML = total;
             };
 
             //Purchase Order Grid--------------------------------------------------------------
             $('#purchase-orders-grid').bootgrid({
+                navigation: 0,
+                rowCount: -1,
                 formatters: {
                     "commands": function (column, row) {
                         return '<span class="glyphicon glyphicon-remove remove" data-row-id="' + row.id + '"></span>';
@@ -425,7 +428,7 @@
                     $('#purchase-orders-grid').bootgrid("remove", [id]);
                 });
 
-                var pages = $("#purchase-orders-grid-footer ul.pagination>li[class*='page-'");
+                var pages = $("#purchase-orders-grid-footer ul.pagination>li[class*='page-']");
                 if (pages.length <= 1) {
                     $("#purchase-orders-grid-footer").hide();
                 } else {
@@ -449,7 +452,7 @@
                     $('#truck-stock-grid').bootgrid("remove", [id]);
                 });
 
-                var pages = $("#truck-stock-grid-footer ul.pagination>li[class*='page-'");
+                var pages = $("#truck-stock-grid-footer ul.pagination>li[class*='page-']");
                 if (pages.length <= 1) {
                     $("#truck-stock-grid-footer").hide();
                 } else {
