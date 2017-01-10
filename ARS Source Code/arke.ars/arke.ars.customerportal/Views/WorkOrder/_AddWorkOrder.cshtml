@@ -57,10 +57,16 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <label for="po">PO #</label>
-                                    <input type="text" class="form-control" rows="" id="po" name="po" required="required" />
+                                    <input type="text" class="form-control" rows="" id="po" name="po" required="required"/>
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <button type="button" class="btn btn-danger btn-sm" id="poButton" onclick="poGenerator()">Generate PO #</button>
+                            </div>
+                        </div>
+                        <br />
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
@@ -92,3 +98,10 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    function poGenerator () {
+            var currentTime = new Date();
+            var ticks = ((currentTime.getTime() * 1) + 6213559680000000);
+            $('#po').val(ticks.toString());
+    }
+</script>
