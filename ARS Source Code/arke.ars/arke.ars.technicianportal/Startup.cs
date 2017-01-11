@@ -49,6 +49,7 @@ namespace Arke.ARS.TechnicianPortal
             builder.Register(c => c.Resolve<ArsContextFactory>().CreateContext()).InstancePerLifetimeScope();
             builder.RegisterType<CrmTechnicianAuthenticationService>().As<IAuthenticationService>().InstancePerLifetimeScope();
             builder.RegisterType<WorkOrderService>().As<IWorkOrderService>().InstancePerLifetimeScope();
+            builder.RegisterType<AttachmentService>().As<IAttachmentService>().InstancePerLifetimeScope();
             builder.RegisterType<PurchaseOrderService>().As<IPurchaseOrderService>().InstancePerLifetimeScope();
             builder.RegisterType<AppointmentService>().As<IAppointmentService>().InstancePerLifetimeScope();
             builder.RegisterType<TechnicianService>().As<ITechnicianService>().InstancePerLifetimeScope();

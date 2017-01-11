@@ -1,4 +1,5 @@
-﻿@model Arke.ARS.TechnicianPortal.Models.WorkOrderModel
+﻿@using Arke.ARS.TechnicianPortal.Models
+@model Arke.ARS.TechnicianPortal.Models.WorkOrderModel
 @{
     ViewBag.Title = "WorkOrder";
     ViewBag.BodyCss = "home";
@@ -99,6 +100,33 @@
                         </div>
                         <div class="panel-body">
                             <p>Tesing the panel body</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><strong>Work Order Details</strong></h3>
+                        </div>
+                        <div class="panel-body">
+                            @foreach (ActivityModel activity in Model.Activities)
+                            {
+                                <div class="activity">
+                                    <ul>
+                                        @foreach (AttachmentModel attachment in activity.Attachments)
+                                        {
+                                            <li><a href="@Url.Action("Download", "Attachment", new { id = attachment.Id })">@attachment.FileName</a></li>
+                                        }
+                                    </ul>
+                                </div>
+                            }
+
+                            @if (!Model.Activities.Any())
+                            {
+                                <p>No activity was found</p>
+                            }
                         </div>
                     </div>
                 </div>
