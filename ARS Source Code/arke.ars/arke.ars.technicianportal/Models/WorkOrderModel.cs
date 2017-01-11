@@ -7,6 +7,8 @@ namespace Arke.ARS.TechnicianPortal.Models
         public WorkOrderModel()
         {
             WorkItems = new WorkItemModel[0];
+            Activities = new ActivityModel[0];
+            Orders = new OrderModel[0]; 
         }
 
         public Guid Id { get; set; }
@@ -24,5 +26,43 @@ namespace Arke.ARS.TechnicianPortal.Models
         public string trade { get; set; }
         public string po { get; set; }
         public bool new_nteincrease { get; set; }
+        public ActivityModel[] Activities { get; set; }
+        public OrderModel[] Orders { get; set; }
+    }
+
+    public sealed class OrderModel
+    {
+        public Guid Id { get; set; }
+
+        public string Name { get; set; }
+
+        public DateTime CreatedOn { get; set; }
+
+        public decimal Amount { get; set; }
+
+        public string Status { get; set; }
+    }
+
+    public sealed class ActivityModel
+    {
+        public ActivityModel()
+        {
+            Attachments = new AttachmentModel[0];
+        }
+
+        public Guid Id { get; set; }
+
+        public DateTime CreatedOn { get; set; }
+
+        public string Description { get; set; }
+
+        public AttachmentModel[] Attachments { get; set; }
+    }
+
+    public sealed class AttachmentModel
+    {
+        public string FileName { get; set; }
+
+        public Guid Id { get; set; }
     }
 }

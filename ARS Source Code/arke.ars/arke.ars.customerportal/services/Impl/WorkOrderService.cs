@@ -478,7 +478,7 @@ namespace Arke.ARS.CustomerPortal.Services.Impl
 
                 public int GetHashCode(ClosedWorkOrderColumnProjection obj)
                 {
-                    return obj.GetHashCode();
+                    return obj.GetHashCode(); 
                 }
             }
         }

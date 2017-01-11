@@ -112,7 +112,54 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                 isInProgress = true;
             }
 
-            return new WorkOrderModel
+            var activities = (from activity in _context.ars_workitemSet
+                              join annotation in _context.AnnotationSet on activity.ars_workitemId equals annotation.ObjectId.Id
+                              into attachments
+                              from attachment in attachments.DefaultIfEmpty()
+                              where activity.ars_WorkOrderId.Id == workOrderId
+                              select new
+                              {
+                                  AttachmentId = attachment.AnnotationId,
+                                  AttachmentFileName = attachment.FileName,
+                                  CreatedOn = activity.CreatedOn.Value,
+                                  Description = activity.ars_name,
+                                  Id = activity.ars_workitemId.Value
+                              }).ToArray();
+
+
+            var activiteList = new List<ActivityModel>(activities.Length);
+            foreach (var activityGroup in activities.GroupBy(a => a.Id))
+            {
+                var activityModel = new ActivityModel
+                {
+                    Id = activityGroup.Key
+                };
+
+                var attachments = new List<AttachmentModel>();
+                int index = 1;
+
+                foreach (var activity in activityGroup)
+                {
+                    activityModel.CreatedOn = activity.CreatedOn;
+                    activityModel.Description = activity.Description;
+
+                    if (activity.AttachmentId.HasValue)
+                    {
+                        attachments.Add(new AttachmentModel
+                        {
+                            FileName = activity.AttachmentFileName ?? "Attachment #" + index,
+                            Id = activity.AttachmentId.Value
+                        });
+
+                        index++;
+                    }
+                }
+
+                activityModel.Attachments = attachments.ToArray();
+                activiteList.Add(activityModel);
+            }
+
+                return new WorkOrderModel
             {
                 Id = workOrder.Id,
                 Title = workOrder.Title,
@@ -126,8 +173,8 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                 Customer = customer,
                 WorkItems = workItems,
                 trade = workOrder.new_trade,
-                po = workOrder.new_PO
-
+                po = workOrder.new_PO,
+                Activities = activiteList.OrderByDescending(a => a.CreatedOn).ToArray()
             };
         }
 
@@ -413,6 +460,76 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
             }
         }
 
+        public WorkOrderModel GetWorkOrderDetails(Guid workOrderId)
+        {
+            Incident workOrder = _context.IncidentSet.First(i => i.Id == workOrderId);
+
+            var activities = (from activity in _context.ars_workordernoteSet
+                              join annotation in _context.AnnotationSet on activity.ars_workordernoteId equals annotation.ObjectId.Id
+                              into attachments
+                              from attachment in attachments.DefaultIfEmpty()
+                              where activity.ars_WorkOrderId.Id == workOrderId
+                              select new
+                              {
+                                  AttachmentId = attachment.AnnotationId,
+                                  AttachmentFileName = attachment.FileName,
+                                  CreatedOn = activity.CreatedOn.Value,
+                                  Description = activity.ars_NoteText,
+                                  Id = activity.ars_workordernoteId.Value
+                              }).ToArray();
+
+
+            var activiteList = new List<ActivityModel>(activities.Length);
+            foreach (var activityGroup in activities.GroupBy(a => a.Id))
+            {
+                var activityModel = new ActivityModel
+                {
+                    Id = activityGroup.Key
+                };
+
+                var attachments = new List<AttachmentModel>();
+                int index = 1;
+
+                foreach (var activity in activityGroup)
+                {
+                    activityModel.CreatedOn = activity.CreatedOn;
+                    activityModel.Description = activity.Description;
+
+                    if (activity.AttachmentId.HasValue)
+                    {
+                        attachments.Add(new AttachmentModel
+                        {
+                            FileName = activity.AttachmentFileName ?? "Attachment #" + index,
+                            Id = activity.AttachmentId.Value
+                        });
+
+                        index++;
+                    }
+                }
+
+                activityModel.Attachments = attachments.ToArray();
+                activiteList.Add(activityModel);
+            }
+
+            Dictionary<int, string> orderStatuses = GetOrderStatuses();
+            var orders = (from order in _context.SalesOrderSet
+                          where order.ars_WorkOrderId.Id == workOrderId
+                          select new OrderModel
+                          {
+                              Amount = order.TotalAmount.Value,
+                              CreatedOn = order.CreatedOn.Value,
+                              Id = order.Id,
+                              Name = order.Name,
+                              Status = orderStatuses[order.StatusCode.Value]
+                          }).ToArray();
+
+            return new WorkOrderModel
+            {
+                Activities = activiteList.OrderByDescending(a => a.CreatedOn).ToArray(),
+                Orders = orders
+            };
+        }
+
         private void ChangeWorkOrdersStatus(Incident workOrder, ars_technician technician, StatusCode statusCode, EventType eventType)
         {
             var status = GetStatusOptionSetValue(statusCode);
@@ -497,6 +614,12 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
         private Dictionary<string, int> GetWorkItemStatuses()
         {
             return _optionSetHelper.GetStringValues(ars_workitem.EntityLogicalName, NameOf.Property(() => ((ars_workitem)null).statuscode)).ToDictionary(o => o.Value, o => o.Key);
+        }
+
+        private Dictionary<int, string> GetOrderStatuses()
+        {
+            var options = _optionSetHelper.GetStringValues(SalesOrder.EntityLogicalName, NameOf.Property(() => ((SalesOrder)null).StatusCode));
+            return options;
         }
     }
 }
