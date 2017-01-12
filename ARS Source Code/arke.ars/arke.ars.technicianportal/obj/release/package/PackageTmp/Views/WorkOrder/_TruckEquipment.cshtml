@@ -14,17 +14,17 @@
                 <div class="modal-body">
                     <div class="row">
                         <p><strong>Truck Stock Items</strong></p>
+                        <div class="form-group col-sm-3">
+                            <label for="truck-stock-name" class="sr-only">Item</label>
+                            <input class="form-control input-sm" id="truck-stock-name" placeholder="Item">
+                        </div>
                         <div class="form-group col-sm-2">
                             <label for="truck-stock-quantity" class="sr-only">Quantity</label>
                             <input type="number" class="form-control input-sm" id="truck-stock-quantity" placeholder="QTY" min="0">
                         </div>
                         <div class="form-group col-sm-3">
-                            <label for="truck-stock-name" class="sr-only">Item</label>
-                            <input class="form-control input-sm" id="truck-stock-name" placeholder="Item">
-                        </div>
-                        <div class="form-group col-sm-3">
                             <label for="truck-stock-price" class="sr-only">Price each</label>
-                            <input class="form-control input-sm" id="truck-stock-price" placeholder="Price each" type="number" min="0">
+                            <input class="form-control input-sm" id="truck-stock-price" placeholder="Price each" step=".01" type="number" min="0">
                         </div>
                         <div class="form-group col-sm-2">
                             <label for="truck-stock-total" class="sr-only">Total</label>
@@ -36,17 +36,17 @@
                     </div>
                     <div class="row">
                         <p><strong>Other Equipment Items</strong></p>
+                        <div class="form-group col-sm-3">
+                            <label for="equipment-name" class="sr-only">Item</label>
+                            <input class="form-control input-sm" id="equipment-name" placeholder="Item">
+                        </div>
                         <div class="form-group col-sm-2">
                             <label for="equipment-quantity" class="sr-only">Quantity</label>
                             <input type="number" class="form-control input-sm" id="equipment-quantity" placeholder="QTY" min="0">
                         </div>
                         <div class="form-group col-sm-3">
-                            <label for="equipment-name" class="sr-only">Item</label>
-                            <input class="form-control input-sm" id="equipment-name" placeholder="Item">
-                        </div>
-                        <div class="form-group col-sm-3">
                             <label for="equipment-price" class="sr-only">Price each</label>
-                            <input class="form-control input-sm" id="equipment-price" placeholder="Price each" type="number" min="0">
+                            <input class="form-control input-sm" id="equipment-price" placeholder="Price each" type="number" step=".01" min="0">
                         </div>
                         <div class="form-group col-sm-2">
                             <label for="equipment-total" class="sr-only">Total</label>
@@ -61,8 +61,8 @@
                             <table class="table table-striped" id="truck-stock-grid">
                                 <thead>
                                     <tr>
-                                        <th data-column-id=quantity data-header-css-class="col-md-3">Quantity</th>
                                         <th data-column-id=item data-header-css-class="col-md-6">Item</th>
+                                        <th data-column-id=quantity data-header-css-class="col-md-3">Quantity</th>
                                         <th data-column-id=price data-header-css-class="col-md-3" data-formatter="currency">Price</th>
                                         <th data-column-id=total data-header-css-class="col-md-3" data-formatter="total">Total</th>
                                         <th data-column-id="id" data-header-css-class="col-md-1" data-identifier="true" data-formatter="commands" data-sortable="false">&nbsp;</th>

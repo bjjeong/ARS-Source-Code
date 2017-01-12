@@ -9,7 +9,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Purchase order request <small>@Model.TicketNumber</small></h4>
+                    <h4 class="modal-title">Purchase Order Request <small>@Model.TicketNumber</small></h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -24,29 +24,29 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="taxAmount">Tax Amount</label>
-                                <input type="text" class="form-control" rows="" id="taxAmount" name="taxAmount" required="required" />
+                                <input type="number" step=".01" min="0" class="form-control" rows="" id="taxAmount" name="taxAmount" required="required" />
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="subtotal">Subtotal</label>
-                                <input type="text" class="form-control" rows="" id="subtotal" name="subtotal" required="required" />
+                                <input type="number" min="0" step=".01" class="form-control" rows="" id="subtotal" name="subtotal" required="required" />
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <p><strong>Purchase Order Items</strong></p>
+                        <div class="form-group col-sm-3">
+                            <label for="purchase-order-name" class="sr-only">Item</label>
+                            <input class="form-control input-sm" id="purchase-order-name" placeholder="Item">
+                        </div>
                         <div class="form-group col-sm-2">
                             <label for="purchase-order-quantity" class="sr-only">Quantity</label>
                             <input type="number" class="form-control input-sm" id="purchase-order-quantity" placeholder="QTY" min="0">
                         </div>
                         <div class="form-group col-sm-3">
-                            <label for="purchase-order-name" class="sr-only">Item</label>
-                            <input class="form-control input-sm" id="purchase-order-name" placeholder="Item">
-                        </div>
-                        <div class="form-group col-sm-3">
                             <label for="purchase-order-price" class="sr-only">Price each</label>
-                            <input class="form-control input-sm" id="purchase-order-price" placeholder="Price each" type="number" min="0">
+                            <input class="form-control input-sm" id="purchase-order-price" placeholder="Price each" type="number" min="0" step=".01">
                         </div>
                         <div class="form-group col-sm-2">
                             <label for="purchase-order-total" class="sr-only">Total</label>
@@ -61,8 +61,8 @@
                             <table class="table table-striped" onclick="" id="purchase-orders-grid">
                                 <thead>
                                     <tr>
-                                        <th data-column-id=quantity data-header-css-class="col-md-3">Quantity</th>
                                         <th data-column-id=item data-header-css-class="col-md-6">Item</th>
+                                        <th data-column-id=quantity data-header-css-class="col-md-3">Quantity</th>
                                         <th data-column-id=price data-header-css-class="col-md-3" data-formatter="currency">Price</th>
                                         <th data-column-id=total data-header-css-class="col-md-3" data-formatter="total">Total</th>
                                         <th data-column-id="id" data-header-css-class="col-md-1" data-identifier="true" data-formatter="commands" data-sortable="false">&nbsp;</th>

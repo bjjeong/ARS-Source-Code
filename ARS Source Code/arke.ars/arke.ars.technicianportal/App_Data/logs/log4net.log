@@ -5690,3 +5690,81 @@ Cannot resolve parameter 'Arke.ARS.TechnicianPortal.Services.IAttachmentService 
 2017-01-11 10:55:53,656 [9] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
 2017-01-11 10:55:53,933 [9] INFO  customer name 00027 Office Depot SMS Assist, LLC
 2017-01-11 10:55:54,209 [9] INFO  workItemStatuses contains 2
+2017-01-11 11:03:24,922 [6] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-11 11:03:25,242 [6] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-11 11:03:25,540 [6] INFO  workItemStatuses contains 2
+2017-01-11 11:05:40,247 [6] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-11 11:05:40,542 [6] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-11 11:05:40,718 [6] INFO  workItemStatuses contains 2
+2017-01-11 11:05:49,281 [6] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-11 11:05:49,458 [6] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-11 11:05:49,631 [6] INFO  workItemStatuses contains 2
+2017-01-11 11:07:20,052 [6] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-11 11:07:20,238 [6] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-11 11:07:20,415 [6] INFO  workItemStatuses contains 2
+2017-01-11 11:08:06,881 [6] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-11 11:08:07,067 [6] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-11 11:08:07,237 [6] INFO  workItemStatuses contains 2
+2017-01-11 11:08:11,441 [6] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-11 11:08:11,670 [6] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-11 11:08:11,838 [6] INFO  workItemStatuses contains 2
+2017-01-11 11:08:59,436 [6] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-11 11:08:59,659 [6] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-11 11:08:59,834 [6] INFO  workItemStatuses contains 2
+2017-01-11 11:09:15,745 [17] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-11 11:09:15,927 [17] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-11 11:09:16,098 [17] INFO  workItemStatuses contains 2
+2017-01-11 11:10:13,344 [11] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-11 11:10:13,527 [11] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-11 11:10:13,689 [11] INFO  workItemStatuses contains 2
+2017-01-11 11:10:28,117 [11] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-11 11:10:28,316 [11] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-11 11:10:28,928 [11] INFO  workItemStatuses contains 2
+2017-01-11 11:12:40,657 [8] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-11 11:12:45,824 [8] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-11 11:12:46,037 [8] INFO  workItemStatuses contains 2
+2017-01-11 11:13:15,421 [18] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-11 11:13:15,597 [18] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-11 11:13:15,757 [18] INFO  workItemStatuses contains 2
+2017-01-11 11:13:40,321 [26] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-11 11:13:40,538 [26] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-11 11:13:40,714 [26] INFO  workItemStatuses contains 2
+2017-01-11 11:14:02,489 [5] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-11 11:14:02,663 [5] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-11 11:14:02,842 [5] INFO  workItemStatuses contains 2
+2017-01-11 15:16:37,272 [7] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-11 15:16:38,001 [7] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-11 15:16:38,747 [7] INFO  workItemStatuses contains 2
+2017-01-11 15:16:53,314 [7] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-11 15:16:53,533 [7] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-11 15:16:53,746 [7] INFO  workItemStatuses contains 2
+2017-01-12 09:20:16,009 [8] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-12 09:20:16,304 [8] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-12 09:20:16,598 [8] INFO  workItemStatuses contains 2
+2017-01-12 09:20:29,739 [8] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-12 09:20:29,914 [8] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-12 09:20:30,082 [8] INFO  workItemStatuses contains 2
+2017-01-12 09:22:42,720 [8] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-12 09:22:47,427 [8] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-12 09:22:47,644 [8] INFO  workItemStatuses contains 2
+2017-01-12 09:24:00,739 [21] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-12 09:24:00,981 [21] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-12 09:24:01,149 [21] INFO  workItemStatuses contains 2
+2017-01-12 09:27:07,554 [15] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-12 09:27:08,197 [15] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-12 09:27:08,347 [15] INFO  workItemStatuses contains 2
+2017-01-12 09:31:20,103 [27] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-12 09:31:20,366 [27] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-12 09:31:20,528 [27] INFO  workItemStatuses contains 2
+2017-01-12 09:31:50,807 [27] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-12 09:31:51,064 [27] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-12 09:31:51,226 [27] INFO  workItemStatuses contains 2
+2017-01-12 09:32:11,826 [27] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-12 09:32:11,994 [27] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-12 09:32:12,155 [27] INFO  workItemStatuses contains 2
+2017-01-12 09:35:10,471 [25] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-12 09:35:11,063 [25] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-12 09:35:11,226 [25] INFO  workItemStatuses contains 2
+2017-01-12 09:36:34,956 [25] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-12 09:36:35,114 [25] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-12 09:36:35,275 [25] INFO  workItemStatuses contains 2

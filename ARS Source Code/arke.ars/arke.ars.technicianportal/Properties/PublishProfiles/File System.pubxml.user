@@ -60,7 +60,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/06/2017 10:55:57</publishTime>
     </File>
     <File Include="bin/Arke.ARS.TechnicianPortal.dll">
-      <publishTime>01/11/2017 10:57:02</publishTime>
+      <publishTime>01/12/2017 09:37:25</publishTime>
     </File>
     <File Include="bin/Arke.Crm.Utils.dll">
       <publishTime>05/31/2016 15:17:25</publishTime>
@@ -399,22 +399,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/31/2016 15:17:10</publishTime>
     </File>
     <File Include="Views/WorkOrder/Index.cshtml">
-      <publishTime>01/11/2017 10:22:44</publishTime>
+      <publishTime>01/12/2017 09:36:32</publishTime>
     </File>
     <File Include="Views/WorkOrder/_CheckIn.cshtml">
       <publishTime>06/17/2016 10:23:34</publishTime>
     </File>
     <File Include="Views/WorkOrder/_CheckOut.cshtml">
-      <publishTime>01/03/2017 08:17:04</publishTime>
+      <publishTime>01/12/2017 09:32:09</publishTime>
     </File>
     <File Include="Views/WorkOrder/_CommentsAndAttachments.cshtml">
       <publishTime>05/31/2016 15:17:10</publishTime>
     </File>
     <File Include="Views/WorkOrder/_NteIncrease.cshtml">
-      <publishTime>08/03/2016 13:18:25</publishTime>
+      <publishTime>01/12/2017 09:23:58</publishTime>
     </File>
     <File Include="Views/WorkOrder/_PurchaseOrder.cshtml">
-      <publishTime>01/05/2017 14:26:05</publishTime>
+      <publishTime>01/12/2017 09:35:57</publishTime>
     </File>
     <File Include="Views/WorkOrder/_SignWorkOrder.cshtml">
       <publishTime>06/16/2016 13:06:02</publishTime>
