@@ -6576,3 +6576,180 @@ System.Xml.XmlException - The maximum nametable character count quota (16384) ha
    at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
 
 
+2017-01-23 09:28:29,532 [7] ERROR ==========================  Exception info see below  ===============================
+An unhandled exception occurred.
+Url: /api/Appointment?start=2017-01-23&end=2017-01-24
+System.IO.FileLoadException - Could not load file or assembly 'Microsoft.Crm.Sdk.Proxy, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+   at Arke.ARS.CommonWeb.Services.Impl.TimeService.ConvertUtcTimeToUserTime(DateTime utcDate)
+   at Arke.ARS.TechnicianPortal.Services.Impl.AppointmentService.GetAppointments(DateTime start, DateTime end, Guid technicianId) in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal\Services\Impl\AppointmentService.cs:line 55
+   at Arke.ARS.TechnicianPortal.Controllers.AppointmentController.Get(DateTime start, DateTime end) in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal\Controllers\AppointmentController.cs:line 26
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+
+
+2017-01-23 09:28:29,538 [7] ERROR ==========================  Exception info see below  ===============================
+An unhandled exception occurred.
+Url: /api/Appointment?start=2017-01-23&end=2017-01-24
+System.IO.FileLoadException - Could not load file or assembly 'Microsoft.Crm.Sdk.Proxy, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+   at Arke.ARS.CommonWeb.Services.Impl.TimeService.ConvertUtcTimeToUserTime(DateTime utcDate)
+   at Arke.ARS.TechnicianPortal.Services.Impl.AppointmentService.GetAppointments(DateTime start, DateTime end, Guid technicianId) in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal\Services\Impl\AppointmentService.cs:line 55
+   at Arke.ARS.TechnicianPortal.Controllers.AppointmentController.Get(DateTime start, DateTime end) in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal\Controllers\AppointmentController.cs:line 26
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+
+
+2017-01-23 10:09:32,271 [6] ERROR ==========================  Exception info see below  ===============================
+An unhandled exception occurred.
+Url: /api/Appointment?start=2017-01-23&end=2017-01-24
+System.IO.FileLoadException - Could not load file or assembly 'Microsoft.Crm.Sdk.Proxy, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+   at Arke.ARS.CommonWeb.Services.Impl.TimeService.ConvertUtcTimeToUserTime(DateTime utcDate)
+   at Arke.ARS.TechnicianPortal.Services.Impl.AppointmentService.GetAppointments(DateTime start, DateTime end, Guid technicianId) in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal\Services\Impl\AppointmentService.cs:line 55
+   at Arke.ARS.TechnicianPortal.Controllers.AppointmentController.Get(DateTime start, DateTime end) in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal\Controllers\AppointmentController.cs:line 26
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+
+
+2017-01-23 10:09:32,278 [6] ERROR ==========================  Exception info see below  ===============================
+An unhandled exception occurred.
+Url: /api/Appointment?start=2017-01-23&end=2017-01-24
+System.IO.FileLoadException - Could not load file or assembly 'Microsoft.Crm.Sdk.Proxy, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+   at Arke.ARS.CommonWeb.Services.Impl.TimeService.ConvertUtcTimeToUserTime(DateTime utcDate)
+   at Arke.ARS.TechnicianPortal.Services.Impl.AppointmentService.GetAppointments(DateTime start, DateTime end, Guid technicianId) in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal\Services\Impl\AppointmentService.cs:line 55
+   at Arke.ARS.TechnicianPortal.Controllers.AppointmentController.Get(DateTime start, DateTime end) in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal\Controllers\AppointmentController.cs:line 26
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+
+
+2017-01-23 10:37:02,539 [6] ERROR ==========================  Exception info see below  ===============================
+An unhandled exception occurred.
+Url: /api/Appointment?start=2017-01-23&end=2017-01-24
+System.IO.FileLoadException - Could not load file or assembly 'Microsoft.Crm.Sdk.Proxy, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+   at Arke.ARS.CommonWeb.Services.Impl.TimeService.ConvertUtcTimeToUserTime(DateTime utcDate)
+   at Arke.ARS.TechnicianPortal.Services.Impl.AppointmentService.GetAppointments(DateTime start, DateTime end, Guid technicianId) in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal\Services\Impl\AppointmentService.cs:line 55
+   at Arke.ARS.TechnicianPortal.Controllers.AppointmentController.Get(DateTime start, DateTime end) in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal\Controllers\AppointmentController.cs:line 26
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+
+
+2017-01-23 10:37:02,546 [6] ERROR ==========================  Exception info see below  ===============================
+An unhandled exception occurred.
+Url: /api/Appointment?start=2017-01-23&end=2017-01-24
+System.IO.FileLoadException - Could not load file or assembly 'Microsoft.Crm.Sdk.Proxy, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+   at Arke.ARS.CommonWeb.Services.Impl.TimeService.ConvertUtcTimeToUserTime(DateTime utcDate)
+   at Arke.ARS.TechnicianPortal.Services.Impl.AppointmentService.GetAppointments(DateTime start, DateTime end, Guid technicianId) in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal\Services\Impl\AppointmentService.cs:line 55
+   at Arke.ARS.TechnicianPortal.Controllers.AppointmentController.Get(DateTime start, DateTime end) in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal\Controllers\AppointmentController.cs:line 26
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+
+
+2017-01-23 10:37:40,638 [8] INFO  getting order with id 38d03618-58df-e611-80f9-3863bb347a00
+2017-01-23 10:37:41,149 [8] INFO  customer name 07505 Mapco Mart
+2017-01-23 10:37:41,446 [8] INFO  workItemStatuses contains 2
