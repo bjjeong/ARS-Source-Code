@@ -12,5 +12,7 @@ namespace Arke.ARS.TechnicianPortal.Models
         CheckOut,
         [Description("NTE Increase Request")]
         NteIncreaseRequest,
+        [Description("Lunch")]
+        Lunch,
     }
 }

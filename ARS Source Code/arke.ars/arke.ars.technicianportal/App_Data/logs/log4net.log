@@ -5768,3 +5768,811 @@ Cannot resolve parameter 'Arke.ARS.TechnicianPortal.Services.IAttachmentService 
 2017-01-12 09:36:34,956 [25] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
 2017-01-12 09:36:35,114 [25] INFO  customer name 00027 Office Depot SMS Assist, LLC
 2017-01-12 09:36:35,275 [25] INFO  workItemStatuses contains 2
+2017-01-12 11:25:25,531 [10] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-12 11:25:25,728 [10] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-12 11:25:25,929 [10] INFO  workItemStatuses contains 2
+2017-01-12 11:31:17,397 [12] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-12 11:31:17,580 [12] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-12 11:31:17,768 [12] INFO  workItemStatuses contains 2
+2017-01-13 14:44:22,041 [6] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-13 14:44:22,529 [6] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-13 14:44:22,994 [6] INFO  workItemStatuses contains 2
+2017-01-13 14:44:37,717 [6] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-13 14:44:37,956 [6] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-13 14:44:38,199 [6] INFO  workItemStatuses contains 2
+2017-01-17 08:58:03,307 [6] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-17 08:58:03,764 [6] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-17 08:58:04,073 [6] INFO  workItemStatuses contains 2
+2017-01-17 08:58:34,510 [6] ERROR ==========================  Exception info see below  ===============================
+Unhandled exception
+Url: /WorkOrder/CheckIn/6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+Microsoft.Xrm.Sdk.SaveChangesException - An error occured while processing this request.
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceContext.SaveChanges(SaveChangesOptions options)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceContext.SaveChanges()
+   at Arke.ARS.Organization.Context.ArsOrganizationContext.Arke.Crm.Utils.IOrganizationServiceContext.SaveChanges()
+   at Arke.ARS.TechnicianPortal.Services.Impl.WorkOrderService.StartProgress(Guid workOrderId, Guid technicianId) in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal\Services\Impl\WorkOrderService.cs:line 264
+   at Arke.ARS.TechnicianPortal.Controllers.WorkOrderController.CheckIn(Guid id) in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal\Controllers\WorkOrderController.cs:line 46
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass48.<InvokeActionMethodFilterAsynchronouslyRecursive>b__41()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecute>b__15(IAsyncResult asyncResult, Controller controller)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+System.ServiceModel.FaultException`1[Microsoft.Xrm.Sdk.OrganizationServiceFault] - 1 is not a valid status code for state code IncidentState.Canceled on incident with Id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8.
+
+Server stack trace: 
+   at System.ServiceModel.Channels.ServiceChannel.HandleReply(ProxyOperationRuntime operation, ProxyRpc& rpc)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at Microsoft.Xrm.Sdk.IOrganizationService.Execute(OrganizationRequest request)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceProxy.ExecuteCore(OrganizationRequest request)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceProxy.Execute(OrganizationRequest request)
+   at Microsoft.Xrm.Client.Services.OrganizationService.<>c__DisplayClass19.<Execute>b__18(IOrganizationService s)
+   at Microsoft.Xrm.Client.Services.OrganizationService.InnerOrganizationService.UsingService[TResult](Func`2 action)
+   at Microsoft.Xrm.Client.Services.OrganizationService.Execute(OrganizationRequest request)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceContext.Execute(OrganizationRequest request)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceContext.SaveChange(OrganizationRequest request, IList`1 results)
+
+
+2017-01-17 08:59:10,159 [8] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-17 08:59:10,373 [8] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-17 08:59:10,583 [8] INFO  workItemStatuses contains 2
+2017-01-17 08:59:29,601 [8] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-17 08:59:29,789 [8] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-17 08:59:29,975 [8] INFO  workItemStatuses contains 2
+2017-01-17 09:07:53,077 [9] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-17 09:07:53,602 [9] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-17 09:07:53,975 [9] INFO  workItemStatuses contains 2
+2017-01-17 09:08:02,171 [7] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-17 09:08:02,353 [7] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-17 09:08:02,541 [7] INFO  workItemStatuses contains 2
+2017-01-17 09:08:10,068 [9] INFO  getting order with id 6e89a8eb-3bd1-e611-80fa-3863bb36ade8
+2017-01-17 09:08:10,253 [9] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-01-17 09:08:10,439 [9] INFO  workItemStatuses contains 2
+2017-01-23 08:24:11,831 [6] ERROR ==========================  Exception info see below  ===============================
+Unhandled exception
+Url: /Token
+System.InvalidOperationException - Metadata contains a reference that cannot be resolved: 'https://advancedretail.crm.dynamics.com/XRMServices/2011/Organization.svc?wsdl=wsdl0'.
+   at System.ServiceModel.Description.MetadataExchangeClient.MetadataRetriever.Retrieve(TimeoutHelper timeoutHelper)
+   at System.ServiceModel.Description.MetadataExchangeClient.ResolveNext(ResolveCallState resolveCallState)
+   at System.ServiceModel.Description.MetadataExchangeClient.ResolveNext(ResolveCallState resolveCallState)
+   at System.ServiceModel.Description.MetadataExchangeClient.GetMetadata(MetadataRetriever retriever)
+   at System.ServiceModel.Description.MetadataExchangeClient.GetMetadata(Uri address, MetadataExchangeClientMode mode)
+   at Microsoft.Xrm.Sdk.Client.ServiceMetadataUtility.RetrieveServiceEndpointMetadata(Type contractType, Uri serviceUri, Boolean checkForSecondary)
+   at Microsoft.Xrm.Sdk.Client.ServiceConfiguration`1..ctor(Uri serviceUri, Boolean checkForSecondary)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceConfiguration..ctor(Uri serviceUri)
+   at Microsoft.Xrm.Sdk.Client.ServiceConfigurationFactory.CreateConfiguration[TService](Uri serviceUri)
+   at Microsoft.Xrm.Client.Services.OrganizationService.CreateServiceConfiguration(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.GetServiceConfiguration(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.ToOrganizationServiceProxy(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.ToOrganizationService(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.<>c__DisplayClass2.<.ctor>b__0()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.Xrm.Client.Services.OrganizationService.InnerOrganizationService.UsingService[TResult](Func`2 action)
+   at Microsoft.Xrm.Client.Services.OrganizationService.Execute(OrganizationRequest request)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceContext.Execute(OrganizationRequest request)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.RetrieveEntityCollection(OrganizationRequest request, NavigationSource source)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute(QueryExpression qe, Boolean throwIfSequenceIsEmpty, Boolean throwIfSequenceNotSingle, Projection projection, NavigationSource source, List`1 linkLookups, String& pagingCookie, Boolean& moreRecords)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute[TElement](QueryExpression qe, Boolean throwIfSequenceIsEmpty, Boolean throwIfSequenceNotSingle, Projection projection, NavigationSource source, List`1 linkLookups)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute[TElement](Expression expression)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.GetEnumerator[TElement](Expression expression)
+   at Microsoft.Xrm.Sdk.Linq.Query`1.GetEnumerator()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at Arke.ARS.TechnicianPortal.Services.Impl.CrmTechnicianAuthenticationService.FindUser(String name, String password) in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal\Services\Impl\CrmTechnicianAuthenticationService.cs:line 37
+   at Arke.ARS.CommonWeb.Providers.ApplicationOAuthProvider.<GrantResourceOwnerCredentials>d__3.MoveNext() in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.CommonWeb\Providers\ApplicationOAuthProvider.cs:line 49
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerHandler.<InvokeTokenEndpointResourceOwnerPasswordCredentialsGrantAsync>d__3f.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerHandler.<InvokeTokenEndpointAsync>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerHandler.<InvokeAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Security.Infrastructure.AuthenticationMiddleware`1.<Invoke>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Security.Infrastructure.AuthenticationMiddleware`1.<Invoke>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContextStage.<RunApp>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContext.<DoFinalWork>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.StageAsyncResult.End(IAsyncResult ar)
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContext.EndFinalWork(IAsyncResult ar)
+   at System.Web.HttpApplication.AsyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+System.InvalidOperationException - There is an error in XML document (1, 1298).
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+   at System.Web.Services.Description.ServiceDescription.Read(XmlReader reader, Boolean validate)
+   at System.ServiceModel.Description.MetadataExchangeClient.MetadataRetriever.CreateMetadataSection(XmlReader reader, String sourceUrl)
+   at System.ServiceModel.Description.MetadataExchangeClient.MetadataRetriever.Retrieve(TimeoutHelper timeoutHelper)
+System.Xml.XmlException - The maximum nametable character count quota (16384) has been exceeded while reading XML data. The nametable is a data structure used to store strings encountered during XML processing - long XML documents with non-repeating element names, attribute names and attribute values may trigger this quota. This quota may be increased by changing the MaxNameTableCharCount property on the XmlDictionaryReaderQuotas object used when creating the XML reader. Line 1, position 1298.
+   at System.Xml.XmlExceptionHelper.ThrowXmlException(XmlDictionaryReader reader, String res, String arg1, String arg2, String arg3)
+   at System.Xml.XmlExceptionHelper.ThrowMaxNameTableCharCountExceeded(XmlDictionaryReader reader, Int32 maxNameTableCharCount)
+   at System.Xml.XmlBaseReader.QuotaNameTable.Add(Int32 charCount)
+   at System.Xml.XmlBaseReader.QuotaNameTable.Add(String value)
+   at System.Xml.Serialization.XmlSerializationReader.ToXmlQualifiedName(String value, Boolean decodeName)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read72_OperationOutput(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read74_Operation(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read75_PortType(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read124_ServiceDescription(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read125_definitions()
+   at System.Web.Services.Description.ServiceDescription.ServiceDescriptionSerializer.Deserialize(XmlSerializationReader reader)
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+
+
+2017-01-23 08:30:32,144 [8] ERROR ==========================  Exception info see below  ===============================
+Unhandled exception
+Url: /Token
+System.InvalidOperationException - Metadata contains a reference that cannot be resolved: 'https://advancedretail.crm.dynamics.com/XRMServices/2011/Organization.svc?wsdl=wsdl0'.
+   at System.ServiceModel.Description.MetadataExchangeClient.MetadataRetriever.Retrieve(TimeoutHelper timeoutHelper)
+   at System.ServiceModel.Description.MetadataExchangeClient.ResolveNext(ResolveCallState resolveCallState)
+   at System.ServiceModel.Description.MetadataExchangeClient.ResolveNext(ResolveCallState resolveCallState)
+   at System.ServiceModel.Description.MetadataExchangeClient.GetMetadata(MetadataRetriever retriever)
+   at System.ServiceModel.Description.MetadataExchangeClient.GetMetadata(Uri address, MetadataExchangeClientMode mode)
+   at Microsoft.Xrm.Sdk.Client.ServiceMetadataUtility.RetrieveServiceEndpointMetadata(Type contractType, Uri serviceUri, Boolean checkForSecondary)
+   at Microsoft.Xrm.Sdk.Client.ServiceConfiguration`1..ctor(Uri serviceUri, Boolean checkForSecondary)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceConfiguration..ctor(Uri serviceUri)
+   at Microsoft.Xrm.Sdk.Client.ServiceConfigurationFactory.CreateConfiguration[TService](Uri serviceUri)
+   at Microsoft.Xrm.Client.Services.OrganizationService.CreateServiceConfiguration(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.GetServiceConfiguration(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.ToOrganizationServiceProxy(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.ToOrganizationService(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.<>c__DisplayClass2.<.ctor>b__0()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.Xrm.Client.Services.OrganizationService.InnerOrganizationService.UsingService[TResult](Func`2 action)
+   at Microsoft.Xrm.Client.Services.OrganizationService.Execute(OrganizationRequest request)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceContext.Execute(OrganizationRequest request)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.RetrieveEntityCollection(OrganizationRequest request, NavigationSource source)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute(QueryExpression qe, Boolean throwIfSequenceIsEmpty, Boolean throwIfSequenceNotSingle, Projection projection, NavigationSource source, List`1 linkLookups, String& pagingCookie, Boolean& moreRecords)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute[TElement](QueryExpression qe, Boolean throwIfSequenceIsEmpty, Boolean throwIfSequenceNotSingle, Projection projection, NavigationSource source, List`1 linkLookups)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute[TElement](Expression expression)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.GetEnumerator[TElement](Expression expression)
+   at Microsoft.Xrm.Sdk.Linq.Query`1.GetEnumerator()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at Arke.ARS.TechnicianPortal.Services.Impl.CrmTechnicianAuthenticationService.FindUser(String name, String password) in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal\Services\Impl\CrmTechnicianAuthenticationService.cs:line 37
+   at Arke.ARS.CommonWeb.Providers.ApplicationOAuthProvider.<GrantResourceOwnerCredentials>d__3.MoveNext() in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.CommonWeb\Providers\ApplicationOAuthProvider.cs:line 49
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerHandler.<InvokeTokenEndpointResourceOwnerPasswordCredentialsGrantAsync>d__3f.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerHandler.<InvokeTokenEndpointAsync>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerHandler.<InvokeAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Security.Infrastructure.AuthenticationMiddleware`1.<Invoke>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Security.Infrastructure.AuthenticationMiddleware`1.<Invoke>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContextStage.<RunApp>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContext.<DoFinalWork>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.StageAsyncResult.End(IAsyncResult ar)
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContext.EndFinalWork(IAsyncResult ar)
+   at System.Web.HttpApplication.AsyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+System.InvalidOperationException - There is an error in XML document (1, 1298).
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+   at System.Web.Services.Description.ServiceDescription.Read(XmlReader reader, Boolean validate)
+   at System.ServiceModel.Description.MetadataExchangeClient.MetadataRetriever.CreateMetadataSection(XmlReader reader, String sourceUrl)
+   at System.ServiceModel.Description.MetadataExchangeClient.MetadataRetriever.Retrieve(TimeoutHelper timeoutHelper)
+System.Xml.XmlException - The maximum nametable character count quota (16384) has been exceeded while reading XML data. The nametable is a data structure used to store strings encountered during XML processing - long XML documents with non-repeating element names, attribute names and attribute values may trigger this quota. This quota may be increased by changing the MaxNameTableCharCount property on the XmlDictionaryReaderQuotas object used when creating the XML reader. Line 1, position 1298.
+   at System.Xml.XmlExceptionHelper.ThrowXmlException(XmlDictionaryReader reader, String res, String arg1, String arg2, String arg3)
+   at System.Xml.XmlExceptionHelper.ThrowMaxNameTableCharCountExceeded(XmlDictionaryReader reader, Int32 maxNameTableCharCount)
+   at System.Xml.XmlBaseReader.QuotaNameTable.Add(Int32 charCount)
+   at System.Xml.XmlBaseReader.QuotaNameTable.Add(String value)
+   at System.Xml.Serialization.XmlSerializationReader.ToXmlQualifiedName(String value, Boolean decodeName)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read72_OperationOutput(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read74_Operation(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read75_PortType(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read124_ServiceDescription(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read125_definitions()
+   at System.Web.Services.Description.ServiceDescription.ServiceDescriptionSerializer.Deserialize(XmlSerializationReader reader)
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+
+
+2017-01-23 08:30:35,609 [7] ERROR ==========================  Exception info see below  ===============================
+Unhandled exception
+Url: /Token
+System.InvalidOperationException - Metadata contains a reference that cannot be resolved: 'https://advancedretail.crm.dynamics.com/XRMServices/2011/Organization.svc?wsdl=wsdl0'.
+   at System.ServiceModel.Description.MetadataExchangeClient.MetadataRetriever.Retrieve(TimeoutHelper timeoutHelper)
+   at System.ServiceModel.Description.MetadataExchangeClient.ResolveNext(ResolveCallState resolveCallState)
+   at System.ServiceModel.Description.MetadataExchangeClient.ResolveNext(ResolveCallState resolveCallState)
+   at System.ServiceModel.Description.MetadataExchangeClient.GetMetadata(MetadataRetriever retriever)
+   at System.ServiceModel.Description.MetadataExchangeClient.GetMetadata(Uri address, MetadataExchangeClientMode mode)
+   at Microsoft.Xrm.Sdk.Client.ServiceMetadataUtility.RetrieveServiceEndpointMetadata(Type contractType, Uri serviceUri, Boolean checkForSecondary)
+   at Microsoft.Xrm.Sdk.Client.ServiceConfiguration`1..ctor(Uri serviceUri, Boolean checkForSecondary)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceConfiguration..ctor(Uri serviceUri)
+   at Microsoft.Xrm.Sdk.Client.ServiceConfigurationFactory.CreateConfiguration[TService](Uri serviceUri)
+   at Microsoft.Xrm.Client.Services.OrganizationService.CreateServiceConfiguration(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.GetServiceConfiguration(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.ToOrganizationServiceProxy(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.ToOrganizationService(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.<>c__DisplayClass2.<.ctor>b__0()
+   at System.Lazy`1.CreateValue()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Lazy`1.get_Value()
+   at Microsoft.Xrm.Client.Services.OrganizationService.InnerOrganizationService.UsingService[TResult](Func`2 action)
+   at Microsoft.Xrm.Client.Services.OrganizationService.Execute(OrganizationRequest request)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceContext.Execute(OrganizationRequest request)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.RetrieveEntityCollection(OrganizationRequest request, NavigationSource source)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute(QueryExpression qe, Boolean throwIfSequenceIsEmpty, Boolean throwIfSequenceNotSingle, Projection projection, NavigationSource source, List`1 linkLookups, String& pagingCookie, Boolean& moreRecords)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute[TElement](QueryExpression qe, Boolean throwIfSequenceIsEmpty, Boolean throwIfSequenceNotSingle, Projection projection, NavigationSource source, List`1 linkLookups)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute[TElement](Expression expression)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.GetEnumerator[TElement](Expression expression)
+   at Microsoft.Xrm.Sdk.Linq.Query`1.GetEnumerator()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at Arke.ARS.TechnicianPortal.Services.Impl.CrmTechnicianAuthenticationService.FindUser(String name, String password) in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal\Services\Impl\CrmTechnicianAuthenticationService.cs:line 37
+   at Arke.ARS.CommonWeb.Providers.ApplicationOAuthProvider.<GrantResourceOwnerCredentials>d__3.MoveNext() in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.CommonWeb\Providers\ApplicationOAuthProvider.cs:line 49
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerHandler.<InvokeTokenEndpointResourceOwnerPasswordCredentialsGrantAsync>d__3f.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerHandler.<InvokeTokenEndpointAsync>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerHandler.<InvokeAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Security.Infrastructure.AuthenticationMiddleware`1.<Invoke>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Security.Infrastructure.AuthenticationMiddleware`1.<Invoke>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContextStage.<RunApp>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContext.<DoFinalWork>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.StageAsyncResult.End(IAsyncResult ar)
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContext.EndFinalWork(IAsyncResult ar)
+   at System.Web.HttpApplication.AsyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+System.InvalidOperationException - There is an error in XML document (1, 1298).
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+   at System.Web.Services.Description.ServiceDescription.Read(XmlReader reader, Boolean validate)
+   at System.ServiceModel.Description.MetadataExchangeClient.MetadataRetriever.CreateMetadataSection(XmlReader reader, String sourceUrl)
+   at System.ServiceModel.Description.MetadataExchangeClient.MetadataRetriever.Retrieve(TimeoutHelper timeoutHelper)
+System.Xml.XmlException - The maximum nametable character count quota (16384) has been exceeded while reading XML data. The nametable is a data structure used to store strings encountered during XML processing - long XML documents with non-repeating element names, attribute names and attribute values may trigger this quota. This quota may be increased by changing the MaxNameTableCharCount property on the XmlDictionaryReaderQuotas object used when creating the XML reader. Line 1, position 1298.
+   at System.Xml.XmlExceptionHelper.ThrowXmlException(XmlDictionaryReader reader, String res, String arg1, String arg2, String arg3)
+   at System.Xml.XmlExceptionHelper.ThrowMaxNameTableCharCountExceeded(XmlDictionaryReader reader, Int32 maxNameTableCharCount)
+   at System.Xml.XmlBaseReader.QuotaNameTable.Add(Int32 charCount)
+   at System.Xml.XmlBaseReader.QuotaNameTable.Add(String value)
+   at System.Xml.Serialization.XmlSerializationReader.ToXmlQualifiedName(String value, Boolean decodeName)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read72_OperationOutput(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read74_Operation(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read75_PortType(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read124_ServiceDescription(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read125_definitions()
+   at System.Web.Services.Description.ServiceDescription.ServiceDescriptionSerializer.Deserialize(XmlSerializationReader reader)
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+
+
+2017-01-23 08:32:02,665 [6] ERROR ==========================  Exception info see below  ===============================
+Unhandled exception
+Url: /Token
+System.InvalidOperationException - Metadata contains a reference that cannot be resolved: 'https://advancedretail.crm.dynamics.com/XRMServices/2011/Organization.svc?wsdl=wsdl0'.
+   at System.ServiceModel.Description.MetadataExchangeClient.MetadataRetriever.Retrieve(TimeoutHelper timeoutHelper)
+   at System.ServiceModel.Description.MetadataExchangeClient.ResolveNext(ResolveCallState resolveCallState)
+   at System.ServiceModel.Description.MetadataExchangeClient.ResolveNext(ResolveCallState resolveCallState)
+   at System.ServiceModel.Description.MetadataExchangeClient.GetMetadata(MetadataRetriever retriever)
+   at System.ServiceModel.Description.MetadataExchangeClient.GetMetadata(Uri address, MetadataExchangeClientMode mode)
+   at Microsoft.Xrm.Sdk.Client.ServiceMetadataUtility.RetrieveServiceEndpointMetadata(Type contractType, Uri serviceUri, Boolean checkForSecondary)
+   at Microsoft.Xrm.Sdk.Client.ServiceConfiguration`1..ctor(Uri serviceUri, Boolean checkForSecondary)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceConfiguration..ctor(Uri serviceUri)
+   at Microsoft.Xrm.Sdk.Client.ServiceConfigurationFactory.CreateConfiguration[TService](Uri serviceUri)
+   at Microsoft.Xrm.Client.Services.OrganizationService.CreateServiceConfiguration(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.GetServiceConfiguration(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.ToOrganizationServiceProxy(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.ToOrganizationService(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.<>c__DisplayClass2.<.ctor>b__0()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.Xrm.Client.Services.OrganizationService.InnerOrganizationService.UsingService[TResult](Func`2 action)
+   at Microsoft.Xrm.Client.Services.OrganizationService.Execute(OrganizationRequest request)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceContext.Execute(OrganizationRequest request)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.RetrieveEntityCollection(OrganizationRequest request, NavigationSource source)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute(QueryExpression qe, Boolean throwIfSequenceIsEmpty, Boolean throwIfSequenceNotSingle, Projection projection, NavigationSource source, List`1 linkLookups, String& pagingCookie, Boolean& moreRecords)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute[TElement](QueryExpression qe, Boolean throwIfSequenceIsEmpty, Boolean throwIfSequenceNotSingle, Projection projection, NavigationSource source, List`1 linkLookups)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute[TElement](Expression expression)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.GetEnumerator[TElement](Expression expression)
+   at Microsoft.Xrm.Sdk.Linq.Query`1.GetEnumerator()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at Arke.ARS.TechnicianPortal.Services.Impl.CrmTechnicianAuthenticationService.FindUser(String name, String password) in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal\Services\Impl\CrmTechnicianAuthenticationService.cs:line 37
+   at Arke.ARS.CommonWeb.Providers.ApplicationOAuthProvider.<GrantResourceOwnerCredentials>d__3.MoveNext() in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.CommonWeb\Providers\ApplicationOAuthProvider.cs:line 49
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerHandler.<InvokeTokenEndpointResourceOwnerPasswordCredentialsGrantAsync>d__3f.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerHandler.<InvokeTokenEndpointAsync>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerHandler.<InvokeAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Security.Infrastructure.AuthenticationMiddleware`1.<Invoke>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Security.Infrastructure.AuthenticationMiddleware`1.<Invoke>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContextStage.<RunApp>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContext.<DoFinalWork>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.StageAsyncResult.End(IAsyncResult ar)
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContext.EndFinalWork(IAsyncResult ar)
+   at System.Web.HttpApplication.AsyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+System.InvalidOperationException - There is an error in XML document (1, 1298).
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+   at System.Web.Services.Description.ServiceDescription.Read(XmlReader reader, Boolean validate)
+   at System.ServiceModel.Description.MetadataExchangeClient.MetadataRetriever.CreateMetadataSection(XmlReader reader, String sourceUrl)
+   at System.ServiceModel.Description.MetadataExchangeClient.MetadataRetriever.Retrieve(TimeoutHelper timeoutHelper)
+System.Xml.XmlException - The maximum nametable character count quota (16384) has been exceeded while reading XML data. The nametable is a data structure used to store strings encountered during XML processing - long XML documents with non-repeating element names, attribute names and attribute values may trigger this quota. This quota may be increased by changing the MaxNameTableCharCount property on the XmlDictionaryReaderQuotas object used when creating the XML reader. Line 1, position 1298.
+   at System.Xml.XmlExceptionHelper.ThrowXmlException(XmlDictionaryReader reader, String res, String arg1, String arg2, String arg3)
+   at System.Xml.XmlExceptionHelper.ThrowMaxNameTableCharCountExceeded(XmlDictionaryReader reader, Int32 maxNameTableCharCount)
+   at System.Xml.XmlBaseReader.QuotaNameTable.Add(Int32 charCount)
+   at System.Xml.XmlBaseReader.QuotaNameTable.Add(String value)
+   at System.Xml.Serialization.XmlSerializationReader.ToXmlQualifiedName(String value, Boolean decodeName)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read72_OperationOutput(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read74_Operation(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read75_PortType(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read124_ServiceDescription(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read125_definitions()
+   at System.Web.Services.Description.ServiceDescription.ServiceDescriptionSerializer.Deserialize(XmlSerializationReader reader)
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+
+
+2017-01-23 08:39:54,694 [6] ERROR ==========================  Exception info see below  ===============================
+Unhandled exception
+Url: /Token
+System.InvalidOperationException - Metadata contains a reference that cannot be resolved: 'https://advancedretail.crm.dynamics.com/XRMServices/2011/Organization.svc?wsdl=wsdl0'.
+   at System.ServiceModel.Description.MetadataExchangeClient.MetadataRetriever.Retrieve(TimeoutHelper timeoutHelper)
+   at System.ServiceModel.Description.MetadataExchangeClient.ResolveNext(ResolveCallState resolveCallState)
+   at System.ServiceModel.Description.MetadataExchangeClient.ResolveNext(ResolveCallState resolveCallState)
+   at System.ServiceModel.Description.MetadataExchangeClient.GetMetadata(MetadataRetriever retriever)
+   at System.ServiceModel.Description.MetadataExchangeClient.GetMetadata(Uri address, MetadataExchangeClientMode mode)
+   at Microsoft.Xrm.Sdk.Client.ServiceMetadataUtility.RetrieveServiceEndpointMetadata(Type contractType, Uri serviceUri, Boolean checkForSecondary)
+   at Microsoft.Xrm.Sdk.Client.ServiceConfiguration`1..ctor(Uri serviceUri, Boolean checkForSecondary)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceConfiguration..ctor(Uri serviceUri)
+   at Microsoft.Xrm.Sdk.Client.ServiceConfigurationFactory.CreateConfiguration[TService](Uri serviceUri)
+   at Microsoft.Xrm.Client.Services.OrganizationService.CreateServiceConfiguration(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.GetServiceConfiguration(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.ToOrganizationServiceProxy(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.ToOrganizationService(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.<>c__DisplayClass2.<.ctor>b__0()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.Xrm.Client.Services.OrganizationService.InnerOrganizationService.UsingService[TResult](Func`2 action)
+   at Microsoft.Xrm.Client.Services.OrganizationService.Execute(OrganizationRequest request)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceContext.Execute(OrganizationRequest request)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.RetrieveEntityCollection(OrganizationRequest request, NavigationSource source)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute(QueryExpression qe, Boolean throwIfSequenceIsEmpty, Boolean throwIfSequenceNotSingle, Projection projection, NavigationSource source, List`1 linkLookups, String& pagingCookie, Boolean& moreRecords)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute[TElement](QueryExpression qe, Boolean throwIfSequenceIsEmpty, Boolean throwIfSequenceNotSingle, Projection projection, NavigationSource source, List`1 linkLookups)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute[TElement](Expression expression)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.GetEnumerator[TElement](Expression expression)
+   at Microsoft.Xrm.Sdk.Linq.Query`1.GetEnumerator()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at Arke.ARS.TechnicianPortal.Services.Impl.CrmTechnicianAuthenticationService.FindUser(String name, String password) in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal\Services\Impl\CrmTechnicianAuthenticationService.cs:line 37
+   at Arke.ARS.CommonWeb.Providers.ApplicationOAuthProvider.<GrantResourceOwnerCredentials>d__3.MoveNext() in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.CommonWeb\Providers\ApplicationOAuthProvider.cs:line 49
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerHandler.<InvokeTokenEndpointResourceOwnerPasswordCredentialsGrantAsync>d__3f.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerHandler.<InvokeTokenEndpointAsync>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerHandler.<InvokeAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Security.Infrastructure.AuthenticationMiddleware`1.<Invoke>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Security.Infrastructure.AuthenticationMiddleware`1.<Invoke>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContextStage.<RunApp>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContext.<DoFinalWork>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.StageAsyncResult.End(IAsyncResult ar)
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContext.EndFinalWork(IAsyncResult ar)
+   at System.Web.HttpApplication.AsyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+System.InvalidOperationException - There is an error in XML document (1, 1298).
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+   at System.Web.Services.Description.ServiceDescription.Read(XmlReader reader, Boolean validate)
+   at System.ServiceModel.Description.MetadataExchangeClient.MetadataRetriever.CreateMetadataSection(XmlReader reader, String sourceUrl)
+   at System.ServiceModel.Description.MetadataExchangeClient.MetadataRetriever.Retrieve(TimeoutHelper timeoutHelper)
+System.Xml.XmlException - The maximum nametable character count quota (16384) has been exceeded while reading XML data. The nametable is a data structure used to store strings encountered during XML processing - long XML documents with non-repeating element names, attribute names and attribute values may trigger this quota. This quota may be increased by changing the MaxNameTableCharCount property on the XmlDictionaryReaderQuotas object used when creating the XML reader. Line 1, position 1298.
+   at System.Xml.XmlExceptionHelper.ThrowXmlException(XmlDictionaryReader reader, String res, String arg1, String arg2, String arg3)
+   at System.Xml.XmlExceptionHelper.ThrowMaxNameTableCharCountExceeded(XmlDictionaryReader reader, Int32 maxNameTableCharCount)
+   at System.Xml.XmlBaseReader.QuotaNameTable.Add(Int32 charCount)
+   at System.Xml.XmlBaseReader.QuotaNameTable.Add(String value)
+   at System.Xml.Serialization.XmlSerializationReader.ToXmlQualifiedName(String value, Boolean decodeName)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read72_OperationOutput(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read74_Operation(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read75_PortType(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read124_ServiceDescription(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read125_definitions()
+   at System.Web.Services.Description.ServiceDescription.ServiceDescriptionSerializer.Deserialize(XmlSerializationReader reader)
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+
+
+2017-01-23 08:42:00,519 [7] ERROR ==========================  Exception info see below  ===============================
+Unhandled exception
+Url: /Token
+System.InvalidOperationException - Metadata contains a reference that cannot be resolved: 'https://advancedretail.crm.dynamics.com/xrmservices/2011/Organization.svc?wsdl=wsdl0'.
+   at System.ServiceModel.Description.MetadataExchangeClient.MetadataRetriever.Retrieve(TimeoutHelper timeoutHelper)
+   at System.ServiceModel.Description.MetadataExchangeClient.ResolveNext(ResolveCallState resolveCallState)
+   at System.ServiceModel.Description.MetadataExchangeClient.ResolveNext(ResolveCallState resolveCallState)
+   at System.ServiceModel.Description.MetadataExchangeClient.GetMetadata(MetadataRetriever retriever)
+   at System.ServiceModel.Description.MetadataExchangeClient.GetMetadata(Uri address, MetadataExchangeClientMode mode)
+   at Microsoft.Xrm.Sdk.Client.ServiceMetadataUtility.RetrieveServiceEndpointMetadata(Type contractType, Uri serviceUri, Boolean checkForSecondary)
+   at Microsoft.Xrm.Sdk.Client.ServiceConfiguration`1..ctor(Uri serviceUri, Boolean checkForSecondary)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceConfiguration..ctor(Uri serviceUri)
+   at Microsoft.Xrm.Sdk.Client.ServiceConfigurationFactory.CreateConfiguration[TService](Uri serviceUri)
+   at Microsoft.Xrm.Client.Services.OrganizationService.CreateServiceConfiguration(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.GetServiceConfiguration(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.ToOrganizationServiceProxy(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.ToOrganizationService(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.<>c__DisplayClass2.<.ctor>b__0()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.Xrm.Client.Services.OrganizationService.InnerOrganizationService.UsingService[TResult](Func`2 action)
+   at Microsoft.Xrm.Client.Services.OrganizationService.Execute(OrganizationRequest request)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceContext.Execute(OrganizationRequest request)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.RetrieveEntityCollection(OrganizationRequest request, NavigationSource source)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute(QueryExpression qe, Boolean throwIfSequenceIsEmpty, Boolean throwIfSequenceNotSingle, Projection projection, NavigationSource source, List`1 linkLookups, String& pagingCookie, Boolean& moreRecords)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute[TElement](QueryExpression qe, Boolean throwIfSequenceIsEmpty, Boolean throwIfSequenceNotSingle, Projection projection, NavigationSource source, List`1 linkLookups)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute[TElement](Expression expression)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.GetEnumerator[TElement](Expression expression)
+   at Microsoft.Xrm.Sdk.Linq.Query`1.GetEnumerator()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at Arke.ARS.TechnicianPortal.Services.Impl.CrmTechnicianAuthenticationService.FindUser(String name, String password) in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal\Services\Impl\CrmTechnicianAuthenticationService.cs:line 37
+   at Arke.ARS.CommonWeb.Providers.ApplicationOAuthProvider.<GrantResourceOwnerCredentials>d__3.MoveNext() in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.CommonWeb\Providers\ApplicationOAuthProvider.cs:line 49
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerHandler.<InvokeTokenEndpointResourceOwnerPasswordCredentialsGrantAsync>d__3f.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerHandler.<InvokeTokenEndpointAsync>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerHandler.<InvokeAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Security.Infrastructure.AuthenticationMiddleware`1.<Invoke>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Security.Infrastructure.AuthenticationMiddleware`1.<Invoke>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContextStage.<RunApp>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContext.<DoFinalWork>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.StageAsyncResult.End(IAsyncResult ar)
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContext.EndFinalWork(IAsyncResult ar)
+   at System.Web.HttpApplication.AsyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+System.InvalidOperationException - There is an error in XML document (1, 1298).
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+   at System.Web.Services.Description.ServiceDescription.Read(XmlReader reader, Boolean validate)
+   at System.ServiceModel.Description.MetadataExchangeClient.MetadataRetriever.CreateMetadataSection(XmlReader reader, String sourceUrl)
+   at System.ServiceModel.Description.MetadataExchangeClient.MetadataRetriever.Retrieve(TimeoutHelper timeoutHelper)
+System.Xml.XmlException - The maximum nametable character count quota (16384) has been exceeded while reading XML data. The nametable is a data structure used to store strings encountered during XML processing - long XML documents with non-repeating element names, attribute names and attribute values may trigger this quota. This quota may be increased by changing the MaxNameTableCharCount property on the XmlDictionaryReaderQuotas object used when creating the XML reader. Line 1, position 1298.
+   at System.Xml.XmlExceptionHelper.ThrowXmlException(XmlDictionaryReader reader, String res, String arg1, String arg2, String arg3)
+   at System.Xml.XmlExceptionHelper.ThrowMaxNameTableCharCountExceeded(XmlDictionaryReader reader, Int32 maxNameTableCharCount)
+   at System.Xml.XmlBaseReader.QuotaNameTable.Add(Int32 charCount)
+   at System.Xml.XmlBaseReader.QuotaNameTable.Add(String value)
+   at System.Xml.Serialization.XmlSerializationReader.ToXmlQualifiedName(String value, Boolean decodeName)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read72_OperationOutput(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read74_Operation(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read75_PortType(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read124_ServiceDescription(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read125_definitions()
+   at System.Web.Services.Description.ServiceDescription.ServiceDescriptionSerializer.Deserialize(XmlSerializationReader reader)
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+
+
+2017-01-23 08:42:43,318 [6] ERROR ==========================  Exception info see below  ===============================
+Unhandled exception
+Url: /Token
+System.InvalidOperationException - Metadata contains a reference that cannot be resolved: 'https://advancedretail.crm.dynamics.com/XRMServices/2011/Organization.svc?wsdl=wsdl0'.
+   at System.ServiceModel.Description.MetadataExchangeClient.MetadataRetriever.Retrieve(TimeoutHelper timeoutHelper)
+   at System.ServiceModel.Description.MetadataExchangeClient.ResolveNext(ResolveCallState resolveCallState)
+   at System.ServiceModel.Description.MetadataExchangeClient.ResolveNext(ResolveCallState resolveCallState)
+   at System.ServiceModel.Description.MetadataExchangeClient.GetMetadata(MetadataRetriever retriever)
+   at System.ServiceModel.Description.MetadataExchangeClient.GetMetadata(Uri address, MetadataExchangeClientMode mode)
+   at Microsoft.Xrm.Sdk.Client.ServiceMetadataUtility.RetrieveServiceEndpointMetadata(Type contractType, Uri serviceUri, Boolean checkForSecondary)
+   at Microsoft.Xrm.Sdk.Client.ServiceConfiguration`1..ctor(Uri serviceUri, Boolean checkForSecondary)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceConfiguration..ctor(Uri serviceUri)
+   at Microsoft.Xrm.Sdk.Client.ServiceConfigurationFactory.CreateConfiguration[TService](Uri serviceUri)
+   at Microsoft.Xrm.Client.Services.OrganizationService.CreateServiceConfiguration(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.GetServiceConfiguration(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.ToOrganizationServiceProxy(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.ToOrganizationService(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.<>c__DisplayClass2.<.ctor>b__0()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.Xrm.Client.Services.OrganizationService.InnerOrganizationService.UsingService[TResult](Func`2 action)
+   at Microsoft.Xrm.Client.Services.OrganizationService.Execute(OrganizationRequest request)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceContext.Execute(OrganizationRequest request)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.RetrieveEntityCollection(OrganizationRequest request, NavigationSource source)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute(QueryExpression qe, Boolean throwIfSequenceIsEmpty, Boolean throwIfSequenceNotSingle, Projection projection, NavigationSource source, List`1 linkLookups, String& pagingCookie, Boolean& moreRecords)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute[TElement](QueryExpression qe, Boolean throwIfSequenceIsEmpty, Boolean throwIfSequenceNotSingle, Projection projection, NavigationSource source, List`1 linkLookups)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute[TElement](Expression expression)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.GetEnumerator[TElement](Expression expression)
+   at Microsoft.Xrm.Sdk.Linq.Query`1.GetEnumerator()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at Arke.ARS.TechnicianPortal.Services.Impl.CrmTechnicianAuthenticationService.FindUser(String name, String password) in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal\Services\Impl\CrmTechnicianAuthenticationService.cs:line 37
+   at Arke.ARS.CommonWeb.Providers.ApplicationOAuthProvider.<GrantResourceOwnerCredentials>d__3.MoveNext() in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.CommonWeb\Providers\ApplicationOAuthProvider.cs:line 49
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerHandler.<InvokeTokenEndpointResourceOwnerPasswordCredentialsGrantAsync>d__3f.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerHandler.<InvokeTokenEndpointAsync>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerHandler.<InvokeAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Security.Infrastructure.AuthenticationMiddleware`1.<Invoke>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Security.Infrastructure.AuthenticationMiddleware`1.<Invoke>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContextStage.<RunApp>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContext.<DoFinalWork>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.StageAsyncResult.End(IAsyncResult ar)
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContext.EndFinalWork(IAsyncResult ar)
+   at System.Web.HttpApplication.AsyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+System.InvalidOperationException - There is an error in XML document (1, 1298).
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+   at System.Web.Services.Description.ServiceDescription.Read(XmlReader reader, Boolean validate)
+   at System.ServiceModel.Description.MetadataExchangeClient.MetadataRetriever.CreateMetadataSection(XmlReader reader, String sourceUrl)
+   at System.ServiceModel.Description.MetadataExchangeClient.MetadataRetriever.Retrieve(TimeoutHelper timeoutHelper)
+System.Xml.XmlException - The maximum nametable character count quota (16384) has been exceeded while reading XML data. The nametable is a data structure used to store strings encountered during XML processing - long XML documents with non-repeating element names, attribute names and attribute values may trigger this quota. This quota may be increased by changing the MaxNameTableCharCount property on the XmlDictionaryReaderQuotas object used when creating the XML reader. Line 1, position 1298.
+   at System.Xml.XmlExceptionHelper.ThrowXmlException(XmlDictionaryReader reader, String res, String arg1, String arg2, String arg3)
+   at System.Xml.XmlExceptionHelper.ThrowMaxNameTableCharCountExceeded(XmlDictionaryReader reader, Int32 maxNameTableCharCount)
+   at System.Xml.XmlBaseReader.QuotaNameTable.Add(Int32 charCount)
+   at System.Xml.XmlBaseReader.QuotaNameTable.Add(String value)
+   at System.Xml.Serialization.XmlSerializationReader.ToXmlQualifiedName(String value, Boolean decodeName)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read72_OperationOutput(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read74_Operation(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read75_PortType(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read124_ServiceDescription(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read125_definitions()
+   at System.Web.Services.Description.ServiceDescription.ServiceDescriptionSerializer.Deserialize(XmlSerializationReader reader)
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+
+
+2017-01-23 08:45:22,936 [6] ERROR ==========================  Exception info see below  ===============================
+Unhandled exception
+Url: /Token
+System.InvalidOperationException - Metadata contains a reference that cannot be resolved: 'https://advancedretail.crm.dynamics.com/xrmservices/2011/Organization.svc?wsdl=wsdl0'.
+   at System.ServiceModel.Description.MetadataExchangeClient.MetadataRetriever.Retrieve(TimeoutHelper timeoutHelper)
+   at System.ServiceModel.Description.MetadataExchangeClient.ResolveNext(ResolveCallState resolveCallState)
+   at System.ServiceModel.Description.MetadataExchangeClient.ResolveNext(ResolveCallState resolveCallState)
+   at System.ServiceModel.Description.MetadataExchangeClient.GetMetadata(MetadataRetriever retriever)
+   at System.ServiceModel.Description.MetadataExchangeClient.GetMetadata(Uri address, MetadataExchangeClientMode mode)
+   at Microsoft.Xrm.Sdk.Client.ServiceMetadataUtility.RetrieveServiceEndpointMetadata(Type contractType, Uri serviceUri, Boolean checkForSecondary)
+   at Microsoft.Xrm.Sdk.Client.ServiceConfiguration`1..ctor(Uri serviceUri, Boolean checkForSecondary)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceConfiguration..ctor(Uri serviceUri)
+   at Microsoft.Xrm.Sdk.Client.ServiceConfigurationFactory.CreateConfiguration[TService](Uri serviceUri)
+   at Microsoft.Xrm.Client.Services.OrganizationService.CreateServiceConfiguration(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.GetServiceConfiguration(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.ToOrganizationServiceProxy(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.ToOrganizationService(CrmConnection connection)
+   at Microsoft.Xrm.Client.Services.OrganizationService.<>c__DisplayClass2.<.ctor>b__0()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.Xrm.Client.Services.OrganizationService.InnerOrganizationService.UsingService[TResult](Func`2 action)
+   at Microsoft.Xrm.Client.Services.OrganizationService.Execute(OrganizationRequest request)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceContext.Execute(OrganizationRequest request)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.RetrieveEntityCollection(OrganizationRequest request, NavigationSource source)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute(QueryExpression qe, Boolean throwIfSequenceIsEmpty, Boolean throwIfSequenceNotSingle, Projection projection, NavigationSource source, List`1 linkLookups, String& pagingCookie, Boolean& moreRecords)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute[TElement](QueryExpression qe, Boolean throwIfSequenceIsEmpty, Boolean throwIfSequenceNotSingle, Projection projection, NavigationSource source, List`1 linkLookups)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute[TElement](Expression expression)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.GetEnumerator[TElement](Expression expression)
+   at Microsoft.Xrm.Sdk.Linq.Query`1.GetEnumerator()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at Arke.ARS.TechnicianPortal.Services.Impl.CrmTechnicianAuthenticationService.FindUser(String name, String password) in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal\Services\Impl\CrmTechnicianAuthenticationService.cs:line 37
+   at Arke.ARS.CommonWeb.Providers.ApplicationOAuthProvider.<GrantResourceOwnerCredentials>d__3.MoveNext() in C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.CommonWeb\Providers\ApplicationOAuthProvider.cs:line 49
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerHandler.<InvokeTokenEndpointResourceOwnerPasswordCredentialsGrantAsync>d__3f.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerHandler.<InvokeTokenEndpointAsync>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerHandler.<InvokeAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Security.Infrastructure.AuthenticationMiddleware`1.<Invoke>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Security.Infrastructure.AuthenticationMiddleware`1.<Invoke>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContextStage.<RunApp>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContext.<DoFinalWork>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.StageAsyncResult.End(IAsyncResult ar)
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContext.EndFinalWork(IAsyncResult ar)
+   at System.Web.HttpApplication.AsyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+System.InvalidOperationException - There is an error in XML document (1, 1298).
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+   at System.Web.Services.Description.ServiceDescription.Read(XmlReader reader, Boolean validate)
+   at System.ServiceModel.Description.MetadataExchangeClient.MetadataRetriever.CreateMetadataSection(XmlReader reader, String sourceUrl)
+   at System.ServiceModel.Description.MetadataExchangeClient.MetadataRetriever.Retrieve(TimeoutHelper timeoutHelper)
+System.Xml.XmlException - The maximum nametable character count quota (16384) has been exceeded while reading XML data. The nametable is a data structure used to store strings encountered during XML processing - long XML documents with non-repeating element names, attribute names and attribute values may trigger this quota. This quota may be increased by changing the MaxNameTableCharCount property on the XmlDictionaryReaderQuotas object used when creating the XML reader. Line 1, position 1298.
+   at System.Xml.XmlExceptionHelper.ThrowXmlException(XmlDictionaryReader reader, String res, String arg1, String arg2, String arg3)
+   at System.Xml.XmlExceptionHelper.ThrowMaxNameTableCharCountExceeded(XmlDictionaryReader reader, Int32 maxNameTableCharCount)
+   at System.Xml.XmlBaseReader.QuotaNameTable.Add(Int32 charCount)
+   at System.Xml.XmlBaseReader.QuotaNameTable.Add(String value)
+   at System.Xml.Serialization.XmlSerializationReader.ToXmlQualifiedName(String value, Boolean decodeName)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read72_OperationOutput(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read74_Operation(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read75_PortType(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read124_ServiceDescription(Boolean isNullable, Boolean checkType)
+   at System.Web.Services.Description.ServiceDescriptionSerializationReader.Read125_definitions()
+   at System.Web.Services.Description.ServiceDescription.ServiceDescriptionSerializer.Deserialize(XmlSerializationReader reader)
+   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)
+
+

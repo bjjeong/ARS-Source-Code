@@ -332,10 +332,33 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
             ChangeWorkOrdersStatus(workOrder, technician, StatusCode.WorkComplete, EventType.CheckOut);
             AddNote(technicianId, workOrder, notes);
             workOrder.new_lunch = lunch;
+
+
+            var eventTypecode = GetEventTypeValue(EventType.Lunch);
+
+            var workorderevent = new ars_workorderevent
+            {
+                ars_name = String.Format("Lunch"),
+                ars_DateTime = DateTime.UtcNow,
+                ars_WorkOrder = workOrder.ToEntityReference(),
+                ars_Technician = technician.ToEntityReference(),
+                ars_Hours = Decimal.Parse(lunch),
+                ars_EventType = new OptionSetValue
+                {
+                    Value = Convert.ToInt32(eventTypecode.Key)
+                },
+            };
+
+            _context.AddObject(workorderevent);
+
+            _context.UpdateObject(workOrder);
+            _context.SaveChanges();
+
+
             _context.SaveChanges();
         }
 
-        public void IncreaseNte(Guid workOrderId, Guid technicianId, decimal money, decimal hours, string item1, string item2, string item3, string item4, string item5, string price1, string price2, string price3, string price4, string price5, string quantity1, string quantity2, string quantity3, string quantity4, string quantity5, string comment)
+        public void IncreaseNte(Guid workOrderId, Guid technicianId, decimal money, decimal hours, string item1, string item2, string item3, string item4, string item5, string item6, string item7, string price1, string price2, string price3, string price4, string price5, string price6, string price7, string quantity1, string quantity2, string quantity3, string quantity4, string quantity5, string quantity6, string quantity7, string comment)
         {
             if (money < 0)
             {
@@ -372,7 +395,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                 }, 
                 ars_Amount = new Money(money),
                 ars_Hours = hours,
-                new_description = String.Format("NTE Increase Request: {20} hours requested{25}{19}Name:   {0}   Price: {1}   Quantity: {2}{3}Name:   {4}   Price: {5}   Quantity: {6}{7}Name:   {8}   Price: {9}   Quantity: {10}{11}Name:   {12}   Price: {13}   Quantity: {14}{15}Name:   {16}   Price: {17}   Quantity: {18}{21}{24}Comments:{22}{23}", item1, price1, quantity1, Environment.NewLine, item2, price2, quantity2, Environment.NewLine, item3, price3, quantity3, Environment.NewLine, item4, price4, quantity4, Environment.NewLine, item5, price5, quantity5, Environment.NewLine, hours, Environment.NewLine, Environment.NewLine, comment, Environment.NewLine, Environment.NewLine)
+                new_description = String.Format("NTE Increase Request: {20} hours requested{25}{19}NAME:   {0}   PRICE: ${1}   QUANTITY: {2}{3}NAME:   {4}   PRICE: ${5}   QUANTITY: {6}{7}NAME:   {8}   PRICE: ${9}   QUANTITY: {10}{11}NAME:   {12}   PRICE: ${13}   QUANTITY: {14}{15}NAME:   {16}   PRICE: ${17}   QUANTITY: {18}{21}NAME:  {26}    PRICE: ${27}    QUANTITY: {28}{29}NAME: {30}    PRICE: ${31}    QUANTITY:   {32}{33}{24}Comments:{22}{23}", item1, price1, quantity1, Environment.NewLine, item2, price2, quantity2, Environment.NewLine, item3, price3, quantity3, Environment.NewLine, item4, price4, quantity4, Environment.NewLine, item5, price5, quantity5, Environment.NewLine, hours, Environment.NewLine, Environment.NewLine, comment, Environment.NewLine, Environment.NewLine, item6, price6, quantity6, Environment.NewLine, item7, price7, quantity7, Environment.NewLine)
             };
 
             _context.AddObject(workorderevent);
