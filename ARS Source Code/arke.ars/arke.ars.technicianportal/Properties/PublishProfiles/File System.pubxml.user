@@ -60,10 +60,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/06/2017 10:55:57</publishTime>
     </File>
     <File Include="bin/Arke.ARS.TechnicianPortal.dll">
-      <publishTime>01/23/2017 08:52:45</publishTime>
+      <publishTime>01/25/2017 08:16:18</publishTime>
     </File>
     <File Include="bin/Arke.ARS.TechnicianPortal.dll.config">
-      <publishTime>01/23/2017 08:49:03</publishTime>
+      <publishTime>01/23/2017 10:36:57</publishTime>
     </File>
     <File Include="bin/Arke.Crm.GeoLocation.dll">
       <publishTime>05/31/2016 15:17:25</publishTime>
@@ -363,7 +363,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/31/2016 15:17:07</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>01/23/2017 08:49:02</publishTime>
+      <publishTime>01/23/2017 09:30:53</publishTime>
     </File>
     <File Include="Scripts/animationService.js">
       <publishTime>05/31/2016 15:17:14</publishTime>
@@ -477,7 +477,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/31/2016 15:17:10</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/23/2017 08:52:46</publishTime>
+      <publishTime>01/25/2017 08:16:19</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -6753,3 +6753,18 @@ System.IO.FileLoadException - Could not load file or assembly 'Microsoft.Crm.Sdk
 2017-01-23 10:37:40,638 [8] INFO  getting order with id 38d03618-58df-e611-80f9-3863bb347a00
 2017-01-23 10:37:41,149 [8] INFO  customer name 07505 Mapco Mart
 2017-01-23 10:37:41,446 [8] INFO  workItemStatuses contains 2
+2017-01-23 13:42:29,769 [6] INFO  getting order with id b5035c82-9ee1-e611-80ef-e0071b66cfa1
+2017-01-23 13:42:30,230 [6] INFO  customer name 00024 Office Depot SMS Assist, LLC
+2017-01-23 13:42:30,465 [6] INFO  workItemStatuses contains 2
+2017-01-23 13:43:10,362 [11] INFO  getting order with id b5035c82-9ee1-e611-80ef-e0071b66cfa1
+2017-01-23 13:43:10,531 [11] INFO  customer name 00024 Office Depot SMS Assist, LLC
+2017-01-23 13:43:10,696 [11] INFO  workItemStatuses contains 2
+2017-01-23 13:46:08,786 [8] INFO  getting order with id b5035c82-9ee1-e611-80ef-e0071b66cfa1
+2017-01-23 13:46:08,951 [8] INFO  customer name 00024 Office Depot SMS Assist, LLC
+2017-01-23 13:46:09,118 [8] INFO  workItemStatuses contains 2
+2017-01-23 15:23:20,256 [72] INFO  getting order with id b5035c82-9ee1-e611-80ef-e0071b66cfa1
+2017-01-23 15:23:20,471 [72] INFO  customer name 00024 Office Depot SMS Assist, LLC
+2017-01-23 15:23:20,651 [72] INFO  workItemStatuses contains 2
+2017-01-24 08:57:58,001 [6] INFO  getting order with id b5035c82-9ee1-e611-80ef-e0071b66cfa1
+2017-01-24 08:57:58,520 [6] INFO  customer name 00024 Office Depot SMS Assist, LLC
+2017-01-24 08:57:58,841 [6] INFO  workItemStatuses contains 2
