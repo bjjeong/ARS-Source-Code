@@ -127,11 +127,11 @@ namespace Arke.ARS.CustomerPortal.Services.Impl
                 Orders = orders,
                 PurchaseOrderNumber = workOrder.new_PO,
                 Nte = workOrder.new_NotToExceedNTE == null ? 0 : workOrder.new_NotToExceedNTE.Value,
-                DescriptionOfService = workOrder.Description,
+                DescriptionOfService = workOrder.Description, 
                 Status = workOrderStatuses[workOrder.StatusCode.Value]
             };
         }
-
+        
         private AddressModel GetLocationAddress(EntityReference locationRef)
         {
             if (locationRef == null)
@@ -235,8 +235,13 @@ namespace Arke.ARS.CustomerPortal.Services.Impl
                     Id = workOrder.IncidentId.Value,
                     Title = workOrder.Title,
                     Location = workOrder.ars_Location == null ? String.Empty : workOrder.ars_Location.Name,
+                    LocationId = workOrder.ars_Location.Id,
                     OrderNumber = workOrder.TicketNumber,
                     NeedBy = workOrder.ars_CompleteByDate,
+                    City = location.Address1_City,
+                    State = location.Address1_StateOrProvince,
+                    Priority = workOrder.PriorityCode.Value,
+                    Trade = workOrder.new_trade,
                     Status = workItemStatuses[workOrder.StatusCode.Value]
                 }).ToArray();
 
@@ -251,10 +256,135 @@ namespace Arke.ARS.CustomerPortal.Services.Impl
                     Id = workOrder.IncidentId.Value,
                     Title = workOrder.Title,
                     Location = workOrder.ars_Location == null ? String.Empty : workOrder.ars_Location.Name,
+                    LocationId = workOrder.ars_Location.Id,
                     OrderNumber = workOrder.TicketNumber,
                     NeedBy = workOrder.ars_CompleteByDate,
+                    City = location.Address1_City,
+                    State = location.Address1_StateOrProvince,
+                    Priority = workOrder.PriorityCode.Value,
+                    Trade = workOrder.new_trade,
                     Status = workItemStatuses[workOrder.StatusCode.Value]
                 }).ToArray();
+
+            IEnumerable<OpenWorkOrderModel> openOrders = directlyRelatedWorkOrders.Union(indirectlyRelatedWorkOrders, OpenWorkOrderModel.Comparer);
+
+            return SortByColumn(openOrders, query.SortColumn, query.SortOrder).ToPagedList(query.PageIndex, _pageSize.Value);
+        }
+
+        public IPagedList<ClosedWorkOrderModel> GetLocationClosedWorkOrdersModels(QueryModel query, Guid customerId)
+        {
+            if (query == null)
+            {
+                throw new ArgumentNullException("query");
+            }
+
+            var workItemStatuses = GetWorkOrderStatusCodes();
+
+            var directlyRelatedWorkOrders = (from workOrder in _context.IncidentSet
+                                             join location in _context.AccountSet on workOrder.CustomerId.Id equals location.AccountId
+                                             join contact in _context.ContactSet on location.AccountId equals contact.ParentCustomerId.Id
+                                             where contact.ContactId == customerId
+                                             where workOrder.StateCode.Value != IncidentState.Active
+                                             select new ClosedWorkOrderColumnProjection
+                                             {
+                                                 Id = workOrder.IncidentId.Value,
+                                                 Title = workOrder.Title,
+                                                 Location = workOrder.ars_Location == null ? String.Empty : workOrder.ars_Location.Name,
+                                                 OrderNumber = workOrder.TicketNumber,
+                                                 Amount = workOrder.new_NotToExceedNTE != null ? workOrder.new_NotToExceedNTE.Value : 0,
+                                                 Status = workItemStatuses[workOrder.StatusCode.Value]
+                                             }).ToArray();
+
+            var indirectlyRelatedWorkOrders = (from workOrder in _context.IncidentSet
+                                               join location in _context.AccountSet on workOrder.CustomerId.Id equals location.AccountId
+                                               join business in _context.AccountSet on location.ParentAccountId.Id equals business.AccountId
+                                               join contact in _context.ContactSet on business.AccountId equals contact.ParentCustomerId.Id
+                                               where contact.ContactId == customerId
+                                               where workOrder.StateCode.Value != IncidentState.Active
+                                               select new ClosedWorkOrderColumnProjection
+                                               {
+                                                   Id = workOrder.IncidentId.Value,
+                                                   Title = workOrder.Title,
+                                                   Location = workOrder.ars_Location == null ? String.Empty : workOrder.ars_Location.Name,
+                                                   OrderNumber = workOrder.TicketNumber,
+                                                   Amount = workOrder.new_NotToExceedNTE != null ? workOrder.new_NotToExceedNTE.Value : 0,
+                                                   Status = workItemStatuses[workOrder.StatusCode.Value]
+                                               }).ToArray();
+
+            IEnumerable<ClosedWorkOrderColumnProjection> closedOrders = directlyRelatedWorkOrders.Union(indirectlyRelatedWorkOrders, ClosedWorkOrderColumnProjection.Comparer);
+
+            var closedOrdersModels = new List<ClosedWorkOrderModel>();
+            foreach (var order in closedOrders)
+            {
+                EntityReference techRef =
+                    (from appointment in _context.ServiceAppointmentSet
+                     where appointment.RegardingObjectId.Id == order.Id
+                     orderby appointment.ScheduledEnd descending
+                     select appointment.ars_Technician).FirstOrDefault();
+
+                closedOrdersModels.Add(new ClosedWorkOrderModel
+                {
+                    Id = order.Id,
+                    Title = order.Title,
+                    Location = order.Location,
+                    OrderNumber = order.OrderNumber,
+                    Amount = order.Amount,
+                    Tech = techRef != null ? techRef.Name : String.Empty,
+                    Status = order.Status
+                });
+            }
+
+            return SortByColumn(closedOrdersModels, query.SortColumn, query.SortOrder).ToPagedList(query.PageIndex, _pageSize.Value);
+        }
+
+        public IPagedList<OpenWorkOrderModel> GetLocationOpenWorkOrdersModels(QueryModel query, Guid customerId)
+        {
+            if (query == null)
+            {
+                throw new ArgumentNullException("query");
+            }
+
+            var workItemStatuses = GetWorkOrderStatusCodes();
+
+            var directlyRelatedWorkOrders = (from workOrder in _context.IncidentSet
+                                             join location in _context.AccountSet on workOrder.ars_Location.Id equals location.AccountId
+                                             where location.AccountId == customerId
+                                             where workOrder.StateCode.Value == IncidentState.Active
+                                             select new OpenWorkOrderModel
+                                             {
+                                                 Id = workOrder.IncidentId.Value,
+                                                 Title = workOrder.Title,
+                                                 Location = workOrder.ars_Location == null ? String.Empty : workOrder.ars_Location.Name,
+                                                 LocationId = workOrder.ars_Location.Id,
+                                                 OrderNumber = workOrder.TicketNumber,
+                                                 NeedBy = workOrder.ars_CompleteByDate,
+                                                 City = location.Address1_City,
+                                                 State = location.Address1_StateOrProvince,
+                                                 Priority = workOrder.PriorityCode.Value,
+                                                 Trade = workOrder.new_trade,
+                                                 Status = workItemStatuses[workOrder.StatusCode.Value]
+                                             }).ToArray();
+
+            var indirectlyRelatedWorkOrders = (from workOrder in _context.IncidentSet
+                                               join location in _context.AccountSet on workOrder.CustomerId.Id equals location.AccountId
+                                               join business in _context.AccountSet on location.ParentAccountId.Id equals business.AccountId
+                                               join contact in _context.ContactSet on business.AccountId equals contact.ParentCustomerId.Id
+                                               where contact.ContactId == customerId
+                                               where workOrder.StateCode.Value == IncidentState.Active
+                                               select new OpenWorkOrderModel
+                                               {
+                                                   Id = workOrder.IncidentId.Value,
+                                                   Title = workOrder.Title,
+                                                   Location = workOrder.ars_Location == null ? String.Empty : workOrder.ars_Location.Name,
+                                                   LocationId = workOrder.ars_Location.Id,
+                                                   OrderNumber = workOrder.TicketNumber,
+                                                   NeedBy = workOrder.ars_CompleteByDate,
+                                                   City = location.Address1_City,
+                                                   State = location.Address1_StateOrProvince,
+                                                   Priority = workOrder.PriorityCode.Value,
+                                                   Trade = workOrder.new_trade,
+                                                   Status = workItemStatuses[workOrder.StatusCode.Value]
+                                               }).ToArray();
 
             IEnumerable<OpenWorkOrderModel> openOrders = directlyRelatedWorkOrders.Union(indirectlyRelatedWorkOrders, OpenWorkOrderModel.Comparer);
 

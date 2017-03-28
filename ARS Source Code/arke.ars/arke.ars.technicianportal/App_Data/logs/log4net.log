@@ -6768,3 +6768,103 @@ System.IO.FileLoadException - Could not load file or assembly 'Microsoft.Crm.Sdk
 2017-01-24 08:57:58,001 [6] INFO  getting order with id b5035c82-9ee1-e611-80ef-e0071b66cfa1
 2017-01-24 08:57:58,520 [6] INFO  customer name 00024 Office Depot SMS Assist, LLC
 2017-01-24 08:57:58,841 [6] INFO  workItemStatuses contains 2
+2017-01-25 12:22:28,055 [6] ERROR ==========================  Exception info see below  ===============================
+Unhandled exception
+Url: /WorkOrder/Index
+System.ArgumentException - The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Guid' for method 'System.Web.Mvc.ActionResult Index(System.Guid)' in 'Arke.ARS.TechnicianPortal.Controllers.WorkOrderController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+   at System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass48.<InvokeActionMethodFilterAsynchronouslyRecursive>b__41()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecute>b__15(IAsyncResult asyncResult, Controller controller)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+2017-01-25 12:23:30,649 [6] INFO  getting order with id b5035c82-9ee1-e611-80ef-e0071b66cfa1
+2017-01-25 12:23:30,876 [6] INFO  customer name 00024 Office Depot SMS Assist, LLC
+2017-01-25 12:23:31,104 [6] INFO  workItemStatuses contains 2
+2017-01-25 12:23:47,893 [6] INFO  getting order with id c013e3ba-7de2-e611-8100-e0071b66aea1
+2017-01-25 12:23:48,081 [6] INFO  customer name 06853 Walgreens Divisions Maintenance Group
+2017-01-25 12:23:48,240 [6] INFO  workItemStatuses contains 2
+2017-01-25 13:06:27,663 [6] INFO  getting order with id c013e3ba-7de2-e611-8100-e0071b66aea1
+2017-01-25 13:06:27,891 [6] INFO  customer name 06853 Walgreens Divisions Maintenance Group
+2017-01-25 13:06:28,141 [6] INFO  workItemStatuses contains 2
+2017-01-25 13:07:57,326 [9] INFO  getting order with id c013e3ba-7de2-e611-8100-e0071b66aea1
+2017-01-25 13:07:57,531 [9] INFO  customer name 06853 Walgreens Divisions Maintenance Group
+2017-01-25 13:07:57,758 [9] INFO  workItemStatuses contains 2
+2017-01-25 13:09:04,158 [6] INFO  getting order with id c013e3ba-7de2-e611-8100-e0071b66aea1
+2017-01-25 13:09:04,560 [6] INFO  customer name 06853 Walgreens Divisions Maintenance Group
+2017-01-25 13:09:04,766 [6] INFO  workItemStatuses contains 2
+2017-01-25 13:09:10,275 [6] INFO  getting order with id c013e3ba-7de2-e611-8100-e0071b66aea1
+2017-01-25 13:09:10,456 [6] INFO  customer name 06853 Walgreens Divisions Maintenance Group
+2017-01-25 13:09:10,629 [6] INFO  workItemStatuses contains 2
+2017-01-25 13:09:46,554 [6] INFO  getting order with id c013e3ba-7de2-e611-8100-e0071b66aea1
+2017-01-25 13:09:46,789 [6] INFO  customer name 06853 Walgreens Divisions Maintenance Group
+2017-01-25 13:09:47,025 [6] INFO  workItemStatuses contains 2
+2017-01-25 13:09:51,418 [6] INFO  getting order with id 663bcd2d-60e2-e611-8101-e0071b6a1051
+2017-01-25 13:09:51,592 [6] INFO  customer name 02072 Maurices Regency Lighting
+2017-01-25 13:09:51,772 [6] INFO  workItemStatuses contains 2
+2017-01-25 13:11:48,420 [6] INFO  getting order with id c013e3ba-7de2-e611-8100-e0071b66aea1
+2017-01-25 13:11:48,611 [6] INFO  customer name 06853 Walgreens Divisions Maintenance Group
+2017-01-25 13:11:48,829 [6] INFO  workItemStatuses contains 2
+2017-01-25 13:15:17,055 [7] INFO  getting order with id c013e3ba-7de2-e611-8100-e0071b66aea1
+2017-01-25 13:15:17,328 [7] INFO  customer name 06853 Walgreens Divisions Maintenance Group
+2017-01-25 13:15:17,480 [7] INFO  workItemStatuses contains 2
+2017-01-25 13:17:48,031 [6] INFO  getting order with id c013e3ba-7de2-e611-8100-e0071b66aea1
+2017-01-25 13:17:48,242 [6] INFO  customer name Divisions Maintenance Group,Walgreens 0091403
+2017-01-25 13:17:48,486 [6] INFO  workItemStatuses contains 2
+2017-01-25 13:18:25,828 [7] INFO  getting order with id c013e3ba-7de2-e611-8100-e0071b66aea1
+2017-01-25 13:18:26,015 [7] INFO  customer name Divisions Maintenance Group,Walgreens 0091403
+2017-01-25 13:18:26,220 [7] INFO  workItemStatuses contains 2
+2017-01-25 13:20:31,137 [6] INFO  getting order with id c013e3ba-7de2-e611-8100-e0071b66aea1
+2017-01-25 13:20:31,322 [6] INFO  customer name Divisions Maintenance Group,Walgreens 0091403
+2017-01-25 13:20:31,566 [6] INFO  workItemStatuses contains 2
+2017-01-25 13:22:30,394 [5] INFO  getting order with id c013e3ba-7de2-e611-8100-e0071b66aea1
+2017-01-25 13:22:30,581 [5] INFO  customer name 06853 Walgreens Divisions Maintenance Group
+2017-01-25 13:22:30,796 [5] INFO  workItemStatuses contains 2
+2017-01-25 13:24:40,388 [6] INFO  getting order with id c013e3ba-7de2-e611-8100-e0071b66aea1
+2017-01-25 13:24:40,631 [6] INFO  customer name 06853 Walgreens Divisions Maintenance Group
+2017-01-25 13:24:40,716 [6] INFO  customer name 
+2017-01-25 13:24:40,987 [6] INFO  workItemStatuses contains 2
+2017-01-25 13:26:14,500 [6] INFO  getting order with id c013e3ba-7de2-e611-8100-e0071b66aea1
+2017-01-25 13:26:14,707 [6] INFO  customer name 06853 Walgreens Divisions Maintenance Group
+2017-01-25 13:26:14,785 [6] INFO  customer name 
+2017-01-25 13:26:15,020 [6] INFO  workItemStatuses contains 2
+2017-01-27 09:22:47,504 [7] INFO  getting order with id b5035c82-9ee1-e611-80ef-e0071b66cfa1
+2017-01-27 09:22:47,703 [7] INFO  customer name 00024 Office Depot SMS Assist, LLC
+2017-01-27 09:22:48,006 [7] INFO  workItemStatuses contains 2
+2017-01-27 09:23:15,033 [6] INFO  getting order with id b5035c82-9ee1-e611-80ef-e0071b66cfa1
+2017-01-27 09:23:15,217 [6] INFO  customer name 00024 Office Depot SMS Assist, LLC
+2017-01-27 09:23:15,459 [6] INFO  workItemStatuses contains 2
+2017-01-27 09:59:51,468 [45] INFO  getting order with id b5035c82-9ee1-e611-80ef-e0071b66cfa1
+2017-01-27 09:59:51,669 [45] INFO  customer name 00024 Office Depot SMS Assist, LLC
+2017-01-27 09:59:51,841 [45] INFO  workItemStatuses contains 2

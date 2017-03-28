@@ -5,19 +5,21 @@
   @Html.Partial("_AuthorizedNavigation")
 }
 @{
-    ViewBag.Title = "SERVICE TECH DIRECT";
+    ViewBag.Title = "Pending New Name****";
 }
 @{ int openOrderCount = 0; }
 @{ int closedOrderCount = 0;}
 @{ int scheduledOrderCount = 0; }
+@{ int pendingQuoteApprovalCount = 0; }
 @foreach (var order in Model.OpenOrders) { openOrderCount++; }
 @foreach (var order in Model.ClosedOrders) { closedOrderCount++; }
 @foreach (var order in Model.OpenOrders) { if (order.Status == "Scheduled") { scheduledOrderCount++; } }
+@foreach (var order in Model.OpenOrders) { if (order.Status == "Pending Quote Approval") { pendingQuoteApprovalCount++; } }
 <section class="two">
     <div class="wrap">
-        <a href="#" class="btn btn-primary btn-xl btn-3d" id="billed">
-            Amount Billed
-            <div class="btn-content">$20000</div>
+        <a href="#" class="btn btn-primary btn-xl btn-3d" id="quoteApproval-jobs">
+            Pending Quote Approval
+            <div class="btn-content">@pendingQuoteApprovalCount</div>
         </a>
         <a href="#" class="btn btn-success btn-xl btn-3d" id="open-jobs">
             Open Jobs
@@ -58,18 +60,27 @@
             <div role="tabpanel" class="tab-pane active" id="open">
                 <div class="row  hidden-xs">
                     <div class="col-sm-2">
-                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("OrderNumber", true)>Order #</h3>
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("OrderNumber", true)>WO #</h3>
                     </div>
                     <div class="col-sm-2">
                         <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("Location", true)>Location</h3>
                     </div>
-                    <div class="col-sm-2 col-md-3">
-                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("Title", true)>Title</h3>
+                    <div class="col-sm-1 col-md-1">
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("City", true)>City</h3>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-sm-1 col-md-1">
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("State", true)>State</h3>
+                    </div>
+                    <div class="col-sm-2 col-md-2">
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("Trade", true)>Trade</h3>
+                    </div>
+                    <div class="col-sm-1 col-md-1">
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("Priority", true)>Priority</h3>
+                    </div>
+                    <div class="col-sm-1">
                         <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("NeedBy", true)>Need by</h3>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-sm-1">
                         <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("Status", true)>Status</h3>
                     </div>
                     <div class="col-sm-2  col-md-1">
@@ -86,15 +97,30 @@
                         </div>
                         <div class="col-sm-2">
                             <p>
-                                <span class="title visible-xs-inline">Location: </span>@order.Location
+                                <span class="title visible-xs-inline">Location: </span><a href="@Url.Action("Location", new { id = @order.LocationId })">@order.Location</a>
                             </p>
                         </div>
-                        <div class="col-sm-2 col-md-3">
+                        <div class="col-sm-1">
                             <p>
-                                <span class="title visible-xs-inline">Title: </span>@order.Title
+                                <span class="title visible-xs-inline">City: </span>@order.City
+                            </p>
+                        </div>
+                        <div class="col-sm-1">
+                            <p>
+                                <span class="title visible-xs-inline">State: </span>@order.State
                             </p>
                         </div>
                         <div class="col-sm-2">
+                            <p>
+                                <span class="title visible-xs-inline">Trade: </span>@order.Trade
+                            </p>
+                        </div>
+                        <div class="col-sm-1">
+                            <p>
+                                <span class="title visible-xs-inline">Priority: </span>@if (order.Priority == 1) {<span> 24 Hour </span> } else if (order.Priority == 2) {<span>48 Hour</span>} else if (order.Priority == 3) {<span>EMERGENCY</span>}
+                            </p>
+                        </div>
+                        <div class="col-sm-1">
                             <p>
                                 <span class="title visible-xs-inline">Needed by: </span>@if (order.NeedBy != null)
                                 {
@@ -102,7 +128,7 @@
                                 }
                             </p>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-1">
                             <p>
                                 <span class="title visible-xs-inline">Status: </span>@order.Status
                             </p>

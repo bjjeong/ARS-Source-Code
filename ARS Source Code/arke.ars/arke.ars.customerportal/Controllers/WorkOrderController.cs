@@ -30,6 +30,7 @@ namespace Arke.ARS.CustomerPortal.Controllers
                 throw new ArgumentNullException("workOrderService");
             }
 
+
             if (locationService == null)
             {
                 throw new ArgumentNullException("locationService");
@@ -59,23 +60,6 @@ namespace Arke.ARS.CustomerPortal.Controllers
             }).ToList();
             locationItems.Insert(0, new SelectListItem());
 
-/*          
-            var connection = CrmConnection.Parse("Url=http://advancedretail.crm.dynamics.com; Username=bjeong@advancedretail.onmicrosoft.com; Password=bjtjjjaj1029.;");
-            var service = new OrganizationService(connection);
-            var context = new CrmOrganizationServiceContext(connection);
-            IOrganizationService _service = service;
-
-            QueryByAttribute query = new QueryByAttribute("account");
-            query.ColumnSet = new ColumnSet("entityimage_url");
-            query.AddAttributeValue("contact", "Brian Jeong");
-            EntityCollection binaryImageResults = _service.RetrieveMultiple(query);
-            String recordName = "blank.jpg";
-            foreach (var record in binaryImageResults.Entities)
-            {
-                recordName = record.Attributes["entityimage_url"].ToString();
-                Console.WriteLine(recordName);
-            }
-*/
             var model = new CustomerPortalModel(Url)
             {
                 OpenOrders = openOrders,
@@ -84,7 +68,6 @@ namespace Arke.ARS.CustomerPortal.Controllers
                 Locations = locationItems,
                 ClosedWorkOrdersQuery = cq,
                 OpenWorkOrdersQuery = oq,
-                //imageUrl = recordName
             };
 
             TempData["ReturnToListUrl"] = Request.RawUrl;
@@ -94,6 +77,37 @@ namespace Arke.ARS.CustomerPortal.Controllers
         public ActionResult Details(Guid id)
         {
             WorkOrderDetailsModel model = _workOrderService.GetWorkOrderDetails(id);
+
+            ViewData["ReturnToListUrl"] = TempData.ContainsKey("ReturnToListUrl")
+                ? TempData["ReturnToListUrl"]
+                : Url.Action("Index");
+            return View(model);
+        }
+
+        public ActionResult Location(Guid id, QueryModel oq, QueryModel cq, bool? showOpen)
+        {
+
+            Guid customerId = GetCurrentCustomerId();
+
+            IPagedList<ClosedWorkOrderModel> closedOrders = _workOrderService.GetLocationClosedWorkOrdersModels(cq, customerId);
+            IPagedList<OpenWorkOrderModel> openOrders = _workOrderService.GetLocationOpenWorkOrdersModels(oq, id);
+
+            var locationItems = _locationService.GetLocations(id).Select(l => new SelectListItem
+            {
+                Value = l.Id.ToString(),
+                Text = l.Name
+            }).ToList();
+            locationItems.Insert(0, new SelectListItem());
+
+            var model = new LocationDetailsModel(Url)
+            {
+                LocationOpenOrders = openOrders,
+                LocationClosedOrders = closedOrders,
+                ShowOpen = showOpen ?? true,
+                Locations = locationItems,
+                ClosedWorkOrdersQuery = cq,
+                OpenWorkOrdersQuery = oq,
+            };
 
             ViewData["ReturnToListUrl"] = TempData.ContainsKey("ReturnToListUrl")
                 ? TempData["ReturnToListUrl"]

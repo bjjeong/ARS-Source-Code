@@ -11,7 +11,13 @@ namespace Arke.ARS.CustomerPortal.Services
 
         IPagedList<OpenWorkOrderModel> GetOpenWorkOrdersModels(QueryModel query, Guid customerId);
 
+        IPagedList<ClosedWorkOrderModel> GetLocationClosedWorkOrdersModels(QueryModel query, Guid customerId);
+
+        IPagedList<OpenWorkOrderModel> GetLocationOpenWorkOrdersModels(QueryModel query, Guid customerId);
+
         WorkOrderDetailsModel GetWorkOrderDetails(Guid workOrderId);
+
+        //LocationDetailsModel GetLocationDetails(Guid locationId);
 
         void AddWorkOrder(NewWorkOrderModel model, Guid contactId);
 

@@ -68,7 +68,9 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
             //Using ticks as a way to have unique PO #'s
             long time = DateTime.Now.Ticks;
             String fileName = Convert.ToString(time);
-            //fileName.Substring(fileName.Length - 15);
+            //fileName.Substring(fileName.Length - 15); This is an attempt to make that PO # shorter. However, this might create the problem of collisions in the future. No guarantees for unique ID's. 
+            //We will keep it at current length for now. If we really need to shorten it, we can later. 
+            //For new STD system we probably still need this feature. But a lot of the features in the technician portal can be removed.
             var receiptBool = false;
             if ((purchaseOrderReceipt != null) || (purchaseOrderReceipt2 != null))
             {
@@ -114,7 +116,8 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                     new_storename = store,
                     new_receipt = receiptBool,
                     new_cost = new Money(orderItem.RealPrice),
-                    new_extcost = new Money(orderItem.RealPrice*orderItem.Quantity)
+                    new_extcost = new Money(orderItem.RealPrice*orderItem.Quantity),
+                    new_technician = techName
                 };
 
                 _context.AddObject(item);

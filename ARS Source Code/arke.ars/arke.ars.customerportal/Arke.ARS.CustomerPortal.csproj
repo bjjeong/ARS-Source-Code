@@ -228,6 +228,7 @@
     </Compile>
     <Compile Include="Models\ClosedWorkOrderModel.cs" />
     <Compile Include="Models\CustomerPortalModel.cs" />
+    <Compile Include="Models\LocationDetailsModel.cs" />
     <Compile Include="Models\LocationModel.cs" />
     <Compile Include="Models\NewWorkOrderModel.cs" />
     <Compile Include="Models\DonwloadAttachmentModel.cs" />
@@ -409,6 +410,7 @@
     <Content Include="Views\WorkOrder\_AddWorkOrder.cshtml" />
     <Content Include="Views\WorkOrder\_ReopenWorkOrder.cshtml" />
     <Content Include="Views\Shared\_AuthorizedNavigation.cshtml" />
+    <Content Include="Views\WorkOrder\Location.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

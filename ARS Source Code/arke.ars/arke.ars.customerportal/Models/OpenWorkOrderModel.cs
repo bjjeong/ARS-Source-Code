@@ -11,6 +11,11 @@ namespace Arke.ARS.CustomerPortal.Models
         public string Title { get; set; }
         public DateTime? NeedBy { get; set; }
         public string Status { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public int Priority { get; set; }
+        public string Trade { get; set; }
+        public Guid LocationId { get; set; }
 
         public override bool Equals(object obj)
         {
@@ -28,6 +33,10 @@ namespace Arke.ARS.CustomerPortal.Models
                 && string.Equals(OrderNumber, other.OrderNumber)
                 && string.Equals(Location, other.Location)
                 && string.Equals(Title, other.Title)
+                && string.Equals(City, other.City)
+                && string.Equals(State, other.State)
+                && int.Equals(Priority, other.Priority)
+                && string.Equals(Trade, other.Trade)
                 && NeedBy.Equals(other.NeedBy)
                 && string.Equals(Status, other.Status);
         }
@@ -42,6 +51,9 @@ namespace Arke.ARS.CustomerPortal.Models
                 hashCode = (hashCode * 397) ^ (Title != null ? Title.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ NeedBy.GetHashCode();
                 hashCode = (hashCode * 397) ^ (Status != null ? Status.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (City != null ? City.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (State != null ? State.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (Trade != null ? Trade.GetHashCode() : 0);
                 return hashCode;
             }
         }

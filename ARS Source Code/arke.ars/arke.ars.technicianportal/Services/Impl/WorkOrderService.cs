@@ -81,7 +81,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                                 Pin = account.new_pinNumber != null ? account.new_pinNumber : "N/A",
                             }).First();
                 _logger.LogInfo("customer name {0}", customer.CustomerName);
-            } 
+            }
 
             Dictionary<string, int> workItemStatuses = GetWorkItemStatuses();
             var workItems = (from workItem in _context.ars_workitemSet
@@ -315,7 +315,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
 
         public void CompleteWork(Guid workOrderId, Guid technicianId, string notes, string lunch)
         {
-            Dictionary<string, int> workItemStatuses = GetWorkItemStatuses();
+            Dictionary<string, int> workItemStatuses = GetWorkItemStatuses(); 
             bool hasIncompleteWorkItems =
                 (from item in _context.ars_workitemSet
                  where item.ars_WorkOrderId.Id == workOrderId && item.statuscode.Value == workItemStatuses["Incomplete"]
@@ -573,12 +573,12 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
             var events = _context.ars_workordereventSet.Where(e => e.ars_WorkOrder.Id == workOrder.IncidentId);
             var incidentEvent =
                 events.Where(e => e.ars_EventType.Value == previouscode.Key)
-                    .OrderByDescending(e => e.CreatedOn)
+                    .OrderByDescending(e => e.ars_DateTime)
                     .FirstOrDefault();
             decimal? hours = 0;
             if (incidentEvent != null && eventType == EventType.CheckOut)
             {
-                    var diff = DateTime.UtcNow.Subtract(incidentEvent.CreatedOn.Value);
+                    var diff = DateTime.UtcNow.Subtract(incidentEvent.ars_DateTime.Value);
                     hours = diff.Hours + (decimal) diff.Minutes/60;
             }
 
@@ -616,6 +616,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                 ars_Amount = new Money(money),
                 ars_Hours = hours
             };
+           
 
             _context.AddObject(workorderevent);
         }
