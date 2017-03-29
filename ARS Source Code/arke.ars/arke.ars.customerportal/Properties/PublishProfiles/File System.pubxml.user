@@ -57,7 +57,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/28/2017 11:08:17</publishTime>
     </File>
     <File Include="bin/Arke.ARS.CustomerPortal.dll">
-      <publishTime>03/28/2017 11:08:17</publishTime>
+      <publishTime>03/29/2017 14:02:19</publishTime>
     </File>
     <File Include="bin/Arke.ARS.CustomerPortal.dll.config">
       <publishTime>01/23/2017 10:38:20</publishTime>
@@ -345,7 +345,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/31/2016 15:16:56</publishTime>
     </File>
     <File Include="Views/Shared/_AuthorizedNavigation.cshtml">
-      <publishTime>05/31/2016 15:16:56</publishTime>
+      <publishTime>03/28/2017 13:15:44</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
       <publishTime>05/31/2016 15:16:56</publishTime>
@@ -357,10 +357,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/30/2016 10:32:05</publishTime>
     </File>
     <File Include="Views/WorkOrder/Index.cshtml">
-      <publishTime>03/27/2017 12:02:10</publishTime>
+      <publishTime>03/28/2017 13:10:08</publishTime>
     </File>
     <File Include="Views/WorkOrder/Location.cshtml">
-      <publishTime>03/27/2017 16:03:00</publishTime>
+      <publishTime>03/29/2017 14:01:17</publishTime>
     </File>
     <File Include="Views/WorkOrder/_AddComment.cshtml">
       <publishTime>05/31/2016 15:16:56</publishTime>

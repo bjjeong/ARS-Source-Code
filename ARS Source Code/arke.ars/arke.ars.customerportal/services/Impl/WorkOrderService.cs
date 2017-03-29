@@ -150,6 +150,25 @@ namespace Arke.ARS.CustomerPortal.Services.Impl
             };
         }
 
+        public LocationAddressModel GetLocationInfo(Guid id)
+        {
+            if (id == null)
+            {
+                return null;
+            }
+
+            Account location = _context.AccountSet.First(a => a.Id == id);
+            return new LocationAddressModel
+            {
+                Name = location.Name,
+                Address1 = location.Address1_Line1,
+                Address2 = location.Address1_Line2,
+                City = location.Address1_City,
+                State = location.Address1_StateOrProvince,
+                PostalCode = location.Address1_PostalCode
+            };
+        }
+
         public IPagedList<ClosedWorkOrderModel> GetClosedWorkOrdersModels(QueryModel query, Guid customerId)
         {
             if (query == null)
@@ -228,6 +247,7 @@ namespace Arke.ARS.CustomerPortal.Services.Impl
             var directlyRelatedWorkOrders = (from workOrder in _context.IncidentSet
                 join location in _context.AccountSet on workOrder.CustomerId.Id equals location.AccountId
                 join contact in _context.ContactSet on location.AccountId equals contact.ParentCustomerId.Id
+                join store in _context.AccountSet on workOrder.ars_Location.Id equals store.AccountId
                 where contact.ContactId == customerId
                 where workOrder.StateCode.Value == IncidentState.Active
                 select new OpenWorkOrderModel
@@ -238,8 +258,8 @@ namespace Arke.ARS.CustomerPortal.Services.Impl
                     LocationId = workOrder.ars_Location.Id,
                     OrderNumber = workOrder.TicketNumber,
                     NeedBy = workOrder.ars_CompleteByDate,
-                    City = location.Address1_City,
-                    State = location.Address1_StateOrProvince,
+                    City = store.Address1_City,
+                    State = store.Address1_StateOrProvince,
                     Priority = workOrder.PriorityCode.Value,
                     Trade = workOrder.new_trade,
                     Status = workItemStatuses[workOrder.StatusCode.Value]

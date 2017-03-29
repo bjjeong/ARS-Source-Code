@@ -5,7 +5,7 @@
   @Html.Partial("_AuthorizedNavigation")
 }
 @{
-    ViewBag.Title = "Pending New Name****";
+    ViewBag.Title = "Craftsmen Alliance FM";
 }
 @{ int openOrderCount = 0; }
 @{ int closedOrderCount = 0;}
@@ -59,13 +59,13 @@
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="open">
                 <div class="row  hidden-xs">
-                    <div class="col-sm-2">
+                    <div class="col-sm-1">
                         <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("OrderNumber", true)>WO #</h3>
                     </div>
                     <div class="col-sm-2">
                         <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("Location", true)>Location</h3>
                     </div>
-                    <div class="col-sm-1 col-md-1">
+                    <div class="col-sm-2 col-md-2">
                         <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("City", true)>City</h3>
                     </div>
                     <div class="col-sm-1 col-md-1">
@@ -90,7 +90,7 @@
                 @foreach (var order in Model.OpenOrders)
                 {
                     <div class="row">
-                        <div class="col-sm-2">
+                        <div class="col-sm-1">
                             <p>
                                 <span class="title visible-xs-inline">Order number: </span>@order.OrderNumber
                             </p>
@@ -100,7 +100,7 @@
                                 <span class="title visible-xs-inline">Location: </span><a href="@Url.Action("Location", new { id = @order.LocationId })">@order.Location</a>
                             </p>
                         </div>
-                        <div class="col-sm-1">
+                        <div class="col-sm-2">
                             <p>
                                 <span class="title visible-xs-inline">City: </span>@order.City
                             </p>
@@ -150,45 +150,61 @@
                 </nav>
             </div>
             <div role="tabpanel" class="tab-pane" id="closed">
-                <div class="row hidden-xs">
-                    <div class="col-sm-2">
-                        <h3 title="Click to sort by column" class="heading sortable closed-sorting" data-sort-url=@Model.GetQueryLink("OrderNumber", false)>Order #</h3>
+                <div class="row  hidden-xs">
+                    <div class="col-sm-1">
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("OrderNumber", true)>WO #</h3>
                     </div>
                     <div class="col-sm-2">
-                        <h3 title="Click to sort by column" class="heading sortable closed-sorting" data-sort-url=@Model.GetQueryLink("Location", false)>Location</h3>
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("Location", true)>Location</h3>
                     </div>
                     <div class="col-sm-2 col-md-2">
-                        <h3 title="Click to sort by column" class="heading sortable closed-sorting" data-sort-url=@Model.GetQueryLink("Title", false)>Title</h3>
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("City", true)>City</h3>
+                    </div>
+                    <div class="col-sm-1 col-md-1">
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("State", true)>State</h3>
+                    </div>
+                    <div class="col-sm-2 col-md-2">
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("Trade", true)>Trade</h3>
                     </div>
                     <div class="col-sm-1">
                         <h3 title="Click to sort by column" class="heading sortable closed-sorting" data-sort-url=@Model.GetQueryLink("ClosedDate", false)>Close Date</h3>
                     </div>
-                    <div class="col-sm-2">
-                        <h3 title="Click to sort by column" class="heading sortable closed-sorting" data-sort-url=@Model.GetQueryLink("Amount", false)>Amount</h3>
+                    <div class="col-sm-1">
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("Amount", true)>Amount</h3>
                     </div>
                     <div class="col-sm-1">
-                        <h3 title="Click to sort by column" class="heading sortable closed-sorting" data-sort-url=@Model.GetQueryLink("Tech", false)>Tech</h3>
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("Tech", true)>Tech</h3>
                     </div>
-                    <div class="col-sm-1">
-                        <p>&nbsp;</p>
+                    <div class="col-sm-2  col-md-1">
+                        <span class="sr-only">Edit/Delete</span>
                     </div>
                 </div>
                 @foreach (var order in Model.ClosedOrders)
                 {
                     <div class="row">
-                        <div class="col-sm-2">
+                        <div class="col-sm-1">
                             <p>
                                 <span class="title visible-xs-inline">Order number: </span>@order.OrderNumber
                             </p>
                         </div>
                         <div class="col-sm-2">
                             <p>
-                                <span class="title visible-xs-inline">Location: </span>@order.Location
+                                <span class="title visible-xs-inline">Location: </span><a href="@Url.Action("Location", new { id = @order.LocationId })">@order.Location</a>
                             </p>
                         </div>
                         <div class="col-sm-2">
                             <p>
-                                <span class="title visible-xs-inline">Title: </span>@order.Title
+                                <span class="title visible-xs-inline">City: </span>@order.City
+                            </p>
+                        </div>
+                        <div class="col-sm-1">
+                            <p>
+                                <span class="title visible-xs-inline">State: </span>@order.State
+                            </p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>
+                                <span class="title visible-xs-inline">Trade: </span>@order.Trade
                             </p>
                         </div>
                         <div class="col-sm-1">

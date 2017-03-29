@@ -8,34 +8,55 @@
 @{
     ViewBag.Title = "Pending New Name****";
 }
-@{ int openOrderCount = 0; }
-@{ int closedOrderCount = 0;}
-@{ int scheduledOrderCount = 0; }
-@{ int pendingQuoteApprovalCount = 0; }
-@foreach (var order in Model.LocationOpenOrders) { openOrderCount++; }
-@foreach (var order in Model.LocationClosedOrders) { closedOrderCount++; }
-@foreach (var order in Model.LocationOpenOrders) { if (order.Status == "Scheduled") { scheduledOrderCount++; } }
-@foreach (var order in Model.LocationOpenOrders) { if (order.Status == "Pending Quote Approval") { pendingQuoteApprovalCount++; } }
-<section class="two">
-    <div class="wrap">
-        <a href="#" class="btn btn-primary btn-xl btn-3d" id="quoteApproval-jobs">
-            Pending Quote Approval
-            <div class="btn-content">@pendingQuoteApprovalCount</div>
-        </a>
-        <a href="#" class="btn btn-success btn-xl btn-3d" id="open-jobs">
-            Open Jobs
-            <div class="btn-content">@openOrderCount</div>
-        </a>
-        <a href="#" class="btn btn-warning btn-xl btn-3d" id="scheduled-jobs">
-            Scheduled Jobs
-            <div class="btn-content">@scheduledOrderCount</div>
-        </a>
-        <a href="#" class="btn btn-danger btn-xl btn-3d" id="closed-jobs">
-            Closed Jobs
-            <div class="btn-content">@closedOrderCount</div>
-        </a>
+@helper GetInfoLine(string content)
+{
+    if (!String.IsNullOrWhiteSpace(content))
+    {
+        <p>@content</p>
+    }
+}
+
+<div class="info">
+    <div class="h-group">
+        <h3><strong>@Model.Name</strong></h3>
     </div>
-</section>
+    <div class="row">
+        <div class="col-sm-3">
+            <p><strong>Address: </strong>@Model.Address1</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            @if (@Model.Address2 != null)
+            {<p><strong>Address 2: </strong>@Model.Address2</p>}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            <p><strong>City: </strong>@Model.City</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            <p><strong>State: </strong>@Model.State</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            <p><strong>Zip Code: </strong>@Model.PostalCode</p>
+        </div>
+    </div>
+    @if (@Model.Address2 != null)
+    {<p><strong>Address 2: </strong>@Model.Address2</p>}
+    @if (Model.LocationAddress != null)
+            {
+        @GetInfoLine(Model.Address1)
+        @GetInfoLine(Model.Address2)
+        @GetInfoLine(Model.City)
+    }
+</div>
+
+
 
 <div class="work-order">
     <div class="wrap-pagination hidden-xs">
