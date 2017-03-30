@@ -343,6 +343,7 @@
     <Content Include="Content\apple-touch-icon-144-precomposed.png" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Craftsmen-Logo-official.png" />
     <Content Include="Content\favicon.ico" />
     <Content Include="Content\logo.png" />
     <Content Include="Content\PagedList.css" />
@@ -411,6 +412,7 @@
     <Content Include="Views\WorkOrder\_ReopenWorkOrder.cshtml" />
     <Content Include="Views\Shared\_AuthorizedNavigation.cshtml" />
     <Content Include="Views\WorkOrder\Location.cshtml" />
+    <Content Include="Views\WorkOrder\_AddLocationWorkOrder.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

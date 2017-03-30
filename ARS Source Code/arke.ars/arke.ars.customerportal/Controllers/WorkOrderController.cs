@@ -90,7 +90,7 @@ namespace Arke.ARS.CustomerPortal.Controllers
             IPagedList<OpenWorkOrderModel> openOrders = _workOrderService.GetLocationOpenWorkOrdersModels(oq, id);
             LocationAddressModel location = _workOrderService.GetLocationInfo(id);
 
-            var locationItems = _locationService.GetLocations(id).Select(l => new SelectListItem
+            var locationItems = _locationService.GetSingleLocation(id).Select(l => new SelectListItem
             {
                 Value = l.Id.ToString(),
                 Text = l.Name

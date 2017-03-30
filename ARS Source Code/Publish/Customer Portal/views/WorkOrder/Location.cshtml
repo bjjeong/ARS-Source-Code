@@ -6,7 +6,7 @@
     @Html.Partial("_AuthorizedNavigation")
 }
 @{
-    ViewBag.Title = "Pending New Name****";
+    ViewBag.Title = @Model.Name;
 }
 @helper GetInfoLine(string content)
 {
@@ -21,19 +21,39 @@
         <h3><strong>@Model.Name</strong></h3>
     </div>
     <div class="row">
-        <div class="col-sm-3">
+        <div class="col-sm-6">
             <p><strong>Address: </strong>@Model.Address1</p>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-3">
-            @if (@Model.Address2 != null)
-            {<p><strong>Address 2: </strong>@Model.Address2</p>}
+        <div class="col-sm-2">
+            <p><strong>Water Heater Type: </strong>N/A</p>
+        </div>
+        <div class="col-sm-2">
+            <p><strong>Panel Type: </strong>N/A</p>
+        </div>
+        <div class="col-sm-2">
+            <p><strong>Septic/Sewer: </strong>N/A</p>
         </div>
     </div>
     <div class="row">
+        <div class="col-sm-6">
+            <p><strong>Address 2: </strong>@Model.Address2</p>
+        </div>
         <div class="col-sm-2">
+            <p><strong>Floor Tile: </strong>N/A</p>
+        </div>
+        <div class="col-sm-2">
+            <p><strong>Celing Tile: </strong>N/A</p>
+        </div>
+        <div class="col-sm-2">
+            <p><strong>Paint Spec: </strong>N/A</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
             <p><strong>City: </strong>@Model.City</p>
+        </div>
+        <div class="col-sm-2">
+            <p><strong>HVAC Spec: </strong>N/A</p>
         </div>
     </div>
     <div class="row">
@@ -44,6 +64,15 @@
     <div class="row">
         <div class="col-sm-2">
             <p><strong>Zip Code: </strong>@Model.PostalCode</p>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label for="locationInfo"><strong>Additional Info:</strong></label>
+                <input type="text" class="form-control" rows="" id="locationInfo" name="locationInfo" />
+            </div>
         </div>
     </div>
     @if (@Model.Address2 != null)
@@ -81,13 +110,13 @@
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="open">
                 <div class="row  hidden-xs">
-                    <div class="col-sm-2">
+                    <div class="col-sm-1">
                         <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("OrderNumber", true)>WO #</h3>
                     </div>
                     <div class="col-sm-2">
                         <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("Location", true)>Location</h3>
                     </div>
-                    <div class="col-sm-1 col-md-1">
+                    <div class="col-sm-1 col-md-2">
                         <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("City", true)>City</h3>
                     </div>
                     <div class="col-sm-1 col-md-1">
@@ -112,7 +141,7 @@
                 @foreach (var order in Model.LocationOpenOrders)
                 {
                     <div class="row">
-                        <div class="col-sm-2">
+                        <div class="col-sm-1">
                             <p>
                                 <span class="title visible-xs-inline">Order number: </span>@order.OrderNumber
                             </p>
@@ -122,7 +151,7 @@
                                 <span class="title visible-xs-inline">Location: </span><a href="@Url.Action("Location", new { id = @order.LocationId })">@order.Location</a>
                             </p>
                         </div>
-                        <div class="col-sm-1">
+                        <div class="col-sm-2">
                             <p>
                                 <span class="title visible-xs-inline">City: </span>@order.City
                             </p>
@@ -263,6 +292,8 @@
 </div>
 
 <button class="btn btn-danger no-print add-work-order" data-toggle="modal" data-target="#add-work-order"><span class="glyphicon glyphicon-plus"></span> New Work Order</button>
+
+@Html.Partial("_AddLocationWorkOrder", Model)
 
 @section scripts {
     <script>

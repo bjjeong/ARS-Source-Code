@@ -7,5 +7,6 @@ namespace Arke.ARS.CustomerPortal.Services
     public interface ILocationService
     {
         IEnumerable<LocationModel> GetLocations(Guid customerId);
+        IEnumerable<LocationModel> GetSingleLocation(Guid customerId);
     }
 }

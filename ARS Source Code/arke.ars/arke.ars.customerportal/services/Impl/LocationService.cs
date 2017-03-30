@@ -45,5 +45,30 @@ namespace Arke.ARS.CustomerPortal.Services.Impl
 
             return directlyRelatedLocations.Union(indirectlyRelatedLocations, LocationModel.Comparer).OrderBy(l => l.Name);
         }
+
+        public IEnumerable<LocationModel> GetSingleLocation(Guid customerId)
+        {
+            var directlyRelatedLocations = (from location in _context.AccountSet
+                                            where location.new_AllowService == true
+                                            where location.AccountId == customerId
+                                            select new LocationModel
+                                            {
+                                                Id = location.AccountId.Value,
+                                                Name = location.Name
+                                            }).ToArray();
+
+            var indirectlyRelatedLocations = (from customer in _context.ContactSet
+                                              join business in _context.AccountSet on customer.ParentCustomerId.Id equals business.AccountId
+                                              join location in _context.AccountSet on business.AccountId equals location.ParentAccountId.Id
+                                              where customer.ContactId == customerId
+                                              where location.new_AllowService == true
+                                              select new LocationModel
+                                              {
+                                                  Id = location.AccountId.Value,
+                                                  Name = location.Name
+                                              }).ToArray();
+
+            return directlyRelatedLocations.Union(indirectlyRelatedLocations, LocationModel.Comparer).OrderBy(l => l.Name);
+        }
     }
 }
