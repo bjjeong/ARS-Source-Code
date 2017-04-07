@@ -365,6 +365,7 @@
     <Content Include="bin\System.Web.WebPages.Razor.xml" />
     <Content Include="bin\System.Web.WebPages.xml" />
     <Content Include="bin\WebGrease.dll" />
+    <Content Include="Content\images\White Logo for Website.png" />
     <Content Include="Content\jquery.bootgrid.min.css" />
     <Content Include="Content\Site.css.map">
       <DependentUpon>Site.css</DependentUpon>
@@ -453,6 +454,7 @@
     <Content Include="Views\WorkOrder\_PurchaseOrder.cshtml" />
     <Content Include="Views\WorkOrder\_WorkItems.cshtml" />
     <Content Include="Views\WorkOrder\_TruckEquipment.cshtml" />
+    <Content Include="Views\Shared\_LayoutLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Arke.ARS.Organization\Arke.ARS.Organization.csproj">

@@ -15,7 +15,7 @@ namespace Arke.ARS.CustomerPortal.Models
             if (urlHelper == null)
             {
                 throw new ArgumentNullException("urlHelper");
-            }
+            } 
 
             _urlHelper = urlHelper;
         }

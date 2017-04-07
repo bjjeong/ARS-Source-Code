@@ -1,4 +1,5 @@
 ﻿@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
 /*
 The main SCSS file for everything, yep
 */
@@ -7,7 +8,10 @@ The main SCSS file for everything, yep
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-.gradient-theme, .footer {
+.footer{
+    background: #FFFFFF;
+}
+.gradient-theme {
   background: #013e75;
   /* Old browsers */
   /* FF3.6+ */
@@ -6381,7 +6385,7 @@ textarea.form-control {
     margin-bottom: 0;
     font-size: 12px;
     letter-spacing: .05em;
-    color: rgba(255, 255, 255, 0.8); }
+    color: #000; }
 
 /* Sticky footer styles
 -------------------------------------------------- */
