@@ -57,10 +57,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/28/2017 11:08:17</publishTime>
     </File>
     <File Include="bin/Arke.ARS.CustomerPortal.dll">
-      <publishTime>03/30/2017 14:57:51</publishTime>
+      <publishTime>04/07/2017 08:57:24</publishTime>
     </File>
     <File Include="bin/Arke.ARS.CustomerPortal.dll.config">
-      <publishTime>01/23/2017 10:38:20</publishTime>
+      <publishTime>03/30/2017 15:53:28</publishTime>
     </File>
     <File Include="bin/Arke.ARS.Organization.dll">
       <publishTime>03/28/2017 11:08:16</publishTime>
@@ -252,7 +252,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/31/2016 15:16:58</publishTime>
     </File>
     <File Include="Content/Craftsmen-Logo-official.png">
-      <publishTime>03/28/2017 13:10:02</publishTime>
+      <publishTime>03/30/2017 15:00:09</publishTime>
     </File>
     <File Include="Content/favicon.ico">
       <publishTime>05/31/2016 15:16:58</publishTime>
@@ -264,7 +264,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/31/2016 15:16:58</publishTime>
     </File>
     <File Include="Content/site.css">
-      <publishTime>08/09/2016 11:43:57</publishTime>
+      <publishTime>04/05/2017 10:09:19</publishTime>
+    </File>
+    <File Include="Content/White Logo for Website.png">
+      <publishTime>04/05/2017 12:16:35</publishTime>
+    </File>
+    <File Include="Content/woodlogo.png">
+      <publishTime>04/05/2017 08:59:40</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>05/31/2016 15:16:51</publishTime>
@@ -288,7 +294,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/31/2016 15:16:51</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>01/23/2017 08:51:35</publishTime>
+      <publishTime>03/30/2017 15:53:28</publishTime>
     </File>
     <File Include="Scripts/animationService.js">
       <publishTime>05/31/2016 15:16:58</publishTime>
@@ -342,7 +348,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/31/2016 15:16:58</publishTime>
     </File>
     <File Include="Views/Account/SignIn.cshtml">
-      <publishTime>05/31/2016 15:16:56</publishTime>
+      <publishTime>04/07/2017 08:29:16</publishTime>
+    </File>
+    <File Include="Views/Account/woodbackground.png">
+      <publishTime>04/05/2017 11:04:28</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>05/31/2016 15:16:56</publishTime>
@@ -351,7 +360,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/28/2017 13:15:44</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>05/31/2016 15:16:56</publishTime>
+      <publishTime>04/05/2017 11:54:37</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>05/31/2016 15:16:55</publishTime>
@@ -363,13 +372,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/28/2017 13:10:08</publishTime>
     </File>
     <File Include="Views/WorkOrder/Location.cshtml">
-      <publishTime>03/30/2017 14:50:20</publishTime>
+      <publishTime>03/30/2017 15:00:09</publishTime>
     </File>
     <File Include="Views/WorkOrder/_AddComment.cshtml">
       <publishTime>05/31/2016 15:16:56</publishTime>
     </File>
     <File Include="Views/WorkOrder/_AddLocationWorkOrder.cshtml">
-      <publishTime>03/30/2017 12:00:40</publishTime>
+      <publishTime>03/30/2017 15:00:09</publishTime>
     </File>
     <File Include="Views/WorkOrder/_AddWorkOrder.cshtml">
       <publishTime>01/11/2017 11:25:10</publishTime>
@@ -381,7 +390,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/31/2016 15:16:55</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/23/2017 10:39:36</publishTime>
+      <publishTime>04/07/2017 08:49:32</publishTime>
     </File>
   </ItemGroup>
 </Project>

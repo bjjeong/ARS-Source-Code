@@ -15,17 +15,16 @@
     @RenderSection("styles", required: false)
 </head>
 <body class="@ViewBag.BodyCss">
-    <div id="loadingDiv"></div>
 <div class="container content">
     <div class="header">
         @RenderSection("navigation", required: false)
-        <h1>@ViewBag.Title</h1>
+        
     </div>
     @RenderBody()
-    <hr/>
+
 </div>
     <footer class="footer no-print">
-        <div class="container">
+        <div class="container1">
             <p>Copyright @DateTime.UtcNow.Year &copy; Advanced Retail Solutions Inc.</p>
         </div>
     </footer>
