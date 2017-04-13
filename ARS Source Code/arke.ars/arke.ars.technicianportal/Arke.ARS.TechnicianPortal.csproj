@@ -455,6 +455,7 @@
     <Content Include="Views\WorkOrder\_WorkItems.cshtml" />
     <Content Include="Views\WorkOrder\_TruckEquipment.cshtml" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
+    <Content Include="Views\Account\_Application.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Arke.ARS.Organization\Arke.ARS.Organization.csproj">

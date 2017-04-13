@@ -111,6 +111,22 @@ namespace Arke.ARS.TechnicianPortal.Controllers
             return RedirectToAction("Index", new { id });
         }
 
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public RedirectToRouteResult Application(NteIncreaseRequestModel nteIncreaseRequest, string item1, string item2, string item3, string item4, string item5, string item6, string item7, string price1, string price2, string price3, string price4, string price5, string price6, string price7, string quantity1, string quantity2, string quantity3, string quantity4, string quantity5, string quantity6, string quantity7, string comment)
+        {
+            if (nteIncreaseRequest == null)
+            {
+                throw new ArgumentNullException("nteIncreaseRequest");
+            }
+            var identity = (ClaimsIdentity)User.Identity;
+            var technicianId = Guid.Parse(identity.GetUserId());
+            _workOrderService.setNteBool(nteIncreaseRequest.WorkOrderId, technicianId);
+            _workOrderService.IncreaseNte(nteIncreaseRequest.WorkOrderId, technicianId, nteIncreaseRequest.Money, nteIncreaseRequest.Hours, item1, item2, item3, item4, item5, item6, item7, price1, price2, price3, price4, price5, price6, price7, quantity1, quantity2, quantity3, quantity4, quantity5, quantity6, quantity7, comment);
+            return RedirectToAction("Index", new { Id = nteIncreaseRequest.WorkOrderId });
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public RedirectToRouteResult SubmitPurchaseOrderRequest(Guid id, OrderItemModel[] orderItems, HttpPostedFileBase purchaseOrderReceipt, HttpPostedFileBase purchaseOrderReceipt2, string vendor, string store)

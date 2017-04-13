@@ -1,0 +1,416 @@
+﻿<style>
+    .input {
+  display: block;
+}
+.modal-body {
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+}
+
+.input span {
+  position: absolute;
+  z-index: 1;
+  cursor: text;
+  pointer-events: none;
+  color: #999;
+  /* Input padding + input border */
+  padding: 7px;
+  /* Firefox does not respond well to different line heights. Use padding instead. */
+  line-height: 17px;
+  /* This gives a little gap between the cursor and the label */
+  margin-left: 2px;
+}
+.input input, .input textarea, .input select {
+  z-index: 0;
+  padding: 6px;
+  margin: 0;
+  font: inherit;
+  line-height: 17px;
+}
+.input select {
+  padding: 5px;
+  /* Unfortunately selects don't respond well to padding. They need an explicit height. */
+  height: 31px;
+}
+</style>
+@model Arke.ARS.TechnicianPortal.Models.WorkOrderModel
+@using (Html.BeginForm("Application", "WorkOrder"))
+{
+    <div class="modal fade" id="modal-application">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" style="text-align:center;"><strong>Contractor Application</strong></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <p class="help-block">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="firstname" name="firstname" required placeholder="Contact First Name">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="lastname" name="lastname" required placeholder="Contact Last Name">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="email" name="email" required placeholder="Email">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone #">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="name" name="name" required placeholder="Company Name">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="website" name="website" placeholder="Website">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="address" name="address" required placeholder="Street Address">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="city" name="city" required placeholder="City">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="State" name="State" required placeholder="State">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group form-group-sm">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th class="col-xs-4">Service</th>
+                                            <th class="col-xs-2">Hourly Rate</th>
+                                            <th class="col-xs-2">Trip Rate</th>
+                                            <th class="col-xs-2">OT Rate</th>
+                                            <th class="col-xs-2">OT Trip Rate</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item1" name="item1" value="Awnings" readonly /></td>
+                                            <td><input type="number" min="0" class="form-control" id="hourly" name="hourly" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="trip" name="trip" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="otrate" name="otrate" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="ottrip" name="ottrip" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item1" name="item1" value="Backflow Repair" readonly/></td>
+                                            <td><input type="number" min="0" class="form-control" id="hourly" name="hourly" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="trip" name="trip" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="otrate" name="otrate" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="ottrip" name="ottrip" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item1" name="item1" value="Backflow Testing" readonly/></td>
+                                            <td><input type="number" min="0" class="form-control" id="hourly" name="hourly" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="trip" name="trip" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="otrate" name="otrate" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="ottrip" name="ottrip" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item1" name="item1" value="Building Repair" readonly/></td>
+                                            <td><input type="number" min="0" class="form-control" id="hourly" name="hourly" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="trip" name="trip" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="otrate" name="otrate" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="ottrip" name="ottrip" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item1" name="item1" value="Disaster Relief" readonly/></td>
+                                            <td><input type="number" min="0" class="form-control" id="hourly" name="hourly" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="trip" name="trip" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="otrate" name="otrate" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="ottrip" name="ottrip" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item1" name="item1" value="Door Repair" readonly/></td>
+                                            <td><input type="number" min="0" class="form-control" id="hourly" name="hourly" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="trip" name="trip" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="otrate" name="otrate" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="ottrip" name="ottrip" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item1" name="item1" value="Drywall Repair" readonly/></td>
+                                            <td><input type="number" min="0" class="form-control" id="hourly" name="hourly" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="trip" name="trip" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="otrate" name="otrate" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="ottrip" name="ottrip" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item1" name="item1" value="Electrical" readonly/></td>
+                                            <td><input type="number" min="0" class="form-control" id="hourly" name="hourly" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="trip" name="trip" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="otrate" name="otrate" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="ottrip" name="ottrip" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item1" name="item1" value="Fences/Gates" readonly/></td>
+                                            <td><input type="number" min="0" class="form-control" id="hourly" name="hourly" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="trip" name="trip" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="otrate" name="otrate" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="ottrip" name="ottrip" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item1" name="item1" value="Fire Protection" readonly/></td>
+                                            <td><input type="number" min="0" class="form-control" id="hourly" name="hourly" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="trip" name="trip" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="otrate" name="otrate" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="ottrip" name="ottrip" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item1" name="item1" value="Flooring" readonly/></td>
+                                            <td><input type="number" min="0" class="form-control" id="hourly" name="hourly" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="trip" name="trip" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="otrate" name="otrate" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="ottrip" name="ottrip" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item1" name="item1" value="Grease Trap Cleaning" readonly/></td>
+                                            <td><input type="number" min="0" class="form-control" id="hourly" name="hourly" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="trip" name="trip" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="otrate" name="otrate" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="ottrip" name="ottrip" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item1" name="item1" value="Handyman" readonly/></td>
+                                            <td><input type="number" min="0" class="form-control" id="hourly" name="hourly" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="trip" name="trip" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="otrate" name="otrate" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="ottrip" name="ottrip" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item1" name="item1" value="HVAC" readonly/></td>
+                                            <td><input type="number" min="0" class="form-control" id="hourly" name="hourly" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="trip" name="trip" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="otrate" name="otrate" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="ottrip" name="ottrip" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item1" name="item1" value="Landscaping" readonly/></td>
+                                            <td><input type="number" min="0" class="form-control" id="hourly" name="hourly" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="trip" name="trip" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="otrate" name="otrate" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="ottrip" name="ottrip" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item1" name="item1" value="Lighting" readonly/></td>
+                                            <td><input type="number" min="0" class="form-control" id="hourly" name="hourly" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="trip" name="trip" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="otrate" name="otrate" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="ottrip" name="ottrip" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item1" name="item1" value="Locksmith" readonly/></td>
+                                            <td><input type="number" min="0" class="form-control" id="hourly" name="hourly" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="trip" name="trip" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="otrate" name="otrate" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="ottrip" name="ottrip" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item1" name="item1" value="Lot Striping" readonly/></td>
+                                            <td><input type="number" min="0" class="form-control" id="hourly" name="hourly" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="trip" name="trip" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="otrate" name="otrate" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="ottrip" name="ottrip" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item1" name="item1" value="Lot Sweeping" readonly/></td>
+                                            <td><input type="number" min="0" class="form-control" id="hourly" name="hourly" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="trip" name="trip" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="otrate" name="otrate" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="ottrip" name="ottrip" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item1" name="item1" value="Painting" readonly/></td>
+                                            <td><input type="number" min="0" class="form-control" id="hourly" name="hourly" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="trip" name="trip" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="otrate" name="otrate" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="ottrip" name="ottrip" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item1" name="item1" value="Parking Lot Repair" readonly/></td>
+                                            <td><input type="number" min="0" class="form-control" id="hourly" name="hourly" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="trip" name="trip" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="otrate" name="otrate" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="ottrip" name="ottrip" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item1" name="item1" value="Pest Control" readonly/></td>
+                                            <td><input type="number" min="0" class="form-control" id="hourly" name="hourly" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="trip" name="trip" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="otrate" name="otrate" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="ottrip" name="ottrip" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item1" name="item1" value="Plumbing" readonly/></td>
+                                            <td><input type="number" min="0" class="form-control" id="hourly" name="hourly" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="trip" name="trip" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="otrate" name="otrate" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="ottrip" name="ottrip" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item1" name="item1" value="Pressure Washing " readonly/></td>
+                                            <td><input type="number" min="0" class="form-control" id="hourly" name="hourly" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="trip" name="trip" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="otrate" name="otrate" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="ottrip" name="ottrip" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item1" name="item1" value="Refrigeration" readonly/></td>
+                                            <td><input type="number" min="0" class="form-control" id="hourly" name="hourly" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="trip" name="trip" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="otrate" name="otrate" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="ottrip" name="ottrip" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item1" name="item1" value="Restroom Cleaning" readonly/></td>
+                                            <td><input type="number" min="0" class="form-control" id="hourly" name="hourly" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="trip" name="trip" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="otrate" name="otrate" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="ottrip" name="ottrip" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item1" name="item1" value="Roof Repair" readonly/></td>
+                                            <td><input type="number" min="0" class="form-control" id="hourly" name="hourly" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="trip" name="trip" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="otrate" name="otrate" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="ottrip" name="ottrip" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item1" name="item1" value="Snow Removal" readonly/></td>
+                                            <td><input type="number" min="0" class="form-control" id="hourly" name="hourly" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="trip" name="trip" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="otrate" name="otrate" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="ottrip" name="ottrip" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item1" name="item1" value="Sign Removal/Repairs" readonly/></td>
+                                            <td><input type="number" min="0" class="form-control" id="hourly" name="hourly" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="trip" name="trip" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="otrate" name="otrate" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="ottrip" name="ottrip" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item1" name="item1" value="Wall Paper" readonly/></td>
+                                            <td><input type="number" min="0" class="form-control" id="hourly" name="hourly" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="trip" name="trip" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="otrate" name="otrate" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="ottrip" name="ottrip" /></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <label for="states" style="text-align:center;">*Please list all of the States or Zip Code(s) within your coverage area*</label>
+                            <textarea class="form-control" id="comment" name="comment" rows="3" required></textarea>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <label for="emergency">Does your company provide 24 hour emergency service?</label>
+                            <input type="text" class="form-control" id="emergency" name="emergency" placeholder="Yes/No">
+                        </div>
+                        <div class="col-xs-4">
+                            <label for="ivr">Have experience using an IVR for Checking In/Out of Work Orders?</label>
+                            <input type="text" class="form-control" id="ivr" name="ivr" placeholder="Yes/No">
+                        </div>
+                        <div class="col-xs-4">
+                            <label for="photos">Do you have the ability to provide before and after photos?</label>
+                            <input type="text" class="form-control" id="photos" name="photos" placeholder="Yes/No">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="nte-increase">Submit Application</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<script>
+    (function ($) {
+
+        function measureWidth(deflt) {
+            var dummy = $('<label></label>').text(deflt).css('visibility', 'hidden').appendTo(document.body);
+            var result = dummy.width();
+            dummy.remove();
+            return result;
+        }
+
+        function toggleLabel() {
+            var input = $(this);
+            var deflt = input.attr('title');
+            var span = input.prev('span');
+            setTimeout(function () {
+                if (!input.val() || (input.val() == deflt)) {
+                    span.css('visibility', '');
+                    if (deflt) {
+                        span.css('margin-left', measureWidth(deflt) + 2 + 'px');
+                    }
+                } else {
+                    span.css('visibility', 'hidden');
+                }
+            }, 0);
+        };
+
+        $(document).on('cut', 'input, textarea', toggleLabel);
+        $(document).on('keydown', 'input, textarea', toggleLabel);
+        $(document).on('paste', 'input, textarea', toggleLabel);
+        $(document).on('change', 'select', toggleLabel);
+
+        $(document).on('focusin', 'input, textarea', function () {
+            $(this).prev('span').css('color', '#ccc');
+        });
+        $(document).on('focusout', 'input, textarea', function () {
+            $(this).prev('span').css('color', '#999');
+        });
+
+        function init() {
+            $('input, textarea, select').each(toggleLabel);
+        };
+
+        // Set things up as soon as the DOM is ready.
+        $(init);
+
+        // Do it again to detect Chrome autofill.
+        $(window).load(function () {
+            setTimeout(init, 0);
+        });
+
+    })(jQuery);
+</script>
