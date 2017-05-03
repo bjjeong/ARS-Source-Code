@@ -17,7 +17,7 @@ namespace Arke.ARS.TechnicianPortal.Controllers
         public ActionResult SignOut()
         {
             IAuthenticationManager authManager = Request.GetOwinContext().Authentication;
-            authManager.SignOut();
+            authManager.SignOut(); 
 
             return RedirectToAction("SignIn");
         }
