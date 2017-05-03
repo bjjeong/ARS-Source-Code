@@ -54,13 +54,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/31/2016 15:17:02</publishTime>
     </File>
     <File Include="bin/Arke.ARS.CommonWeb.dll">
-      <publishTime>03/28/2017 11:08:17</publishTime>
+      <publishTime>05/03/2017 09:11:37</publishTime>
     </File>
     <File Include="bin/Arke.ARS.Organization.dll">
-      <publishTime>03/28/2017 11:08:16</publishTime>
+      <publishTime>05/03/2017 09:11:36</publishTime>
     </File>
     <File Include="bin/Arke.ARS.TechnicianPortal.dll">
-      <publishTime>04/13/2017 08:35:36</publishTime>
+      <publishTime>05/03/2017 09:11:37</publishTime>
     </File>
     <File Include="bin/Arke.ARS.TechnicianPortal.dll.config">
       <publishTime>01/23/2017 10:36:57</publishTime>
@@ -428,11 +428,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Scripts/_references.js">
       <publishTime>05/31/2016 15:17:14</publishTime>
     </File>
+    <File Include="Views/Account/Application.cshtml">
+      <publishTime>05/03/2017 09:04:33</publishTime>
+    </File>
     <File Include="Views/Account/SignIn.cshtml">
-      <publishTime>04/12/2017 10:56:43</publishTime>
+      <publishTime>05/02/2017 11:40:33</publishTime>
     </File>
     <File Include="Views/Account/_Application.cshtml">
-      <publishTime>04/12/2017 12:26:13</publishTime>
+      <publishTime>05/03/2017 09:10:46</publishTime>
     </File>
     <File Include="Views/Home/Home.cshtml">
       <publishTime>01/09/2017 13:43:50</publishTime>
@@ -444,10 +447,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/31/2016 15:17:10</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>04/07/2017 08:33:21</publishTime>
+      <publishTime>05/03/2017 08:58:51</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutLogin.cshtml">
-      <publishTime>04/07/2017 08:36:44</publishTime>
+      <publishTime>05/03/2017 08:59:06</publishTime>
     </File>
     <File Include="Views/Shared/_UnauthorizedNavigation.cshtml">
       <publishTime>05/31/2016 15:17:10</publishTime>

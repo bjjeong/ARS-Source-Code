@@ -16,6 +16,7 @@ namespace Arke.ARS.TechnicianPortal.Services
         void AddSignature(Guid workOrderId, Guid technicianId, string signature, string printname);
         void SetWorkItemStatus(Guid workItemId, Guid technicianId, bool isComplete, HttpPostedFileBase note);
         void setNteBool(Guid workOrderId, Guid technicianId);
+        void AddApplication(ApplicationModel model);
         WorkOrderModel GetWorkOrderDetails(Guid workOrderId);
     }
 }

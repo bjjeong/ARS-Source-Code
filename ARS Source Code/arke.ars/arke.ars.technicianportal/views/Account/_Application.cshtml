@@ -33,18 +33,19 @@
   height: 31px;
 }
 </style>
-@model Arke.ARS.TechnicianPortal.Models.WorkOrderModel
-@using (Html.BeginForm("Application", "WorkOrder"))
-{
-    <div class="modal fade" id="modal-application">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
+@model Arke.ARS.TechnicianPortal.Models.ApplicationModel
+<div class="modal fade" id="modal-application">
+    @using (Html.BeginForm("Submit", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" style="text-align:center;"><strong>Contractor Application</strong></h4>
                 </div>
                 <div class="modal-body">
-                    <div class="row">
+                    <div class="temporary" style="text-align:center; font-size:1.5em;">Please Email <strong>steve@craftsmenalliancefm.com</strong> to Apply</div>
+                    @*<div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <p class="help-block">
@@ -55,46 +56,47 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="firstname" name="firstname" required placeholder="Contact First Name">
+                                <input type="text" class="form-control" id="ContactFirstName" name="ContactFirstName" required placeholder="Contact First Name">
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="lastname" name="lastname" required placeholder="Contact Last Name">
+                                <input type="text" class="form-control" id="ContactLastName" name="ContactLastName" required placeholder="Contact Last Name">
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group">
-                                <input type="email" class="form-control" id="email" name="email" required placeholder="Email">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone #">
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="name" name="name" required placeholder="Company Name">
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="website" name="website" placeholder="Website">
+                                <input type="email" class="form-control" id="Email" name="Email" required placeholder="Email">
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="address" name="address" required placeholder="Street Address">
+                                <input type="text" class="form-control" id="Phone" name="Phone" placeholder="Phone #">
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="city" name="city" required placeholder="City">
+                                <input type="text" class="form-control" id="CompanyName" name="CompanyName" required placeholder="Company Name">
+                                @Html.TextAreaFor(model => model.Body, new { rows = "3", cols = "20" })
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="Website" name="Website" placeholder="Website">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="StreetAddress" name="StreetAddress" required placeholder="Street Address">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="City" name="City" required placeholder="City">
                             </div>
                         </div>
                         <div class="col-sm-4">
@@ -335,33 +337,34 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <label for="states" style="text-align:center;">*Please list all of the States or Zip Code(s) within your coverage area*</label>
-                            <textarea class="form-control" id="comment" name="comment" rows="3" required></textarea>
+                            <textarea class="form-control" id="ServiceArea" name="ServiceArea" rows="3" required></textarea>
                         </div>
                     </div>
                     <br />
                     <div class="row">
                         <div class="col-xs-4">
                             <label for="emergency">Does your company provide 24 hour emergency service?</label>
-                            <input type="text" class="form-control" id="emergency" name="emergency" placeholder="Yes/No">
+                            <input type="text" class="form-control" id="Emergency" name="Emergency" placeholder="Yes/No">
                         </div>
                         <div class="col-xs-4">
                             <label for="ivr">Have experience using an IVR for Checking In/Out of Work Orders?</label>
-                            <input type="text" class="form-control" id="ivr" name="ivr" placeholder="Yes/No">
+                            <input type="text" class="form-control" id="IVR" name="IVR" placeholder="Yes/No">
                         </div>
                         <div class="col-xs-4">
                             <label for="photos">Do you have the ability to provide before and after photos?</label>
-                            <input type="text" class="form-control" id="photos" name="photos" placeholder="Yes/No">
+                            <input type="text" class="form-control" id="Photos" name="Photos" placeholder="Yes/No">
                         </div>
-                    </div>
+                    </div>*@
                 </div>
-                <div class="modal-footer">
+                @*<div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-primary" id="nte-increase">Submit Application</button>
-                </div>
-            </div>
+                    <button type="submit" value="Send" class="btn btn-primary">Submit Application</button>
+                    <a href="@Url.Action("Submit")">Test Label</a>
+                </div>*@
         </div>
     </div>
-}
+    }
+</div>
 <script>
     (function ($) {
 

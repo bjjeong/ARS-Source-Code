@@ -14,6 +14,7 @@ using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Metadata;
 using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Client;
+using System.Diagnostics;
 
 namespace Arke.ARS.TechnicianPortal.Services.Impl
 {
@@ -51,6 +52,30 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
             _technicianService = technicianService;
             _optionSetHelper = optionSetHelper;
             _logger = logger;
+        }
+
+        public void AddApplication(ApplicationModel model)
+        {
+            Debug.Print("Entered WorkOrderServices.cs AddApplication function");
+            var application = new new_applications
+            {
+                new_ContactFirstName = model.ContactFirstName,
+                new_ContactLastName = model.ContactLastName,
+                new_Email = model.Email,
+                new_name = model.CompanyName,
+                new_Phone = model.Phone,
+                new_StreetAddress = model.StreetAddress,
+                new_City = model.City,
+                new_State = model.State,
+                new_CompanyWebsite = model.Website,
+                new_IVR = model.IVR,
+                new_EmergencyService = model.Emergency,
+                new_BeforeAfterPhotos = model.Photos,
+                new_ServiceArea = model.ServiceArea
+            };
+
+            _context.AddObject(application);
+            _context.SaveChanges();
         }
 
         public WorkOrderModel GetWorkOrder(Guid workOrderId, Guid technicianId)

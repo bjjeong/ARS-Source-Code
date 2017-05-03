@@ -2,9 +2,12 @@
 using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
+using Arke.ARS.CommonWeb.Services;
 using Arke.ARS.TechnicianPortal.Models;
 using Arke.ARS.TechnicianPortal.Services;
 using Microsoft.AspNet.Identity;
+using System.Linq;
+using System.Diagnostics;
 
 namespace Arke.ARS.TechnicianPortal.Controllers
 {
@@ -12,8 +15,9 @@ namespace Arke.ARS.TechnicianPortal.Controllers
     {
         private readonly IWorkOrderService _workOrderService;
         private readonly IPurchaseOrderService _purchaseOrderService;
+        private readonly ILogger _logger;
 
-        public WorkOrderController(IWorkOrderService workOrderService, IPurchaseOrderService purchaseOrderService)
+        public WorkOrderController(IWorkOrderService workOrderService, IPurchaseOrderService purchaseOrderService, ILogger logger)
         {
             if (workOrderService == null)
             {
@@ -25,8 +29,14 @@ namespace Arke.ARS.TechnicianPortal.Controllers
                 throw new ArgumentNullException("purchaseOrderService");
             }
 
+            if (logger == null)
+            {
+                throw new ArgumentNullException("logger");
+            }
+
             _workOrderService = workOrderService;
             _purchaseOrderService = purchaseOrderService;
+            _logger = logger;
         }
 
         public ActionResult Index(Guid id)
@@ -54,7 +64,7 @@ namespace Arke.ARS.TechnicianPortal.Controllers
             var identity = (ClaimsIdentity)User.Identity;
             var technicianId = Guid.Parse(identity.GetUserId());
             switch (status)
-            {
+            { 
                 case StatusCode.TechnicianOffsite:
                     _workOrderService.SetTemporarilyOffSite(id, technicianId, notes);
                     break;
@@ -151,6 +161,22 @@ namespace Arke.ARS.TechnicianPortal.Controllers
 
             _purchaseOrderService.SubmitTruckEquipment(id, GetCurrentTechnicianId(), orderItems);
             return RedirectToAction("Index", new { id });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Add(ApplicationModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                _workOrderService.AddApplication(model);
+            }
+            else
+            {
+                _logger.LogException("Invalid model state", ModelState.SelectMany(x => x.Value.Errors.Select(z => z.Exception)).First());
+            }
+
+            return RedirectToAction("Index");
         }
 
         [HttpPost]

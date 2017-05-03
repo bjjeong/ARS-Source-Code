@@ -99,7 +99,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                     ars_description = orderItem.Item,
                     ars_Quantity = orderItem.Quantity,
                     ars_OrderId = workOrder.ars_Order,
-                    new_ponumber = fileName
+                    new_PONumber = fileName
                 };
 
                 _context.AddObject(item1);
@@ -115,8 +115,8 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                     new_vendor = myOptionSet,
                     new_storename = store,
                     new_receipt = receiptBool,
-                    new_cost = new Money(orderItem.RealPrice),
-                    new_extcost = new Money(orderItem.RealPrice*orderItem.Quantity),
+                    new_Cost = new Money(orderItem.RealPrice),
+                    new_ExtCost = new Money(orderItem.RealPrice*orderItem.Quantity),
                     new_technician = techName
                 };
 

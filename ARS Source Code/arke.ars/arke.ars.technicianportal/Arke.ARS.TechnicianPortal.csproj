@@ -199,6 +199,7 @@
     <Folder Include="Views\AttachmentService\" />
     <Folder Include="Views\Attachment\" />
     <Folder Include="Views\DownloadAttachmentModel\" />
+    <Folder Include="Views\Email\" />
     <Folder Include="Views\IAttachmentService\" />
   </ItemGroup>
   <ItemGroup>
@@ -223,6 +224,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AppointmentController.cs" />
     <Compile Include="Controllers\AttachmentController.cs" />
+    <Compile Include="Controllers\EmailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\WorkOrderController.cs" />
     <Compile Include="Global.asax.cs">
@@ -230,7 +232,9 @@
     </Compile>
     <Compile Include="Infrastructure\EnumUtility.cs" />
     <Compile Include="Models\AppointmentModel.cs" />
+    <Compile Include="Models\EmailModel.cs" />
     <Compile Include="Models\DownloadAttachmentModel.cs" />
+    <Compile Include="Models\ApplicationModel.cs" />
     <Compile Include="Models\PurchaseOrderModel.cs" />
     <Compile Include="Models\CustomerModel.cs" />
     <Compile Include="Models\EventType.cs" />
@@ -456,6 +460,7 @@
     <Content Include="Views\WorkOrder\_TruckEquipment.cshtml" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
     <Content Include="Views\Account\_Application.cshtml" />
+    <Content Include="Views\Account\Application.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Arke.ARS.Organization\Arke.ARS.Organization.csproj">
