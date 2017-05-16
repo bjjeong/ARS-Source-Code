@@ -327,10 +327,6 @@
             $("#need-by-date").datetimepicker();
 
             $("#open-jobs").click(function () {
-                @{ scheduledActive = 0; }
-                @{ openActive = 1; }
-                @{ closedActive = 0; }
-                @{ pendingActive = 0; }
                 $("#closed").removeClass("active");
                 $("#open").addClass("active");
                 $("#closed-tab").removeClass("active");
@@ -357,10 +353,6 @@
             });
 
             $("#scheduled-jobs").click(function () {
-                @{ scheduledActive = 1; }
-                @{ openActive = 0; }
-                @{ closedActive = 0; }
-                @{ pendingActive = 0; }
                 $("#closed").removeClass("active");
                 $("#open").addClass("active");
                 $("#closed-tab").removeClass("active");
@@ -374,10 +366,6 @@
             });
 
             $("#quoteApproval-jobs").click(function () {
-                @{ scheduledActive = 0; }
-                @{ openActive = 0; }
-                @{ closedActive = 0; }
-                @{ pendingActive = 1; }
                 $("#closed").removeClass("active");
                 $("#open").addClass("active");
                 $("#closed-tab").removeClass("active");
