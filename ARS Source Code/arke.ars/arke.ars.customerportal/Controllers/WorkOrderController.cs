@@ -131,6 +131,14 @@ namespace Arke.ARS.CustomerPortal.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        public RedirectToRouteResult AddLocationComment(Guid id, string comment)
+        {
+            _locationService.AddLocationNotes(id, comment);
+            return RedirectToAction("Location", new { id });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Add(NewWorkOrderModel model)
         {
             if (ModelState.IsValid)

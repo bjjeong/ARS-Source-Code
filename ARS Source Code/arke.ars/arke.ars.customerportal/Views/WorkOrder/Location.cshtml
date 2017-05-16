@@ -67,14 +67,15 @@
         </div>
     </div>
     <br />
-    <div class="row">
+    @*<div class="row">
         <div class="col-sm-12">
             <div class="form-group">
                 <label for="locationInfo"><strong>Additional Info:</strong></label>
+                <button class="btn btn-primary btn-work-order" data-toggle="modal" data-target="#modal-comments-attachments">Add a Note</button>
                 <input type="text" class="form-control" rows="" id="locationInfo" name="locationInfo" />
             </div>
         </div>
-    </div>
+    </div>*@
     @if (@Model.Address2 != null)
     {<p><strong>Address 2: </strong>@Model.Address2</p>}
     @if (Model.LocationAddress != null)
@@ -105,6 +106,7 @@
         <li role="presentation" id="closed-tab"><a href="#closed" aria-controls="profile" role="tab" data-toggle="tab">Closed</a></li>
         <li role="presentation" id="open-tab" class="active"><a href="#open" aria-controls="home" role="tab" data-toggle="tab">Open</a></li>
     </ul>
+    <button class="btn-sm btn-danger no-print add-work-order" data-toggle="modal" data-target="#add-work-order"><span class="glyphicon glyphicon-plus"></span> New Work Order</button>
     @using (Html.BeginForm("Index", "WorkOrder", FormMethod.Post, new { id = "filterForm" }))
     {
         <div class="tab-content">
@@ -126,7 +128,7 @@
                         <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("Trade", true)>Trade</h3>
                     </div>
                     <div class="col-sm-1 col-md-1">
-                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("Priority", true)>Priority</h3>
+                        <h3 title="Click to sort by column">Priority</h3>
                     </div>
                     <div class="col-sm-1">
                         <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("NeedBy", true)>Need by</h3>
@@ -291,9 +293,10 @@
 
 </div>
 
-<button class="btn btn-danger no-print add-work-order" data-toggle="modal" data-target="#add-work-order"><span class="glyphicon glyphicon-plus"></span> New Work Order</button>
+@*<button class="btn btn-danger no-print add-work-order" data-toggle="modal" data-target="#add-work-order"><span class="glyphicon glyphicon-plus"></span> New Work Order</button>*@
 
 @Html.Partial("_AddLocationWorkOrder", Model)
+@Html.Partial("_AddNote", Model)
 
 @section scripts {
     <script>

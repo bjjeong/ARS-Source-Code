@@ -434,7 +434,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
         {
             bool hasAttachment = attachment != null && attachment.ContentLength > 0;
 
-            if (String.IsNullOrWhiteSpace(comment) && !hasAttachment)
+            if (String.IsNullOrWhiteSpace(comment) && !hasAttachment) 
             {
                 return;
             }

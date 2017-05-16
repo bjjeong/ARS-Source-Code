@@ -27,6 +27,7 @@ namespace Arke.ARS.CustomerPortal.Models
         public QueryModel OpenWorkOrdersQuery { get; set; }
         public QueryModel ClosedWorkOrdersQuery { get; set; }
         public LocationAddressModel LocationAddress { get; set; }
+        public Guid Id { get; set; }
         public bool ShowOpen { get; set; }
         public string imageUrl { get; set; }
         public string Name { get; set; }

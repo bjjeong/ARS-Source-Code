@@ -383,6 +383,8 @@
     <Content Include="bin\normnfkd.nlp" />
     <Content Include="bin\coretools\LicenseTerms.docx" />
     <Content Include="bin\coretools\CrmSvcUtil.exe.config" />
+    <None Include="Properties\PublishProfiles\CraftsmenAllianceFM - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\CraftsmenAllianceFM - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -420,6 +422,7 @@
     <Content Include="Views\Shared\_AuthorizedNavigation.cshtml" />
     <Content Include="Views\WorkOrder\Location.cshtml" />
     <Content Include="Views\WorkOrder\_AddLocationWorkOrder.cshtml" />
+    <Content Include="Views\WorkOrder\_AddNote.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

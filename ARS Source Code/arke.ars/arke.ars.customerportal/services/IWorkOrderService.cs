@@ -21,6 +21,8 @@ namespace Arke.ARS.CustomerPortal.Services
 
         //LocationDetailsModel GetLocationDetails(Guid locationId);
 
+        void AddLocationNotes(Guid id, string comment);
+
         void AddWorkOrder(NewWorkOrderModel model, Guid contactId);
 
         void CancelWorkOrder(Guid orderId);

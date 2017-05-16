@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Arke.ARS.CustomerPortal.Models;
 using Arke.ARS.Organization.Context;
+using Microsoft.Xrm.Sdk;
 
 namespace Arke.ARS.CustomerPortal.Services.Impl
 {
@@ -69,6 +70,24 @@ namespace Arke.ARS.CustomerPortal.Services.Impl
                                               }).ToArray();
 
             return directlyRelatedLocations.Union(indirectlyRelatedLocations, LocationModel.Comparer).OrderBy(l => l.Name);
+        }
+
+        public void AddLocationNotes(Guid locationId, string comment)
+        {
+
+            if (String.IsNullOrWhiteSpace(comment))
+            {
+                return;
+            }
+
+            var annotation = new Annotation
+            {
+                NoteText = String.Format("{0}", comment),
+                ObjectId = new EntityReference(Account.EntityLogicalName, locationId),
+            };
+
+            _context.AddObject(annotation);
+            _context.SaveChanges();
         }
     }
 }

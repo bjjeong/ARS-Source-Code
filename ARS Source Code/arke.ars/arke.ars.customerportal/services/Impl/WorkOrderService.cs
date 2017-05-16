@@ -471,6 +471,24 @@ namespace Arke.ARS.CustomerPortal.Services.Impl
             return options;
         }
 
+        public void AddLocationNotes(Guid locationId, string comment)
+        {
+
+            if (String.IsNullOrWhiteSpace(comment))
+            {
+                return;
+            }
+
+            var annotation = new Annotation
+            {
+                NoteText = String.Format("{0}", comment),
+                ObjectId = new EntityReference(Incident.EntityLogicalName, locationId)
+            };
+
+            _context.AddObject(annotation);
+            _context.SaveChanges();
+        }
+
         public void AddWorkOrder(NewWorkOrderModel model, Guid contactId)
         {
             var customerReference = _context.AccountSet.Single(a => a.PrimaryContactId.Id == contactId).ToEntityReference();

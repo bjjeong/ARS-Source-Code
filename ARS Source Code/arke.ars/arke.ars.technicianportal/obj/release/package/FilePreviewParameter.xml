@@ -1,10 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="IIS Web Application Name" description="" value="Default Web Site" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\bjjeo\\Downloads\\ARS\ Source\ Code\\ARS\ Source\ Code\\arke\.ars\\Arke\.ARS\.TechnicianPortal\\obj\\Release\\Package\\PackageTmp$" />
-    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\bjjeo\\Downloads\\ARS\ Source\ Code\\ARS\ Source\ Code\\arke\.ars\\Arke\.ARS\.TechnicianPortal\\obj\\Release\\Package\\PackageTmp$" />
+  <parameter name="IIS Web Application Name" description="" value="Contractor" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\bjjeo\\OneDrive\\Documents\\GitHub\\ARS-Source-Code\\ARS\ Source\ Code\\arke\.ars\\Arke\.ARS\.TechnicianPortal\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\bjjeo\\OneDrive\\Documents\\GitHub\\ARS-Source-Code\\ARS\ Source\ Code\\arke\.ars\\Arke\.ARS\.TechnicianPortal\\obj\\Release\\Package\\PackageTmp$" />
   </parameter>
-  <parameter name="ArsOrg-Web.config Connection String" description="" value="Url=https://advancedretail.crm.dynamics.com/; Username=bjeong@advancedretail.onmicrosoft.com; Password=Adv@nc3d" tags="">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\bjjeo\\Downloads\\ARS\ Source\ Code\\ARS\ Source\ Code\\arke\.ars\\Arke\.ARS\.TechnicianPortal\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ArsOrg']/@connectionString" />
+  <parameter name="ArsOrg-Web.config Connection String" description="ArsOrg Connection String used in web.config by the application to access the database." value="Url=https://advancedretail.crm.dynamics.com/; Username=bjeong@advancedretail.onmicrosoft.com; Password=bjtjjjaj1029.." tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\bjjeo\\OneDrive\\Documents\\GitHub\\ARS-Source-Code\\ARS\ Source\ Code\\arke\.ars\\Arke\.ARS\.TechnicianPortal\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ArsOrg']/@connectionString" />
+  </parameter>
+  <parameter name="Server=CRM Online, organization=advancedretail, user=bjeong-Web.config Connection String" description="Server=CRM Online, organization=advancedretail, user=bjeong Connection String used in web.config by the application to access the database." value="Url=https://advancedretail.crm.dynamics.com; Username=bjeong@advancedretail.onmicrosoft.com; Password=bjtjjjaj1029..; authtype=Office365" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\bjjeo\\OneDrive\\Documents\\GitHub\\ARS-Source-Code\\ARS\ Source\ Code\\arke\.ars\\Arke\.ARS\.TechnicianPortal\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Server=CRM Online, organization=advancedretail, user=bjeong']/@connectionString" />
   </parameter>
 </parameters>

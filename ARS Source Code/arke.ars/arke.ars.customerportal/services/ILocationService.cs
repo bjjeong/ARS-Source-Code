@@ -8,5 +8,6 @@ namespace Arke.ARS.CustomerPortal.Services
     {
         IEnumerable<LocationModel> GetLocations(Guid customerId);
         IEnumerable<LocationModel> GetSingleLocation(Guid customerId);
+        void AddLocationNotes(Guid locationId, string comment);
     }
 }

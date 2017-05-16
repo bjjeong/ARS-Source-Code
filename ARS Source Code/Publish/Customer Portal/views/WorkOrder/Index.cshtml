@@ -11,6 +11,7 @@
 @{ int closedOrderCount = 0;}
 @{ int scheduledOrderCount = 0; }
 @{ int pendingQuoteApprovalCount = 0; }
+
 @foreach (var order in Model.OpenOrders) { openOrderCount++; }
 @foreach (var order in Model.ClosedOrders) { closedOrderCount++; }
 @foreach (var order in Model.OpenOrders) { if (order.Status == "Scheduled") { scheduledOrderCount++; } }
@@ -34,7 +35,7 @@
             <div class="btn-content">@closedOrderCount</div>
         </a>
     </div>
-</section>
+</section>  
 
 <div class="work-order">
     <div class="wrap-pagination hidden-xs">
@@ -54,6 +55,7 @@
         <li role="presentation" id="closed-tab"><a href="#closed" aria-controls="profile" role="tab" data-toggle="tab">Closed</a></li>
         <li role="presentation" id="open-tab" class="active"><a href="#open" aria-controls="home" role="tab" data-toggle="tab">Open</a></li>
     </ul>
+    <button class="btn-sm btn-danger no-print add-work-order" data-toggle="modal" data-target="#add-work-order"><span class="glyphicon glyphicon-plus"></span> New Work Order</button>
     @using (Html.BeginForm("Index", "WorkOrder", FormMethod.Post, new { id = "filterForm" }))
     {
         <div class="tab-content">
@@ -75,7 +77,7 @@
                         <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("Trade", true)>Trade</h3>
                     </div>
                     <div class="col-sm-1 col-md-1">
-                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("Priority", true)>Priority</h3>
+                        <h3 title="Click to sort by column">Priority</h3>
                     </div>
                     <div class="col-sm-1">
                         <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("NeedBy", true)>Need by</h3>
@@ -137,10 +139,10 @@
                             <a href="@Url.Action("Details", new { id = @order.Id })" class="edit-delete edit btn btn-default btn-sm no-print" title="View or edit details">
                                 Details
                             </a>
-                            <a href="#" class="edit-delete cancel no-print @(order.Status == "Pending" ? "" : "invisible")" data-orderid="@order.Id" title="Cancel Work Order">
+                            @*<a href="#" class="edit-delete cancel no-print @(order.Status == "Pending" ? "" : "invisible")" data-orderid="@order.Id" title="Cancel Work Order">
                                 <span class="sr-only">Cancel Work Order</span>
                                 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                            </a>
+                            </a>*@
                         </div>
                     </div>
                 }
@@ -251,7 +253,7 @@
 
 </div>
 
-<button class="btn btn-danger no-print add-work-order" data-toggle="modal" data-target="#add-work-order"><span class="glyphicon glyphicon-plus"></span> New Work Order</button>
+@*<button class="btn btn-danger no-print add-work-order" data-toggle="modal" data-target="#add-work-order"><span class="glyphicon glyphicon-plus"></span> New Work Order</button>*@
 
 @Html.Partial("_AddWorkOrder", Model)
 @Html.Partial("_ReopenWorkOrder")
@@ -325,6 +327,10 @@
             $("#need-by-date").datetimepicker();
 
             $("#open-jobs").click(function () {
+                @{ scheduledActive = 0; }
+                @{ openActive = 1; }
+                @{ closedActive = 0; }
+                @{ pendingActive = 0; }
                 $("#closed").removeClass("active");
                 $("#open").addClass("active");
                 $("#closed-tab").removeClass("active");
@@ -346,6 +352,40 @@
                 $(".closed-paging").show();
                 $('html,body').animate({
                     scrollTop: $("#closed").offset().top
+                },
+                    'slow');
+            });
+
+            $("#scheduled-jobs").click(function () {
+                @{ scheduledActive = 1; }
+                @{ openActive = 0; }
+                @{ closedActive = 0; }
+                @{ pendingActive = 0; }
+                $("#closed").removeClass("active");
+                $("#open").addClass("active");
+                $("#closed-tab").removeClass("active");
+                $("#open-tab").addClass("active");
+                $(".closed-paging").hide();
+                $(".open-paging").show();
+                $('html,body').animate({
+                    scrollTop: $("#open").offset().top
+                },
+                    'slow');
+            });
+
+            $("#quoteApproval-jobs").click(function () {
+                @{ scheduledActive = 0; }
+                @{ openActive = 0; }
+                @{ closedActive = 0; }
+                @{ pendingActive = 1; }
+                $("#closed").removeClass("active");
+                $("#open").addClass("active");
+                $("#closed-tab").removeClass("active");
+                $("#open-tab").addClass("active");
+                $(".closed-paging").hide();
+                $(".open-paging").show();
+                $('html,body').animate({
+                    scrollTop: $("#open").offset().top
                 },
                     'slow');
             });
