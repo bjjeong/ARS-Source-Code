@@ -11,6 +11,10 @@ namespace Arke.ARS.CustomerPortal.Services
 
         IPagedList<OpenWorkOrderModel> GetOpenWorkOrdersModels(QueryModel query, Guid customerId);
 
+        IPagedList<ScheduledWorkOrderModel> GetScheduledWorkOrdersModels(QueryModel query, Guid customerId);
+
+        IPagedList<QuoteApprovalWorkOrderModel> GetQuoteApprovalWorkOrdersModels(QueryModel query, Guid customerId);
+
         IPagedList<ClosedWorkOrderModel> GetLocationClosedWorkOrdersModels(QueryModel query, Guid customerId);
 
         IPagedList<OpenWorkOrderModel> GetLocationOpenWorkOrdersModels(QueryModel query, Guid customerId);

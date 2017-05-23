@@ -1855,3 +1855,135 @@ Parameter name: parameters
    at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
 
 
+2017-05-23 09:54:43,593 [82] ERROR ==========================  Exception info see below  ===============================
+Unhandled exception
+Url: /
+System.Collections.Generic.KeyNotFoundException - The given key was not present in the dictionary.
+   at System.ThrowHelper.ThrowKeyNotFoundException()
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Arke.ARS.CustomerPortal.Services.Impl.WorkOrderService.SortByColumn[T](IEnumerable`1 source, String columnName, Nullable`1 sortOrder) in C:\Users\brian\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.CustomerPortal\Services\Impl\WorkOrderService.cs:line 546
+   at Arke.ARS.CustomerPortal.Services.Impl.WorkOrderService.GetScheduledWorkOrdersModels(QueryModel query, Guid customerId) in C:\Users\brian\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.CustomerPortal\Services\Impl\WorkOrderService.cs:line 349
+   at Arke.ARS.CustomerPortal.Controllers.WorkOrderController.Index(QueryModel oq, QueryModel cq, Nullable`1 showOpen) in C:\Users\brian\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.CustomerPortal\Controllers\WorkOrderController.cs:line 55
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+2017-05-23 09:57:20,367 [82] ERROR ==========================  Exception info see below  ===============================
+Unhandled exception
+Url: /
+System.Collections.Generic.KeyNotFoundException - The given key was not present in the dictionary.
+   at System.ThrowHelper.ThrowKeyNotFoundException()
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Arke.ARS.CustomerPortal.Services.Impl.WorkOrderService.SortByColumn[T](IEnumerable`1 source, String columnName, Nullable`1 sortOrder) in C:\Users\brian\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.CustomerPortal\Services\Impl\WorkOrderService.cs:line 546
+   at Arke.ARS.CustomerPortal.Services.Impl.WorkOrderService.GetScheduledWorkOrdersModels(QueryModel query, Guid customerId) in C:\Users\brian\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.CustomerPortal\Services\Impl\WorkOrderService.cs:line 349
+   at Arke.ARS.CustomerPortal.Controllers.WorkOrderController.Index(QueryModel oq, QueryModel cq, Nullable`1 showOpen) in C:\Users\brian\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.CustomerPortal\Controllers\WorkOrderController.cs:line 55
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+2017-05-23 10:01:36,190 [87] ERROR ==========================  Exception info see below  ===============================
+Unhandled exception
+Url: /
+System.Collections.Generic.KeyNotFoundException - The given key was not present in the dictionary.
+   at System.ThrowHelper.ThrowKeyNotFoundException()
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Arke.ARS.CustomerPortal.Services.Impl.WorkOrderService.SortByColumn[T](IEnumerable`1 source, String columnName, Nullable`1 sortOrder) in C:\Users\brian\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.CustomerPortal\Services\Impl\WorkOrderService.cs:line 546
+   at Arke.ARS.CustomerPortal.Services.Impl.WorkOrderService.GetScheduledWorkOrdersModels(QueryModel query, Guid customerId) in C:\Users\brian\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.CustomerPortal\Services\Impl\WorkOrderService.cs:line 349
+   at Arke.ARS.CustomerPortal.Controllers.WorkOrderController.Index(QueryModel oq, QueryModel cq, Nullable`1 showOpen) in C:\Users\brian\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.CustomerPortal\Controllers\WorkOrderController.cs:line 55
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+2017-05-23 10:06:21,410 [82] ERROR ==========================  Exception info see below  ===============================
+Unhandled exception
+Url: /
+System.Collections.Generic.KeyNotFoundException - The given key was not present in the dictionary.
+   at System.ThrowHelper.ThrowKeyNotFoundException()
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Arke.ARS.CustomerPortal.Services.Impl.WorkOrderService.SortByColumn[T](IEnumerable`1 source, String columnName, Nullable`1 sortOrder) in C:\Users\brian\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.CustomerPortal\Services\Impl\WorkOrderService.cs:line 546
+   at Arke.ARS.CustomerPortal.Services.Impl.WorkOrderService.GetScheduledWorkOrdersModels(QueryModel query, Guid customerId) in C:\Users\brian\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.CustomerPortal\Services\Impl\WorkOrderService.cs:line 349
+   at Arke.ARS.CustomerPortal.Controllers.WorkOrderController.Index(QueryModel oq, QueryModel cq, Nullable`1 showOpen) in C:\Users\brian\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.CustomerPortal\Controllers\WorkOrderController.cs:line 55
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+

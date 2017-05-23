@@ -238,6 +238,8 @@
     <Compile Include="Models\DonwloadAttachmentModel.cs" />
     <Compile Include="Models\OpenWorkOrderModel.cs" />
     <Compile Include="Models\QueryModel.cs" />
+    <Compile Include="Models\QuoteApprovalWorkOrderModel.cs" />
+    <Compile Include="Models\ScheduledWorkOrderModel.cs" />
     <Compile Include="Models\WorkOrderDetailsModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ILocationService.cs" />

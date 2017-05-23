@@ -22,9 +22,13 @@ namespace Arke.ARS.CustomerPortal.Models
 
         public IPagedList<ClosedWorkOrderModel> ClosedOrders { get; set; }
         public IPagedList<OpenWorkOrderModel> OpenOrders { get; set; }
+        public IPagedList<ScheduledWorkOrderModel> ScheduledOrders { get; set; }
+        public IPagedList<QuoteApprovalWorkOrderModel> QuoteApprovalOrders { get; set; }
         public List<SelectListItem> Locations { get; set; }
         public QueryModel OpenWorkOrdersQuery{ get; set; }
         public QueryModel ClosedWorkOrdersQuery { get; set; }
+        public QueryModel ScheduledWOrkOrdersQuery { get; set; }
+        public QueryModel QuoteApprovalWorkOrdersQuery { get; set; }
         public bool ShowOpen { get; set; }
         public string imageUrl { get; set; }
 

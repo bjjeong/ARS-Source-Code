@@ -14,17 +14,17 @@
 
 @foreach (var order in Model.OpenOrders) { openOrderCount++; }
 @foreach (var order in Model.ClosedOrders) { closedOrderCount++; }
-@foreach (var order in Model.OpenOrders) { if (order.Status == "Scheduled") { scheduledOrderCount++; } }
-@foreach (var order in Model.OpenOrders) { if (order.Status == "Pending Quote Approval") { pendingQuoteApprovalCount++; } }
+@foreach (var order in Model.ScheduledOrders) { if (order.Status == "Scheduled") { scheduledOrderCount++; } }
+@foreach (var order in Model.QuoteApprovalOrders) { if (order.Status == "WQA") { pendingQuoteApprovalCount++; } }
 <section class="two">
     <div class="wrap">
-        <a href="#" class="btn btn-primary btn-xl btn-3d" id="quoteApproval-jobs">
-            Pending Quote Approval
-            <div class="btn-content">@pendingQuoteApprovalCount</div>
-        </a>
         <a href="#" class="btn btn-success btn-xl btn-3d" id="open-jobs">
             Open Jobs
             <div class="btn-content">@openOrderCount</div>
+        </a>
+        <a href="#" class="btn btn-primary btn-xl btn-3d" id="quoteApproval-jobs">
+            Pending Quote Approval
+            <div class="btn-content">@pendingQuoteApprovalCount</div>
         </a>
         <a href="#" class="btn btn-warning btn-xl btn-3d" id="scheduled-jobs">
             Scheduled Jobs
@@ -46,6 +46,12 @@
             <div class="closed-paging">
                 @Html.PagedListPager(Model.ClosedOrders, page => Model.GetQueryLink(page, false))
             </div>
+            <div class="scheduled-paging">
+                @Html.PagedListPager(Model.ScheduledOrders, page => Model.GetQueryLink(page, false))
+            </div>
+            <div class="quoteApproval-paging">
+                @Html.PagedListPager(Model.QuoteApprovalOrders, page => Model.GetQueryLink(page, false))
+            </div>
         </nav>
     </div>
 
@@ -53,6 +59,8 @@
     <!-- Nav tabs -->
     <ul class="nav nav-tabs no-print" role="tablist">
         <li role="presentation" id="closed-tab"><a href="#closed" aria-controls="profile" role="tab" data-toggle="tab">Closed</a></li>
+        <li role="presentation" id="scheduled-tab"><a href="#scheduled" aria-controls="profile" role="tab" data-toggle="tab">Scheduled</a></li>
+        <li role="presentation" id="quoteApproval-tab"><a href="#quoteApproval" aria-controls="profile" role="tab" data-toggle="tab">WQA</a></li>
         <li role="presentation" id="open-tab" class="active"><a href="#open" aria-controls="home" role="tab" data-toggle="tab">Open</a></li>
     </ul>
     <button class="btn-sm btn-danger no-print add-work-order" data-toggle="modal" data-target="#add-work-order"><span class="glyphicon glyphicon-plus"></span> New Work Order</button>
@@ -149,6 +157,200 @@
                 <a href="#" class="btn btn-default print pull-left no-print"><span class="glyphicon glyphicon-print"></span> Print view</a>
                 <nav class="pull-right no-print">
                     @Html.PagedListPager(Model.OpenOrders, page => Model.GetQueryLink(page, true))
+                </nav>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="quoteApproval">
+                <div class="row  hidden-xs">
+                    <div class="col-sm-1">
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("OrderNumber", true)>WO #</h3>
+                    </div>
+                    <div class="col-sm-2">
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("Location", true)>Location</h3>
+                    </div>
+                    <div class="col-sm-2 col-md-2">
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("City", true)>City</h3>
+                    </div>
+                    <div class="col-sm-1 col-md-1">
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("State", true)>State</h3>
+                    </div>
+                    <div class="col-sm-2 col-md-2">
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("Trade", true)>Trade</h3>
+                    </div>
+                    <div class="col-sm-1 col-md-1">
+                        <h3 title="Click to sort by column">Priority</h3>
+                    </div>
+                    <div class="col-sm-1">
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("NeedBy", true)>Need by</h3>
+                    </div>
+                    <div class="col-sm-1">
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("Status", true)>Status</h3>
+                    </div>
+                    <div class="col-sm-2  col-md-1">
+                        <span class="sr-only">Edit/Delete</span>
+                    </div>
+                </div>
+                @foreach (var order in Model.QuoteApprovalOrders)
+                {
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <p>
+                                <span class="title visible-xs-inline">Order number: </span>@order.OrderNumber
+                            </p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>
+                                <span class="title visible-xs-inline">Location: </span><a href="@Url.Action("Location", new { id = @order.LocationId })">@order.Location</a>
+                            </p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>
+                                <span class="title visible-xs-inline">City: </span>@order.City
+                            </p>
+                        </div>
+                        <div class="col-sm-1">
+                            <p>
+                                <span class="title visible-xs-inline">State: </span>@order.State
+                            </p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>
+                                <span class="title visible-xs-inline">Trade: </span>@order.Trade
+                            </p>
+                        </div>
+                        <div class="col-sm-1">
+                            <p>
+                                <span class="title visible-xs-inline">Priority: </span>@if (order.Priority == 1)
+                                {<span> 24 Hour </span> }
+                                else if (order.Priority == 2)
+                                {<span>48 Hour</span>}
+                                else if (order.Priority == 3)
+                                {<span>EMERGENCY</span>}
+                            </p>
+                        </div>
+                        <div class="col-sm-1">
+                            <p>
+                                <span class="title visible-xs-inline">Needed by: </span>@if (order.NeedBy != null)
+                                {
+                                    @String.Format("{0:MM/dd/yy}", order.NeedBy)
+                                }
+                            </p>
+                        </div>
+                        <div class="col-sm-1">
+                            <p>
+                                <span class="title visible-xs-inline">Status: </span>@order.Status
+                            </p>
+                        </div>
+                        <div class="col-sm-2 col-md-1 view-delete">
+                            <a href="@Url.Action("Details", new { id = @order.Id })" class="edit-delete edit btn btn-default btn-sm no-print" title="View or edit details">
+                                Details
+                            </a>
+                            @*<a href="#" class="edit-delete cancel no-print @(order.Status == "Pending" ? "" : "invisible")" data-orderid="@order.Id" title="Cancel Work Order">
+                            <span class="sr-only">Cancel Work Order</span>
+                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                        </a>*@
+                        </div>
+                    </div>
+                }
+                <a href="#" class="btn btn-default print pull-left no-print"><span class="glyphicon glyphicon-print"></span> Print view</a>
+                <nav class="pull-right no-print">
+                    @Html.PagedListPager(Model.QuoteApprovalOrders, page => Model.GetQueryLink(page, true))
+                </nav>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="scheduled">
+                <div class="row  hidden-xs">
+                    <div class="col-sm-1">
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("OrderNumber", true)>WO #</h3>
+                    </div>
+                    <div class="col-sm-2">
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("Location", true)>Location</h3>
+                    </div>
+                    <div class="col-sm-2 col-md-2">
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("City", true)>City</h3>
+                    </div>
+                    <div class="col-sm-1 col-md-1">
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("State", true)>State</h3>
+                    </div>
+                    <div class="col-sm-2 col-md-2">
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("Trade", true)>Trade</h3>
+                    </div>
+                    <div class="col-sm-1 col-md-1">
+                        <h3 title="Click to sort by column">Priority</h3>
+                    </div>
+                    <div class="col-sm-1">
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("NeedBy", true)>Need by</h3>
+                    </div>
+                    <div class="col-sm-1">
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("Status", true)>Status</h3>
+                    </div>
+                    <div class="col-sm-2  col-md-1">
+                        <span class="sr-only">Edit/Delete</span>
+                    </div>
+                </div>
+                @foreach (var order in Model.ScheduledOrders)
+                {
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <p>
+                                <span class="title visible-xs-inline">Order number: </span>@order.OrderNumber
+                            </p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>
+                                <span class="title visible-xs-inline">Location: </span><a href="@Url.Action("Location", new { id = @order.LocationId })">@order.Location</a>
+                            </p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>
+                                <span class="title visible-xs-inline">City: </span>@order.City
+                            </p>
+                        </div>
+                        <div class="col-sm-1">
+                            <p>
+                                <span class="title visible-xs-inline">State: </span>@order.State
+                            </p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>
+                                <span class="title visible-xs-inline">Trade: </span>@order.Trade
+                            </p>
+                        </div>
+                        <div class="col-sm-1">
+                            <p>
+                                <span class="title visible-xs-inline">Priority: </span>@if (order.Priority == 1)
+                                {<span> 24 Hour </span> }
+                                else if (order.Priority == 2)
+                                {<span>48 Hour</span>}
+                                else if (order.Priority == 3)
+                                {<span>EMERGENCY</span>}
+                            </p>
+                        </div>
+                        <div class="col-sm-1">
+                            <p>
+                                <span class="title visible-xs-inline">Needed by: </span>@if (order.NeedBy != null)
+                                {
+                                    @String.Format("{0:MM/dd/yy}", order.NeedBy)
+                                }
+                            </p>
+                        </div>
+                        <div class="col-sm-1">
+                            <p>
+                                <span class="title visible-xs-inline">Status: </span>@order.Status
+                            </p>
+                        </div>
+                        <div class="col-sm-2 col-md-1 view-delete">
+                            <a href="@Url.Action("Details", new { id = @order.Id })" class="edit-delete edit btn btn-default btn-sm no-print" title="View or edit details">
+                                Details
+                            </a>
+                            @*<a href="#" class="edit-delete cancel no-print @(order.Status == "Pending" ? "" : "invisible")" data-orderid="@order.Id" title="Cancel Work Order">
+                            <span class="sr-only">Cancel Work Order</span>
+                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                        </a>*@
+                        </div>
+                    </div>
+                }
+                <a href="#" class="btn btn-default print pull-left no-print"><span class="glyphicon glyphicon-print"></span> Print view</a>
+                <nav class="pull-right no-print">
+                    @Html.PagedListPager(Model.ScheduledOrders, page => Model.GetQueryLink(page, true))
                 </nav>
             </div>
             <div role="tabpanel" class="tab-pane" id="closed">
@@ -265,6 +467,11 @@
             var animationService = new ARS.AnimationService();
 
             $(".closed-paging").hide();
+            $(".scheduled-paging").hide();
+            $(".quoteApproval-paging").hide();
+
+            $("#scheduled-tab").removeClass("active");
+            $("#quoteApproval-tab").removeClass("active");
 
             if ('@Model.ShowOpen' === 'False') {
                 $("#open").removeClass("active");
@@ -328,10 +535,16 @@
 
             $("#open-jobs").click(function () {
                 $("#closed").removeClass("active");
+                $("#scheduled").removeClass("active");
+                $("#quoteApproval").removeClass("active");
                 $("#open").addClass("active");
                 $("#closed-tab").removeClass("active");
+                $("#scheduled-tab").removeClass("active");
+                $("#quoteApproval-tab").removeClass("active");
                 $("#open-tab").addClass("active");
                 $(".closed-paging").hide();
+                $(".scheduled-paging").hide();
+                $(".quoteApproval-paging").hide();
                 $(".open-paging").show();
                 $('html,body').animate({
                     scrollTop: $("#open").offset().top
@@ -341,10 +554,16 @@
 
             $("#closed-jobs").click(function () {
                 $("#open").removeClass("active");
+                $("#scheduled").removeClass("active");
+                $("#quoteApproval").removeClass("active");
                 $("#closed").addClass("active");
                 $("#open-tab").removeClass("active");
+                $("#scheduled-tab").removeClass("active");
+                $("#quoteApproval-tab").removeClass("active");
                 $("#closed-tab").addClass("active");
                 $(".open-paging").hide();
+                $(".scheduled-paging").hide();
+                $(".quoteApproval-paging").hide();
                 $(".closed-paging").show();
                 $('html,body').animate({
                     scrollTop: $("#closed").offset().top
@@ -354,24 +573,40 @@
 
             $("#scheduled-jobs").click(function () {
                 $("#closed").removeClass("active");
-                $("#open").addClass("active");
+                $("#quoteApproval").removeClass("active");
+                $("#open").removeClass("active");
+                $("#scheduled").addClass("active");
+
                 $("#closed-tab").removeClass("active");
-                $("#open-tab").addClass("active");
+                $("#quoteApproval-tab").removeClass("active");
+                $("#open-tab").removeClass("active");
+                $("#scheduled-tab").addClass("active");
+
                 $(".closed-paging").hide();
-                $(".open-paging").show();
+                $(".open-paging").hide();
+                $(".quoteApproval-paging").hide();
+                $(".scheduled-paging").show();
                 $('html,body').animate({
-                    scrollTop: $("#open").offset().top
+                    scrollTop: $("#scheduled").offset().top
                 },
                     'slow');
             });
 
             $("#quoteApproval-jobs").click(function () {
                 $("#closed").removeClass("active");
-                $("#open").addClass("active");
+                $("#quoteApproval").addClass("active");
+                $("#open").removeClass("active");
+                $("#scheduled").removeClass("active");
+
                 $("#closed-tab").removeClass("active");
-                $("#open-tab").addClass("active");
+                $("#quoteApproval-tab").addClass("active");
+                $("#open-tab").removeClass("active");
+                $("#scheduled-tab").removeClass("active");
+
                 $(".closed-paging").hide();
-                $(".open-paging").show();
+                $(".open-paging").hide();
+                $(".quoteApproval-paging").show();
+                $(".scheduled-paging").hide();
                 $('html,body').animate({
                     scrollTop: $("#open").offset().top
                 },

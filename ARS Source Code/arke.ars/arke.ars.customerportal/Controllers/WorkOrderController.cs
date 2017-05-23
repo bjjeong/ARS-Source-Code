@@ -52,6 +52,8 @@ namespace Arke.ARS.CustomerPortal.Controllers
 
             IPagedList<ClosedWorkOrderModel> closedOrders = _workOrderService.GetClosedWorkOrdersModels(cq, customerId);
             IPagedList<OpenWorkOrderModel> openOrders = _workOrderService.GetOpenWorkOrdersModels(oq, customerId);
+            IPagedList<ScheduledWorkOrderModel> scheduledOrders = _workOrderService.GetScheduledWorkOrdersModels(oq, customerId);
+            IPagedList<QuoteApprovalWorkOrderModel> quoteApprovalOrders = _workOrderService.GetQuoteApprovalWorkOrdersModels(oq, customerId);
 
             var locationItems = _locationService.GetLocations(customerId).Select(l => new SelectListItem
             {
@@ -64,10 +66,14 @@ namespace Arke.ARS.CustomerPortal.Controllers
             {
                 OpenOrders = openOrders,
                 ClosedOrders = closedOrders,
+                ScheduledOrders = scheduledOrders,
+                QuoteApprovalOrders = quoteApprovalOrders,
                 ShowOpen = showOpen ?? true,
                 Locations = locationItems,
                 ClosedWorkOrdersQuery = cq,
                 OpenWorkOrdersQuery = oq,
+                ScheduledWOrkOrdersQuery = oq,
+                QuoteApprovalWorkOrdersQuery = oq,
             };
 
             TempData["ReturnToListUrl"] = Request.RawUrl;

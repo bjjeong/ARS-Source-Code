@@ -15,6 +15,6 @@ namespace Arke.ARS.CustomerPortal.Models
         public string City { get; set; }
         public string State { get; set; }
         public string Trade { get; set; }
-        public Guid LocationId { get; set; } 
+        public Guid LocationId { get; set; }  
     }
 }
