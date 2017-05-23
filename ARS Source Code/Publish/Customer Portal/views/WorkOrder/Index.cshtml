@@ -17,13 +17,13 @@
 @foreach (var order in Model.ScheduledOrders) { if (order.Status == "Scheduled") { scheduledOrderCount++; } }
 @foreach (var order in Model.QuoteApprovalOrders) { if (order.Status == "WQA") { pendingQuoteApprovalCount++; } }
 <section class="two">
-    <div class="wrap">
+    <div class="wrap" style="padding: 50px 0px 50px 0px;">
         <a href="#" class="btn btn-success btn-xl btn-3d" id="open-jobs">
             Open Jobs
             <div class="btn-content">@openOrderCount</div>
         </a>
         <a href="#" class="btn btn-primary btn-xl btn-3d" id="quoteApproval-jobs">
-            Pending Quote Approval
+            Pending Quote
             <div class="btn-content">@pendingQuoteApprovalCount</div>
         </a>
         <a href="#" class="btn btn-warning btn-xl btn-3d" id="scheduled-jobs">
@@ -34,6 +34,21 @@
             Closed Jobs
             <div class="btn-content">@closedOrderCount</div>
         </a>
+        <div class="btn-group dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" style="margin: 0px 30px 0px 30px;">
+                Request Reports
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" style="margin: 0px 30px 0px;">
+                <li><a href="#">Avg Spend/Service</a></li>
+                <li><a href="#">Avg Spend/Trade</a></li>
+                <li><a href="#">Spend Frequency - Trade</a></li>
+                <li><a href="#">Spend Frequency - Location</a></li>
+                <li><a href="#">Spend Frequency - State</a></li>
+                <li><a href="#">Spend Frequency - Region</a></li>
+                <li><a href="#">Filter by Region/State/Location</a></li>
+            </ul>
+        </div>
     </div>
 </section>  
 
@@ -60,7 +75,7 @@
     <ul class="nav nav-tabs no-print" role="tablist">
         <li role="presentation" id="closed-tab"><a href="#closed" aria-controls="profile" role="tab" data-toggle="tab">Closed</a></li>
         <li role="presentation" id="scheduled-tab"><a href="#scheduled" aria-controls="profile" role="tab" data-toggle="tab">Scheduled</a></li>
-        <li role="presentation" id="quoteApproval-tab"><a href="#quoteApproval" aria-controls="profile" role="tab" data-toggle="tab">WQA</a></li>
+        <li role="presentation" id="quoteApproval-tab"><a href="#quoteApproval" aria-controls="profile" role="tab" data-toggle="tab">PQA</a></li>
         <li role="presentation" id="open-tab" class="active"><a href="#open" aria-controls="home" role="tab" data-toggle="tab">Open</a></li>
     </ul>
     <button class="btn-sm btn-danger no-print add-work-order" data-toggle="modal" data-target="#add-work-order"><span class="glyphicon glyphicon-plus"></span> New Work Order</button>
@@ -454,8 +469,6 @@
     }
 
 </div>
-
-@*<button class="btn btn-danger no-print add-work-order" data-toggle="modal" data-target="#add-work-order"><span class="glyphicon glyphicon-plus"></span> New Work Order</button>*@
 
 @Html.Partial("_AddWorkOrder", Model)
 @Html.Partial("_ReopenWorkOrder")
