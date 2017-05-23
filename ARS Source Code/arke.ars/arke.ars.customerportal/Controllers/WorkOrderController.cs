@@ -42,7 +42,7 @@ namespace Arke.ARS.CustomerPortal.Controllers
             }
 
             _workOrderService = workOrderService;
-            _locationService = locationService;
+            _locationService = locationService; 
             _logger = logger;
         }
 

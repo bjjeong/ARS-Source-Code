@@ -1,0 +1,80 @@
+﻿@using Arke.ARS.CustomerPortal.Models
+@model WorkOrderDetailsModel
+
+@{
+    ViewBag.Title = Model.TicketNumber;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@helper GetInfoLine(string content)
+{
+    if (!String.IsNullOrWhiteSpace(content))
+    {
+        <p>@content</p>
+    }
+}
+
+@section navigation
+{
+    @Html.Partial("_AuthorizedNavigation")
+}
+<div class="container">
+    <div class="row details">
+        <div class="col-sm-8 ">
+            <div class="h-group">
+                <h2>Recent activity</h2>
+            </div>
+            @foreach (ActivityModel activity in Model.Activities)
+            {
+                <div class="activity">
+                    <div class="meta">
+                        <span class="date">@activity.CreatedOn.ToShortDateString() @activity.CreatedOn.ToShortTimeString()</span>
+                    </div>
+                    @if (activity.Description != null)
+                    {
+                        <p>@activity.Description</p>
+                    }
+                    <ul>
+                        @foreach (AttachmentModel attachment in activity.Attachments)
+                        {
+                            <li><a href="@Url.Action("Download", "Attachment", new { id = attachment.Id })">@attachment.FileName</a></li>
+                        }
+                    </ul>
+                </div>
+            }
+            
+            @if (!Model.Activities.Any())
+            {
+                <p>No activity was found</p>
+            }
+        </div>
+        <div class="col-sm-4 right-rail">
+            <div class="h-group">
+                <h3><strong>About</strong></h3>
+            </div>
+            <p><strong>Title: </strong>@Model.Name</p>
+            <p><strong>Status: </strong>@Model.Status</p>
+            <p><strong>Created on: </strong>@Model.CreatedOn.ToShortDateString()</p>
+            @if (Model.ScheduledOn.HasValue)
+            {
+                <p><strong>Complete By: </strong>@Model.ScheduledOn.Value.ToShortDateString() @Model.ScheduledOn.Value.ToShortTimeString()</p>
+            }
+            <p><strong>Location: </strong>@Model.Location</p>
+            @if (Model.LocationAddress != null)
+            {
+                @GetInfoLine(Model.LocationAddress.Address1)
+                @GetInfoLine(Model.LocationAddress.Address2)
+                @GetInfoLine(Model.LocationAddress.GetCityLine())
+            }
+            <p><strong>NTE: </strong>@Model.Nte.ToString("C2")</p>
+            <p><strong>PO#: </strong>@Model.PurchaseOrderNumber</p>
+            <p><strong>Description of Service: </strong>@Model.DescriptionOfService</p>
+        </div>
+    </div>
+    <button class="btn btn-default print pull-left no-print"><span class="glyphicon glyphicon-print"></span> Print view</button>
+    <a href="@ViewData["ReturnToListUrl"]" class="btn btn-default back pull-right no-print"><span class="glyphicon"></span> Return to List</a>
+    <button class="btn btn-danger no-print add-work-order" data-toggle="modal" data-target="#add-comment">
+        <span class="glyphicon glyphicon-plus"></span> New Comment/Attachment
+    </button>
+    @Html.Partial("_AddComment", Model)
+</div>

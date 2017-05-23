@@ -1,0 +1,113 @@
+﻿@model Arke.ARS.TechnicianPortal.Models.WorkOrderModel
+
+@using (Html.BeginForm("NteIncrease", "WorkOrder"))
+{
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="workOrderId" value="@Model.Id" />
+    <div class="modal fade" id="modal-nte-increase">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Request NTE Increase</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <p class="help-block">
+                                    Current Time Left: <strong><span id="current">@Model.RemainingHours.ToString("F2")</span></strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                <label for="nte-time">How many more hours do you need *FROM THIS POINT ON?*</label>
+                                <input type="number" class="form-control" id="nte-time" name="hours" min="0" step="0.01" value="0" required>
+                            </div>
+                        </div>
+                    </div>
+   <!--                 <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <p class="help-block">
+                                    Current Money Limit: <strong>$<span id="current">@Model.NteMoney.ToString("F2")</span></strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                <label for="nte-money">Increase Money Limit On</label>
+                                <input type="number" class="form-control" id="nte-money" name="money" placeholder="Amount" min="0" step="0.01" value="0">
+                            </div>
+                        </div>
+                    </div>
+   -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th class="col-xs-8">Item</th>
+                                            <th class="col-xs-2">Unit Price</th>
+                                            <th class="col-xs-2">Quantity</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item1" name="item1" /></td>
+                                            <td><input type="number" step="0.01" class="form-control" id="price1" name="price1" /></td>
+                                            <td><input type="number" min="0" class="form-control" id="quantity1" name="quantity1"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item2" name="item2"/></td>
+                                            <td><input type="number" step="0.01" class="form-control" id="price2" name="price2"/></td>
+                                            <td><input type="number" min="0" class="form-control" id="quantity2" name="quantity2"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item3" name="item3"/></td>
+                                            <td><input type="number" step="0.01" class="form-control" id="price3" name="price3"/></td>
+                                            <td><input type="number" class="form-control" id="quantity3" name="quantity3" min="0"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item4" name="item4"/></td>
+                                            <td><input type="number" step="0.01" class="form-control" id="price4" name="price4"/></td>
+                                            <td><input type="number" class="form-control" id="quantity4" name="quantity4" min="0"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item5" name="item5"/></td>
+                                            <td><input type="number" step="0.01" class="form-control" id="price5" name="price5"/></td>
+                                            <td><input type="number" class="form-control" id="quantity5" name="quantity5" min="0"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item6" name="item6" /></td>
+                                            <td><input type="number" step="0.01" class="form-control" id="price6" name="price6" /></td>
+                                            <td><input type="number" class="form-control" id="quantity6" name="quantity6" min="0" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control" id="item7" name="item7" /></td>
+                                            <td><input type="number" step="0.01" class="form-control" id="price7" name="price7" /></td>
+                                            <td><input type="number" class="form-control" id="quantity7" name="quantity7" min="0" /></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br />
+                                <label for="comment" style="text-align:center;">Please document what you have done so far and why you need extra time</label>
+                                <textarea class="form-control" id="comment" name="comment" rows="3" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="nte-increase">Submit request</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

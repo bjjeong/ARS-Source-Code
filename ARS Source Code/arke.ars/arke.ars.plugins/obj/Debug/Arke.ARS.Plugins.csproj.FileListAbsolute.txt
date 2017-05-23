@@ -1,0 +1,48 @@
+C:\Dev\ARSPlatformImplementation\Arke.ARS\Arke.ARS.Plugins\bin\Debug\Arke.ARS.Plugins.dll
+C:\Dev\ARSPlatformImplementation\Arke.ARS\Arke.ARS.Plugins\bin\Debug\Arke.ARS.Plugins.pdb
+C:\Dev\ARSPlatformImplementation\Arke.ARS\Arke.ARS.Plugins\bin\Debug\Arke.ARS.Organization.dll
+C:\Dev\ARSPlatformImplementation\Arke.ARS\Arke.ARS.Plugins\bin\Debug\Arke.Crm.GeoLocation.dll
+C:\Dev\ARSPlatformImplementation\Arke.ARS\Arke.ARS.Plugins\bin\Debug\Arke.Crm.Utils.dll
+C:\Dev\ARSPlatformImplementation\Arke.ARS\Arke.ARS.Plugins\bin\Debug\microsoft.xrm.sdk.dll
+C:\Dev\ARSPlatformImplementation\Arke.ARS\Arke.ARS.Plugins\bin\Debug\Arke.ARS.Organization.pdb
+C:\Dev\ARSPlatformImplementation\Arke.ARS\Arke.ARS.Plugins\bin\Debug\Arke.Crm.GeoLocation.pdb
+C:\Dev\ARSPlatformImplementation\Arke.ARS\Arke.ARS.Plugins\bin\Debug\Arke.Crm.Utils.pdb
+C:\Dev\ARSPlatformImplementation\Arke.ARS\Arke.ARS.Plugins\obj\Debug\Arke.ARS.Plugins.csprojResolveAssemblyReference.cache
+C:\Dev\ARSPlatformImplementation\Arke.ARS\Arke.ARS.Plugins\obj\Debug\Arke.ARS.Plugins.dll
+C:\Dev\ARSPlatformImplementation\Arke.ARS\Arke.ARS.Plugins\obj\Debug\Arke.ARS.Plugins.pdb
+C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.Plugins\bin\Debug\Arke.ARS.Plugins.dll
+C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.Plugins\bin\Debug\Arke.ARS.Plugins.pdb
+C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.Plugins\bin\Debug\Arke.ARS.Organization.dll
+C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.Plugins\bin\Debug\Arke.Crm.GeoLocation.dll
+C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.Plugins\bin\Debug\Arke.Crm.Utils.dll
+C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.Plugins\bin\Debug\microsoft.xrm.sdk.dll
+C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.Plugins\bin\Debug\Arke.ARS.Organization.pdb
+C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.Plugins\bin\Debug\Arke.Crm.GeoLocation.pdb
+C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.Plugins\bin\Debug\Arke.Crm.Utils.pdb
+C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.Plugins\obj\Debug\Arke.ARS.Plugins.csprojResolveAssemblyReference.cache
+C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.Plugins\obj\Debug\Arke.ARS.Plugins.dll
+C:\Users\bjjeo\Downloads\ARS Source Code\ARS Source Code\arke.ars\Arke.ARS.Plugins\obj\Debug\Arke.ARS.Plugins.pdb
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.Plugins\bin\Debug\Arke.ARS.Plugins.dll
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.Plugins\bin\Debug\Arke.ARS.Plugins.pdb
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.Plugins\bin\Debug\Arke.ARS.Organization.dll
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.Plugins\bin\Debug\Arke.Crm.GeoLocation.dll
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.Plugins\bin\Debug\Arke.Crm.Utils.dll
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.Plugins\bin\Debug\microsoft.xrm.sdk.dll
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.Plugins\bin\Debug\Arke.ARS.Organization.pdb
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.Plugins\bin\Debug\Arke.Crm.GeoLocation.pdb
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.Plugins\bin\Debug\Arke.Crm.Utils.pdb
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.Plugins\obj\Debug\Arke.ARS.Plugins.csprojResolveAssemblyReference.cache
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.Plugins\obj\Debug\Arke.ARS.Plugins.dll
+C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.Plugins\obj\Debug\Arke.ARS.Plugins.pdb
+C:\Users\brian\Documents\ARS Source Code\arke.ars\Arke.ARS.Plugins\bin\Debug\Arke.ARS.Plugins.dll
+C:\Users\brian\Documents\ARS Source Code\arke.ars\Arke.ARS.Plugins\bin\Debug\Arke.ARS.Plugins.pdb
+C:\Users\brian\Documents\ARS Source Code\arke.ars\Arke.ARS.Plugins\bin\Debug\Arke.ARS.Organization.dll
+C:\Users\brian\Documents\ARS Source Code\arke.ars\Arke.ARS.Plugins\bin\Debug\Arke.Crm.GeoLocation.dll
+C:\Users\brian\Documents\ARS Source Code\arke.ars\Arke.ARS.Plugins\bin\Debug\Arke.Crm.Utils.dll
+C:\Users\brian\Documents\ARS Source Code\arke.ars\Arke.ARS.Plugins\bin\Debug\microsoft.xrm.sdk.dll
+C:\Users\brian\Documents\ARS Source Code\arke.ars\Arke.ARS.Plugins\bin\Debug\Arke.ARS.Organization.pdb
+C:\Users\brian\Documents\ARS Source Code\arke.ars\Arke.ARS.Plugins\bin\Debug\Arke.Crm.GeoLocation.pdb
+C:\Users\brian\Documents\ARS Source Code\arke.ars\Arke.ARS.Plugins\bin\Debug\Arke.Crm.Utils.pdb
+C:\Users\brian\Documents\ARS Source Code\arke.ars\Arke.ARS.Plugins\obj\Debug\Arke.ARS.Plugins.csprojResolveAssemblyReference.cache
+C:\Users\brian\Documents\ARS Source Code\arke.ars\Arke.ARS.Plugins\obj\Debug\Arke.ARS.Plugins.dll
+C:\Users\brian\Documents\ARS Source Code\arke.ars\Arke.ARS.Plugins\obj\Debug\Arke.ARS.Plugins.pdb

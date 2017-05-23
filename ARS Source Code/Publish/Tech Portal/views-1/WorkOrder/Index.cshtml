@@ -1,0 +1,558 @@
+﻿@using Arke.ARS.TechnicianPortal.Models
+@model Arke.ARS.TechnicianPortal.Models.WorkOrderModel
+@{
+    ViewBag.Title = "WorkOrder";
+    ViewBag.BodyCss = "home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section navigation
+{
+@Html.Partial("_AuthorizedNavigation")
+}
+@section styles{
+    @Styles.Render("~/styles/purchaseOrder")
+}
+
+<div class="container content">
+    <div class=row>
+        <div class=col-sm-12>
+            <h1 class=work-order-header><strong>Work Order</strong>: @Model.TicketNumber</h1>
+            <h2 class=work-order-header><strong>PO #</strong>: @Model.po</h2>
+            <div class=work-order-buttons>
+                @if (!Model.IsInProgress)
+                {
+                    <button class="btn btn-danger btn-work-order checkin" id="checkin" data-toggle=modal data-target=#modal-check-in>Check In</button>
+                }
+                else
+                {
+                    <button class="btn btn-primary btn-work-order" id="checkout1" data-toggle=modal data-target=#modal-check-out>Check Out</button>
+                }
+                @if (!Model.IsInProgress)
+                {
+                    <button class="btn btn-default btn-work-order" disabled data-toggle="modal" data-target="#modal-nte-increase">NTE Increase</button>
+                    <button class="btn btn-default btn-work-order" disabled data-toggle="modal" data-target="#modal-po-request">P.O. Request</button>
+                    <button class="btn btn-default btn-work-order" disabled data-toggle="modal" data-target="#modal-truck-equipment">Truck/Equipment</button>
+                    <button class="btn btn-default btn-work-order" disabled data-toggle="modal" data-target="#modal-comments-attachments">Comments/Attachments</button>
+                    <button class="btn btn-default btn-work-order signout" disabled data-toggle="modal" data-target="#modal-signature">Sign Work Order</button>
+                }
+                else
+                {
+                    <button class="btn btn-primary btn-work-order" data-toggle="modal" data-target="#modal-nte-increase">NTE Increase</button>
+                    <button class="btn btn-primary btn-work-order" data-toggle="modal" data-target="#modal-po-request">P.O. Request</button>
+                    <button class="btn btn-primary btn-work-order" data-toggle="modal" data-target="#modal-truck-equipment">Truck/Equipment</button>
+                    <button class="btn btn-primary btn-work-order" data-toggle="modal" data-target="#modal-comments-attachments">Comments/Attachments</button>
+                    <button class="btn btn-danger btn-work-order signout" data-toggle="modal" data-target="#modal-signature">Sign Work Order</button>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class=customer-info>
+                <p>
+                    <strong>@Model.Customer.CustomerName</strong>
+                </p>
+                <p>@Model.Customer.AddressLine1</p>
+                <p>@Model.Customer.City, @Model.Customer.State, @Model.Customer.PostalCode</p>
+                <p><strong>Tel: </strong>@Model.Customer.Telephone</p>
+                <p><strong>IVR: </strong>@Model.Customer.IVR</p>
+                <p><strong>IVR Pin #: </strong>@Model.Customer.Pin</p>
+                <p><strong>Trade Type: </strong>@Model.trade</p>
+            </div>
+            <div class="nte">
+                <p class="nte-amount">
+                    <strong>Money Limit: </strong>$@Model.NteMoney.ToString("F2")
+                </p>
+                <p class="nte-remaining">
+                    <strong>Remaining Money: </strong>@Model.RemainingMoney.ToString("F2")
+                </p>
+                <p class="nte-amount">
+                    <strong>Time Limit: </strong>@Model.NteHours.ToString("F2")
+                </p>
+                <p class="nte-remaining">
+                    <strong>Remaining Time: </strong>@Model.RemainingHours.ToString("F2")
+                </p>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><strong>@Model.Title</strong></h3>
+                        </div>
+                        <div class="panel-body">
+                            <p>@Model.Description</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><strong>Work Order Attachments</strong></h3>
+                        </div>
+                        <div class="panel-body">
+                            @foreach (ActivityModel activity in Model.Activities)
+                            {
+                                <div class="activity">
+                                    <ul>
+                                        @foreach (AttachmentModel attachment in activity.Attachments)
+                                        {
+                                            <li><a href="@Url.Action("Download", "Attachment", new { id = attachment.Id })">@activity.Description</a></li>
+                                        }
+                                    </ul>
+                                </div>
+                            }
+
+                            @if (!Model.Activities.Any())
+                            {
+                                <p>No activity was found</p>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    @Html.Partial("_WorkItems", Model)
+                </div>
+            </div>
+        </div>
+    </div>
+    @Html.Partial("_CommentsAndAttachments", Model)
+    @Html.Partial("_PurchaseOrder", Model)
+    @Html.Partial("_TruckEquipment", Model)
+    @Html.Partial("_CheckIn", Model)
+    @Html.Partial("_CheckOut", Model)
+    @Html.Partial("_NteIncrease", Model)
+    @Html.Partial("_SignWorkOrder", Model)
+</div>
+@section scripts{
+    @Scripts.Render("~/bundles/signature")
+    @Scripts.Render("~/bundles/purchaseOrder")
+    <script type="text/javascript">
+    var GUID = GUID || {
+        isValid: function (s) {
+            return /^\{?[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\}?$/i.test(s);
+        },
+        create: function () {
+            return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
+                var r = Math.random() * 16 | 0, v = c === "x" ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+            });
+        }
+    };
+
+    $(function () {
+        $('#purchase-order-price,#purchase-order-quantity').change(function () {
+            var quantity = parseFloat($('#purchase-order-quantity').val());
+            quantity = isNaN(quantity) ? 0 : quantity;
+
+            var price = parseFloat($('#purchase-order-price').val());
+            price = isNaN(price) ? 0 : price;
+
+            $('#purchase-order-total').val(quantity * price);
+        });
+
+        $('#truck-stock-price,#truck-stock-quantity').change(function () {
+            var quantity = parseFloat($('#truck-stock-quantity').val());
+            quantity = isNaN(quantity) ? 0 : quantity;
+
+            var price = parseFloat($('#truck-stock-price').val());
+            price = isNaN(price) ? 0 : price;
+
+            $('#truck-stock-total').val(quantity * price);
+        });
+
+        $('#equipment-price,#equipment-quantity').change(function () {
+            var quantity = parseFloat($('#equipment-quantity').val());
+            quantity = isNaN(quantity) ? 0 : quantity;
+
+            var price = parseFloat($('#equipment-price').val());
+            price = isNaN(price) ? 0 : price;
+
+            $('#equipment-total').val(quantity * price);
+        });
+
+        var notificationService = new ARS.NotificationService();
+        var animationService = new ARS.AnimationService();
+
+        if ('@TempData["ErrorMessage"]') {
+                notificationService.showError('@TempData["ErrorMessage"]');
+            }
+
+            $('#purchase-order-add-to-list').click(function () {
+                var quantity = parseFloat($('#purchase-order-quantity').val());
+                if (isNaN(quantity) || quantity <= 0) {
+                    notificationService.showError("Please specify purchase order item quantity");
+                    return;
+                }
+
+                var price = parseFloat($('#purchase-order-price').val());
+                if (isNaN(price) || price <= 0) {
+                    notificationService.showError("Please specify purchase order item price");
+                    return;
+                }
+
+                var taxAmount = parseFloat($('#taxAmount').val());
+                if (isNaN(taxAmount) || taxAmount <= 0) {
+                    notificationService.showError("Please specify the amount of tax paid on receipt");
+                    return; 
+                }
+
+                var subtotal = parseFloat($('#subtotal').val());
+                if (isNaN(subtotal) || subtotal <= 0) {
+                    notificationService.showError("Please specify the subtotal on receipt");
+                    return;
+                }
+
+                var item = $('#purchase-order-name').val();
+                if (!item) {
+                    notificationService.showError("Please specify purchase order item name");
+                    return;
+                }
+
+                var taxRate = (taxAmount / subtotal);
+                var purchaseOrderItem = {
+                    id: GUID.create(),
+                    quantity: quantity,
+                    item: item,
+                    realprice: price * (1.0000 + taxRate),
+                    price: price * 1.3500
+                };
+
+                $('#purchase-orders-grid').bootgrid("append", [purchaseOrderItem]);
+
+                $('#purchase-order-name').val("");
+                $('#purchase-order-quantity').val("");
+                $('#purchase-order-price').val("");
+                $('#purchase-order-total').val("");
+            });
+
+            $('#truck-stock-add-to-list').click(function () {
+                var quantity = parseFloat($('#truck-stock-quantity').val());
+                if (isNaN(quantity) || quantity <= 0) {
+                    notificationService.showError("Please specify purchase order item quantity");
+                    return;
+                }
+
+                var price = parseFloat($('#truck-stock-price').val());
+                if (isNaN(price) || price <= 0) {
+                    notificationService.showError("Please specify purchase order item price");
+                    return;
+                }
+
+                var item = $('#truck-stock-name').val();
+                if (!item) {
+                    notificationService.showError("Please specify purchase order item name");
+                    return;
+                }
+
+                var truckStockItem = {
+                    id: GUID.create(),
+                    quantity: quantity,
+                    item: item,
+                    realprice: price,
+                    price: price * 1.35
+                };
+
+                $('#truck-stock-grid').bootgrid("append", [truckStockItem]);
+
+                $('#truck-stock-name').val("");
+                $('#truck-stock-quantity').val("");
+                $('#truck-stock-price').val("");
+                $('#truck-stock-total').val("");
+            });
+
+            $('#equipment-add-to-list').click(function () {
+                var quantity = parseFloat($('#equipment-quantity').val());
+                if (isNaN(quantity) || quantity <= 0) {
+                    notificationService.showError("Please specify purchase order item quantity");
+                    return;
+                }
+
+                var price = parseFloat($('#equipment-price').val());
+                if (isNaN(price) || price <= 0) {
+                    notificationService.showError("Please specify purchase order item price");
+                    return;
+                }
+
+                var item = $('#equipment-name').val();
+                if (!item) {
+                    notificationService.showError("Please specify purchase order item name");
+                    return;
+                }
+
+                var equipmentItem = {
+                    id: GUID.create(),
+                    quantity: quantity,
+                    item: item,
+                    price: price
+                };
+
+                $('#truck-stock-grid').bootgrid("append", [equipmentItem]);
+
+                $('#equipment-name').val("");
+                $('#equipment-quantity').val("");
+                $('#equipment-price').val("");
+                $('#equipment-total').val("");
+            });
+
+            var checkoutButton = function () {
+                var isComplete = true;
+
+                var checkboxes = $("[name='isComplete']");
+                checkboxes.each(function (index, checkbox) {
+                    if (!checkbox.checked) {
+                        isComplete = false;
+                    }
+                });
+                if (!isComplete) {
+                    $('#work-complete-submit').prop('disabled', true);
+                } else {
+                    $('#work-complete-submit').prop('disabled', false);
+                }
+            };
+
+            $("[name='isComplete']").change(function () {
+                checkoutButton();
+                $('#' + $(this).closest("form").attr("id")).submit();
+            });
+
+            checkoutButton();
+
+            $("[name='note']").change(function () {
+                $('#' + $(this).closest("form").attr("id")).submit();
+            });
+
+            $(".return-submit").click(function (evt) {
+                var value = $("#notes-area").val();
+                if (!value) {
+                    evt.preventDefault();
+                    notificationService.showError("Please, add a note");
+                }
+            });
+
+            $('#work-complete-submit').click(function (e) {
+                if ($('form[data-work-item] input[name="isComplete"]:not(:checked)').length > 0) {
+                    e.preventDefault();
+                    notificationService.showError("All Work Items must be completed before marking this job as complete.");
+                }
+
+            });
+            
+/*          $(".signout").click(function () {
+                $('#checkout1').removeAttr("disabled");
+            });
+*/
+            $("#nte-increase").click(function (evt) {
+                var money = $("#nte-money").val();
+                var time = $("#nte-time").val();
+
+                if (money <= 0 && time <= 0) {
+                    evt.preventDefault();
+                    notificationService.showError("Please specify time or/and money limit");
+                }
+            });
+
+            $('#signature-pad').signature({
+                width: 568,
+                height: 400
+            });
+
+            $('#clear-signature').click(function (e) {
+                e.preventDefault();
+                $('#signature-pad').signature('clear');
+            });
+            
+            $('#save-signature').click(function (evt) {
+                var canvas = $(this).closest("form").find('canvas')[0];
+                var signature = canvas.toDataURL("image/png");
+                var prefix = "data:image/png;base64,";
+                signature = signature.substring(prefix.length);
+
+                $('#signature').val(signature);
+                var value = $("#printname").val();
+                var signatureValue = $("#signature").val();
+                if(!value)
+                {
+                    evt.preventDefault();
+                    notificationService.showError("Please add a printed name!");
+                }
+            });
+
+            $(".return-submit").click(function (evt) {
+                var value = $("#notes-area").val();
+                if (!value) {
+                    evt.preventDefault();
+                    notificationService.showError("Please, add a note");
+                }
+            });
+
+            var currencyFormatter = function (column, row) {
+                return (row.currencySymbol || '$') + row[column.id];
+            };
+
+            var totalFormatter = function (column, row) {
+                row.total = row.price * row.quantity;
+
+                return currencyFormatter(column, row);
+            };
+
+            var calculateGrandTotal = function () {
+                var rows = $("#purchase-orders-grid").bootgrid("getRows");
+
+                var total = 0;
+
+                for (var i = 0; i < rows.length; i++) {
+                    total += rows[i].price * rows[i].quantity;
+                }
+
+                $("#purchase-orders-grid-total").text(total);
+                document.getElementById("purchase-orders-grid-total").innerHTML = total;
+            };
+
+            var calculateTruckGrandTotal = function () {
+                var rows = $("#truck-stock-grid").bootgrid("getRows");
+
+                var total = 0;
+
+                for (var i = 0; i < rows.length; i++) {
+                    total += rows[i].price * rows[i].quantity;
+                }
+
+                $("#truck-stock-grid-total").text(total);
+                document.getElementById("truck-stock-grid-total").innerHTML = total;
+            };
+
+            //Purchase Order Grid--------------------------------------------------------------
+            $('#purchase-orders-grid').bootgrid({
+                navigation: 0,
+                rowCount: -1,
+                formatters: {
+                    "commands": function (column, row) {
+                        return '<span class="glyphicon glyphicon-remove remove" data-row-id="' + row.id + '"></span>';
+                    },
+                    "currency": currencyFormatter,
+                    "total": totalFormatter
+                }
+            }).on("loaded.rs.jquery.bootgrid", function () {
+                $(this).find(".remove").click(function () {
+                    var id = $(this).data("row-id");
+                    $('#purchase-orders-grid').bootgrid("remove", [id]);
+                });
+
+                var pages = $("#purchase-orders-grid-footer ul.pagination>li[class*='page-']");
+                if (pages.length <= 1) {
+                    $("#purchase-orders-grid-footer").hide();
+                } else {
+                    $("#purchase-orders-grid-footer").show();
+                }
+            }).on("appended.rs.jquery.bootgrid", calculateGrandTotal)
+                .on("removed.rs.jquery.bootgrid", calculateGrandTotal);
+
+            //Truck Stock Grid-------------------------------------------------------------------
+            $('#truck-stock-grid').bootgrid({
+                formatters: {
+                    "commands": function (column, row) {
+                        return '<span class="glyphicon glyphicon-remove remove" data-row-id="' + row.id + '"></span>';
+                    },
+                    "currency": currencyFormatter,
+                    "total": totalFormatter
+                }
+            }).on("loaded.rs.jquery.bootgrid", function () {
+                $(this).find(".remove").click(function () {
+                    var id = $(this).data("row-id");
+                    $('#truck-stock-grid').bootgrid("remove", [id]);
+                });
+
+                var pages = $("#truck-stock-grid-footer ul.pagination>li[class*='page-']");
+                if (pages.length <= 1) {
+                    $("#truck-stock-grid-footer").hide();
+                } else {
+                    $("#truck-stock-grid-footer").show();
+                }
+            }).on("appended.rs.jquery.bootgrid", calculateTruckGrandTotal)
+                .on("removed.rs.jquery.bootgrid", calculateTruckGrandTotal);
+
+
+            $("#submit-purchase-order-request").click(function (e) {
+                var form = $("#submit-purchase-order-request-form");
+                var rows = $("#purchase-orders-grid").bootgrid("getCurrentRows");
+                if (rows.length === 0) {
+                    e.preventDefault();
+                    notificationService.showError("Please add at least one purchase order item before submitting");
+                    return;
+                }
+
+                var receipt = $("#attach-receipt").length;
+                if (receipt.length == 0)
+                {
+                    e.preventDefault();
+                    notificationService.showError("Please attach a receipt before submitting");
+                }
+
+                for (var i = 0; i < rows.length; i++) {
+                    var row = rows[i];
+
+                    for (var prop in row) {
+                        if (row.hasOwnProperty(prop)) {
+                            $('<input type=hidden>').val(row[prop]).attr('name', 'orderItems[' + i + '].' + prop).appendTo(form);
+                        }
+                    }
+                }
+            });
+
+            $("#submit-truck-stock-request").click(function (e) {
+                var form = $("#submit-truck-stock-request-form");
+                var rows = $("#truck-stock-grid").bootgrid("getCurrentRows");
+                if (rows.length === 0) {
+                    e.preventDefault();
+                    notificationService.showError("Please add at least one item before submitting");
+                    return;
+                }
+
+                for (var i = 0; i < rows.length; i++) {
+                    var row = rows[i];
+
+                    for (var prop in row) {
+                        if (row.hasOwnProperty(prop)) {
+                            $('<input type=hidden>').val(row[prop]).attr('name', 'orderItems[' + i + '].' + prop).appendTo(form);
+                        }
+                    }
+                }
+            });
+
+            var calculateRemainingWorkItemsCount = function () {
+                $('#remaining-work-items-count').text($('form[data-work-item] input[name="isComplete"]:not(:checked)').length);
+            };
+
+            calculateRemainingWorkItemsCount();
+
+            $('form[data-work-item]').submit(function (e) {
+                e.preventDefault();
+
+                var container = $(this).closest('form');
+                var formData = new FormData(container[0]);
+
+                animationService.showBusyAnimation();
+                $.ajax({
+                    url: container.attr('action'),
+                    type: "POST",
+                    data: formData,
+                    contentType: false,
+                    processData: false
+                }).done(function () {
+                    notificationService.showNotification("Your work item has been saved");
+                    calculateRemainingWorkItemsCount();
+                }).fail(function () {
+                    notificationService.showError("Cannot save work item");
+                }).always(function () {
+                    animationService.hideBusyAnimation();
+                });
+            });
+        });
+    </script>
+}

@@ -162,3 +162,9 @@ C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.
 C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal.Tests\obj\Debug\Arke.ARS.TechnicianPortal.Tests.csprojResolveAssemblyReference.cache
 C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal.Tests\obj\Debug\Arke.ARS.TechnicianPortal.Tests.dll
 C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal.Tests\obj\Debug\Arke.ARS.TechnicianPortal.Tests.pdb
+C:\Users\brian\Documents\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal.Tests\obj\Debug\Arke.ARS.TechnicianPortal.Tests.csprojResolveAssemblyReference.cache
+C:\Users\brian\Documents\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal.Tests\obj\Debug\Arke.ARS.TechnicianPortal.Tests.dll
+C:\Users\brian\Documents\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal.Tests\obj\Debug\Arke.ARS.TechnicianPortal.Tests.pdb
+C:\Users\brian\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal.Tests\obj\Debug\Arke.ARS.TechnicianPortal.Tests.csprojResolveAssemblyReference.cache
+C:\Users\brian\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal.Tests\obj\Debug\Arke.ARS.TechnicianPortal.Tests.dll
+C:\Users\brian\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal.Tests\obj\Debug\Arke.ARS.TechnicianPortal.Tests.pdb

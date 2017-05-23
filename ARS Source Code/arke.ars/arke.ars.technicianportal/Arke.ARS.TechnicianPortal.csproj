@@ -425,6 +425,7 @@
     <Content Include="Scripts\callendar.js" />
     <Content Include="Scripts\fastclick.js" />
     <Content Include="Scripts\fullcalendar.js" />
+    <None Include="Properties\PublishProfiles\arsportals.pubxml" />
     <None Include="Properties\PublishProfiles\File System.pubxml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />

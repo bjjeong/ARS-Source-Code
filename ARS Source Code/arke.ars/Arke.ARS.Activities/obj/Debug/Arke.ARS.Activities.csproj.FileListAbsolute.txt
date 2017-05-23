@@ -40,3 +40,15 @@ C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.
 C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.Activities\obj\Debug\Arke.ARS.Activities.csprojResolveAssemblyReference.cache
 C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.Activities\obj\Debug\Arke.ARS.Activities.dll
 C:\Users\bjjeo\OneDrive\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.Activities\obj\Debug\Arke.ARS.Activities.pdb
+C:\Users\brian\Documents\ARS Source Code\arke.ars\Arke.ARS.Activities\bin\Debug\Arke.ARS.Activities.dll
+C:\Users\brian\Documents\ARS Source Code\arke.ars\Arke.ARS.Activities\bin\Debug\Arke.ARS.Activities.pdb
+C:\Users\brian\Documents\ARS Source Code\arke.ars\Arke.ARS.Activities\bin\Debug\Arke.ARS.Organization.dll
+C:\Users\brian\Documents\ARS Source Code\arke.ars\Arke.ARS.Activities\bin\Debug\Arke.Crm.Utils.dll
+C:\Users\brian\Documents\ARS Source Code\arke.ars\Arke.ARS.Activities\bin\Debug\Microsoft.IdentityModel.dll
+C:\Users\brian\Documents\ARS Source Code\arke.ars\Arke.ARS.Activities\bin\Debug\microsoft.xrm.sdk.dll
+C:\Users\brian\Documents\ARS Source Code\arke.ars\Arke.ARS.Activities\bin\Debug\microsoft.xrm.sdk.workflow.dll
+C:\Users\brian\Documents\ARS Source Code\arke.ars\Arke.ARS.Activities\bin\Debug\Arke.ARS.Organization.pdb
+C:\Users\brian\Documents\ARS Source Code\arke.ars\Arke.ARS.Activities\bin\Debug\Arke.Crm.Utils.pdb
+C:\Users\brian\Documents\ARS Source Code\arke.ars\Arke.ARS.Activities\obj\Debug\Arke.ARS.Activities.csprojResolveAssemblyReference.cache
+C:\Users\brian\Documents\ARS Source Code\arke.ars\Arke.ARS.Activities\obj\Debug\Arke.ARS.Activities.dll
+C:\Users\brian\Documents\ARS Source Code\arke.ars\Arke.ARS.Activities\obj\Debug\Arke.ARS.Activities.pdb
