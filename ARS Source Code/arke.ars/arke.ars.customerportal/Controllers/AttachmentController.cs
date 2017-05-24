@@ -19,7 +19,7 @@ namespace Arke.ARS.CustomerPortal.Controllers
             _attachmentService = attachmentService;
         }
 
-        public ActionResult Donwload(Guid id)
+        public ActionResult Download(Guid id)
         {
             DonwloadAttachmentModel attachment = _attachmentService.GetAttachment(id);
             if (attachment == null)

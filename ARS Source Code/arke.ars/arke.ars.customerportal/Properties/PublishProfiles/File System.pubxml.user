@@ -57,7 +57,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/03/2017 12:54:40</publishTime>
     </File>
     <File Include="bin/Arke.ARS.CustomerPortal.dll">
-      <publishTime>05/23/2017 12:45:27</publishTime>
+      <publishTime>05/24/2017 09:35:55</publishTime>
     </File>
     <File Include="bin/Arke.ARS.CustomerPortal.dll.config">
       <publishTime>05/03/2017 12:54:40</publishTime>
