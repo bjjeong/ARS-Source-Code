@@ -71,7 +71,6 @@
         <div class="col-sm-12">
             <div class="form-group">
                 <label for="locationInfo"><strong>Additional Info:</strong></label>
-                <button class="btn btn-primary btn-work-order" data-toggle="modal" data-target="#modal-comments-attachments">Add a Note</button>
                 <input type="text" class="form-control" rows="" id="locationInfo" name="locationInfo" />
             </div>
         </div>
@@ -128,7 +127,7 @@
                         <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("Trade", true)>Trade</h3>
                     </div>
                     <div class="col-sm-1 col-md-1">
-                        <h3 title="Click to sort by column">Priority</h3>
+                        <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("Priority", true)>Priority</h3>
                     </div>
                     <div class="col-sm-1">
                         <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("NeedBy", true)>Need by</h3>
@@ -296,7 +295,6 @@
 @*<button class="btn btn-danger no-print add-work-order" data-toggle="modal" data-target="#add-work-order"><span class="glyphicon glyphicon-plus"></span> New Work Order</button>*@
 
 @Html.Partial("_AddLocationWorkOrder", Model)
-@Html.Partial("_AddNote", Model)
 
 @section scripts {
     <script>
