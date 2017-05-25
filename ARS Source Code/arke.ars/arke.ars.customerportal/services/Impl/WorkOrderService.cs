@@ -150,6 +150,26 @@ namespace Arke.ARS.CustomerPortal.Services.Impl
             };
         }
 
+        public LocationInfoModel GetSpecificLocationInfo(Guid id)
+        {
+            if(id == null)
+            {
+                return null;
+            }
+
+            Account location = _context.AccountSet.First(a => a.Id == id);
+            return new LocationInfoModel
+            {
+                WaterHeaterType = location.new_WaterHeaterType,
+                FloorTile = location.new_FloorTile,
+                HVACSpec = location.new_HVACSpec,
+                CeilingTile = location.new_CeilingTile,
+                PanelType = location.new_PanelType,
+                SepticSewer = location.new_SepticSewer, 
+                PaintSpec = location.new_PaintSpec
+            };
+        }
+
         public LocationAddressModel GetLocationInfo(Guid id)
         {
             if (id == null)

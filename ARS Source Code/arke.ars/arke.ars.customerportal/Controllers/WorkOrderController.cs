@@ -95,6 +95,7 @@ namespace Arke.ARS.CustomerPortal.Controllers
             IPagedList<ClosedWorkOrderModel> closedOrders = _workOrderService.GetLocationClosedWorkOrdersModels(cq, id);
             IPagedList<OpenWorkOrderModel> openOrders = _workOrderService.GetLocationOpenWorkOrdersModels(oq, id);
             LocationAddressModel location = _workOrderService.GetLocationInfo(id);
+            LocationInfoModel locationInfo = _workOrderService.GetSpecificLocationInfo(id);
 
             var locationItems = _locationService.GetSingleLocation(id).Select(l => new SelectListItem
             {
@@ -116,7 +117,8 @@ namespace Arke.ARS.CustomerPortal.Controllers
                 City = location.City,
                 State = location.State,
                 PostalCode = location.PostalCode, 
-                Name = location.Name
+                Name = location.Name,
+                LocationInfo = locationInfo
             };
 
             ViewData["ReturnToListUrl"] = TempData.ContainsKey("ReturnToListUrl")

@@ -23,6 +23,8 @@ namespace Arke.ARS.CustomerPortal.Services
 
         LocationAddressModel GetLocationInfo(Guid id);
 
+        LocationInfoModel GetSpecificLocationInfo(Guid id);
+
         //LocationDetailsModel GetLocationDetails(Guid locationId);
 
         //void AddLocationNotes(Guid id, string comment);

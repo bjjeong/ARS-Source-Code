@@ -27,6 +27,7 @@ namespace Arke.ARS.CustomerPortal.Models
         public QueryModel OpenWorkOrdersQuery { get; set; }
         public QueryModel ClosedWorkOrdersQuery { get; set; }
         public LocationAddressModel LocationAddress { get; set; }
+        public LocationInfoModel LocationInfo { get; set; }
         public bool ShowOpen { get; set; }
         public string imageUrl { get; set; }
         public string Name { get; set; }
@@ -67,6 +68,23 @@ namespace Arke.ARS.CustomerPortal.Models
         {
             return forOpen ? "oq" : "cq";
         }
+    }
+
+    public sealed class LocationInfoModel
+    {
+        public string WaterHeaterType { get; set; }
+
+        public string FloorTile { get; set; }
+
+        public string HVACSpec { get; set; }
+
+        public string CeilingTile { get; set; }
+
+        public string PanelType { get; set; }
+
+        public string SepticSewer { get; set; }
+
+        public string PaintSpec { get; set; }
     }
 
     public sealed class LocationAddressModel
