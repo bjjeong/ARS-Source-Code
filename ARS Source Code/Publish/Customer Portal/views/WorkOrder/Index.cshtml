@@ -546,6 +546,14 @@
 
             $("#need-by-date").datetimepicker();
 
+            $('#windowstart').datetimepicker({
+                format: 'LT'
+            });
+
+            $('#windowend').datetimepicker({
+                format: 'LT'
+            });
+
             $("#open-jobs").click(function () {
                 $("#closed").removeClass("active");
                 $("#scheduled").removeClass("active");

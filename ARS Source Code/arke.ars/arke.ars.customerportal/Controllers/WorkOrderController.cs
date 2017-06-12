@@ -118,7 +118,8 @@ namespace Arke.ARS.CustomerPortal.Controllers
                 State = location.State,
                 PostalCode = location.PostalCode, 
                 Name = location.Name,
-                LocationInfo = locationInfo
+                LocationInfo = locationInfo,
+                LocationAddress = location
             };
 
             ViewData["ReturnToListUrl"] = TempData.ContainsKey("ReturnToListUrl")

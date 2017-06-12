@@ -12,6 +12,8 @@ namespace Arke.ARS.CustomerPortal.Models
         public string Title { get; set; }
         public decimal Nte { get; set; }
         public DateTime NeedByDate { get; set; }
+        public string ServiceWindowStart { get; set; }
+        public string ServiceWindowEnd { get; set; }
         public string Description { get; set; }
         public HttpPostedFileBase Attachment { get; set; }
         public string PO { get; set; }

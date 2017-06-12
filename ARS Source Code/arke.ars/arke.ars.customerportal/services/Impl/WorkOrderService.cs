@@ -651,6 +651,8 @@ namespace Arke.ARS.CustomerPortal.Services.Impl
                 Title = model.Title,
                 Description = model.Description,
                 ars_CompleteByDate = model.NeedByDate == DateTime.MinValue ? (DateTime?)null : model.NeedByDate,
+                new_ServiceWindowStart = model.ServiceWindowStart,
+                new_ServiceWindowEnd = model.ServiceWindowEnd,
                 CustomerId = customerReference,
                 new_PO = model.PO,
                 new_TradeType = myOptionSet

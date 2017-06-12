@@ -28,7 +28,7 @@
             {
                 <div class="activity">
                     <div class="meta">
-                        <span class="date">@activity.CreatedOn.ToShortDateString() @activity.CreatedOn.ToShortTimeString()</span>
+                        <span class="date">@activity.CreatedOn.AddHours(-5).ToShortDateString() @activity.CreatedOn.AddHours(-5).ToShortTimeString()</span>
                     </div>
                     @if (activity.Description != null)
                     {

@@ -33,7 +33,31 @@
                             <div class="col-sm-2">
                                 <div class="form-group">
                                     <label for="nte">NTE</label>
-                                    <input type="number" class="form-control" name="nte" id="nte">
+                                    <input type="number" class="form-control" name="nte" id="nte" required="required">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class='col-sm-6'>
+                                <div class="form-group">
+                                    <label for="windowstart">Service Window Start</label>
+                                    <div class='input-group date' id='windowstart'>
+                                        <input type='text' class="form-control" name="ServiceWindowStart" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-time"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='col-sm-6'>
+                                <div class="form-group">
+                                    <label for="windowend">Service Window End</label>
+                                    <div class='input-group date' id='windowend'>
+                                        <input type='text' class="form-control" name="ServiceWindowEnd"/>
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-time"></span>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
