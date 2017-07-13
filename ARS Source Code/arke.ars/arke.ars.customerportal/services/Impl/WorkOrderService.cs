@@ -201,6 +201,7 @@ namespace Arke.ARS.CustomerPortal.Services.Impl
             var directlyRelatedWorkOrders = (from workOrder in _context.IncidentSet
                 join location in _context.AccountSet on workOrder.CustomerId.Id equals location.AccountId
                 join contact in _context.ContactSet on location.AccountId equals contact.ParentCustomerId.Id
+                join store in _context.AccountSet on workOrder.ars_Location.Id equals store.AccountId
                 where contact.ContactId == customerId
                 where workOrder.StateCode.Value != IncidentState.Active
                 select new ClosedWorkOrderColumnProjection
@@ -208,7 +209,11 @@ namespace Arke.ARS.CustomerPortal.Services.Impl
                     Id = workOrder.IncidentId.Value,
                     Title = workOrder.Title,
                     Location = workOrder.ars_Location == null ? String.Empty : workOrder.ars_Location.Name,
+                    LocationId = workOrder.ars_Location.Id,
                     OrderNumber = workOrder.TicketNumber,
+                    City = store.Address1_City,
+                    State = store.Address1_StateOrProvince,
+                    Trade = workOrder.new_trade,
                     Amount = workOrder.new_NotToExceedNTE != null ? workOrder.new_NotToExceedNTE.Value : 0,
                     Status = workItemStatuses[workOrder.StatusCode.Value]
                 }).ToArray();
@@ -217,6 +222,7 @@ namespace Arke.ARS.CustomerPortal.Services.Impl
                 join location in _context.AccountSet on workOrder.CustomerId.Id equals location.AccountId
                 join business in _context.AccountSet on location.ParentAccountId.Id equals business.AccountId
                 join contact in _context.ContactSet on business.AccountId equals contact.ParentCustomerId.Id
+                join store in _context.AccountSet on workOrder.ars_Location.Id equals store.AccountId
                 where contact.ContactId == customerId
                 where workOrder.StateCode.Value != IncidentState.Active
                 select new ClosedWorkOrderColumnProjection
@@ -224,7 +230,11 @@ namespace Arke.ARS.CustomerPortal.Services.Impl
                     Id = workOrder.IncidentId.Value,
                     Title = workOrder.Title,
                     Location = workOrder.ars_Location == null ? String.Empty : workOrder.ars_Location.Name,
+                    LocationId = workOrder.ars_Location.Id,
                     OrderNumber = workOrder.TicketNumber,
+                    City = store.Address1_City,
+                    State = store.Address1_StateOrProvince,
+                    Trade = workOrder.new_trade,
                     Amount = workOrder.new_NotToExceedNTE != null ? workOrder.new_NotToExceedNTE.Value : 0,
                     Status = workItemStatuses[workOrder.StatusCode.Value]
                 }).ToArray();
@@ -248,7 +258,11 @@ namespace Arke.ARS.CustomerPortal.Services.Impl
                     OrderNumber = order.OrderNumber,
                     Amount = order.Amount,
                     Tech = techRef != null ? techRef.Name : String.Empty,
-                    Status = order.Status
+                    Status = order.Status,
+                    Trade = order.Trade,
+                    City = order.City,
+                    State = order.State,
+                    LocationId = order.LocationId
                 });
             }
 
@@ -733,7 +747,7 @@ namespace Arke.ARS.CustomerPortal.Services.Impl
                 _context.SaveChanges();
             }
         }
-        
+
         private sealed class ClosedWorkOrderColumnProjection
         {
             public Guid Id { get; set; }
@@ -741,6 +755,10 @@ namespace Arke.ARS.CustomerPortal.Services.Impl
             public string Location { get; set; }
             public string OrderNumber { get; set; }
             public decimal Amount { get; set; }
+            public Guid LocationId { get; set; }
+            public string City { get; set; }
+            public string State { get; set; }
+            public string Trade { get; set; }
 
             public string Status { get; set; }
 

@@ -2118,3 +2118,38 @@ System.Web.HttpCompileException - c:\Users\brian\Documents\ARS-Source-Code\ARS S
    at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
 
 
+2017-07-13 13:24:56,155 [484] ERROR ==========================  Exception info see below  ===============================
+Unhandled exception
+Url: /WorkOrder/Location/00000000-0000-0000-0000-000000000000
+System.InvalidOperationException - Sequence contains no elements
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.ThrowException(Exception exception)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute(QueryExpression qe, Boolean throwIfSequenceIsEmpty, Boolean throwIfSequenceNotSingle, Projection projection, NavigationSource source, List`1 linkLookups, String& pagingCookie, Boolean& moreRecords)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute[TElement](QueryExpression qe, Boolean throwIfSequenceIsEmpty, Boolean throwIfSequenceNotSingle, Projection projection, NavigationSource source, List`1 linkLookups)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.Execute[TElement](Expression expression)
+   at Microsoft.Xrm.Sdk.Linq.QueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   at Arke.ARS.CustomerPortal.Services.Impl.WorkOrderService.GetLocationInfo(Guid id) in C:\Users\brian\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.CustomerPortal\Services\Impl\WorkOrderService.cs:line 180
+   at Arke.ARS.CustomerPortal.Controllers.WorkOrderController.Location(Guid id, QueryModel oq, QueryModel cq, Nullable`1 showOpen) in C:\Users\brian\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.CustomerPortal\Controllers\WorkOrderController.cs:line 97
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+

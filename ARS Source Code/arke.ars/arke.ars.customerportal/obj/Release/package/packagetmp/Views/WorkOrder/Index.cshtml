@@ -394,7 +394,7 @@
                     <div class="col-sm-1">
                         <h3 title="Click to sort by column" class="heading sortable open-sorting" data-sort-url=@Model.GetQueryLink("Tech", true)>Tech</h3>
                     </div>
-                    <div class="col-sm-2  col-md-1">
+                    <div class="col-sm-1  col-md-1">
                         <span class="sr-only">Edit/Delete</span>
                     </div>
                 </div>
@@ -411,17 +411,17 @@
                                 <span class="title visible-xs-inline">Location: </span><a href="@Url.Action("Location", new { id = @order.LocationId })">@order.Location</a>
                             </p>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-2 col-md-2">
                             <p>
                                 <span class="title visible-xs-inline">City: </span>@order.City
                             </p>
                         </div>
-                        <div class="col-sm-1">
+                        <div class="col-sm-1 col-md-1">
                             <p>
                                 <span class="title visible-xs-inline">State: </span>@order.State
                             </p>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-2 col-md-2">
                             <p>
                                 <span class="title visible-xs-inline">Trade: </span>@order.Trade
                             </p>
@@ -434,7 +434,7 @@
                                 }
                             </p>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-1">
                             <p>
                                 <span class="title visible-xs-inline">Amount: </span>$ @order.Amount
                             </p>
@@ -442,11 +442,6 @@
                         <div class="col-sm-1">
                             <p>
                                 <span class="title visible-xs-inline">Tech: </span>@order.Tech
-                            </p>
-                        </div>
-                        <div class="col-sm-1">
-                            <p>
-                                <a href="#" data-toggle="modal" data-orderid="@order.Id" class="btn btn-default btn-sm reopen @(order.Status == "Canceled" ? "" : "invisible")">Reopen</a>
                             </p>
                         </div>
                         <div class="col-sm-1 col-md-1 view-delete">
