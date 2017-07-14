@@ -641,7 +641,7 @@ namespace Arke.ARS.CustomerPortal.Services.Impl
 
         public void AddWorkOrder(NewWorkOrderModel model, Guid contactId)
         {
-            var customerReference = _context.AccountSet.Single(a => a.PrimaryContactId.Id == contactId).ToEntityReference();
+            var customerReference = _context.AccountSet.Single(a => a.PrimaryContactId.Id == contactId || a.new_secondarycontact.Id == contactId).ToEntityReference();
             var locationReference = _context.AccountSet.Single(l => l.AccountId == model.Locations).ToEntityReference();
 
             OptionSetValue myOptionSet = new OptionSetValue();
