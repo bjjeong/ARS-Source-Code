@@ -7620,3 +7620,57 @@ Exception rethrown at [0]:
    at Microsoft.Xrm.Sdk.Client.OrganizationServiceContext.SaveChange(OrganizationRequest request, IList`1 results)
 
 
+2017-07-20 15:17:56,900 [610] INFO  getting order with id 3aa4e600-996d-e711-8111-e0071b66cfe1
+2017-07-20 15:17:57,714 [610] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-07-20 15:17:58,280 [610] INFO  workItemStatuses contains 2
+2017-07-20 15:18:21,692 [611] INFO  getting order with id 3aa4e600-996d-e711-8111-e0071b66cfe1
+2017-07-20 15:18:21,768 [611] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-07-20 15:18:21,840 [611] INFO  workItemStatuses contains 2
+2017-07-20 15:22:08,294 [611] INFO  getting order with id 3aa4e600-996d-e711-8111-e0071b66cfe1
+2017-07-20 15:22:08,422 [611] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-07-20 15:22:08,492 [611] INFO  workItemStatuses contains 2
+2017-07-21 11:27:09,748 [600] INFO  getting order with id 3aa4e600-996d-e711-8111-e0071b66cfe1
+2017-07-21 11:27:10,187 [600] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-07-21 11:27:10,449 [600] INFO  workItemStatuses contains 2
+2017-07-21 11:27:54,866 [611] INFO  getting order with id 3aa4e600-996d-e711-8111-e0071b66cfe1
+2017-07-21 11:27:54,959 [611] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-07-21 11:27:55,173 [611] INFO  workItemStatuses contains 2
+2017-07-21 11:32:34,103 [611] INFO  getting order with id 3aa4e600-996d-e711-8111-e0071b66cfe1
+2017-07-21 11:32:34,185 [611] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-07-21 11:32:34,271 [611] INFO  workItemStatuses contains 2
+2017-07-21 11:48:05,207 [611] INFO  getting order with id 3aa4e600-996d-e711-8111-e0071b66cfe1
+2017-07-21 11:48:05,283 [611] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-07-21 11:48:05,360 [611] INFO  workItemStatuses contains 2
+2017-07-21 11:50:09,008 [611] INFO  getting order with id 3aa4e600-996d-e711-8111-e0071b66cfe1
+2017-07-21 11:50:09,087 [611] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-07-21 11:50:09,164 [611] INFO  workItemStatuses contains 2
+2017-07-21 11:50:54,754 [612] INFO  getting order with id 3aa4e600-996d-e711-8111-e0071b66cfe1
+2017-07-21 11:50:54,837 [612] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-07-21 11:50:54,917 [612] INFO  workItemStatuses contains 2
+2017-07-21 11:51:05,264 [611] INFO  getting order with id 3aa4e600-996d-e711-8111-e0071b66cfe1
+2017-07-21 11:51:05,384 [611] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-07-21 11:51:05,515 [611] INFO  workItemStatuses contains 2
+2017-07-21 11:51:15,627 [611] INFO  getting order with id 3aa4e600-996d-e711-8111-e0071b66cfe1
+2017-07-21 11:51:15,702 [611] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-07-21 11:51:15,779 [611] INFO  workItemStatuses contains 2
+2017-07-21 11:52:10,504 [612] INFO  getting order with id 3aa4e600-996d-e711-8111-e0071b66cfe1
+2017-07-21 11:52:10,641 [612] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-07-21 11:52:10,802 [612] INFO  workItemStatuses contains 2
+2017-07-21 11:52:33,051 [611] INFO  getting order with id 3aa4e600-996d-e711-8111-e0071b66cfe1
+2017-07-21 11:52:33,128 [611] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-07-21 11:52:33,202 [611] INFO  workItemStatuses contains 2
+2017-07-21 11:58:21,923 [611] INFO  getting order with id 3aa4e600-996d-e711-8111-e0071b66cfe1
+2017-07-21 11:58:22,038 [611] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-07-21 11:58:22,182 [611] INFO  workItemStatuses contains 2
+2017-07-21 11:58:29,074 [611] INFO  getting order with id 3aa4e600-996d-e711-8111-e0071b66cfe1
+2017-07-21 11:58:29,148 [611] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-07-21 11:58:29,224 [611] INFO  workItemStatuses contains 2
+2017-07-21 11:59:59,617 [610] INFO  getting order with id 3aa4e600-996d-e711-8111-e0071b66cfe1
+2017-07-21 11:59:59,692 [610] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-07-21 11:59:59,764 [610] INFO  workItemStatuses contains 2
+2017-07-21 12:04:00,844 [611] INFO  getting order with id 3aa4e600-996d-e711-8111-e0071b66cfe1
+2017-07-21 12:04:00,923 [611] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-07-21 12:04:01,000 [611] INFO  workItemStatuses contains 2
+2017-07-21 12:05:47,545 [611] INFO  getting order with id 3aa4e600-996d-e711-8111-e0071b66cfe1
+2017-07-21 12:05:47,617 [611] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-07-21 12:05:47,694 [611] INFO  workItemStatuses contains 2

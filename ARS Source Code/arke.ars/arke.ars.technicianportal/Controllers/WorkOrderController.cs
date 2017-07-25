@@ -64,7 +64,7 @@ namespace Arke.ARS.TechnicianPortal.Controllers
             var identity = (ClaimsIdentity)User.Identity;
             var technicianId = Guid.Parse(identity.GetUserId());
             switch (status)
-            { 
+            {
                 case StatusCode.TechnicianOffsite:
                     _workOrderService.SetTemporarilyOffSite(id, technicianId, notes);
                     break;

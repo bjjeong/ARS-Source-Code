@@ -356,7 +356,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
             var technician = _context.ars_technicianSet.Single(t => t.ars_technicianId == technicianId);
             ChangeWorkOrdersStatus(workOrder, technician, StatusCode.WorkComplete, EventType.CheckOut);
             AddNote(technicianId, workOrder, notes);
-            workOrder.new_lunch = lunch;
+            //workOrder.new_lunch = lunch;
 
 
             var eventTypecode = GetEventTypeValue(EventType.Lunch);
@@ -376,9 +376,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
 
             _context.AddObject(workorderevent);
 
-            _context.UpdateObject(workOrder);
-            _context.SaveChanges();
-
+            //_context.UpdateObject(workOrder);
 
             _context.SaveChanges();
         }
