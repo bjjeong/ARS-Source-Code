@@ -60,7 +60,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/14/2017 13:21:38</publishTime>
     </File>
     <File Include="bin/Arke.ARS.CustomerPortal.dll.config">
-      <publishTime>05/03/2017 12:54:40</publishTime>
+      <publishTime>07/17/2017 13:27:07</publishTime>
     </File>
     <File Include="bin/Arke.ARS.Organization.dll">
       <publishTime>07/14/2017 13:21:37</publishTime>
@@ -348,7 +348,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/03/2017 12:54:40</publishTime>
     </File>
     <File Include="Views/Account/SignIn.cshtml">
-      <publishTime>05/16/2017 10:01:02</publishTime>
+      <publishTime>07/26/2017 10:22:34</publishTime>
     </File>
     <File Include="Views/Account/woodbackground.png">
       <publishTime>05/16/2017 10:01:02</publishTime>
@@ -357,7 +357,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/16/2017 10:01:02</publishTime>
     </File>
     <File Include="Views/Shared/_AuthorizedNavigation.cshtml">
-      <publishTime>05/23/2017 13:37:00</publishTime>
+      <publishTime>07/26/2017 10:22:15</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
       <publishTime>05/16/2017 10:01:02</publishTime>
@@ -390,7 +390,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/16/2017 10:01:02</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/23/2017 08:41:17</publishTime>
+      <publishTime>07/26/2017 11:38:34</publishTime>
     </File>
   </ItemGroup>
 </Project>
