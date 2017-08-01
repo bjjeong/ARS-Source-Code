@@ -108,7 +108,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="attachment">Attach a file</label>
-                                    <input type="file" id="attachment" name="attachment">
+                                    <input type="file" id="attachment" name="attachment" onchange="fileCheck()">
                                 </div>
                             </div>
                         </div>
@@ -127,5 +127,10 @@
         var currentTime = new Date();
         var ticks = currentTime.getTime();
         $('#po').val(ticks.toString().substring(3));
+    }
+
+    function fileCheck() {
+        var filesize = document.getElementById(' attachment').files[0].size;
+        console.log(filesize);
     }
 </script>

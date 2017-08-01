@@ -57,7 +57,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/14/2017 13:21:37</publishTime>
     </File>
     <File Include="bin/Arke.ARS.CustomerPortal.dll">
-      <publishTime>07/14/2017 13:21:38</publishTime>
+      <publishTime>08/01/2017 11:28:33</publishTime>
     </File>
     <File Include="bin/Arke.ARS.CustomerPortal.dll.config">
       <publishTime>07/17/2017 13:27:07</publishTime>
@@ -242,6 +242,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/WebGrease.dll">
       <publishTime>05/03/2017 12:54:40</publishTime>
     </File>
+    <File Include="Content/AFM Logo.jpg">
+      <publishTime>08/01/2017 09:00:46</publishTime>
+    </File>
     <File Include="Content/apple-touch-icon-144-precomposed.png">
       <publishTime>05/03/2017 12:54:40</publishTime>
     </File>
@@ -347,8 +350,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Scripts/_references.js">
       <publishTime>05/03/2017 12:54:40</publishTime>
     </File>
+    <File Include="Views/Account/AFM Logo.jpg">
+      <publishTime>08/01/2017 08:59:51</publishTime>
+    </File>
     <File Include="Views/Account/SignIn.cshtml">
-      <publishTime>07/26/2017 11:40:33</publishTime>
+      <publishTime>08/01/2017 09:04:14</publishTime>
     </File>
     <File Include="Views/Account/woodbackground.png">
       <publishTime>05/16/2017 10:01:02</publishTime>
@@ -357,7 +363,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/16/2017 10:01:02</publishTime>
     </File>
     <File Include="Views/Shared/_AuthorizedNavigation.cshtml">
-      <publishTime>07/26/2017 10:22:15</publishTime>
+      <publishTime>08/01/2017 09:06:13</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
       <publishTime>05/16/2017 10:01:02</publishTime>
@@ -381,7 +387,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/12/2017 12:33:40</publishTime>
     </File>
     <File Include="Views/WorkOrder/_AddWorkOrder.cshtml">
-      <publishTime>06/12/2017 12:27:32</publishTime>
+      <publishTime>07/31/2017 13:32:17</publishTime>
     </File>
     <File Include="Views/WorkOrder/_ReopenWorkOrder.cshtml">
       <publishTime>05/16/2017 10:01:02</publishTime>
