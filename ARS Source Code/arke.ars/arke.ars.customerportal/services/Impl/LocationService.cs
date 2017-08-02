@@ -18,7 +18,7 @@ namespace Arke.ARS.CustomerPortal.Services.Impl
                 throw new ArgumentNullException("context");
             }
 
-            _context = context;
+            _context = context; 
         }
 
         public IEnumerable<LocationModel> GetLocations(Guid customerId)

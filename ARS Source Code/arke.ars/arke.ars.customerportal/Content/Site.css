@@ -13,7 +13,7 @@ The main SCSS file for everything, yep
 }
 .gradient-theme {
   background: #013e75;
-  /* Old browsers */
+  /* Old browsers */.
   /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #013e75), color-stop(22%, #003b6f), color-stop(23%, #013a71), color-stop(68%, #00315c), color-stop(100%, #002c53));
   /* Chrome,Safari4+ */
@@ -6385,7 +6385,9 @@ textarea.form-control {
     margin-bottom: 0;
     font-size: 12px;
     letter-spacing: .05em;
-    color: #000; }
+    color: #000;
+    text-align:center;
+  }
 
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -6403,6 +6405,7 @@ body {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
+  text-align:center;
   background-color: #f5f5f5; }
 
 .form-signin {

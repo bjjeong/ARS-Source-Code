@@ -65,7 +65,9 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
             string techName = _technicianService.GetTechnicianName(technicianId);
             var workOrder = _context.IncidentSet.Single(w => w.IncidentId == workOrderId);
             
-            //Using ticks as a way to have unique PO #'s
+            //Using ticks as a way to have unique PO #'s. This does not "guarantee" a different number
+            //in the case that two work orders are created at the EXACT same time, but the chance that 
+            //happens is miniscule.
             long time = DateTime.Now.Ticks;
             String fileName = Convert.ToString(time);
             //fileName.Substring(fileName.Length - 15); This is an attempt to make that PO # shorter. However, this might create the problem of collisions in the future. No guarantees for unique ID's. 
@@ -117,6 +119,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                     new_receipt = receiptBool,
                     new_Cost = new Money(orderItem.RealPrice),
                     new_ExtCost = new Money(orderItem.RealPrice*orderItem.Quantity),
+                    new_RetailPrice = new Money(orderItem.beforeTaxPrice),
                     new_technician = techName
                 };
 

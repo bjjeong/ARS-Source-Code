@@ -7674,3 +7674,27 @@ Exception rethrown at [0]:
 2017-07-21 12:05:47,545 [611] INFO  getting order with id 3aa4e600-996d-e711-8111-e0071b66cfe1
 2017-07-21 12:05:47,617 [611] INFO  customer name 00027 Office Depot SMS Assist, LLC
 2017-07-21 12:05:47,694 [611] INFO  workItemStatuses contains 2
+2017-08-02 13:46:37,453 [1516] INFO  getting order with id 27b4e4ea-c277-e711-8102-e0071b66cfa1
+2017-08-02 13:46:38,119 [1516] INFO  customer name 00024 Office Depot SMS Assist, LLC
+2017-08-02 13:46:38,435 [1516] INFO  workItemStatuses contains 2
+2017-08-02 13:46:52,050 [1517] INFO  getting order with id 27b4e4ea-c277-e711-8102-e0071b66cfa1
+2017-08-02 13:46:52,207 [1517] INFO  customer name 00024 Office Depot SMS Assist, LLC
+2017-08-02 13:46:52,481 [1517] INFO  workItemStatuses contains 2
+2017-08-02 13:48:49,500 [1517] INFO  getting order with id 27b4e4ea-c277-e711-8102-e0071b66cfa1
+2017-08-02 13:48:51,508 [1517] INFO  customer name 00024 Office Depot SMS Assist, LLC
+2017-08-02 13:48:54,516 [1517] INFO  workItemStatuses contains 2
+2017-08-02 13:50:32,949 [1517] INFO  getting order with id 27b4e4ea-c277-e711-8102-e0071b66cfa1
+2017-08-02 13:50:36,430 [1517] INFO  customer name 00024 Office Depot SMS Assist, LLC
+2017-08-02 13:50:41,099 [1517] INFO  workItemStatuses contains 2
+2017-08-02 13:51:40,403 [1520] INFO  getting order with id 27b4e4ea-c277-e711-8102-e0071b66cfa1
+2017-08-02 13:51:40,633 [1520] INFO  customer name 00024 Office Depot SMS Assist, LLC
+2017-08-02 13:51:40,904 [1520] INFO  workItemStatuses contains 2
+2017-08-02 13:56:46,753 [1516] INFO  getting order with id 27b4e4ea-c277-e711-8102-e0071b66cfa1
+2017-08-02 13:56:50,056 [1516] INFO  customer name 00024 Office Depot SMS Assist, LLC
+2017-08-02 13:56:50,290 [1516] INFO  workItemStatuses contains 2
+2017-08-02 14:09:52,308 [1518] INFO  getting order with id 27b4e4ea-c277-e711-8102-e0071b66cfa1
+2017-08-02 14:09:52,554 [1518] INFO  customer name 00024 Office Depot SMS Assist, LLC
+2017-08-02 14:09:52,864 [1518] INFO  workItemStatuses contains 2
+2017-08-02 14:10:55,764 [1517] INFO  getting order with id 27b4e4ea-c277-e711-8102-e0071b66cfa1
+2017-08-02 14:10:57,231 [1517] INFO  customer name 00024 Office Depot SMS Assist, LLC
+2017-08-02 14:10:57,925 [1517] INFO  workItemStatuses contains 2

@@ -236,7 +236,8 @@ namespace Arke.ARS.CustomerPortal.Services.Impl
                     State = store.Address1_StateOrProvince,
                     Trade = workOrder.new_trade,
                     Amount = workOrder.new_NotToExceedNTE != null ? workOrder.new_NotToExceedNTE.Value : 0,
-                    Status = workItemStatuses[workOrder.StatusCode.Value]
+                    Status = workItemStatuses[workOrder.StatusCode.Value],
+                    ClosedDate = workOrder.ModifiedOn
                 }).ToArray();
 
             IEnumerable<ClosedWorkOrderColumnProjection> closedOrders = directlyRelatedWorkOrders.Union(indirectlyRelatedWorkOrders, ClosedWorkOrderColumnProjection.Comparer);
@@ -262,7 +263,8 @@ namespace Arke.ARS.CustomerPortal.Services.Impl
                     Trade = order.Trade,
                     City = order.City,
                     State = order.State,
-                    LocationId = order.LocationId
+                    LocationId = order.LocationId,
+                    ClosedDate = order.ClosedDate
                 });
             }
 
@@ -756,6 +758,7 @@ namespace Arke.ARS.CustomerPortal.Services.Impl
             public string OrderNumber { get; set; }
             public decimal Amount { get; set; }
             public Guid LocationId { get; set; }
+            public DateTime? ClosedDate { get; set; }
             public string City { get; set; }
             public string State { get; set; }
             public string Trade { get; set; }

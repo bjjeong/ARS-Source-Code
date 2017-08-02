@@ -12,6 +12,9 @@ namespace Arke.ARS.TechnicianPortal.Models
         public decimal Quantity { get; set; }
 
         [Range(0, Int64.MaxValue)]
+        public decimal beforeTaxPrice { get; set; }
+
+        [Range(0, Int64.MaxValue)]
         public decimal Price { get; set; }
 
         [Range(0, Int64.MaxValue)]
