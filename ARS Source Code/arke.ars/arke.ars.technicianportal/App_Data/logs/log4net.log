@@ -7698,3 +7698,60 @@ Exception rethrown at [0]:
 2017-08-02 14:10:55,764 [1517] INFO  getting order with id 27b4e4ea-c277-e711-8102-e0071b66cfa1
 2017-08-02 14:10:57,231 [1517] INFO  customer name 00024 Office Depot SMS Assist, LLC
 2017-08-02 14:10:57,925 [1517] INFO  workItemStatuses contains 2
+2017-08-06 14:58:00,166 [1021] INFO  getting order with id 27b4e4ea-c277-e711-8102-e0071b66cfa1
+2017-08-06 14:58:00,745 [1021] INFO  customer name 00024 Office Depot SMS Assist, LLC
+2017-08-06 14:58:01,580 [1021] INFO  workItemStatuses contains 2
+2017-08-06 15:00:37,306 [1022] ERROR ==========================  Exception info see below  ===============================
+Unhandled exception
+Url: /WorkOrder/SubmitPurchaseOrderRequest
+Microsoft.Xrm.Sdk.SaveChangesException - An error occured while processing this request.
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceContext.SaveChanges(SaveChangesOptions options)
+   at Arke.ARS.Organization.Context.ArsOrganizationContext.Arke.Crm.Utils.IOrganizationServiceContext.SaveChanges()
+   at Arke.ARS.TechnicianPortal.Services.Impl.PurchaseOrderService.SubmitPurchaseOrderRequest(Guid workOrderId, Guid technicianId, OrderItemModel[] orderItems, HttpPostedFileBase purchaseOrderReceipt, HttpPostedFileBase purchaseOrderReceipt2, String vendor, String store) in C:\Users\brian\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal\Services\Impl\PurchaseOrderService.cs:line 157
+   at Arke.ARS.TechnicianPortal.Controllers.WorkOrderController.SubmitPurchaseOrderRequest(Guid id, OrderItemModel[] orderItems, HttpPostedFileBase purchaseOrderReceipt, HttpPostedFileBase purchaseOrderReceipt2, String vendor, String store) in C:\Users\brian\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal\Controllers\WorkOrderController.cs:line 149
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass48.<InvokeActionMethodFilterAsynchronouslyRecursive>b__41()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+System.ServiceModel.FaultException`1[Microsoft.Xrm.Sdk.OrganizationServiceFault] - 'salesorderdetail' entity doesn't contain attribute with Name = 'new_retailprice'.
+
+Server stack trace: 
+   at System.ServiceModel.Channels.ServiceChannel.HandleReply(ProxyOperationRuntime operation, ProxyRpc& rpc)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at Microsoft.Xrm.Sdk.IOrganizationService.Execute(OrganizationRequest request)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceProxy.ExecuteCore(OrganizationRequest request)
+   at Microsoft.Xrm.Client.Services.OrganizationService.InnerOrganizationService.UsingService[TResult](Func`2 action)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceContext.Execute(OrganizationRequest request)
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceContext.SaveChange(OrganizationRequest request, IList`1 results)
+
+
+2017-08-06 15:10:03,289 [1021] INFO  getting order with id 27b4e4ea-c277-e711-8102-e0071b66cfa1
+2017-08-06 15:10:03,587 [1021] INFO  customer name 00024 Office Depot SMS Assist, LLC
+2017-08-06 15:10:04,175 [1021] INFO  workItemStatuses contains 2
+2017-08-06 15:10:49,225 [1026] INFO  getting order with id 27b4e4ea-c277-e711-8102-e0071b66cfa1
+2017-08-06 15:10:49,586 [1026] INFO  customer name 00024 Office Depot SMS Assist, LLC
+2017-08-06 15:10:49,762 [1026] INFO  workItemStatuses contains 2
