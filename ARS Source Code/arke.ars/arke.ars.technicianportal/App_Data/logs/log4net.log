@@ -7755,3 +7755,15 @@ Exception rethrown at [0]:
 2017-08-06 15:10:49,225 [1026] INFO  getting order with id 27b4e4ea-c277-e711-8102-e0071b66cfa1
 2017-08-06 15:10:49,586 [1026] INFO  customer name 00024 Office Depot SMS Assist, LLC
 2017-08-06 15:10:49,762 [1026] INFO  workItemStatuses contains 2
+2017-08-07 14:36:26,703 [1024] INFO  getting order with id 27b4e4ea-c277-e711-8102-e0071b66cfa1
+2017-08-07 14:36:28,551 [1024] INFO  customer name 00024 Office Depot SMS Assist, LLC
+2017-08-07 14:36:29,156 [1024] INFO  workItemStatuses contains 2
+2017-08-07 14:38:22,927 [1026] INFO  getting order with id 27b4e4ea-c277-e711-8102-e0071b66cfa1
+2017-08-07 14:38:23,117 [1026] INFO  customer name 00024 Office Depot SMS Assist, LLC
+2017-08-07 14:38:23,347 [1026] INFO  workItemStatuses contains 2
+2017-08-07 14:59:33,551 [1024] INFO  getting order with id 27b4e4ea-c277-e711-8102-e0071b66cfa1
+2017-08-07 14:59:33,895 [1024] INFO  customer name 00024 Office Depot SMS Assist, LLC
+2017-08-07 14:59:34,361 [1024] INFO  workItemStatuses contains 2
+2017-08-07 14:59:55,108 [1026] INFO  getting order with id 27b4e4ea-c277-e711-8102-e0071b66cfa1
+2017-08-07 14:59:55,469 [1026] INFO  customer name 00024 Office Depot SMS Assist, LLC
+2017-08-07 14:59:55,695 [1026] INFO  workItemStatuses contains 2

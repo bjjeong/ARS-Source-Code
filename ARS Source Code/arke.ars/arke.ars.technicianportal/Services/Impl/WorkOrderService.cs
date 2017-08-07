@@ -356,8 +356,6 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
             var technician = _context.ars_technicianSet.Single(t => t.ars_technicianId == technicianId);
             ChangeWorkOrdersStatus(workOrder, technician, StatusCode.WorkComplete, EventType.CheckOut);
             AddNote(technicianId, workOrder, notes);
-            //workOrder.new_lunch = lunch;
-
 
             var eventTypecode = GetEventTypeValue(EventType.Lunch);
 
@@ -375,9 +373,6 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
             };
 
             _context.AddObject(workorderevent);
-
-            //_context.UpdateObject(workOrder);
-
             _context.SaveChanges();
         }
 
@@ -422,8 +417,6 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
             };
 
             _context.AddObject(workorderevent);
-
-            //_context.AddObject(annotation);
             _context.UpdateObject(workOrder);
             _context.SaveChanges();
         }
@@ -468,7 +461,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
             {
                 NoteText = String.IsNullOrWhiteSpace(printname) ? techName : String.Format("{0} - Signature from: {1}", techName, printname),
                 ObjectId = new EntityReference(Incident.EntityLogicalName, workOrderId),
-                FileName = "Signature.png",
+                FileName = "Signature: " + printname + ".png",
                 MimeType = "image/png",
                 DocumentBody = signature
             };
