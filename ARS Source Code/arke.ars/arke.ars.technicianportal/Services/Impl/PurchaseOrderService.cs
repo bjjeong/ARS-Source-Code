@@ -65,6 +65,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
             string techName = _technicianService.GetTechnicianName(technicianId);
             var workOrder = _context.IncidentSet.Single(w => w.IncidentId == workOrderId);
             
+            
             //Using ticks as a way to have unique PO #'s. This does not "guarantee" a different number
             //in the case that two work orders are created at the EXACT same time, but the chance that 
             //happens is miniscule.
@@ -107,6 +108,8 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                 _context.AddObject(item1);
 
                 var item = new SalesOrderDetail
+                // This is not creating a new Order, but rather adding line items to the Ordder.
+                //This is the difference between the Sales Order and Sales Order Detail.
                 {
                     PricePerUnit = new Money(orderItem.RealPrice),
                     ProductDescription = orderItem.Item,
@@ -123,7 +126,26 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                     new_technician = techName
                 };
 
+                //var invoice = new InvoiceDetail
+                ////This is not creating a new invoice, but rather adding a line item to the invoice.
+                ////This is the difference between the InvoiceDetail and Invoice
+                
+                // This isn't working cause the invoice has not yet been created. That's why I can't grab
+                // the invoice ID               
+
+                //{
+                //    Quantity = orderItem.Quantity,
+                //    InvoiceId = workOrder.new_invoice,
+                //    PricePerUnit = new Money(orderItem.RealPrice),
+                //    ProductDescription = orderItem.Item,
+                //    new_PO = fileName,
+                //    new_RetailPrice = new Money(orderItem.beforeTaxPrice),
+                //    new_StoreName = store,
+                //    new_Technician = techName
+                //};
+
                 _context.AddObject(item);
+                //_context.AddObject(invoice);
             }
 
             if (purchaseOrderReceipt != null)

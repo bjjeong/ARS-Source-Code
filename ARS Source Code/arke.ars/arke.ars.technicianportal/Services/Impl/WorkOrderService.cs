@@ -234,7 +234,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                 var errorMessage = string.Format("Work order with Id: {0} has no Order. Please contact administrator", workOrderId);
                 _logger.LogWarning(errorMessage);
                 _context.SaveChanges();
-                return "Current work order  has no Order. Please contact administrator.";
+                return "Current work order  has no Order. Please contact bjeong@advancedretailsolutions.com.";
             }
             else
             {
@@ -274,7 +274,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
 
                 //If labor charge is not yet in the list, add it
                 if (!laborDetails.Any())
-                {
+                {                   
                     var labor = new SalesOrderDetail
                     {
                         ProductDescription = _productDescription,

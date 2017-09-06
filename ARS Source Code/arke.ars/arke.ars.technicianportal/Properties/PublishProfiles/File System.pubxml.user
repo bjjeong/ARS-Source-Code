@@ -54,13 +54,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/03/2017 12:54:40</publishTime>
     </File>
     <File Include="bin/Arke.ARS.CommonWeb.dll">
-      <publishTime>08/02/2017 14:13:59</publishTime>
+      <publishTime>09/06/2017 14:12:10</publishTime>
     </File>
     <File Include="bin/Arke.ARS.Organization.dll">
-      <publishTime>08/02/2017 14:13:58</publishTime>
+      <publishTime>09/06/2017 14:12:10</publishTime>
     </File>
     <File Include="bin/Arke.ARS.TechnicianPortal.dll">
-      <publishTime>08/07/2017 15:11:13</publishTime>
+      <publishTime>09/06/2017 14:12:11</publishTime>
     </File>
     <File Include="bin/Arke.ARS.TechnicianPortal.dll.config">
       <publishTime>05/23/2017 08:38:50</publishTime>
@@ -293,6 +293,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/fullcalendar.less">
       <publishTime>05/03/2017 12:54:40</publishTime>
     </File>
+    <File Include="Content/images/AFM Logo.jpg">
+      <publishTime>09/06/2017 10:05:19</publishTime>
+    </File>
     <File Include="Content/images/apple-touch-icon-144-precomposed.png">
       <publishTime>05/03/2017 12:54:40</publishTime>
     </File>
@@ -432,7 +435,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/03/2017 12:54:40</publishTime>
     </File>
     <File Include="Views/Account/SignIn.cshtml">
-      <publishTime>05/03/2017 12:54:40</publishTime>
+      <publishTime>09/06/2017 10:07:39</publishTime>
     </File>
     <File Include="Views/Account/_Application.cshtml">
       <publishTime>05/03/2017 12:54:40</publishTime>
@@ -444,13 +447,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/03/2017 12:54:40</publishTime>
     </File>
     <File Include="Views/Shared/_AuthorizedNavigation.cshtml">
-      <publishTime>05/03/2017 12:54:40</publishTime>
+      <publishTime>09/06/2017 10:08:30</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>06/29/2017 15:10:11</publishTime>
+      <publishTime>08/28/2017 13:26:45</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutLogin.cshtml">
-      <publishTime>05/03/2017 12:54:40</publishTime>
+      <publishTime>08/28/2017 13:57:37</publishTime>
     </File>
     <File Include="Views/Shared/_UnauthorizedNavigation.cshtml">
       <publishTime>05/03/2017 12:54:40</publishTime>
