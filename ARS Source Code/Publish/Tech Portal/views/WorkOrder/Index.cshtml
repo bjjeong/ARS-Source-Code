@@ -32,7 +32,7 @@
                     <button class="btn btn-default btn-work-order" disabled data-toggle="modal" data-target="#modal-nte-increase">NTE Increase</button>
                     <button class="btn btn-default btn-work-order" disabled data-toggle="modal" data-target="#modal-po-request">P.O. Request</button>
                     <button class="btn btn-default btn-work-order" disabled data-toggle="modal" data-target="#modal-truck-equipment">Truck/Equipment</button>
-                    <button class="btn btn-default btn-work-order" disabled data-toggle="modal" data-target="#modal-comments-attachments">Comments/Attachments</button>
+                    <button class="btn btn-default btn-work-order" disabled data-toggle="modal" data-target="#modal-comments-attachments">Tech’s Work Description/Notes</button>
                     <button class="btn btn-default btn-work-order signout" disabled data-toggle="modal" data-target="#modal-signature">Sign Work Order</button>
                 }
                 else
@@ -40,7 +40,7 @@
                     <button class="btn btn-primary btn-work-order" data-toggle="modal" data-target="#modal-nte-increase">NTE Increase</button>
                     <button class="btn btn-primary btn-work-order" data-toggle="modal" data-target="#modal-po-request">P.O. Request</button>
                     <button class="btn btn-primary btn-work-order" data-toggle="modal" data-target="#modal-truck-equipment">Truck/Equipment</button>
-                    <button class="btn btn-primary btn-work-order" data-toggle="modal" data-target="#modal-comments-attachments">Comments/Attachments</button>
+                    <button class="btn btn-primary btn-work-order" data-toggle="modal" data-target="#modal-comments-attachments">Tech’s Work Description/Notes</button>
                     <button class="btn btn-danger btn-work-order signout" data-toggle="modal" data-target="#modal-signature">Sign Work Order</button>
                 }
             </div>
@@ -178,6 +178,9 @@
 
         var notificationService = new ARS.NotificationService();
         var animationService = new ARS.AnimationService();
+
+        //notificationService.showError("REMINDER: Please fill out IVR when arriving on site");
+        alert("REMINDER: If relevant, please fill out IVR when arriving on site");
 
         if ('@TempData["ErrorMessage"]') {
                 notificationService.showError('@TempData["ErrorMessage"]');

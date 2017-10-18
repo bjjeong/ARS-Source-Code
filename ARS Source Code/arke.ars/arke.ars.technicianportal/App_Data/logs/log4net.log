@@ -7959,3 +7959,80 @@ Exception rethrown at [0]:
 2017-09-06 10:47:35,205 [60] INFO  getting order with id b1b64bbe-2393-e711-8116-e0071b66aea1
 2017-09-06 10:47:35,402 [60] INFO  customer name 00042 Office Depot SMS Assist, LLC
 2017-09-06 10:47:35,687 [60] INFO  workItemStatuses contains 2
+2017-10-17 16:44:35,847 [5] INFO  getting order with id 806fd913-b2ae-e711-8119-e0071b66cfe1
+2017-10-17 16:44:36,077 [5] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-10-17 16:44:36,329 [5] INFO  workItemStatuses contains 2
+2017-10-17 16:59:56,257 [35] ERROR ==========================  Exception info see below  ===============================
+Unhandled exception
+Url: /Token
+System.ArgumentNullException - Value cannot be null.
+Parameter name: entity
+   at Microsoft.Xrm.Sdk.Client.OrganizationServiceContext.Detach(Entity entity)
+   at Arke.ARS.Organization.Context.ArsOrganizationContext.Arke.Crm.Utils.IOrganizationServiceContext.Detach(Entity entity)
+   at Arke.ARS.TechnicianPortal.Services.Impl.CrmTechnicianAuthenticationService.FindUser(String name, String password) in C:\Users\brian\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.TechnicianPortal\Services\Impl\CrmTechnicianAuthenticationService.cs:line 47
+   at Arke.ARS.CommonWeb.Providers.ApplicationOAuthProvider.<GrantResourceOwnerCredentials>d__3.MoveNext() in C:\Users\brian\Documents\ARS-Source-Code\ARS Source Code\arke.ars\Arke.ARS.CommonWeb\Providers\ApplicationOAuthProvider.cs:line 49
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerHandler.<InvokeTokenEndpointResourceOwnerPasswordCredentialsGrantAsync>d__3f.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerHandler.<InvokeTokenEndpointAsync>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerHandler.<InvokeAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Security.Infrastructure.AuthenticationMiddleware`1.<Invoke>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Security.Infrastructure.AuthenticationMiddleware`1.<Invoke>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContextStage.<RunApp>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContext.<DoFinalWork>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.StageAsyncResult.End(IAsyncResult ar)
+   at System.Web.HttpApplication.AsyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+2017-10-17 17:00:03,271 [35] INFO  getting order with id 806fd913-b2ae-e711-8119-e0071b66cfe1
+2017-10-17 17:00:03,425 [35] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-10-17 17:00:03,574 [35] INFO  workItemStatuses contains 2
+2017-10-17 17:00:35,967 [35] INFO  getting order with id 806fd913-b2ae-e711-8119-e0071b66cfe1
+2017-10-17 17:00:36,168 [35] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-10-17 17:00:36,363 [35] INFO  workItemStatuses contains 2
+2017-10-17 17:00:40,249 [35] INFO  getting order with id 806fd913-b2ae-e711-8119-e0071b66cfe1
+2017-10-17 17:00:40,449 [35] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-10-17 17:00:40,641 [35] INFO  workItemStatuses contains 2
+2017-10-17 17:01:43,483 [38] INFO  getting order with id 806fd913-b2ae-e711-8119-e0071b66cfe1
+2017-10-17 17:01:43,710 [38] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-10-17 17:01:43,977 [38] INFO  workItemStatuses contains 2
+2017-10-17 17:02:38,882 [39] INFO  getting order with id 806fd913-b2ae-e711-8119-e0071b66cfe1
+2017-10-17 17:02:39,074 [39] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-10-17 17:02:39,251 [39] INFO  workItemStatuses contains 2
+2017-10-17 17:03:38,791 [48] INFO  getting order with id 806fd913-b2ae-e711-8119-e0071b66cfe1
+2017-10-17 17:03:39,000 [48] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-10-17 17:03:39,207 [48] INFO  workItemStatuses contains 2
+2017-10-17 17:04:22,296 [39] INFO  getting order with id 806fd913-b2ae-e711-8119-e0071b66cfe1
+2017-10-17 17:04:22,607 [39] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-10-17 17:04:22,800 [39] INFO  workItemStatuses contains 2
+2017-10-17 17:05:29,809 [44] INFO  getting order with id 806fd913-b2ae-e711-8119-e0071b66cfe1
+2017-10-17 17:05:30,013 [44] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-10-17 17:05:30,220 [44] INFO  workItemStatuses contains 2
+2017-10-17 17:06:16,685 [8] INFO  getting order with id 806fd913-b2ae-e711-8119-e0071b66cfe1
+2017-10-17 17:06:16,887 [8] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-10-17 17:06:17,078 [8] INFO  workItemStatuses contains 2
+2017-10-18 08:57:25,588 [191] INFO  getting order with id 806fd913-b2ae-e711-8119-e0071b66cfe1
+2017-10-18 08:57:26,046 [191] INFO  customer name 00027 Office Depot SMS Assist, LLC
+2017-10-18 08:57:26,312 [191] INFO  workItemStatuses contains 2

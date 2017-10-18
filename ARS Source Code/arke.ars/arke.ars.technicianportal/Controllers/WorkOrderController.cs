@@ -87,7 +87,7 @@ namespace Arke.ARS.TechnicianPortal.Controllers
                     _workOrderService.ReturnRequired(id, notes, status, technicianId);
                     break;
             }
-            return RedirectToAction("Index", new { id });
+            return RedirectToAction("Index", new { id }); 
         }
 
         [HttpPost]

@@ -60,10 +60,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/06/2017 14:12:10</publishTime>
     </File>
     <File Include="bin/Arke.ARS.TechnicianPortal.dll">
-      <publishTime>09/06/2017 14:12:11</publishTime>
+      <publishTime>10/18/2017 09:03:59</publishTime>
     </File>
     <File Include="bin/Arke.ARS.TechnicianPortal.dll.config">
-      <publishTime>05/23/2017 08:38:50</publishTime>
+      <publishTime>10/17/2017 16:43:43</publishTime>
     </File>
     <File Include="bin/Arke.Crm.GeoLocation.dll">
       <publishTime>05/03/2017 12:54:40</publishTime>
@@ -369,7 +369,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/03/2017 12:54:40</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>05/23/2017 08:38:51</publishTime>
+      <publishTime>10/17/2017 16:43:44</publishTime>
     </File>
     <File Include="Scripts/animationService.js">
       <publishTime>05/03/2017 12:54:40</publishTime>
@@ -441,7 +441,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/03/2017 12:54:40</publishTime>
     </File>
     <File Include="Views/Home/Home.cshtml">
-      <publishTime>05/03/2017 12:54:40</publishTime>
+      <publishTime>10/18/2017 08:57:00</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>05/03/2017 12:54:40</publishTime>
@@ -462,7 +462,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/03/2017 12:54:40</publishTime>
     </File>
     <File Include="Views/WorkOrder/Index.cshtml">
-      <publishTime>08/07/2017 14:35:39</publishTime>
+      <publishTime>10/17/2017 17:06:13</publishTime>
     </File>
     <File Include="Views/WorkOrder/_CheckIn.cshtml">
       <publishTime>05/03/2017 12:54:40</publishTime>
@@ -471,10 +471,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/03/2017 12:54:40</publishTime>
     </File>
     <File Include="Views/WorkOrder/_CommentsAndAttachments.cshtml">
-      <publishTime>05/03/2017 12:54:40</publishTime>
+      <publishTime>10/17/2017 16:38:00</publishTime>
     </File>
     <File Include="Views/WorkOrder/_NteIncrease.cshtml">
-      <publishTime>05/03/2017 12:54:40</publishTime>
+      <publishTime>10/17/2017 16:39:31</publishTime>
     </File>
     <File Include="Views/WorkOrder/_PurchaseOrder.cshtml">
       <publishTime>08/02/2017 14:10:49</publishTime>
@@ -492,7 +492,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/03/2017 12:54:40</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/23/2017 08:41:52</publishTime>
+      <publishTime>10/18/2017 09:04:01</publishTime>
     </File>
   </ItemGroup>
 </Project>
