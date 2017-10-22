@@ -180,7 +180,7 @@
         var animationService = new ARS.AnimationService();
 
         //notificationService.showError("REMINDER: Please fill out IVR when arriving on site");
-        alert("REMINDER: If relevant, please fill out IVR when arriving on site");
+        alert("REMINDER: If relevant, please check into IVR when arriving on site");
 
         if ('@TempData["ErrorMessage"]') {
                 notificationService.showError('@TempData["ErrorMessage"]');
@@ -348,7 +348,9 @@
                     e.preventDefault();
                     notificationService.showError("All Work Items must be completed before marking this job as complete.");
                 }
-
+                else {
+                    notificationService.showError("REMINDER: If relevant, please check out of IVR when leaving the site");
+                }
             });
             
 /*          $(".signout").click(function () {

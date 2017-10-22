@@ -8036,3 +8036,6 @@ Parameter name: entity
 2017-10-18 08:57:25,588 [191] INFO  getting order with id 806fd913-b2ae-e711-8119-e0071b66cfe1
 2017-10-18 08:57:26,046 [191] INFO  customer name 00027 Office Depot SMS Assist, LLC
 2017-10-18 08:57:26,312 [191] INFO  workItemStatuses contains 2
+2017-10-20 14:22:09,674 [6] INFO  getting order with id 1a864133-fdb4-e711-811d-e0071b6a1051
+2017-10-20 14:22:13,209 [6] INFO  customer name 585-Walmart-Facility Source
+2017-10-20 14:22:15,655 [6] INFO  workItemStatuses contains 2
