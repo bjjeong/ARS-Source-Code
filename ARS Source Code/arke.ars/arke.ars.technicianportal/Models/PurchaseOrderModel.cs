@@ -17,5 +17,7 @@ namespace Arke.ARS.TechnicianPortal.Models
         public string Vendor { get; set; }
 
         public bool Receipt { get; set; }
+
+        public string Card { get; set; }
     }
 }

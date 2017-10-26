@@ -179,7 +179,6 @@
         var notificationService = new ARS.NotificationService();
         var animationService = new ARS.AnimationService();
 
-        //notificationService.showError("REMINDER: Please fill out IVR when arriving on site");
         alert("REMINDER: If relevant, please check into IVR when arriving on site");
 
         if ('@TempData["ErrorMessage"]') {
@@ -340,6 +339,12 @@
                 if (!value) {
                     evt.preventDefault();
                     notificationService.showError("Please, add a note");
+                }
+
+                var checkboxes = $("[name='isComplete']");
+                for (var i = 0; i < checkboxes.length; i++)
+                {
+                    checkboxes[i].checked = false;
                 }
             });
 

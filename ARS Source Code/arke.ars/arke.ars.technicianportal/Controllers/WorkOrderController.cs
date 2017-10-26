@@ -69,6 +69,8 @@ namespace Arke.ARS.TechnicianPortal.Controllers
                     _workOrderService.SetTemporarilyOffSite(id, technicianId, notes);
                     break;
                 case StatusCode.ReturnNeedForParts:
+                    //_workOrderService.SetWorkItemStatus(id, GetCurrentTechnicianId(), false, note);
+                    //return new EmptyResult();
                     _workOrderService.ReturnRequired(id, notes, status, technicianId);
                     break;
                 case StatusCode.ReturnNeedToQuote:
@@ -139,14 +141,14 @@ namespace Arke.ARS.TechnicianPortal.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public RedirectToRouteResult SubmitPurchaseOrderRequest(Guid id, OrderItemModel[] orderItems, HttpPostedFileBase purchaseOrderReceipt, HttpPostedFileBase purchaseOrderReceipt2, string vendor, string store)
+        public RedirectToRouteResult SubmitPurchaseOrderRequest(Guid id, OrderItemModel[] orderItems, HttpPostedFileBase purchaseOrderReceipt, HttpPostedFileBase purchaseOrderReceipt2, string vendor, string store, string card)
         {
             if (orderItems == null)
             {
                 throw new ArgumentNullException("orderItems");
             }
 
-            _purchaseOrderService.SubmitPurchaseOrderRequest(id, GetCurrentTechnicianId(), orderItems, purchaseOrderReceipt, purchaseOrderReceipt2, vendor, store);
+            _purchaseOrderService.SubmitPurchaseOrderRequest(id, GetCurrentTechnicianId(), orderItems, purchaseOrderReceipt, purchaseOrderReceipt2, vendor, store, card);
             return RedirectToAction("Index", new { id });
         }
 

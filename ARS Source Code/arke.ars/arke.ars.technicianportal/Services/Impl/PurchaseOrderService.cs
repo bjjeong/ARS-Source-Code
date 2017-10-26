@@ -53,7 +53,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
             }
         }
             
-        public void SubmitPurchaseOrderRequest(Guid workOrderId, Guid technicianId, OrderItemModel[] orderItems, HttpPostedFileBase purchaseOrderReceipt, HttpPostedFileBase purchaseOrderReceipt2, string vendor, string store)
+        public void SubmitPurchaseOrderRequest(Guid workOrderId, Guid technicianId, OrderItemModel[] orderItems, HttpPostedFileBase purchaseOrderReceipt, HttpPostedFileBase purchaseOrderReceipt2, string vendor, string store, string card)
         {
             if (orderItems == null)
             {
@@ -80,7 +80,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                 receiptBool = true;
             }
 
-                foreach (OrderItemModel orderItem in orderItems)
+            foreach (OrderItemModel orderItem in orderItems)
             {
                 OptionSetValue myOptionSet = new OptionSetValue();
                 if (vendor == "Visa")
@@ -96,6 +96,12 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                 else
                     myOptionSet.Value = 100000000;
 
+                OptionSetValue cardBool = new OptionSetValue();
+                if (card == "Yes")
+                    cardBool.Value = 100000000;
+                else
+                    cardBool.Value = 100000001;
+
                 var item1 = new ars_technicianitem
                 {
                     ars_Price = new Money(orderItem.Price),
@@ -108,7 +114,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                 _context.AddObject(item1);
 
                 var item = new SalesOrderDetail
-                // This is not creating a new Order, but rather adding line items to the Ordder.
+                // This is not creating a new Order, but rather adding line items to the Order.
                 //This is the difference between the Sales Order and Sales Order Detail.
                 {
                     PricePerUnit = new Money(orderItem.RealPrice),
@@ -123,7 +129,8 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                     new_Cost = new Money(orderItem.RealPrice),
                     new_ExtCost = new Money(orderItem.RealPrice*orderItem.Quantity),
                     new_RetailPrice = new Money(orderItem.beforeTaxPrice),
-                    new_technician = techName
+                    new_technician = techName,
+                    new_card = cardBool
                 };
 
                 //var invoice = new InvoiceDetail
