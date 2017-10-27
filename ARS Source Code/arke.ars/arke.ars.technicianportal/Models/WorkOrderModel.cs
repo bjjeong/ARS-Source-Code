@@ -28,6 +28,7 @@ namespace Arke.ARS.TechnicianPortal.Models
         public bool new_nteincrease { get; set; }
         public ActivityModel[] Activities { get; set; }
         public OrderModel[] Orders { get; set; }
+        public OrderItemModel[] OrderItem { get; set; }
     }
 
     public sealed class OrderModel

@@ -137,6 +137,18 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                 isInProgress = true;
             }
 
+            Dictionary<int, string> orderStatuses = GetOrderStatuses();
+            var orders = (from orderDetail in _context.SalesOrderDetailSet
+                          join order in _context.SalesOrderSet on orderDetail.SalesOrderId.Id equals order.Id
+                          where order.ars_WorkOrderId.Id == workOrderId && orderDetail.new_ponumber != null
+                          select new OrderItemModel
+                          {
+                              PO = orderDetail.new_ponumber,
+                              Store = orderDetail.new_storename,
+                              Date = orderDetail.new_date
+                              
+                          }).Distinct().ToArray();
+
             var activities = (from activity in _context.ars_workitemSet
                               join annotation in _context.AnnotationSet on activity.ars_workitemId equals annotation.ObjectId.Id
                               into attachments
@@ -199,8 +211,9 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                 WorkItems = workItems,
                 trade = workOrder.new_trade,
                 po = workOrder.new_PO,
-                Activities = activiteList.OrderByDescending(a => a.CreatedOn).ToArray()
-            };
+                Activities = activiteList.OrderByDescending(a => a.CreatedOn).ToArray(),
+                OrderItem = orders
+                };
         }
 
         public string GetoptionsetText(string entityName, string attributeName, int optionSetValue, IOrganizationService service)

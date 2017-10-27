@@ -19,5 +19,14 @@ namespace Arke.ARS.TechnicianPortal.Models
 
         [Range(0, Int64.MaxValue)]
         public decimal RealPrice { get; set; }
+
+        [Required]
+        public string PO { get; set; }
+
+        [Required]
+        public string Store { get; set; }
+
+        [Required]
+        public string Date { get; set; }
     }
 }

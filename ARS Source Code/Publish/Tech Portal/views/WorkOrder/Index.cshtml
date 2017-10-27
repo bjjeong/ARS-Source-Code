@@ -116,6 +116,32 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><strong>PO Numbers</strong></h3>
+                        </div>
+                        <div class="panel-body">
+                            @foreach (OrderItemModel orderItem in Model.OrderItem)
+                            {
+                                <div class="activity">
+                                    <ul>
+                                        <li><strong>PO#:</strong> @orderItem.PO</li>      
+                                        <li><strong>Date:</strong> @orderItem.Date </li>
+                                        <li><strong>Store:</strong> @orderItem.Store</li>
+                                    </ul>
+                                </div>
+                            }
+                            @if (!Model.Activities.Any())
+                            {
+                                <p>No activity was found</p>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
                     @Html.Partial("_WorkItems", Model)
                 </div>
             </div>

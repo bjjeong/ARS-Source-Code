@@ -71,7 +71,8 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
             //happens is miniscule.
             long time = DateTime.Now.Ticks;
             String fileName = Convert.ToString(time);
-            //fileName.Substring(fileName.Length - 15); This is an attempt to make that PO # shorter. However, this might create the problem of collisions in the future. No guarantees for unique ID's. 
+            
+             //fileName.Substring(fileName.Length - 15); This is an attempt to make that PO # shorter. However, this might create the problem of collisions in the future. No guarantees for unique ID's. 
             //We will keep it at current length for now. If we really need to shorten it, we can later. 
             //For new STD system we probably still need this feature. But a lot of the features in the technician portal can be removed.
             var receiptBool = false;
@@ -130,7 +131,8 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                     new_ExtCost = new Money(orderItem.RealPrice*orderItem.Quantity),
                     new_RetailPrice = new Money(orderItem.beforeTaxPrice),
                     new_technician = techName,
-                    new_card = cardBool
+                    new_card = cardBool,
+                    new_date = DateTime.Now.ToString()
                 };
 
                 //var invoice = new InvoiceDetail
