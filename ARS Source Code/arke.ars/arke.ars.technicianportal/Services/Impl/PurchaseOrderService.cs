@@ -219,7 +219,8 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                     ProductDescription = orderItem.Item,
                     Quantity = orderItem.Quantity,
                     SalesOrderId = workOrder.ars_Order,
-                    IsProductOverridden = true
+                    IsProductOverridden = true,
+                    new_ponumber = "Truck Stock"
                 };
 
                 _context.AddObject(item);
