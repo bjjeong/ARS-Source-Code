@@ -70,7 +70,6 @@ namespace Arke.ARS.TechnicianPortal.Controllers
                     break;
                 case StatusCode.ReturnNeedForParts:
                     //_workOrderService.SetWorkItemStatus(id, GetCurrentTechnicianId(), false, note);
-                    //return new EmptyResult();
                     _workOrderService.ReturnRequired(id, notes, status, technicianId);
                     break;
                 case StatusCode.ReturnNeedToQuote:
