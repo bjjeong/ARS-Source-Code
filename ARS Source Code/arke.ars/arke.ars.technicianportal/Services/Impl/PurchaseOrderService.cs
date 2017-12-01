@@ -1,11 +1,22 @@
 using System;
+using System.Security;
+using System.Net;
+using System.Net.Security;
+using System.ServiceModel.Description;
+using System.Security.Cryptography.X509Certificates;
+using System.Runtime.InteropServices;
 using System.Linq;
 using System.Web;
+
 using Arke.ARS.CommonWeb.Helpers;
 using Arke.ARS.Organization.Context;
 using Arke.ARS.TechnicianPortal.Models;
+
 using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Discovery;
 using WebGrease.Css.Extensions;
+using Microsoft.Xrm.Sdk.Query;
+using Microsoft.Xrm.Sdk.Client;
 
 namespace Arke.ARS.TechnicianPortal.Services.Impl
 {
@@ -55,6 +66,20 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
             
         public void SubmitPurchaseOrderRequest(Guid workOrderId, Guid technicianId, OrderItemModel[] orderItems, HttpPostedFileBase purchaseOrderReceipt, HttpPostedFileBase purchaseOrderReceipt2, string vendor, string store, string card)
         {
+            ClientCredentials credential = new ClientCredentials();
+            credential.UserName.UserName = "bjeong@advancedretail.onmicrosoft.com";
+            credential.UserName.Password = "bjtjjjaj1029..";
+            Guid defaultUnit = new Guid("054ED7A8-A1AE-4D5F-9108-60D387606730");
+            Guid defaultUnitGroup = new Guid("682A0D63-FD3D-45DD-8C28-C2F5EB546ACE");
+            Guid defaultPriceList = new Guid("2344F7E8-8FD3-E711-810F-E0071B66CFA1");
+            Guid productId;
+            Guid priceListId;
+
+            // Set the org url
+            var organizationURI = "https://advancedretail.crm.dynamics.com/XRMServices/2011/Organization.svc";
+            OrganizationServiceProxy svc = new OrganizationServiceProxy(new Uri(organizationURI), null, credential, null);
+            svc.EnableProxyTypes();
+
             if (orderItems == null)
             {
                 throw new ArgumentNullException("orderItems");
@@ -114,47 +139,89 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
 
                 _context.AddObject(item1);
 
+                //var item = new SalesOrderDetail
+                //// This is not creating a new Order, but rather adding line items to the Order.
+                ////This is the difference between the Sales Order and Sales Order Detail.
+                //{
+                //    PricePerUnit = new Money(orderItem.RealPrice),
+                //    ProductDescription = orderItem.Item,
+                //    IsPriceOverridden = true,
+                //    Quantity = orderItem.Quantity,
+                //    SalesOrderId = workOrder.ars_Order,
+                //    new_ponumber = fileName,
+                //    IsProductOverridden = true,
+                //    new_vendor = myOptionSet,
+                //    new_storename = store,
+                //    new_receipt = receiptBool,
+                //    new_Cost = new Money(orderItem.RealPrice),
+                //    new_ExtCost = new Money(orderItem.RealPrice*orderItem.Quantity),
+                //    new_RetailPrice = new Money(orderItem.beforeTaxPrice),
+                //    new_technician = techName,
+                //    new_card = cardBool,
+                //    new_date = DateTime.Now.ToString(),
+                //};
+
+                QueryByAttribute query = new QueryByAttribute("product");
+                query.ColumnSet = new ColumnSet("productid", "defaultuomid");
+                query.Attributes.AddRange("name");
+                query.Values.AddRange(orderItem.Item);
+                Entity productent = svc.RetrieveMultiple(query).Entities.ToList().FirstOrDefault();
+                if (productent == null)
+                {
+                    //Entity productent_new = new Entity("product");
+                    var newProduct = new Product
+                    {                      
+                        DefaultUoMId = new EntityReference(UoM.EntityLogicalName, defaultUnit),
+                        DefaultUoMScheduleId = new EntityReference(UoMSchedule.EntityLogicalName, defaultUnitGroup),
+                        QuantityDecimal = 2,
+                        ProductNumber = orderItem.Item,
+                        Name = orderItem.Item,
+                        Description = orderItem.Item,
+                    };
+
+                    productId = svc.Create(newProduct);
+
+                    //Create price list item
+                    ProductPriceLevel newPriceListItem = new ProductPriceLevel
+                    {
+                        PriceLevelId = new EntityReference(PriceLevel.EntityLogicalName, defaultPriceList),
+                        ProductId = new EntityReference(Product.EntityLogicalName, productId),
+                        UoMId = new EntityReference(UoM.EntityLogicalName, defaultUnit),
+                        Amount = new Money(orderItem.RealPrice)
+                    };
+
+                    priceListId = svc.Create(newPriceListItem);
+                }
+                else
+                {
+                    //Grab ProductId from productent if it is not null
+                    productId = (Guid)productent.Attributes["productid"];
+                    defaultUnit = ((EntityReference)productent.Attributes["defaultuomid"]).Id;
+                }
+
+                //Create SalesOrderDetail
                 var item = new SalesOrderDetail
-                // This is not creating a new Order, but rather adding line items to the Order.
-                //This is the difference between the Sales Order and Sales Order Detail.
                 {
                     PricePerUnit = new Money(orderItem.RealPrice),
-                    ProductDescription = orderItem.Item,
+                    IsPriceOverridden = true,
                     Quantity = orderItem.Quantity,
                     SalesOrderId = workOrder.ars_Order,
                     new_ponumber = fileName,
-                    IsProductOverridden = true,
+                    IsProductOverridden = false,
                     new_vendor = myOptionSet,
                     new_storename = store,
                     new_receipt = receiptBool,
                     new_Cost = new Money(orderItem.RealPrice),
-                    new_ExtCost = new Money(orderItem.RealPrice*orderItem.Quantity),
+                    new_ExtCost = new Money(orderItem.RealPrice * orderItem.Quantity),
                     new_RetailPrice = new Money(orderItem.beforeTaxPrice),
                     new_technician = techName,
                     new_card = cardBool,
-                    new_date = DateTime.Now.ToString()
+                    new_date = DateTime.Now.ToString(),
+                    ProductId = new EntityReference(Product.EntityLogicalName, productId),
+                    UoMId = new EntityReference(UoM.EntityLogicalName, defaultUnit)
                 };
 
-                //var invoice = new InvoiceDetail
-                ////This is not creating a new invoice, but rather adding a line item to the invoice.
-                ////This is the difference between the InvoiceDetail and Invoice
-                
-                // This isn't working cause the invoice has not yet been created. That's why I can't grab
-                // the invoice ID               
-
-                //{
-                //    Quantity = orderItem.Quantity,
-                //    InvoiceId = workOrder.new_invoice,
-                //    PricePerUnit = new Money(orderItem.RealPrice),
-                //    ProductDescription = orderItem.Item,
-                //    new_PO = fileName,
-                //    new_RetailPrice = new Money(orderItem.beforeTaxPrice),
-                //    new_StoreName = store,
-                //    new_Technician = techName
-                //};
-
                 _context.AddObject(item);
-                //_context.AddObject(invoice);
             }
 
             if (purchaseOrderReceipt != null)
@@ -185,7 +252,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                 _context.AddObject(annotation);
             }
 
-            _context.SaveChanges();
+             _context.SaveChanges();
         }
 
         public void SubmitTruckEquipment(Guid workOrderId, Guid technicianId, OrderItemModel[] orderItems)

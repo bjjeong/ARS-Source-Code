@@ -31,9 +31,16 @@
                 center: 'title',
                 right: ''
             },
+            views: {
+                agendaThreeDay: {
+                    type: 'agenda',
+                    duration: { days: 3 },
+                    buttonText: '3 day'
+                }
+            },
             editable: false,
             timezone: "local",
-            defaultView: 'agendaDay',
+            defaultView: 'agendaThreeDay',
             dragScroll: false,
             eventClick: function (event) {
                 window.location = '@Url.Action("Index", "WorkOrder")/' + event.workOrderId;
@@ -43,11 +50,11 @@
 
                 $.getJSON('@Url.HttpRouteUrl("DefaultApi", new { controller = "Appointment"})?' + 'start=' + encodeURIComponent(start.toISOString()) + '&end=' + encodeURIComponent(end.toISOString()))
                     .done(function(data) {
-                        if (data.haveWorkForTomorrow) {
-                            $('button.fc-corner-right').attr('disabled', 'disabled');
-                        } else {
-                            $('button.fc-corner-right').removeAttr('disabled');
-                        }
+                        //if (data.haveWorkForTomorrow) {
+                        //    $('button.fc-corner-right').attr('disabled', 'disabled');
+                        //} else {
+                        //    $('button.fc-corner-right').removeAttr('disabled');
+                        //}
 
                         callback(data.appointments.map(function (appointment) {
                             //notificationService.showError(appointment.start);

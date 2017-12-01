@@ -54,13 +54,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/03/2017 12:54:40</publishTime>
     </File>
     <File Include="bin/Arke.ARS.CommonWeb.dll">
-      <publishTime>10/27/2017 12:51:18</publishTime>
+      <publishTime>12/01/2017 10:10:38</publishTime>
     </File>
     <File Include="bin/Arke.ARS.Organization.dll">
-      <publishTime>10/27/2017 12:51:15</publishTime>
+      <publishTime>12/01/2017 10:10:38</publishTime>
     </File>
     <File Include="bin/Arke.ARS.TechnicianPortal.dll">
-      <publishTime>11/02/2017 13:34:49</publishTime>
+      <publishTime>12/01/2017 10:10:39</publishTime>
     </File>
     <File Include="bin/Arke.ARS.TechnicianPortal.dll.config">
       <publishTime>11/02/2017 13:27:14</publishTime>
@@ -93,7 +93,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/03/2017 12:54:40</publishTime>
     </File>
     <File Include="bin/Content/fullcalendar.less">
-      <publishTime>05/03/2017 12:54:40</publishTime>
+      <publishTime>12/01/2017 10:02:46</publishTime>
     </File>
     <File Include="bin/Content/modal.less">
       <publishTime>05/03/2017 12:54:40</publishTime>
@@ -291,7 +291,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/03/2017 12:54:40</publishTime>
     </File>
     <File Include="Content/fullcalendar.less">
-      <publishTime>05/03/2017 12:54:40</publishTime>
+      <publishTime>12/01/2017 10:02:46</publishTime>
     </File>
     <File Include="Content/images/AFM Logo.jpg">
       <publishTime>09/06/2017 10:05:19</publishTime>
@@ -390,7 +390,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/03/2017 12:54:40</publishTime>
     </File>
     <File Include="Scripts/fullcalendar.js">
-      <publishTime>05/03/2017 12:54:40</publishTime>
+      <publishTime>12/01/2017 09:55:08</publishTime>
     </File>
     <File Include="Scripts/jquery-2.1.4.js">
       <publishTime>05/03/2017 12:54:40</publishTime>
@@ -441,7 +441,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/03/2017 12:54:40</publishTime>
     </File>
     <File Include="Views/Home/Home.cshtml">
-      <publishTime>10/18/2017 08:57:00</publishTime>
+      <publishTime>12/01/2017 10:09:34</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>05/03/2017 12:54:40</publishTime>

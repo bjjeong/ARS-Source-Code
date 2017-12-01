@@ -15,6 +15,8 @@ using Microsoft.Xrm.Sdk.Metadata;
 using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Client;
 using System.Diagnostics;
+using Microsoft.Xrm.Sdk.Query;
+using System.ServiceModel.Description;
 
 namespace Arke.ARS.TechnicianPortal.Services.Impl
 {
@@ -212,7 +214,7 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                 trade = workOrder.new_trade,
                 po = workOrder.new_PO,
                 Activities = activiteList.OrderByDescending(a => a.CreatedOn).ToArray(),
-                OrderItem = orders
+                OrderItem = orders 
                 };
         }
 
@@ -238,6 +240,18 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
 
         public string StartProgress(Guid workOrderId, Guid technicianId)
         {
+            ClientCredentials credential = new ClientCredentials();
+            credential.UserName.UserName = "bjeong@advancedretail.onmicrosoft.com";
+            credential.UserName.Password = "bjtjjjaj1029..";
+            Guid laborId;
+            Guid tripId;
+            Guid defaultUnit = new Guid("AF8CBC8E-8ED3-E711-810F-E0071B66CFA1");
+
+            // Set the org url
+            var organizationURI = "https://advancedretail.crm.dynamics.com/XRMServices/2011/Organization.svc";
+            OrganizationServiceProxy svc = new OrganizationServiceProxy(new Uri(organizationURI), null, credential, null);
+            svc.EnableProxyTypes();
+
             var workOrder = _context.IncidentSet.Single(i => i.IncidentId == workOrderId);
             var technician = _context.ars_technicianSet.Single(t => t.ars_technicianId == technicianId);
             ChangeWorkOrdersStatus(workOrder, technician, StatusCode.InProgress, EventType.CheckIn);
@@ -267,22 +281,39 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
 
                 if (!today.Any())
                 {
+                    QueryByAttribute query = new QueryByAttribute("product");
+                    query.ColumnSet = new ColumnSet("productid");
+                    query.Attributes.AddRange("name");
+                    query.Values.AddRange("Trip Charge");
+                    Entity productent = svc.RetrieveMultiple(query).Entities.ToList().FirstOrDefault();
+                    tripId = (Guid)productent.Attributes["productid"];
+
                     var product = new SalesOrderDetail
                     {
-                        ProductDescription = _productDescription,
+                        //ProductDescription = _productDescription,
                         SalesOrderId = salesOrder.ToEntityReference(),
                         Quantity = 1,
                         PricePerUnit = workOrder.ars_TripRate,
-                        IsProductOverridden = true
+                        IsProductOverridden = false,
+                        IsPriceOverridden = true,
+                        ProductId = new EntityReference(Product.EntityLogicalName, tripId),
+                        UoMId = new EntityReference(UoM.EntityLogicalName, defaultUnit)
                     };
                     _context.AddObject(product);
                 }
 
                 //Check if labor charge is already in the Product list
+                QueryByAttribute laborQuery = new QueryByAttribute("product");
+                laborQuery.ColumnSet = new ColumnSet("productid");
+                laborQuery.Attributes.AddRange("name");
+                laborQuery.Values.AddRange("Labor Charge");
+                Entity laborProduct = svc.RetrieveMultiple(laborQuery).Entities.ToList().FirstOrDefault();
+                laborId = (Guid)laborProduct.Attributes["productid"];
+
                 _productDescription = "Labor Charge";
                 var laborDetails = _context
                     .SalesOrderDetailSet.Where(s => s.SalesOrderId.Id == salesOrder.SalesOrderId)
-                    .Where(s => s.ProductDescription == _productDescription)
+                    .Where(s => s.ProductId == new EntityReference(Product.EntityLogicalName, laborId))
                     .ToList();
 
                 //If labor charge is not yet in the list, add it
@@ -290,11 +321,14 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                 {                   
                     var labor = new SalesOrderDetail
                     {
-                        ProductDescription = _productDescription,
+                        //ProductDescription = _productDescription,
                         SalesOrderId = salesOrder.ToEntityReference(),
                         Quantity = 1,
                         PricePerUnit = workOrder.ars_LaborRate,
-                        IsProductOverridden = true
+                        IsProductOverridden = false,
+                        IsPriceOverridden = true,
+                        ProductId = new EntityReference(Product.EntityLogicalName, laborId),
+                        UoMId = new EntityReference(UoM.EntityLogicalName, defaultUnit)
                     };
                     _context.AddObject(labor);
                 }

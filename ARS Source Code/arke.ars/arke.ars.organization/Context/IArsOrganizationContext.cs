@@ -19,6 +19,8 @@ namespace Arke.ARS.Organization.Context
 
         IQueryable<SalesOrder> SalesOrderSet { get; }
 
+        IQueryable<Product> ProductSet { get; }
+
         IQueryable<ServiceAppointment> ServiceAppointmentSet { get; }
 
         IQueryable<Account> AccountSet { get; }
