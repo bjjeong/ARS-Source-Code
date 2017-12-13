@@ -8992,3 +8992,9 @@ System.InvalidCastException - Unable to cast object of type 'System.Guid' to typ
 2017-12-13 03:13:10,502 [163] INFO  getting order with id 8a2680a4-eadf-e711-8124-e0071b6a1051
 2017-12-13 03:13:10,655 [163] INFO  customer name Test Customer
 2017-12-13 03:13:10,813 [163] INFO  workItemStatuses contains 2
+2017-12-13 08:22:24,375 [121] INFO  getting order with id 8a2680a4-eadf-e711-8124-e0071b6a1051
+2017-12-13 08:22:24,555 [121] INFO  customer name Test Customer
+2017-12-13 08:22:24,775 [121] INFO  workItemStatuses contains 2
+2017-12-13 08:22:38,961 [118] INFO  getting order with id 8a2680a4-eadf-e711-8124-e0071b6a1051
+2017-12-13 08:22:39,137 [118] INFO  customer name Test Customer
+2017-12-13 08:22:39,289 [118] INFO  workItemStatuses contains 2
