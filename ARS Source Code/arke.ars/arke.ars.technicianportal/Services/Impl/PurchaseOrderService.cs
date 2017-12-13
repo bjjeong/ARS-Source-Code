@@ -100,11 +100,11 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
              //fileName.Substring(fileName.Length - 15); This is an attempt to make that PO # shorter. However, this might create the problem of collisions in the future. No guarantees for unique ID's. 
             //We will keep it at current length for now. If we really need to shorten it, we can later. 
             //For new STD system we probably still need this feature. But a lot of the features in the technician portal can be removed.
-            var receiptBool = false;
-            if ((purchaseOrderReceipt != null) || (purchaseOrderReceipt2 != null))
-            {
-                receiptBool = true;
-            }
+            //var receiptBool = false;
+            //if ((purchaseOrderReceipt != null) || (purchaseOrderReceipt2 != null))
+            //{
+            //    receiptBool = true;
+            //}
 
             foreach (OrderItemModel orderItem in orderItems)
             {
@@ -208,14 +208,14 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                     SalesOrderId = workOrder.ars_Order,
                     new_ponumber = fileName,
                     IsProductOverridden = false,
-                    new_vendor = myOptionSet,
-                    new_storename = store,
-                    new_receipt = receiptBool,
+                    //new_vendor = myOptionSet,
+                    //new_storename = store,
+                    //new_receipt = receiptBool,
                     new_Cost = new Money(orderItem.RealPrice),
                     new_ExtCost = new Money(orderItem.RealPrice * orderItem.Quantity),
                     new_RetailPrice = new Money(orderItem.beforeTaxPrice),
                     new_technician = techName,
-                    new_card = cardBool,
+                    //new_card = cardBool,
                     new_date = DateTime.Now.ToString(),
                     ProductId = new EntityReference(Product.EntityLogicalName, productId),
                     UoMId = new EntityReference(UoM.EntityLogicalName, defaultUnit)

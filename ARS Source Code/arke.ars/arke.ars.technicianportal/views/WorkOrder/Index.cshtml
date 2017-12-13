@@ -127,7 +127,7 @@
                                     <ul>
                                         <li><strong>PO#:</strong> @orderItem.PO</li>      
                                         <li><strong>Date:</strong> @orderItem.Date </li>
-                                        <li><strong>Store:</strong> @orderItem.Store</li>
+                                        @*<li><strong>Store:</strong> @orderItem.Store</li>*@
                                     </ul>
                                 </div>
                             }
@@ -225,17 +225,17 @@
                     return;
                 }
 
-                var taxAmount = parseFloat($('#taxAmount').val());
-                if (isNaN(taxAmount) || taxAmount <= 0) {
-                    notificationService.showError("Please specify the amount of tax paid on receipt");
-                    return; 
-                }
+                //var taxAmount = parseFloat($('#taxAmount').val());
+                //if (isNaN(taxAmount) || taxAmount <= 0) {
+                //    notificationService.showError("Please specify the amount of tax paid on receipt");
+                //    return; 
+                //}
 
-                var subtotal = parseFloat($('#subtotal').val());
-                if (isNaN(subtotal) || subtotal <= 0) {
-                    notificationService.showError("Please specify the subtotal on receipt");
-                    return;
-                }
+                //var subtotal = parseFloat($('#subtotal').val());
+                //if (isNaN(subtotal) || subtotal <= 0) {
+                //    notificationService.showError("Please specify the subtotal on receipt");
+                //    return;
+                //}
 
                 var item = $('#purchase-order-name').val();
                 if (!item) {
@@ -243,18 +243,24 @@
                     return;
                 }
 
-                var taxRate = (taxAmount / subtotal);
+                //var taxRate = (taxAmount / subtotal);
+                //var purchaseOrderItem = {
+                //    id: GUID.create(),
+                //    quantity: quantity,
+                //    item: item,
+                //    beforeTaxPrice: beforeTaxPrice,
+                //    realprice: price * (1.0000 + taxRate),
+                //    price: price * (1.000 + taxRate) * 1.2500
+                //};
+
                 var purchaseOrderItem = {
                     id: GUID.create(),
                     quantity: quantity,
                     item: item,
+                    realprice: price,
                     beforeTaxPrice: beforeTaxPrice,
-
-
-
-                    realprice: price * (1.0000 + taxRate),
-                    price: price * (1.000 + taxRate) * 1.2500
-                };
+                    price: price * 1.3300
+                }
 
                 $('#purchase-orders-grid').bootgrid("append", [purchaseOrderItem]);
 

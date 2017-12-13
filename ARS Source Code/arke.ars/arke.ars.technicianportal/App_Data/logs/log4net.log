@@ -8974,3 +8974,21 @@ System.InvalidCastException - Unable to cast object of type 'System.Guid' to typ
 2017-12-01 10:03:14,032 [300] INFO  getting order with id 60313686-1fd5-e711-811f-e0071b66cfe1
 2017-12-01 10:03:14,216 [300] INFO  customer name Test Customer
 2017-12-01 10:03:14,433 [300] INFO  workItemStatuses contains 2
+2017-12-12 14:51:56,034 [6] INFO  getting order with id 999b3e6b-72df-e711-8120-e0071b66cfe1
+2017-12-12 14:51:56,361 [6] INFO  customer name 07596- T- Mobile
+2017-12-12 14:51:59,682 [6] INFO  workItemStatuses contains 2
+2017-12-13 01:43:05,062 [206] INFO  getting order with id 999b3e6b-72df-e711-8120-e0071b66cfe1
+2017-12-13 01:43:05,247 [206] INFO  customer name 07596- T- Mobile
+2017-12-13 01:43:05,522 [206] INFO  workItemStatuses contains 2
+2017-12-13 01:43:22,609 [206] INFO  getting order with id a96d970c-a7de-e711-8120-e0071b66cfe1
+2017-12-13 01:43:22,755 [206] INFO  customer name 08883 -T-Mobile - FacilitySource IFM
+2017-12-13 01:43:22,898 [206] INFO  workItemStatuses contains 2
+2017-12-13 01:48:59,240 [218] INFO  getting order with id 8a2680a4-eadf-e711-8124-e0071b6a1051
+2017-12-13 01:48:59,387 [218] INFO  customer name Test Customer
+2017-12-13 01:48:59,533 [218] INFO  workItemStatuses contains 2
+2017-12-13 01:51:59,178 [215] INFO  getting order with id 8a2680a4-eadf-e711-8124-e0071b6a1051
+2017-12-13 01:51:59,326 [215] INFO  customer name Test Customer
+2017-12-13 01:51:59,482 [215] INFO  workItemStatuses contains 2
+2017-12-13 03:13:10,502 [163] INFO  getting order with id 8a2680a4-eadf-e711-8124-e0071b6a1051
+2017-12-13 03:13:10,655 [163] INFO  customer name Test Customer
+2017-12-13 03:13:10,813 [163] INFO  workItemStatuses contains 2

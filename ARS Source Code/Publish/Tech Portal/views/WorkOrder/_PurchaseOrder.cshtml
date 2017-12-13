@@ -12,15 +12,15 @@
                     <h4 class="modal-title">Purchase Order Request <small>@Model.TicketNumber</small></h4>
                 </div>
                 <div class="modal-body">
-                    <div class="row">
+                    @*<div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label for="store">Store Name</label>
                                 <input type="text" class="form-control" rows="" id="store" name="store" required="required" />
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
+                    </div>*@
+                    @*<div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="taxAmount">Tax Amount</label>
@@ -33,7 +33,15 @@
                                 <input type="number" min="0" step=".01" class="form-control" rows="" id="subtotal" name="subtotal" required="required" />
                             </div>
                         </div>
-                    </div>
+                    </div>*@
+                    @*<div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="amountRequested">Amount Requested</label>
+                                <input type="number" step=".01" min="0" class="form-control" rows="" id="amountRequested" name="amountRequested" required="required" />
+                            </div>
+                        </div>
+                    </div>*@
                     <div class="row">
                         <p><strong>Purchase Order Items</strong></p>
                         <div class="form-group col-sm-3">
@@ -83,7 +91,7 @@
                             NTE <strong>$@Model.RemainingMoney.ToString("F2")</strong>
                         </div> 
                     </div>
-                    <div class="row">
+                    @*<div class="row">
                         <div class="col-sm-6">
                             <div class="file">
                                 <label for="attach-receipt">Attach Receipt</label>
@@ -113,7 +121,7 @@
                                 </select>
                             </div>
                         </div>
-                    </div>
+                    </div>*@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
