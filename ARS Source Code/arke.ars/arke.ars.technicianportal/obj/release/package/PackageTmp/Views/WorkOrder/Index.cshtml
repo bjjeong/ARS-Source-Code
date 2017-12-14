@@ -64,7 +64,7 @@
                     <strong>Money Limit: </strong>$@Model.NteMoney.ToString("F2")
                 </p>
                 <p class="nte-remaining">
-                    <strong>Remaining Money: </strong>@Model.RemainingMoney.ToString("F2")
+                    <strong>Remaining Money: </strong><span id="remainingMoney">@Model.RemainingMoney.ToString("F2")</span>
                 </p>
                 <p class="nte-amount">
                     <strong>Time Limit: </strong>@Model.NteHours.ToString("F2")
@@ -205,7 +205,11 @@
         var notificationService = new ARS.NotificationService();
         var animationService = new ARS.AnimationService();
 
-        alert("REMINDER: If relevant, please check into IVR when arriving on site");
+        if (document.getElementById("remainingMoney").innerHTML < 50) {
+            alert("NTE IS LOW! Please request for more time");
+        }
+        
+        //alert("REMINDER: If relevant, please check into IVR when arriving on site");
 
         if ('@TempData["ErrorMessage"]') {
                 notificationService.showError('@TempData["ErrorMessage"]');
@@ -380,13 +384,17 @@
                 }
             });
 
+            $('#checkin').click(function (e) {
+                alert("REMINDER: If relevant, please check into IVR when arriving on site");
+            });
+
             $('#work-complete-submit').click(function (e) {
                 if ($('form[data-work-item] input[name="isComplete"]:not(:checked)').length > 0) {
                     e.preventDefault();
                     notificationService.showError("All Work Items must be completed before marking this job as complete.");
                 }
                 else {
-                    notificationService.showError("REMINDER: If relevant, please check out of IVR when leaving the site");
+                    alert("REMINDER: If relevant, please check out of IVR when leaving the site");
                 }
             });
             

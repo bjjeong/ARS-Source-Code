@@ -144,7 +144,7 @@ namespace Arke.ARS.TechnicianPortal.Controllers
         {
             if (orderItems == null)
             {
-                throw new ArgumentNullException("orderItems");
+                throw new ArgumentNullException("orderItems"); 
             }
 
             _purchaseOrderService.SubmitPurchaseOrderRequest(id, GetCurrentTechnicianId(), orderItems, purchaseOrderReceipt, purchaseOrderReceipt2, vendor, store, card);

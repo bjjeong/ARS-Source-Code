@@ -8998,3 +8998,91 @@ System.InvalidCastException - Unable to cast object of type 'System.Guid' to typ
 2017-12-13 08:22:38,961 [118] INFO  getting order with id 8a2680a4-eadf-e711-8124-e0071b6a1051
 2017-12-13 08:22:39,137 [118] INFO  customer name Test Customer
 2017-12-13 08:22:39,289 [118] INFO  workItemStatuses contains 2
+2017-12-14 09:57:46,092 [209] ERROR ==========================  Exception info see below  ===============================
+Unhandled exception
+Url: /WorkOrder/Index
+System.ArgumentException - The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Guid' for method 'System.Web.Mvc.ActionResult Index(System.Guid)' in 'Arke.ARS.TechnicianPortal.Controllers.WorkOrderController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+   at System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass48.<InvokeActionMethodFilterAsynchronouslyRecursive>b__41()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+2017-12-14 09:58:28,827 [209] ERROR ==========================  Exception info see below  ===============================
+Unhandled exception
+Url: /WorkOrder/Index
+System.ArgumentException - The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Guid' for method 'System.Web.Mvc.ActionResult Index(System.Guid)' in 'Arke.ARS.TechnicianPortal.Controllers.WorkOrderController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+   at System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass48.<InvokeActionMethodFilterAsynchronouslyRecursive>b__41()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+2017-12-14 09:59:31,338 [107] INFO  getting order with id 8a2680a4-eadf-e711-8124-e0071b6a1051
+2017-12-14 09:59:31,556 [107] INFO  customer name Test Customer
+2017-12-14 09:59:31,849 [107] INFO  workItemStatuses contains 2
+2017-12-14 10:00:04,113 [107] INFO  getting order with id 8a2680a4-eadf-e711-8124-e0071b6a1051
+2017-12-14 10:00:04,288 [107] INFO  customer name Test Customer
+2017-12-14 10:00:04,432 [107] INFO  workItemStatuses contains 2
+2017-12-14 10:01:49,232 [104] INFO  getting order with id 8a2680a4-eadf-e711-8124-e0071b6a1051
+2017-12-14 10:01:49,448 [104] INFO  customer name Test Customer
+2017-12-14 10:01:49,595 [104] INFO  workItemStatuses contains 2
+2017-12-14 10:02:03,812 [104] INFO  getting order with id 8a2680a4-eadf-e711-8124-e0071b6a1051
+2017-12-14 10:02:03,958 [104] INFO  customer name Test Customer
+2017-12-14 10:02:04,104 [104] INFO  workItemStatuses contains 2
+2017-12-14 10:02:53,351 [209] INFO  getting order with id 8a2680a4-eadf-e711-8124-e0071b6a1051
+2017-12-14 10:02:53,506 [209] INFO  customer name Test Customer
+2017-12-14 10:02:53,654 [209] INFO  workItemStatuses contains 2
+2017-12-14 10:03:33,595 [209] INFO  getting order with id 8a2680a4-eadf-e711-8124-e0071b6a1051
+2017-12-14 10:03:33,747 [209] INFO  customer name Test Customer
+2017-12-14 10:03:33,902 [209] INFO  workItemStatuses contains 2
+2017-12-14 10:06:28,626 [107] INFO  getting order with id 8a2680a4-eadf-e711-8124-e0071b6a1051
+2017-12-14 10:06:28,907 [107] INFO  customer name Test Customer
+2017-12-14 10:06:29,060 [107] INFO  workItemStatuses contains 2
+2017-12-14 10:07:16,359 [107] INFO  getting order with id 8a2680a4-eadf-e711-8124-e0071b6a1051
+2017-12-14 10:07:16,511 [107] INFO  customer name Test Customer
+2017-12-14 10:07:16,697 [107] INFO  workItemStatuses contains 2
+2017-12-14 10:08:36,933 [104] INFO  getting order with id 8a2680a4-eadf-e711-8124-e0071b6a1051
+2017-12-14 10:08:37,082 [104] INFO  customer name Test Customer
+2017-12-14 10:08:37,226 [104] INFO  workItemStatuses contains 2
+2017-12-14 10:09:04,167 [104] INFO  getting order with id 8a2680a4-eadf-e711-8124-e0071b6a1051
+2017-12-14 10:09:04,318 [104] INFO  customer name Test Customer
+2017-12-14 10:09:04,467 [104] INFO  workItemStatuses contains 2
