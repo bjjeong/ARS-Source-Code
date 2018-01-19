@@ -118,15 +118,6 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
 
             var fileName = new String(stringChars);
 
-            //fileName.Substring(fileName.Length - 15); This is an attempt to make that PO # shorter. However, this might create the problem of collisions in the future. No guarantees for unique ID's. 
-            //We will keep it at current length for now. If we really need to shorten it, we can later. 
-            //For new STD system we probably still need this feature. But a lot of the features in the technician portal can be removed.
-            //var receiptBool = false;
-            //if ((purchaseOrderReceipt != null) || (purchaseOrderReceipt2 != null))
-            //{
-            //    receiptBool = true;
-            //}
-
             foreach (OrderItemModel orderItem in orderItems)
             {
                 OptionSetValue myOptionSet = new OptionSetValue();

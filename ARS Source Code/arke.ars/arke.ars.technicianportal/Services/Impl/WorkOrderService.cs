@@ -139,7 +139,35 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                 isInProgress = true;
             }
 
+            //Keep a list of all the check in events so we can display them on the tech portal:
+            var checkInEvent = (from e in _context.ars_workordereventSet
+                                where e.ars_WorkOrder.Id == workOrderId
+                                && e.ars_Technician.Id == technicianId
+                                && e.ars_EventType.Value == checkInKey
+                                orderby e.ars_DateTime descending
+                                select new CheckInEventModel
+                                {
+                                    Time = e.ars_DateTime,
+                                    EventType = "Check In"
+
+                                }).Distinct().ToArray();
+
+            //Keep a list of all the check out events so we can display them on the tech portal:
+            var checkOutEvent = (from e in _context.ars_workordereventSet
+                                where e.ars_WorkOrder.Id == workOrderId
+                                && e.ars_Technician.Id == technicianId
+                                && e.ars_EventType.Value == checkOutKey
+                                orderby e.ars_DateTime descending
+                                select new CheckOutEventModel
+                                {
+                                    Time = e.ars_DateTime,
+                                    EventType = "Check Out"
+
+                                }).Distinct().ToArray();
+
             Dictionary<int, string> orderStatuses = GetOrderStatuses();
+
+            //Keep track of the PO requests so we can display the info on the tech portal:
             var orders = (from orderDetail in _context.SalesOrderDetailSet
                           join order in _context.SalesOrderSet on orderDetail.SalesOrderId.Id equals order.Id
                           where order.ars_WorkOrderId.Id == workOrderId && orderDetail.new_ponumber != null
@@ -214,7 +242,9 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                 trade = workOrder.new_trade,
                 po = workOrder.new_PO,
                 Activities = activiteList.OrderByDescending(a => a.CreatedOn).ToArray(),
-                OrderItem = orders 
+                OrderItem = orders,
+                CheckInEvent = checkInEvent,
+                CheckOutEvent = checkOutEvent
                 };
         }
 

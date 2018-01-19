@@ -233,6 +233,8 @@
     </Compile>
     <Compile Include="Infrastructure\EnumUtility.cs" />
     <Compile Include="Models\AppointmentModel.cs" />
+    <Compile Include="Models\CheckInEventModel.cs" />
+    <Compile Include="Models\CheckOutEventModel.cs" />
     <Compile Include="Models\EmailModel.cs" />
     <Compile Include="Models\DownloadAttachmentModel.cs" />
     <Compile Include="Models\ApplicationModel.cs" />

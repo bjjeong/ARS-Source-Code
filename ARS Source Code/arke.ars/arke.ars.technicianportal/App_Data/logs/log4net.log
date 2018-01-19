@@ -9086,3 +9086,24 @@ Parameter name: parameters
 2017-12-14 10:09:04,167 [104] INFO  getting order with id 8a2680a4-eadf-e711-8124-e0071b6a1051
 2017-12-14 10:09:04,318 [104] INFO  customer name Test Customer
 2017-12-14 10:09:04,467 [104] INFO  workItemStatuses contains 2
+2018-01-18 15:05:45,904 [6] INFO  getting order with id 05189ccd-bafb-e711-8124-e0071b66aea1
+2018-01-18 15:05:50,779 [6] INFO  customer name 00206 - ChenMed - System4
+2018-01-18 15:05:53,159 [6] INFO  workItemStatuses contains 2
+2018-01-18 15:16:05,767 [12] INFO  getting order with id 05189ccd-bafb-e711-8124-e0071b66aea1
+2018-01-18 15:16:06,221 [12] INFO  customer name 00206 - ChenMed - System4
+2018-01-18 15:16:07,274 [12] INFO  workItemStatuses contains 2
+2018-01-18 15:18:09,502 [12] INFO  getting order with id 1adf5986-dafb-e711-8124-e0071b66aea1
+2018-01-18 15:18:10,097 [12] INFO  customer name 77040 - XPO Logistics - FacilitySource IFM
+2018-01-18 15:18:10,452 [12] INFO  workItemStatuses contains 2
+2018-01-18 15:35:46,062 [14] INFO  getting order with id 1adf5986-dafb-e711-8124-e0071b66aea1
+2018-01-18 15:35:46,938 [14] INFO  customer name 77040 - XPO Logistics - FacilitySource IFM
+2018-01-18 15:35:48,617 [14] INFO  workItemStatuses contains 2
+2018-01-18 15:45:21,371 [12] INFO  getting order with id e5af0550-a9fc-e711-8124-e0071b66aea1
+2018-01-18 15:45:22,291 [12] INFO  customer name Test Customer
+2018-01-18 15:45:23,165 [12] INFO  workItemStatuses contains 2
+2018-01-18 15:45:45,684 [25] INFO  getting order with id e5af0550-a9fc-e711-8124-e0071b66aea1
+2018-01-18 15:45:47,645 [25] INFO  customer name Test Customer
+2018-01-18 15:45:48,636 [25] INFO  workItemStatuses contains 2
+2018-01-18 15:46:50,546 [6] INFO  getting order with id e5af0550-a9fc-e711-8124-e0071b66aea1
+2018-01-18 15:46:51,316 [6] INFO  customer name Test Customer
+2018-01-18 15:46:51,712 [6] INFO  workItemStatuses contains 2

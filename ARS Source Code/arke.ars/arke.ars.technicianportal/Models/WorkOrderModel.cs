@@ -29,6 +29,8 @@ namespace Arke.ARS.TechnicianPortal.Models
         public ActivityModel[] Activities { get; set; }
         public OrderModel[] Orders { get; set; }
         public OrderItemModel[] OrderItem { get; set; }
+        public CheckInEventModel[] CheckInEvent { get; set; }
+        public CheckOutEventModel[] CheckOutEvent { get; set; }
     }
 
     public sealed class OrderModel
