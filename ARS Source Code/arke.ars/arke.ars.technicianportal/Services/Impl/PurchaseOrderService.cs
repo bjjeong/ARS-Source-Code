@@ -294,7 +294,6 @@ namespace Arke.ARS.TechnicianPortal.Services.Impl
                 var item = new SalesOrderDetail
                 {
                     PricePerUnit = new Money(orderItem.RealPrice),
-                    //new_markupprice = new Money(orderItem.Price),
                     ProductDescription = orderItem.Item,
                     Quantity = orderItem.Quantity,
                     SalesOrderId = workOrder.ars_Order,

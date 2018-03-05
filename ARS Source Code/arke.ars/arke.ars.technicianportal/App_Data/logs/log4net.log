@@ -9107,3 +9107,6 @@ Parameter name: parameters
 2018-01-18 15:46:50,546 [6] INFO  getting order with id e5af0550-a9fc-e711-8124-e0071b66aea1
 2018-01-18 15:46:51,316 [6] INFO  customer name Test Customer
 2018-01-18 15:46:51,712 [6] INFO  workItemStatuses contains 2
+2018-01-18 18:26:25,211 [133] INFO  getting order with id e5af0550-a9fc-e711-8124-e0071b66aea1
+2018-01-18 18:26:25,699 [133] INFO  customer name Test Customer
+2018-01-18 18:26:26,247 [133] INFO  workItemStatuses contains 2
